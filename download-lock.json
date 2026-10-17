@@ -1,0 +1,98 @@
+{
+  "vendor/chess.js": {
+    "url": "https://cdn.jsdelivr.net/npm/chess.js@1.4.0/dist/esm/chess.js",
+    "sha256": "76c7c34f0e2e9ab076521a5d6fe786a9cce537bb1b6f29d32a9c9970b5b232d2",
+    "bytes": 107052,
+    "publisher_checksum": false
+  },
+  "engine/stockfish-19-lite-single.js": {
+    "url": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-lite-single.js",
+    "sha256": "ccb130d7ff29408531c47d859a49f91d59d4f482d05a53eb1a3231a4f624c91a",
+    "bytes": 28230,
+    "publisher_checksum": true
+  },
+  "engine/stockfish-19-lite-single.wasm": {
+    "url": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-lite-single.wasm",
+    "sha256": "ee4f115bdb2d32cadf96cada104a05b5ec257d7ad6f57582190b49bc71f096de",
+    "bytes": 1845971,
+    "publisher_checksum": true
+  },
+  "engine/stockfish-19-single.js": {
+    "url": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-single.js",
+    "sha256": "8071dee87312f74805a859de933e1a1ef465579ab1a51fbd597388cdce9d444d",
+    "bytes": 28130,
+    "publisher_checksum": true
+  },
+  "engine/stockfish-19-single.wasm": {
+    "url": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-single.wasm",
+    "sha256": "991bede2f253ebb08ff01fcc48270f4b9c8e66b12d5bd5f8d6f52eb3e3b3a740",
+    "bytes": 99169054,
+    "publisher_checksum": true
+  },
+  "models/maia3/maia3_simplified.onnx": {
+    "url": "https://raw.githubusercontent.com/CSSLab/maia-platform-frontend/a6e52f5c811ee18863cb2f0e81f2433a5b9905de/public/maia3/maia3_simplified.onnx",
+    "sha256": "405bf76c15727dad8728b352c06a8f3c1b80fb2760e8d666b32485c63d75b856",
+    "bytes": 45683686,
+    "publisher_checksum": false
+  },
+  "models/maia3/all_moves.json": {
+    "url": "https://raw.githubusercontent.com/CSSLab/maia-platform-frontend/a6e52f5c811ee18863cb2f0e81f2433a5b9905de/src/lib/engine/data/all_moves_maia3.json",
+    "sha256": "e3351a233174e99d9ddca981681b65a444d191e8a6b474e27bd8fad8514af8d7",
+    "bytes": 60074,
+    "publisher_checksum": false
+  },
+  "vendor/ort/ort.wasm.min.js": {
+    "url": "https://raw.githubusercontent.com/CSSLab/maia-platform-frontend/a6e52f5c811ee18863cb2f0e81f2433a5b9905de/public/ort/ort.wasm.min.js",
+    "sha256": "aec37bf5b223afd8ac358e6647369c724cc08727c258760bb88e4f6ce69ab68f",
+    "bytes": 49926,
+    "publisher_checksum": false
+  },
+  "vendor/ort/ort-wasm-simd-threaded.mjs": {
+    "url": "https://raw.githubusercontent.com/CSSLab/maia-platform-frontend/a6e52f5c811ee18863cb2f0e81f2433a5b9905de/public/ort/ort-wasm-simd-threaded.mjs",
+    "sha256": "c0bc2244e2c95fbf39a5eccb595bca31defb9eefdffa6f9ce0325a1c47524461",
+    "bytes": 20321,
+    "publisher_checksum": false
+  },
+  "vendor/ort/ort-wasm-simd-threaded.wasm": {
+    "url": "https://raw.githubusercontent.com/CSSLab/maia-platform-frontend/a6e52f5c811ee18863cb2f0e81f2433a5b9905de/public/ort/ort-wasm-simd-threaded.wasm",
+    "sha256": "3260fcdb33b4fc4ec33e89caf392e13625823e01049d3bf32c38464f9dbfe14c",
+    "bytes": 11815498,
+    "publisher_checksum": false
+  },
+  "licenses/chess.js-LICENSE.txt": {
+    "url": "https://raw.githubusercontent.com/jhlywa/chess.js/v1.4.0/LICENSE",
+    "sha256": "0b3a3c2b4432a26bb18f9d06f5bba4de015bcc980306b7db28b06025495e2186",
+    "bytes": 1315,
+    "publisher_checksum": false
+  },
+  "licenses/Stockfish-GPL-3.0.txt": {
+    "url": "https://raw.githubusercontent.com/nmrugg/stockfish.js/v19.0.1/Copying.txt",
+    "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b",
+    "bytes": 35821,
+    "publisher_checksum": false
+  },
+  "licenses/Maia-frontend-GPL-3.0.txt": {
+    "url": "https://raw.githubusercontent.com/CSSLab/maia-platform-frontend/a6e52f5c811ee18863cb2f0e81f2433a5b9905de/LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149,
+    "publisher_checksum": false
+  },
+  "licenses/Maia3-AGPL-3.0.txt": {
+    "url": "https://raw.githubusercontent.com/CSSLab/maia3/main/LICENSE",
+    "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+    "bytes": 34523,
+    "publisher_checksum": false
+  },
+  "licenses/ONNX-Runtime-MIT.txt": {
+    "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.23.0/LICENSE",
+    "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+    "bytes": 1073,
+    "publisher_checksum": false
+  },
+  "licenses/ONNX-Runtime-ThirdPartyNotices.txt": {
+    "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.23.0/ThirdPartyNotices.txt",
+    "sha256": "e9e90971a8e75a9a8ac0c6412e29c1202d079998389915aa485f46c816c3b4cc",
+    "bytes": 326866,
+    "publisher_checksum": false
+  }
+}
