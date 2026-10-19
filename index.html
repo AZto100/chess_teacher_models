@@ -123,9 +123,6 @@ h1{font-size:22px;line-height:1.2}
 <label id="blunder-control" title="Play computer only. Checked: your weighted top-four choice. Unchecked: Stockfish's final best move at this preset's search limits."><input type="checkbox" id="allowBlunder" checked disabled> Allow Blunder</label>
 </div>
 
-<p class="muted" id="model-note" style="margin:4px 0;line-height:1.4"></p>
-<div class="status"><span id="status" role="status" aria-live="polite">Loading chess rules...</span><button id="engine-retry" hidden>Retry engine</button></div>
-
 
 </header>
 <div class="layout" id="layout">
@@ -145,7 +142,9 @@ h1{font-size:22px;line-height:1.2}
 <div class="panel" id="display-settings"><h2>Hints &amp; display</h2>
 <div class="hint-controls"><label><input type="checkbox" id="hintsWhite" checked> Show white hints</label><label><input type="checkbox" id="hintsBlack" checked> Show black hints</label><label><input type="checkbox" id="talk" checked> Commentary</label></div>
 <p class="muted" id="board-size"></p><p class="muted legend" id="play-legend" hidden><span class="grey-swatch light"></span> / <span class="grey-swatch dark"></span> Grey = latest move's FROM and TO squares. Light squares become light grey; dark squares become dark grey. These remain visible when hints are off.</p>
-<details><summary>Saved game on this device</summary>
+<p class="muted" id="model-note" style="margin:4px 0;line-height:1.4"></p>
+<div class="status"><span id="status" role="status" aria-live="polite">Loading chess rules...</span><button id="engine-retry" hidden>Retry engine</button></div>
+  <details><summary>Saved game on this device</summary>
 <p class="storage-help">The board position, complete move history, engine choice, strength, mode, Allow Blunder, hint switches and board orientation save automatically in this browser. Reopening this same site restores them. If it is the computer's turn, it resumes after a fresh analysis.</p>
 <p class="storage-help">New game replaces the saved position but keeps your settings. This saves one game per browser profile and site folder, not a cloud backup. Private browsing or clearing site data may erase it. Localhost and GitHub Pages have separate saves.</p>
 </details></div>
