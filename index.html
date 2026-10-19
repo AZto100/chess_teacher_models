@@ -125,7 +125,31 @@ h1{font-size:22px;line-height:1.2}
 
 <p class="muted" id="model-note" style="margin:4px 0;line-height:1.4"></p>
 <div class="status"><span id="status" role="status" aria-live="polite">Loading chess rules...</span><button id="engine-retry" hidden>Retry engine</button></div>
-<section id="voice-panel" class="voice-panel" aria-label="Spoken chess moves" hidden>
+
+
+</header>
+<div class="layout" id="layout">
+<div class="boardcolumn">
+<div class="seat" id="top-seat">Black - top</div>
+<div class="boardgroup">
+<div class="eval" id="evaluation-bar" role="img" aria-label="Position evaluation: equal">
+<div class="whitefill" id="whitefill"></div><span class="eval-label black-label">B</span><span class="eval-label white-label">W</span><span class="evalnum" id="evalnum">0.00</span>
+</div>
+<div class="board" id="board" role="group" aria-label="Chessboard"></div>
+</div>
+<div class="seat" id="bottom-seat">White - bottom</div>
+<div class="lastmove-text" id="lastmove">No moves yet.</div>
+
+</div>
+<aside class="side" aria-label="Teaching panels">
+<div class="panel" id="display-settings"><h2>Hints &amp; display</h2>
+<div class="hint-controls"><label><input type="checkbox" id="hintsWhite" checked> Show white hints</label><label><input type="checkbox" id="hintsBlack" checked> Show black hints</label><label><input type="checkbox" id="talk" checked> Commentary</label></div>
+<p class="muted" id="board-size"></p><p class="muted legend" id="play-legend" hidden><span class="grey-swatch light"></span> / <span class="grey-swatch dark"></span> Grey = latest move's FROM and TO squares. Light squares become light grey; dark squares become dark grey. These remain visible when hints are off.</p>
+<details><summary>Saved game on this device</summary>
+<p class="storage-help">The board position, complete move history, engine choice, strength, mode, Allow Blunder, hint switches and board orientation save automatically in this browser. Reopening this same site restores them. If it is the computer's turn, it resumes after a fresh analysis.</p>
+<p class="storage-help">New game replaces the saved position but keeps your settings. This saves one game per browser profile and site folder, not a cloud backup. Private browsing or clearing site data may erase it. Localhost and GitHub Pages have separate saves.</p>
+</details></div>
+<section id="voice-panel" class="side" aria-label="Spoken chess moves" hidden>
 <div class="voice-row">
 <strong>Hands-free voice <small>(optional)</small></strong>
 <button id="voice-start" type="button">Start hands-free</button>
@@ -154,30 +178,6 @@ h1{font-size:22px;line-height:1.2}
 <p>Whisper processes each short phrase locally after a pause. Wait until <strong>Listening</strong> is shown before your next command; audio spoken while it is processing or while the computer moves is discarded, not queued. Browser recognition processes final results only. There is no immediate-play option: coordinates always create a preview first. Ordinary moves keep hands-free enabled; New game, Undo, engine/side/settings changes, hiding the tab, closing this panel, or Escape turn it off. Microphone access never starts automatically on reload. Audio and transcripts are not saved or uploaded. <a href="VOICE_README.md">Voice setup and privacy notes</a>.</p>
 </details>
 </section>
-
-</header>
-<div class="layout" id="layout">
-<div class="boardcolumn">
-<div class="seat" id="top-seat">Black - top</div>
-<div class="boardgroup">
-<div class="eval" id="evaluation-bar" role="img" aria-label="Position evaluation: equal">
-<div class="whitefill" id="whitefill"></div><span class="eval-label black-label">B</span><span class="eval-label white-label">W</span><span class="evalnum" id="evalnum">0.00</span>
-</div>
-<div class="board" id="board" role="group" aria-label="Chessboard"></div>
-</div>
-<div class="seat" id="bottom-seat">White - bottom</div>
-<div class="lastmove-text" id="lastmove">No moves yet.</div>
-
-</div>
-<aside class="side" aria-label="Teaching panels">
-<div class="panel" id="display-settings"><h2>Hints &amp; display</h2>
-<div class="hint-controls"><label><input type="checkbox" id="hintsWhite" checked> Show white hints</label><label><input type="checkbox" id="hintsBlack" checked> Show black hints</label><label><input type="checkbox" id="talk" checked> Commentary</label></div>
-<p class="muted" id="board-size"></p><p class="muted legend" id="play-legend" hidden><span class="grey-swatch light"></span> / <span class="grey-swatch dark"></span> Grey = latest move's FROM and TO squares. Light squares become light grey; dark squares become dark grey. These remain visible when hints are off.</p>
-<details><summary>Saved game on this device</summary>
-<p class="storage-help">The board position, complete move history, engine choice, strength, mode, Allow Blunder, hint switches and board orientation save automatically in this browser. Reopening this same site restores them. If it is the computer's turn, it resumes after a fresh analysis.</p>
-<p class="storage-help">New game replaces the saved position but keeps your settings. This saves one game per browser profile and site folder, not a cloud backup. Private browsing or clearing site data may erase it. Localhost and GitHub Pages have separate saves.</p>
-</details></div>
-
 <div class="panel" id="play-settings" hidden>
 <h2>Computer move selection</h2>
 <div class="settings">
