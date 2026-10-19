@@ -1283,7 +1283,7 @@ function announceComputerMove(move,test=false) {
   invalidateVoiceUtterance();closeNativeVoice();clearTimeout(voice.timer);voice.timer=null;
   voice.recorder?.reset();
   const parts=spokenComputerMoveParts(move,!test&&game.isCheckmate(),!test&&game.isCheck());
-  const label=parts.join(' … ')+'.';
+  const label=parts.join(' ._.')+'.';
   $('computer-voice-status').textContent='Speaking: '+label;
   let finished=false;
   const finish=()=>{
@@ -1308,7 +1308,7 @@ function announceComputerMove(move,test=false) {
     utterance.onend=()=>{
       if(token!==computerSpeech.token||finished)return;
       if(index+1===parts.length)speakPart(index+1);
-      else computerSpeech.gapTimer=setTimeout(()=>speakPart(index+1),50);
+      else computerSpeech.gapTimer=setTimeout(()=>speakPart(index+1),20);
     };
     utterance.onerror=event=>{
       if(token!==computerSpeech.token||finished)return;
