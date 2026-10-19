@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chess Teacher - Stockfish &amp; Maia</title>
+<title>Chess Teacher - Stockfish, Maia &amp; Hands-free Voice</title>
 <style>
 :root{font-family:system-ui,Arial,sans-serif;color:#e9edf5;background:#111827;--sq:64px;--last-light:#d4d4d4;--last-dark:#737373}
 *{box-sizing:border-box}body{margin:0;padding:18px}.wrap{max-width:1250px;margin:auto}a{color:#9ed3ff}h1{margin:0;font-size:25px}.subtitle{margin:5px 0 12px}.controls{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0;align-items:center}
@@ -77,6 +77,26 @@ h1{font-size:22px;line-height:1.2}
   .seat{padding-top:2px;padding-bottom:2px;font-size:11px;line-height:15px}
   .lastmove-text{margin-top:2px;line-height:16px;height:16px;font-size:11px}
 }
+/* A compact collapsible command bar stays available in Focus board mode. */
+#voice-toggle[aria-pressed=true]{background:#385a72;border-color:#8fbcdb}
+.voice-panel{background:#1d293b;border:1px solid #4b617a;border-radius:9px;padding:10px 12px;margin:7px 0}
+.voice-row{display:flex;align-items:center;flex-wrap:wrap;gap:7px 12px;font-size:13px}
+.voice-row + .voice-row{margin-top:8px}.voice-row button,.voice-row select{padding:5px 8px;font-size:13px}
+.voice-entry input{font:inherit;flex:1;min-width:180px;background:#101d2f;color:#fff;border:1px solid #61758e;border-radius:6px;padding:7px 9px}
+.voice-status{font-size:13px;margin:7px 0 0;color:#b7d6eb;line-height:1.5;overflow-wrap:anywhere}
+.voice-status.error{color:#ffd09a}.voice-status.ready{color:#8de5b0}
+#voice-details{margin-top:5px}#voice-details .voice-row{margin-top:9px}
+.mic-indicator{display:inline-block;width:9px;height:9px;border-radius:50%;background:#7d8ba0}
+.mic-indicator.listening{background:#ff7373;box-shadow:0 0 0 4px #ff737325}
+#voice-play:not(:disabled){background:#286345;border-color:#81d6a4}
+@media(max-width:700px){.voice-panel{padding:8px}.voice-row{gap:7px;font-size:12px}.voice-row button,.voice-row select{font-size:12px;max-width:100%}.voice-entry input{flex-basis:100%;min-width:0}.voice-status{font-size:12px}.voice-row label{max-width:100%;flex-wrap:wrap}}
+
+/* A spoken preview is a separate input aid, not an engine recommendation.
+   It overrides last-move greys on the destination only, even with hints off. */
+.sq.voice-preview,.sq.voice-preview.last-move{background:#45e37c;box-shadow:inset 0 0 0 3px #15803d}
+.sq.voice-preview .coord{color:#102018}
+.voice-preview-banner{margin:8px 0 0;padding:7px 10px;border:1px solid #45e37c;border-radius:6px;background:#183c2c;color:#c7ffda;font-size:13px;font-weight:650;line-height:1.5}
+#voice-live{font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -85,7 +105,7 @@ h1{font-size:22px;line-height:1.2}
 <div class="titlebar"><h1>&#9823; Chess Teacher</h1><div class="header-actions">
 <span class="save-status" id="save-status" role="status" aria-live="polite">Autosave starting...</span>
 <button id="focus" aria-pressed="false" title="Hide the teaching panels. Keep the board and main play controls.">Focus board</button>
-<button id="fullscreen" aria-pressed="false" title="Use the full screen. Press Esc to leave." hidden>Full screen</button>
+<button id="voice-toggle" type="button" aria-pressed="false" aria-controls="voice-panel" title="Optional voice input. Click-to-move is always available.">Voice (optional)</button><button id="fullscreen" aria-pressed="false" title="Use the full screen. Press Esc to leave." hidden>Full screen</button>
 </div></div>
 <div class="controls">
 <label>Engine <select id="model" aria-describedby="model-note"><option value="lite" selected>Stockfish Lite</option><option value="full">Stockfish Full</option><option value="maia">Maia-3 (human-like)</option></select></label>
@@ -102,6 +122,36 @@ h1{font-size:22px;line-height:1.2}
 
 <p class="muted" id="model-note" style="margin:4px 0;line-height:1.4"></p>
 <div class="status"><span id="status" role="status" aria-live="polite">Loading chess rules...</span><button id="engine-retry" hidden>Retry engine</button></div>
+<section id="voice-panel" class="voice-panel" aria-label="Spoken chess moves" hidden>
+<div class="voice-row">
+<strong>Hands-free voice <small>(optional)</small></strong>
+<button id="voice-start" type="button">Start hands-free</button>
+<button id="voice-stop" type="button" disabled>Stop listening</button>
+<button id="voice-cancel" type="button" disabled>Clear preview</button>
+<span class="mic-indicator" id="voice-mic" aria-hidden="true"></span><span id="voice-live" class="muted" role="status">Microphone off</span>
+<button id="voice-play" type="button" disabled hidden>Play preview</button>
+</div>
+<p id="voice-preview-banner" class="voice-preview-banner" role="status" hidden></p>
+<p id="voice-status" class="voice-status" role="status" aria-live="polite">Mouse play is always available. To use voice, start once, say coordinates, then say "move" after the green preview appears.</p>
+<details id="voice-details"><summary>Voice settings, typed correction &amp; setup</summary>
+<div class="voice-row">
+<label>Speech <select id="voice-backend"><option value="whisper" selected>Whisper (local, oral-exam method)</option><option value="browser">Browser on-device (local only)</option></select></label>
+<label id="voice-language-wrap">Language <select id="voice-language"><option value="en-US">English (US)</option><option value="en-GB">English (UK)</option><option value="en-ZA">English (South Africa)</option></select></label>
+<button id="voice-prepare" type="button">Prepare voice</button>
+</div>
+<div class="voice-row voice-entry">
+<label for="voice-text">Heard / edit</label><input type="text" id="voice-text" placeholder="C2 to C4, or Charlie two to Charlie four" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="180" aria-describedby="voice-status">
+<label id="voice-promotion-wrap" hidden>Promote <select id="voice-promotion"><option value="">Choose piece</option><option value="q">Queen</option><option value="r">Rook</option><option value="b">Bishop</option><option value="n">Knight</option></select></label>
+</div>
+<div class="voice-row"><label id="voice-pause-wrap">Whisper pause <select id="voice-pause"><option value="650">Short (0.65 s)</option><option value="950" selected>Normal (0.95 s)</option><option value="1400">Long (1.4 s)</option></select></label></div>
+<p><strong>Click-to-move remains the default and always works.</strong> Hands-free is optional: start it once, say <strong>C two to C four</strong>, pause for the single green destination, then say <strong>move</strong> as a separate command. Say <strong>D two to D four</strong> to replace the preview; no piece moves until confirmed. Say <strong>cancel</strong> to clear the preview, or <strong>stop listening</strong> to turn the microphone off. Clicking the board clears the voice preview and takes priority.</p>
+<p>Phonetic coordinates (<strong>Charlie two to Charlie four</strong>), <strong>castle kingside</strong>, and <strong>E seven to E eight promote to queen</strong> are supported. A promotion without a piece first asks you to say <strong>queen</strong>, <strong>rook</strong>, <strong>bishop</strong> or <strong>knight</strong>; then confirm with <strong>move</strong>. In Play computer, speech controls only your bottom-side pieces. It waits through the computer turn and is ready again automatically.</p>
+<p><strong>Whisper:</strong> copy your oral-exam <code>wasm/stream.js</code> and its matching companion files into this site's <code>wasm/</code> folder, plus <code>models/ggml-base.en-q5_1.bin</code>. Alternatively run <code>py -3 install-voice.py</code> from this app folder. The helper <code>voice-coi-serviceworker.js</code> must be beside index.html. Prepare voice may reload this page once to enable local WASM threads; your game is saved first. No speech model loads until you request it.</p>
+<p><strong>Browser on-device:</strong> requires actual <code>processLocally</code> support and an installed language pack. Prepare voice checks/downloads the chosen pack. Unsupported browsers show an error rather than using a cloud recogniser. Both methods require microphone permission and HTTPS (GitHub Pages) or localhost.</p>
+<p>Whisper processes each short phrase locally after a pause. Wait until <strong>Listening</strong> is shown before your next command; audio spoken while it is processing or while the computer moves is discarded, not queued. Browser recognition processes final results only. There is no immediate-play option: coordinates always create a preview first. Ordinary moves keep hands-free enabled; New game, Undo, engine/side/settings changes, hiding the tab, closing this panel, or Escape turn it off. Microphone access never starts automatically on reload. Audio and transcripts are not saved or uploaded. <a href="VOICE_README.md">Voice setup and privacy notes</a>.</p>
+</details>
+</section>
+
 </header>
 <div class="layout" id="layout">
 <div class="boardcolumn">
@@ -147,7 +197,7 @@ h1{font-size:22px;line-height:1.2}
 </div></details>
 </div>
 <div class="panel" id="maia-panel" hidden><h2>Maia: likely human moves</h2><div id="maia-suggestions"></div><p class="muted">Separate from the Stockfish best-move hints. These are move-likelihood predictions, not winning chances.</p></div>
-<div class="panel"><h2 id="suggestions-title">Best next moves</h2><div id="suggestions">Waiting for engine...</div><p class="muted" id="analysis-note"></p><p class="muted legend">Green = #1. Yellow = #2-4. Labels show rank and origin:destination. Dotted lines connect square centres. Hints apply only to the side whose turn it is.</p></div>
+<div class="panel"><h2 id="suggestions-title">Best next moves</h2><div id="suggestions">Waiting for engine...</div><p class="muted" id="analysis-note"></p><p class="muted legend" id="hint-legend">Green = #1. Yellow = #2-4. Labels show rank and origin:destination. Dotted lines connect square centres. Hints apply only to the side whose turn it is.</p></div>
 <div class="panel"><h2>Teacher's commentary</h2><div id="commentary">Waiting for analysis.</div></div>
 <div class="panel"><h2>Move history</h2><div id="history" class="history">No moves yet.</div></div>
 <div class="panel"><h2>About strength settings</h2><p class="muted strength-note" id="rating-caveat"><strong>Training estimates, not measured FIDE ratings.</strong> Stockfish presets control search budgets. Maia receives the selected number as a human-play rating input. Neither is a measured FIDE strength; the Stockfish teacher uses its preset even when Maia is playing.</p>
@@ -216,7 +266,7 @@ let focusBoard = false, storageAvailable = true, storageWarning = '', lastSavedC
 const SAVE_VERSION = 1;
 // Directory-scoped key: /repo/ and /repo/index.html share a save; other Pages apps do not.
 const SAVE_KEY = 'chess-teacher:session:v1:' + new URL('.', location.href).pathname;
-const SELECT_SETTINGS = ['model','mode','rating','weighting','think'];
+const SELECT_SETTINGS = ['model','mode','rating','weighting','think','voice-backend','voice-language','voice-pause'];
 const CHECK_SETTINGS = ['allowBlunder','hintsWhite','hintsBlack','talk'];
 let legalMoves = [], moveHistory = [];
 let evaluation = {value:0, text:'0.00', description:'Equal position', known:false};
@@ -889,13 +939,14 @@ function queueDraw() {
   drawFrame = requestAnimationFrame(() => {drawFrame = null; draw();});
 }
 function drawHintLines(board, files, ranks) {
-  if (!hintsVisible() || !recommendations.length) return;
+  const visibleHints = boardHints();
+  if (!visibleHints.length) return;
   const ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
   svg.setAttribute('class', 'hint-lines'); svg.setAttribute('viewBox', '0 0 800 800');
   svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('aria-hidden', 'true');
   svg.setAttribute('focusable', 'false');
   const centre = sq => ({x:(files.indexOf(sq[0]) + .5) * 100, y:(ranks.indexOf(sq[1]) + .5) * 100});
-  [...recommendations].sort((a, b) => b.rank - a.rank).forEach(move => {
+  [...visibleHints].sort((a, b) => b.rank - a.rank).forEach(move => {
     const from = centre(move.from), to = centre(move.to), group = document.createElementNS(ns, 'g');
     group.dataset.from = move.from; group.dataset.to = move.to; group.dataset.rank = String(move.rank);
     for (const className of ['hint-line-outline', 'hint-line ' + (move.rank === 1 ? 'best' : 'alternative')]) {
@@ -908,7 +959,7 @@ function drawHintLines(board, files, ranks) {
   board.appendChild(svg);
 }
 function draw() {
-  const board = $('board'), show = hintsVisible();
+  const board = $('board'), visibleHints = boardHints(), preview = voicePreview();
   const focusSquare = board.contains(document.activeElement) ? document.activeElement.dataset.square : null;
   board.replaceChildren(); board.classList.toggle('computer-turn', computerTurn());
   board.setAttribute('aria-label', 'Chessboard. ' + colourName(game.turn()) + ' to move.' + (computerTurn() ? ' Computer is playing.' : ''));
@@ -926,10 +977,11 @@ function draw() {
     }
     if (selected === sq) cell.classList.add('selected');
     cell.setAttribute('aria-pressed', String(selected === sq));
-    const recs = show ? recommendations.filter(x => x.to === sq) : [];
+    const recs = visibleHints.filter(x => x.to === sq);
     if (recs.length) {
       cell.classList.add(recs.some(x => x.rank === 1) ? 'best' : 'alternative');
-      label += ', hints ' + recs.map(x => '#' + x.rank + ' ' + x.from.toUpperCase() + ':' + x.to.toUpperCase()).join('; ');
+      if (recs.some(x => x.voicePreview)) cell.classList.add('voice-preview');
+      label += (preview ? ', voice preview, say move to confirm ' : ', hints ') + recs.map(x => x.from.toUpperCase() + ':' + x.to.toUpperCase()).join('; ');
     }
     cell.setAttribute('aria-label', label);
     if (piece) cell.appendChild(createPiece(piece));
@@ -938,7 +990,7 @@ function draw() {
       const box = document.createElement('div'); box.className = 'moves';
       for (const x of recs) {
         const tag = document.createElement('span'); tag.className = 'move';
-        tag.textContent = '#' + x.rank + ' ' + x.from.toUpperCase() + ':' + x.to.toUpperCase() + (x.promotion ? '=' + x.promotion.toUpperCase() : '');
+        tag.textContent = (x.voicePreview ? '' : '#' + x.rank + ' ') + x.from.toUpperCase() + ':' + x.to.toUpperCase() + (x.needsPromotion ? '=?' : x.promotion ? '=' + x.promotion.toUpperCase() : '');
         box.appendChild(tag);
       }
       cell.appendChild(box);
@@ -950,6 +1002,7 @@ function draw() {
     fragment.appendChild(cell);
   }
   board.appendChild(fragment); drawHintLines(board, files, ranks);
+  if (preview) preview.painted = true;
   if (focusSquare) board.querySelector('[data-square="' + focusSquare + '"]')?.focus({preventScroll:true});
   const top = computerColour(), bottom = humanColour();
   $('top-seat').textContent = colourName(top) + ' - top' + (isPlay() ? ' - ' + modelName() : '');
@@ -970,7 +1023,7 @@ function draw() {
   $('evalnum').textContent = evaluation.known ? evaluation.text : '\u2014';
   $('evaluation-bar').setAttribute('aria-label', 'White advantage at bottom, black at top. ' + evaluation.description);
   $('evaluation-bar').title = 'White-perspective evaluation, not a win probability. ' + evaluation.description;
-  renderSuggestions(); renderCommentary(); renderModelPanels(); setStatus(); queueSize();
+  renderSuggestions(); renderCommentary(); renderModelPanels(); setStatus(); voiceControls(); queueSize();
 }
 function renderStrengthControls() {
   const rating = ratingLabel(), preset = presetFor(rating), allow = allowBlunders();
@@ -991,8 +1044,14 @@ function renderStrengthControls() {
 }
 function renderSuggestions() {
   const el = $('suggestions'), note = $('analysis-note');
+  $('hint-legend').textContent = voicePreview() ? 'Green identifies your unplayed voice command, not an engine ranking. Engine hints return when the preview is played or cleared.' : 'Green = #1. Yellow = #2-4. Labels show rank and origin:destination. Dotted lines connect square centres. Hints apply only to the side whose turn it is.';
   $('suggestions-title').textContent = teacherName() + ' hints - ' + colourName(game.turn());
   el.replaceChildren(); note.textContent = '';
+  if (voicePreview()) {
+    $('suggestions-title').textContent = 'Your spoken move - preview only';
+    el.textContent = voiceMoveLabel() + '. ' + (voicePreview().needsPromotion ? 'Say the promotion piece first.' : 'Say "move" to play, or speak another move to replace it.');
+    note.textContent = 'Engine hint colours and lines are temporarily hidden, not disabled. Green identifies your pending command; it does not mean Stockfish recommends it.'; return;
+  }
   if (game.isGameOver()) {el.textContent = 'The game has finished.'; return;}
   if (!hintsVisible()) {el.textContent = colourName(game.turn()) + ' hints hidden.'; return;}
   if (!recommendations.length) {el.textContent = engineError ? 'Analysis unavailable.' : 'Analysing position...'; return;}
@@ -1031,6 +1090,7 @@ function explain(move) {
   return (move.san || move.from.toUpperCase() + ':' + move.to.toUpperCase()) + ': ' + parts.join(' ') + ' These are rule-based observations, not Stockfish\'s full reasoning.';
 }
 function renderCommentary() {
+  if (voicePreview()) {$('commentary').textContent = 'A voice move is being previewed, not played. Confirm with "move", replace it by speaking new coordinates, or click the board to use the mouse.'; return;}
   if (!$('talk').checked) {$('commentary').textContent = 'Commentary disabled.'; return;}
   if (game.isGameOver()) {$('commentary').textContent = game.isCheckmate() ? 'Checkmate. Start a new game or undo to explore another line.' : 'The game is drawn. Start a new game or undo to explore another line.'; return;}
   if (!hintsVisible()) {$('commentary').textContent = colourName(game.turn()) + ' move commentary is hidden with that side\'s hints.'; return;}
@@ -1100,7 +1160,8 @@ function scheduleComputerMove() {
   }, AUTO_DELAY_MS);
   queueDraw();
 }
-function requestAnalysis() {
+function requestAnalysis(keepListening = false) {
+  voicePositionChanged(keepListening);
   clearAutoplay(); revision++; selected = null; recommendations = []; result = null;
   maiaResult = null; maiaBusy = false; maiaEngine?.request(null);
   evaluation.known = false;
@@ -1137,10 +1198,11 @@ function performMove(candidate, actor) {
   const input = {from:legal.from, to:legal.to};
   if (legal.promotion) input.promotion = legal.promotion;
   try {game.move(input);} catch (error) {return false;}
-  selected = null; refreshPositionCache(); saveSession(); requestAnalysis(); return true;
+  selected = null; refreshPositionCache(); saveSession(); requestAnalysis(true); return true;
 }
 function clickSquare(square) {
   if (game.isGameOver() || computerTurn()) return;
+  voiceMouseInteraction();
   const piece = game.get(square);
   if (selected === square) {selected = null; queueDraw(); return;}
   if (selected) {
@@ -1174,6 +1236,566 @@ function startEngine() {
   );
   requestAnalysis();
 }
+// VOICE INPUT: local-only, explicit consent, and no automatic cloud fallback.
+// The parser is intentionally strict. Never infer an arbitrary legal move from
+// incomplete speech; an ASR hallucination should not be a chess command.
+const VOICE_FILE_WORDS = Object.freeze({a:'a',ay:'a',alpha:'a',alfa:'a',b:'b',be:'b',bee:'b',bravo:'b',c:'c',see:'c',sea:'c',charlie:'c',d:'d',dee:'d',delta:'d',e:'e',ee:'e',echo:'e',f:'f',ef:'f',eff:'f',foxtrot:'f',g:'g',gee:'g',golf:'g',h:'h',aitch:'h',haitch:'h',hotel:'h'});
+const VOICE_RANK_WORDS = Object.freeze({one:'1',won:'1',two:'2',to:'2',too:'2',three:'3',tree:'3',four:'4',for:'4',fore:'4',five:'5',six:'6',seven:'7',eight:'8',ate:'8'});
+const VOICE_PROMOTIONS = Object.freeze({q:'q',queen:'q',r:'r',rook:'r',b:'b',bishop:'b',n:'n',knight:'n',night:'n'});
+function parseSpokenMove(text) {
+  if (typeof text !== 'string' || text.length > 180) return {error:'Say one short move, with both square names.'};
+  let s = text.toLowerCase().normalize('NFKC').trim().replace(/[.,!?;:()]/g,' ').replace(/[\u2192\u2013\u2014-]/g,' ');
+  s = s.replace(/^please\s+/,'').replace(/\s+please$/,'').replace(/^(?:move|play)\s+/,'').replace(/^from\s+/,'').trim();
+  if (/^(?:castle|castles|castling)\s+(?:king\s*side|short)$/.test(s)) return {castle:'k'};
+  if (/^(?:castle|castles|castling)\s+(?:queen\s*side|long)$/.test(s)) return {castle:'q'};
+  if (/^(?:o\s*o\s*o|0\s*0\s*0)$/.test(s)) return {castle:'q'};
+  if (/^(?:o\s*o|0\s*0)$/.test(s)) return {castle:'k'};
+  if (/^castl/.test(s)) return {error:'Specify castle kingside or castle queenside.'};
+  // Split compact UCI and normal coordinates before tokenisation.
+  s = s.replace(/([a-h])([1-8])/g,'$1 $2 ').replace(/([1-8])([a-h])/g,'$1 $2');
+  const tokens = s.replace(/=/g,' ').split(/\s+/).filter(Boolean);
+  let i = 0;
+  const square = () => {
+    const f = VOICE_FILE_WORDS[tokens[i++]];
+    const t = tokens[i++], r = /^[1-8]$/.test(t || '') ? t : VOICE_RANK_WORDS[t];
+    return f && r ? f + r : null;
+  };
+  const from = square();
+  if (['to','two','too'].includes(tokens[i])) i++;
+  const to = square();
+  if (!from || !to) return {error:'Could not read two squares. Try "Charlie two to Charlie four" or edit to C2 C4.'};
+  let promotion = '';
+  if (i < tokens.length) {
+    if (['promote','promotes','promotion'].includes(tokens[i])) i++;
+    if (['to','as'].includes(tokens[i])) i++;
+    if (tokens[i] === 'a') i++;
+    promotion = VOICE_PROMOTIONS[tokens[i++]] || '';
+    if (!promotion) return {error:'Promotion must be queen, rook, bishop or knight.'};
+  }
+  if (i !== tokens.length) return {error:'More than one command or extra words. Say just one FROM-to-TO move.'};
+  if (from === to) return {error:'The starting and destination squares are the same. Please repeat or edit.'};
+  return {from,to,promotion};
+}
+// Voice is an opt-in input alongside mouse/keyboard, never a replacement for them.
+// Microphone consent, recognisers, previews and transcripts are NOT persisted.
+let voice = {serial:0,inputEpoch:0,phase:'idle',active:false,processing:false,
+  candidate:null,candidateSeq:0,promotionMoves:[],recognition:null,recorder:null,
+  whisper:null,ready:false,readyKey:'',timer:null,restartCount:0};
+const voiceKey = () => $('voice-backend').value + ':' + $('voice-language').value;
+const voiceAllowed = () => !game.isGameOver() && !computerTurn();
+const voiceBusy = () => voice.active || ['preparing','starting','transcribing'].includes(voice.phase);
+function voicePreview() {
+  const c=voice.candidate;
+  return c && voiceAllowed() && c.fen===game.fen() && c.revision===revision ? c : null;
+}
+function boardHints() {
+  const c=voicePreview();
+  return c ? [{...c.move,rank:1,voicePreview:true,needsPromotion:c.needsPromotion}] : (hintsVisible()?recommendations:[]);
+}
+function voiceMessage(message, kind='') {
+  $('voice-status').textContent=message;
+  $('voice-status').className='voice-status'+(kind?' '+kind:'');
+  $('voice-status').hidden=Boolean(voicePreview())&&kind==='ready';
+}
+function voiceMoveLabel(c=voicePreview()) {
+  if(!c)return '';
+  const m=c.move;
+  return m.from.toUpperCase()+' \u2192 '+m.to.toUpperCase()+
+    (c.needsPromotion?' (choose promotion)':m.promotion?' = '+names[m.promotion]:'');
+}
+function voiceIdleMessage(prefix='') {
+  if(!voice.active)return;
+  if(!voiceAllowed()) {voiceMessage(prefix+'Waiting for the computer. Listening resumes on your turn.');return;}
+  const c=voicePreview();
+  if(c) voiceMessage(prefix+'Preview '+voiceMoveLabel()+'. '+(c.needsPromotion?
+    'Say queen, rook, bishop or knight.':'Say "move" to play, or say another move to replace it.'),'ready');
+  else voiceMessage(prefix+'Listening. Say C two to C four; then wait for the green preview and say "move".','ready');
+}
+function voiceControls() {
+  const active=voiceBusy(),c=voicePreview();
+  $('voice-prepare').disabled=active;
+  $('voice-prepare').textContent=voice.ready&&voice.readyKey===voiceKey()?'Voice ready':'Prepare voice';
+  $('voice-start').disabled=active||game.isGameOver();
+  $('voice-stop').disabled=!active;
+  $('voice-cancel').disabled=!c&&!$('voice-text').value;
+  $('voice-backend').disabled=active;$('voice-language').disabled=active;
+  $('voice-text').disabled=voice.phase==='preparing';
+  $('voice-promotion').disabled=!voiceAllowed();
+  $('voice-play').hidden=!c;
+  $('voice-play').disabled=!c||c.needsPromotion||!voiceAllowed();
+  $('voice-status').hidden=Boolean(c)&&$('voice-status').classList.contains('ready');
+  $('voice-play').textContent=c?'Play '+voiceMoveLabel():'Play preview';
+  $('voice-mic').classList.toggle('listening',voice.active&&Boolean(voice.recognition||voice.recorder?.stream));
+  $('voice-live').textContent=voice.active?(voice.phase==='transcribing'?'Processing - wait':
+    !voiceAllowed()?'Waiting for computer':voice.phase==='starting'?'Starting microphone':'Listening'):voice.phase==='preparing'?'Preparing':'Microphone off';
+  $('voice-language-wrap').hidden=$('voice-backend').value!=='browser';
+  $('voice-pause-wrap').hidden=$('voice-backend').value!=='whisper';
+  $('voice-start').title='Optional: keep listening for coordinates and the confirmation word "move". Mouse moves always work.';
+  $('voice-preview-banner').hidden=!c;
+  $('voice-preview-banner').textContent=c?'Preview: '+voiceMoveLabel()+' \u2014 '+
+    (c.needsPromotion?'say the promotion piece.':'say "move" to play.') : '';
+  queueSize();
+}
+function clearVoiceCandidate() {
+  const changed=Boolean(voice.candidate);
+  voice.candidate=null;voice.promotionMoves=[];
+  $('voice-promotion-wrap').hidden=true;$('voice-promotion').value='';
+  if(changed)queueDraw();
+}
+function closeNativeVoice() {
+  const r=voice.recognition;voice.recognition=null;
+  if(r)try{r.abort();}catch(_){}
+}
+function cancelVoice(message='',clearText=true) {
+  voice.active=false;voice.serial++;voice.inputEpoch++;
+  clearTimeout(voice.timer);voice.timer=null;closeNativeVoice();
+  voice.recorder?.cancel();voice.recorder=null;
+  if(voice.phase==='preparing'||voice.processing) {
+    voice.whisper?.destroy();voice.whisper=null;voice.ready=false;
+  }
+  voice.processing=false;voice.phase='idle';clearVoiceCandidate();
+  if(clearText)$('voice-text').value='';
+  if(message)voiceMessage(message);
+  voiceControls();queueDraw();
+}
+function voiceContext() {
+  return {serial:voice.serial,epoch:voice.inputEpoch,revision,fen:game.fen(),
+    allowed:voiceAllowed(),candidateId:voicePreview()?.id||0,startedAt:performance.now()};
+}
+function voiceSessionValid(session) {
+  return session&&session.serial===voice.serial&&session.epoch===voice.inputEpoch&&
+    session.revision===revision&&session.fen===game.fen()&&session.allowed&&voiceAllowed()&&
+    document.visibilityState!=='hidden';
+}
+function syncHandsFree() {
+  if(!voice.active)return;
+  if(game.isGameOver()){cancelVoice('Game finished. Microphone off.');return;}
+  if(voice.processing){voiceControls();return;}
+  voice.phase=voiceAllowed()?'listening':'waiting';
+  if($('voice-backend').value==='browser'&&voiceAllowed()&&!voice.recognition&&voice.timer===null)
+    scheduleNativeVoice(180);
+  voiceIdleMessage();voiceControls();
+}
+// Called before the new search revision is created. Ordinary played moves keep
+// hands-free enabled; deliberate reset/undo/engine/seat changes stop it safely.
+function voicePositionChanged(keepListening=false) {
+  if(!keepListening||!voice.active) {
+    const hadInput=voiceBusy()||voice.candidate;
+    cancelVoice(hadInput?'Position or play settings changed. Microphone off; click-to-move is ready.':'');
+    return;
+  }
+  voice.inputEpoch++;clearVoiceCandidate();$('voice-text').value='';
+  voice.recorder?.reset();closeNativeVoice();clearTimeout(voice.timer);voice.timer=null;
+  queueMicrotask(syncHandsFree);
+}
+// A mouse selection or a typed correction takes priority over in-flight speech.
+// A late "move" result cannot act on a different mouse-selected position.
+function invalidateVoiceUtterance() {
+  voice.inputEpoch++;voice.recorder?.reset();
+  if(voice.active&&$('voice-backend').value==='browser') {
+    closeNativeVoice();clearTimeout(voice.timer);voice.timer=null;scheduleNativeVoice(180);
+  }
+}
+function clearVoicePreview(message='Preview cleared. Say another move, or click the board.') {
+  invalidateVoiceUtterance();clearVoiceCandidate();$('voice-text').value='';
+  voiceMessage(message);voiceControls();queueDraw();
+}
+function voiceMouseInteraction() {
+  const hadPreview=Boolean(voice.candidate);
+  invalidateVoiceUtterance();clearVoiceCandidate();$('voice-text').value='';
+  if(hadPreview)voiceMessage('Voice preview cleared. Your mouse selection takes priority.');
+  voiceControls();
+}
+function interpretVoice(text) {
+  const previous=voicePreview(),promotion=String(text).toLowerCase().trim().replace(/[.!?,]/g,'').replace(/^(?:promote\s+(?:to\s+)?|to\s+)/,'');
+  if(previous?.needsPromotion&&VOICE_PROMOTIONS[promotion])
+    text=previous.move.from+' '+previous.move.to+' '+VOICE_PROMOTIONS[promotion];
+  clearVoiceCandidate();
+  if(!voiceAllowed()){voiceMessage(computerTurn()?'Wait for your turn. No voice move was played.':'The game has finished.','error');voiceControls();return false;}
+  const parsed=parseSpokenMove(text);
+  if(parsed.error){voiceMessage(parsed.error+' No move is pending.','error');voiceControls();return false;}
+  const matches=legalMoves.filter(m=>parsed.castle?m.flags.includes(parsed.castle)&&m.piece==='k':
+    m.from===parsed.from&&m.to===parsed.to&&(!parsed.promotion||m.promotion===parsed.promotion));
+  if(!matches.length){voiceMessage('That move is not legal for '+colourName(game.turn())+'. No move is pending; please repeat.','error');voiceControls();return false;}
+  const needsPromotion=matches.length>1;
+  voice.candidate={move:matches[0],fen:game.fen(),revision,id:++voice.candidateSeq,
+    needsPromotion,painted:false,createdAt:performance.now()};
+  selected=null;
+  if(needsPromotion){voice.promotionMoves=matches;$('voice-promotion-wrap').hidden=false;}
+  voiceMessage('Preview '+voiceMoveLabel()+'. '+(needsPromotion?'Say queen, rook, bishop or knight.':
+    'Say "move" to play, or say another move to replace it.'),'ready');
+  voiceControls();queueDraw();return true;
+}
+function handleVoiceCommand(text,context) {
+  if(!voice.active)return false;
+  const command=String(text).toLowerCase().normalize('NFKC').trim().replace(/[.,!?;:]/g,'').replace(/\s+/g,' ');
+  if(command==='stop listening'){cancelVoice('Hands-free stopped. Microphone off; click-to-move is ready.');return true;}
+  if(!voiceSessionValid(context))return false;
+  $('voice-text').value=String(text).trim();
+  if(command==='cancel'){clearVoicePreview('Preview cancelled. Still listening for another move.');return true;}
+  if(command==='move')return playVoiceMove('voice',context);
+  return interpretVoice(String(text));
+}
+function playVoiceMove(source='button',context=null) {
+  const candidate=voicePreview();
+  if(!candidate){voiceMessage('No move is pending. Say the two squares first.','error');voiceControls();return false;}
+  if(candidate.needsPromotion){voiceMessage('First say queen, rook, bishop or knight, then say "move".','error');return false;}
+  // The user must have had a rendered preview BEFORE this confirmation utterance.
+  if(source==='voice'&&(!voiceSessionValid(context)||context.candidateId!==candidate.id||
+     !candidate.painted||context.startedAt<candidate.createdAt)) {
+    voiceMessage('Wait for the green preview, then say "move" as a separate command.','error');return false;
+  }
+  const m=candidate.move;
+  if(!performMove(m,'human')){clearVoicePreview('The move could not be played. Please repeat.');return false;}
+  voiceMessage('Played '+m.from.toUpperCase()+' \u2192 '+m.to.toUpperCase()+' ('+m.san+'). '+
+    (voice.active?(computerTurn()?'Waiting for the computer.':'Listening for the next move.'):'Click the board to continue.'),'ready');
+  voiceControls();return true;
+}
+
+// The official stream.wasm exports init, set_audio, get_status, get_transcribed.
+// It uses pthreads; keep its globals inside a dedicated worker, away from both
+// Stockfish and ONNX. Workers, microphone and pending transcripts are cancellable.
+function whisperVoiceWorker() {
+  let module,context=0,poll=null,loaded=false;
+  const tell = (type,extra={}) => postMessage({type,...extra});
+  const fail = error => {clearInterval(poll);poll=null;tell('error',{message:String(error?.message||error)});};
+  self.onmessage = async ({data}) => {
+    try {
+      if (data.type === 'load') {
+        if (!self.crossOriginIsolated) throw new Error('Local Whisper needs cross-origin isolation. Use Prepare voice and reload once.');
+        const root=new URL('.',data.runtime).href;
+        let resolveRuntime,rejectRuntime;
+        const ready=new Promise((resolve,reject)=>{resolveRuntime=resolve;rejectRuntime=reject;});
+        self.Module={
+          locateFile:path=>new URL(path,root).href,
+          mainScriptUrlOrBlob:data.runtime,
+          onRuntimeInitialized:()=>resolveRuntime(),
+          onAbort:reason=>rejectRuntime(new Error('Whisper WASM aborted: '+reason)),
+          print:()=>{}, printErr:()=>{}
+        };
+        importScripts(data.runtime);
+        await ready; module=self.Module;
+        for (const name of ['init','set_audio','get_transcribed','get_status']) if (typeof module[name] !== 'function') throw new Error('Expected oral-exam stream.wasm export '+name+'. Use the matching stream.js build.');
+        tell('status',{message:'Loading local Whisper speech model...'});
+        const response=await fetch(data.model,{credentials:'same-origin'});
+        if (!response.ok) throw new Error('Speech model missing: '+response.status+'. Copy models/ggml-base.en-q5_1.bin or run install-voice.py.');
+        const bytes=new Uint8Array(await response.arrayBuffer());
+        if (bytes.length < 1000000 || new TextDecoder().decode(bytes.subarray(0,80)).includes('<!DOCTYPE') || new TextDecoder().decode(bytes.subarray(0,80)).includes('version https://git-lfs')) throw new Error('Speech model is not a binary model (possibly an HTML page or Git LFS pointer).');
+        if (module.FS_createDataFile) module.FS_createDataFile('/','chess-voice.bin',bytes,true,false);
+        else if (module.FS?.writeFile) module.FS.writeFile('/chess-voice.bin',bytes);
+        else throw new Error('This Whisper build does not expose its virtual filesystem. Use stream.wasm.');
+        // Older oral-exam builds accept one argument, current upstream takes two.
+        try {context=module.init('/chess-voice.bin','en');}
+        catch (error) {if (/BindingError|argument|parameter/i.test(String(error))) context=module.init('/chess-voice.bin'); else throw error;}
+        if (!context) throw new Error('Whisper could not initialise the speech model. Check matching files and available memory.');
+        loaded=true; tell('ready');
+      } else if (data.type === 'transcribe') {
+        if (!loaded || poll) throw new Error('Whisper is not ready or is still transcribing.');
+        module.get_transcribed();
+        const rc=module.set_audio(context,data.audio);
+        if (rc !== 0) throw new Error('Whisper rejected microphone audio: '+rc);
+        const start=Date.now();let sawRunning=false;
+        poll=setInterval(()=>{
+          try {
+            const text=String(module.get_transcribed()||'').trim();
+            const status=String(module.get_status()||'');
+            if (/running whisper/i.test(status)) sawRunning=true;
+            if (text || (sawRunning && /waiting for audio/i.test(status))) {
+              clearInterval(poll);poll=null;tell('transcript',{text,id:data.id});
+            } else if (Date.now()-start > 120000) throw new Error('Local speech transcription timed out. Cancel and try a shorter phrase or browser on-device recognition.');
+          } catch (error) {fail(error);}
+        },100);
+      }
+    } catch(error) {fail(error);}
+  };
+}
+class LocalChessWhisper {
+  constructor(onStatus) {this.worker=null;this.wait=null;this.onStatus=onStatus;this.ready=false;}
+  call(message,transfer=[],timeout=180000) {
+    return new Promise((resolve,reject)=>{
+      if (this.wait) {reject(new Error('Speech engine is busy.'));return;}
+      const timer=setTimeout(()=>{this.wait=null;reject(new Error('Speech engine timed out. Check voice assets and reload.'));this.destroy();},timeout);
+      this.wait={resolve,reject,timer};this.worker.postMessage(message,transfer);
+    });
+  }
+  settle(error,result) {if(!this.wait)return;const p=this.wait;this.wait=null;clearTimeout(p.timer);error?p.reject(error):p.resolve(result);}
+  async load() {
+    if(this.ready)return;
+    const blob=new Blob(['('+whisperVoiceWorker.toString()+')()'],{type:'text/javascript'}),url=URL.createObjectURL(blob);
+    try {this.worker=new Worker(url,{name:'Chess local Whisper'});} finally {URL.revokeObjectURL(url);}
+    this.worker.onmessage=({data})=>{
+      if(data.type==='status') this.onStatus(data.message);
+      else if(data.type==='error') this.settle(new Error(data.message));
+      else if(data.type==='ready') {this.ready=true;this.settle(null,true);}
+      else if(data.type==='transcript') this.settle(null,data.text);
+    };
+    this.worker.onerror=event=>this.settle(new Error('Local Whisper could not start. Check wasm/stream.js and companions, memory, and cross-origin isolation. '+(event.message||'')));
+    await this.call({type:'load',runtime:new URL('wasm/stream.js',location.href).href,model:new URL('models/ggml-base.en-q5_1.bin',location.href).href});
+  }
+  transcribe(audio,id) {return this.call({type:'transcribe',audio,id},[audio.buffer],125000);}
+  destroy() {this.settle(new Error('Speech operation cancelled.'));this.worker?.terminate();this.worker=null;this.ready=false;}
+}
+async function prepareVoiceIsolation(stillCurrent) {
+  if (crossOriginIsolated) return true;
+  if (!navigator.serviceWorker) throw new Error('This browser cannot enable the local Whisper worker. Open HTTPS/localhost in a supported browser.');
+  const expected=new URL('voice-coi-serviceworker.js',location.href).href,scope=new URL('.',location.href).href;
+  const existing=await navigator.serviceWorker.getRegistration(scope);
+  const prior=existing?.active?.scriptURL || existing?.waiting?.scriptURL || existing?.installing?.scriptURL;
+  if (prior && prior !== expected) throw new Error('Another service worker already controls this app. Merge its isolation headers before using Whisper; this update will not replace it automatically.');
+  if(!stillCurrent())return false;
+  const registration=await navigator.serviceWorker.register(expected,{scope,updateViaCache:'none'});
+  if (!registration.active) await new Promise((resolve,reject)=>{
+    const w=registration.installing||registration.waiting;
+    if(!w){reject(new Error('Voice isolation worker did not install.'));return;}
+    const timer=setTimeout(()=>reject(new Error('Voice isolation worker did not activate. Reload and retry.')),15000);
+    const check=()=>{if(w.state==='activated'){clearTimeout(timer);resolve();}else if(w.state==='redundant'){clearTimeout(timer);reject(new Error('Voice isolation installation failed.'));}};
+    w.addEventListener('statechange',check);check();
+  });
+  if(!stillCurrent())return false;
+  const marker='chess-voice-isolation:'+scope;
+  if(sessionStorage.getItem(marker)==='reloaded') throw new Error('Whisper still lacks cross-origin isolation after reload. Open the site directly (not in an iframe) and check browser support.');
+  sessionStorage.setItem(marker,'reloaded');saveSession();
+  // Do not automatically start a microphone after reloading.
+  location.reload();return false;
+}
+async function prepareVoice() {
+  if (voiceBusy()) return false;
+  const id=++voice.serial,key=voiceKey();voice.phase='preparing';voice.ready=false;voiceControls();
+  try {
+    if (!isSecureContext) throw new Error('Microphone input requires HTTPS (GitHub Pages) or localhost.');
+    if ($('voice-backend').value==='whisper') {
+      voiceMessage('Preparing local Whisper. First use may need one saved-game reload.');
+      if (!await prepareVoiceIsolation(()=>id===voice.serial)) return false;
+      if(id!==voice.serial)return false;
+      const instance=voice.whisper || new LocalChessWhisper(message=>{if(id===voice.serial)voiceMessage(message);});voice.whisper=instance;
+      await instance.load();
+    } else {
+      const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+      if(!SR) throw new Error('Browser on-device speech recognition is unavailable. Select Whisper or type the move.');
+      const probe=new SR();
+      if(!('processLocally' in probe)||typeof SR.available!=='function') throw new Error('This browser cannot guarantee local speech recognition. Cloud recognition is disabled; select Whisper or type.');
+      const opts={langs:[$('voice-language').value],processLocally:true};
+      let available=await SR.available(opts);
+      if(id!==voice.serial)return false;
+      if(available==='downloadable') {
+        if(typeof SR.install!=='function') throw new Error('The local language pack is missing and this browser cannot install it.');
+        voiceMessage('Downloading the local language pack. No microphone is running.');
+        if(!await SR.install({langs:opts.langs})) throw new Error('Language-pack installation failed. Choose another English language or Whisper.');
+        available=await SR.available(opts);
+      }
+      if(available!=='available') throw new Error(available==='downloading'?'Language pack is still downloading. Retry Prepare voice when it finishes.':'No on-device pack for this language. Choose another English option or Whisper.');
+    }
+    if(id!==voice.serial)return false;
+    voice.ready=true;voice.readyKey=key;voice.phase='idle';voiceMessage('Voice ready. Start hands-free, say a move, then say "move" after the preview.','ready');voiceControls();return true;
+  } catch(error) {
+    if(id===voice.serial){voice.whisper?.destroy();voice.whisper=null;voice.ready=false;voice.phase='idle';voiceMessage(error.message||String(error),'error');voiceControls();}
+    return false;
+  }
+}
+// One microphone stream per hands-free session. Segment on a pause, then reuse
+// the stream. Idle audio is bounded to a short pre-roll and is never saved.
+class ChessVoiceRecorder {
+  constructor(){this.stream=null;this.context=null;this.source=null;this.node=null;this.closed=false;this.reset();}
+  reset(){this.frames=[];this.preRoll=[];this.preSamples=0;this.samples=0;this.voiced=0;this.quiet=0;this.speechSeen=false;this.utterance=null;}
+  async start(onUtterance,onError) {
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC||!navigator.mediaDevices?.getUserMedia)throw new Error('Microphone capture requires HTTPS/localhost and a supported browser.');
+    this.context=new AC();await this.context.resume();if(this.closed)return;
+    const stream=await navigator.mediaDevices.getUserMedia({video:false,audio:{channelCount:1,echoCancellation:true,noiseSuppression:true,autoGainControl:true}});
+    if(this.closed){stream.getTracks().forEach(t=>t.stop());return;}this.stream=stream;
+    const processor=`class ChessCapture extends AudioWorkletProcessor {constructor(){super();this.buffer=new Float32Array(1024);this.offset=0;}process(inputs,outputs){for(const out of outputs)for(const ch of out)ch.fill(0);const input=inputs[0];if(input&&input.length){for(let j=0;j<input[0].length;j++){let x=0;for(const ch of input)x+=ch[j]||0;this.buffer[this.offset++]=x/input.length;if(this.offset===this.buffer.length){const a=this.buffer;this.buffer=new Float32Array(1024);this.offset=0;this.port.postMessage(a,[a.buffer]);}}}return true;}}registerProcessor('chess-capture',ChessCapture);`;
+    const url=URL.createObjectURL(new Blob([processor],{type:'text/javascript'}));
+    try{await this.context.audioWorklet.addModule(url);}finally{URL.revokeObjectURL(url);}
+    if(this.closed)return;
+    this.node=new AudioWorkletNode(this.context,'chess-capture',{numberOfInputs:1,numberOfOutputs:1,outputChannelCount:[1]});
+    this.node.onprocessorerror=()=>onError(new Error('Microphone processor stopped. Start hands-free again.'));
+    for(const track of stream.getAudioTracks())track.onended=()=>{if(!this.closed)onError(new Error('Microphone disconnected. Reconnect it and start hands-free again.'));};
+    this.node.port.onmessage=({data})=>this.consume(data,onUtterance,onError);
+    this.source=this.context.createMediaStreamSource(stream);this.source.connect(this.node);this.node.connect(this.context.destination);
+  }
+  consume(audio,onUtterance,onError) {
+    if(this.closed||!audio?.length)return;
+    if(!voice.active||voice.phase!=='listening'||!voiceAllowed()){this.reset();return;}
+    const rate=this.context.sampleRate,seconds=audio.length/rate;
+    let sum=0;for(const x of audio)sum+=x*x;const speaking=Math.sqrt(sum/audio.length)>.008;
+    if(!this.speechSeen) {
+      this.preRoll.push(audio);this.preSamples+=audio.length;
+      while(this.preRoll.length>1&&this.preSamples>rate*.24)this.preSamples-=this.preRoll.shift().length;
+      if(!speaking)return;
+      this.speechSeen=true;this.utterance=voiceContext();this.frames=this.preRoll;
+      this.samples=this.preSamples;this.preRoll=[];this.preSamples=0;this.voiced=seconds;return;
+    }
+    this.frames.push(audio);this.samples+=audio.length;
+    if(speaking){this.quiet=0;this.voiced+=seconds;}else this.quiet+=seconds;
+    const pause=Number($('voice-pause').value)/1000;
+    if(this.samples>rate*7) {
+      this.reset();clearVoiceCandidate();voiceMessage('Phrase too long. Say just the two squares, pause, then say "move" after the preview.','error');voiceControls();return;
+    }
+    if(this.quiet<pause)return;
+    const frames=this.frames,samples=this.samples,context=this.utterance,voiced=this.voiced;
+    this.reset();if(voiced<.10)return;
+    // Mark busy synchronously so the next audio frame cannot start a second job.
+    voice.phase='transcribing';voice.processing=true;voiceControls();
+    const pcm=new Float32Array(samples);let offset=0;for(const frame of frames){pcm.set(frame,offset);offset+=frame.length;}
+    Promise.resolve(onUtterance(pcm,rate,context)).catch(onError);
+  }
+  cancel(){this.closed=true;this.stream?.getTracks().forEach(t=>t.stop());this.stream=null;
+    try{this.source?.disconnect();this.node?.disconnect();}catch(_){}
+    this.context?.close().catch(()=>{});this.reset();}
+}
+async function resampleChessAudio(pcm,rate) {
+  if(pcm.length<rate*.15)throw new Error('Phrase too short. Say one clear command.');
+  const OC=window.OfflineAudioContext||window.webkitOfflineAudioContext;
+  const offline=new OC(1,Math.ceil(pcm.length*16000/rate),16000),buffer=offline.createBuffer(1,pcm.length,rate);
+  buffer.copyToChannel(pcm,0);const source=offline.createBufferSource();source.buffer=buffer;
+  source.connect(offline.destination);source.start();
+  return trimChessAudio((await offline.startRendering()).getChannelData(0));
+}
+
+function trimChessAudio(audio) {
+  const frame=320,levels=[];let maximum=0;
+  for(let i=0;i<audio.length;i+=frame){let sum=0;const n=Math.min(frame,audio.length-i);for(let j=0;j<n;j++)sum+=audio[i+j]*audio[i+j];const rms=Math.sqrt(sum/n);levels.push(rms);maximum=Math.max(maximum,rms);}
+  if(maximum<.003)throw new Error('No clear speech detected. Check the microphone and speak a little louder.');
+  const threshold=Math.max(.002,maximum*.10);let first=levels.findIndex(x=>x>=threshold),last=levels.length-1;while(last>=0&&levels[last]<threshold)last--;
+  const start=Math.max(0,first*frame-1600),end=Math.min(audio.length,(last+1)*frame+1600);
+  if(end-start>72000)throw new Error('The phrase is too long for this speech build. Say just the two squares in about four seconds.');
+  // stream.wasm uses the LAST five seconds. Never submit >5 seconds and silently
+  // lose the first coordinate. Pad the trimmed utterance instead of truncating it.
+  const out=new Float32Array(Math.max(16000,end-start+8000));out.set(audio.subarray(start,end),4000);return out;
+}
+function scheduleNativeVoice(delay=180) {
+  if(!voice.active||!voiceAllowed()||voice.recognition||voice.timer!==null)return;
+  const serial=voice.serial;
+  voice.timer=setTimeout(()=>{voice.timer=null;if(voice.active&&voice.serial===serial&&voiceAllowed())startNativeVoice();},delay);
+}
+function startNativeVoice() {
+  if(!voice.active||!voiceAllowed()||voice.recognition)return;
+  const serial=voice.serial;
+  try {
+    const SR=window.SpeechRecognition||window.webkitSpeechRecognition,r=new SR();
+    if(!('processLocally' in r))throw new Error('On-device speech is unavailable. Cloud fallback is disabled.');
+    r.processLocally=true;if(r.processLocally!==true)throw new Error('Local recognition could not be enforced.');
+    r.lang=$('voice-language').value;r.continuous=true;r.interimResults=true;r.maxAlternatives=1;
+    voice.recognition=r;voice.phase='starting';
+    if(window.SpeechRecognitionPhrase&&'phrases' in r)try{
+      r.phrases=[new SpeechRecognitionPhrase('move',4),new SpeechRecognitionPhrase('cancel',3),
+        ...Array.from('abcdefgh').flatMap(f=>Array.from({length:8},(_,i)=>new SpeechRecognitionPhrase(f.toUpperCase()+' '+(i+1),3)))];
+    }catch(_){}
+    const current=()=>voice.active&&voice.serial===serial&&voice.recognition===r;
+    const seen=new Set();let utterance=null,startedAt=performance.now();
+    r.onstart=()=>{if(!current()){try{r.abort();}catch(_){}return;}voice.phase='listening';startedAt=performance.now();voiceIdleMessage();voiceControls();};
+    r.onspeechstart=()=>{if(current())utterance=voiceContext();};
+    r.onresult=event=>{
+      if(!current())return;
+      const context=utterance||voiceContext(),finals=[];let interim='';
+      for(let i=event.resultIndex;i<event.results.length;i++) {
+        const item=event.results[i];if(item.isFinal&&!seen.has(i)){seen.add(i);finals.push(item[0].transcript);}
+        else if(!item.isFinal)interim+=item[0].transcript+' ';
+      }
+      if(finals.length) {
+        voice.restartCount=0;
+        // A coordinate command and confirmation in the same final batch have not
+        // been reviewed. Reject the batch; do not silently execute both.
+        if(finals.length>1){clearVoicePreview('Say one command at a time. Wait for the preview before saying "move".');}
+        else handleVoiceCommand(finals[0],context);
+        utterance=null;
+      } else if(interim&&document.activeElement!==$('voice-text')) {
+        if(!utterance)utterance=context;$('voice-text').value=interim.trim();
+      }
+    };
+    r.onerror=event=>{
+      if(!current())return;
+      if(event.error==='no-speech')return; // onend re-arms; silence does not clear the preview.
+      const messages={'not-allowed':'Microphone permission was denied. Allow it in the site settings.',
+        'audio-capture':'No usable microphone found.','language-not-supported':'Local language pack is unavailable. Prepare voice again.',
+        'network':'The local recogniser failed. Cloud fallback is disabled.','aborted':'Speech recognition stopped.'};
+      cancelVoice('',false);voiceMessage(messages[event.error]||'Local speech error: '+event.error,'error');
+    };
+    r.onend=()=>{
+      if(!current())return;voice.recognition=null;
+      if(performance.now()-startedAt<750)voice.restartCount++;else voice.restartCount=0;
+      if(voice.restartCount>=4){cancelVoice('The browser repeatedly stopped listening. Start hands-free again or use Whisper.');return;}
+      voice.phase=voiceAllowed()?'starting':'waiting';voiceControls();
+      scheduleNativeVoice(Math.min(1200,200+voice.restartCount*250));
+    };
+    r.start();voiceControls();
+  }catch(error){if(voice.serial===serial){cancelVoice('',false);voiceMessage(error.message||String(error),'error');}}
+}
+async function transcribeVoiceChunk(pcm,rate,context) {
+  const serial=voice.serial;
+  try {
+    if(!voiceSessionValid(context))return;
+    voiceMessage('Processing speech locally. Wait for Listening before your next command.');
+    const audio=await resampleChessAudio(pcm,rate);
+    if(!voiceSessionValid(context))return;
+    const text=await voice.whisper.transcribe(audio,context.epoch);
+    if(!voiceSessionValid(context))return;
+    if(text)handleVoiceCommand(text,context);
+    else {clearVoiceCandidate();voiceMessage('No clear command recognised. Please repeat.','error');}
+  }catch(error) {
+    if(voice.serial!==serial||!voice.active)return;
+    if(/too long|No clear speech|too short/.test(error.message||'')) {
+      clearVoiceCandidate();voiceMessage(error.message+' Say one command at a time.','error');
+    }else {cancelVoice('',false);voiceMessage(error.message||String(error),'error');}
+  }finally {
+    if(voice.serial===serial&&voice.active) {
+      voice.processing=false;voice.phase=voiceAllowed()?'listening':'waiting';voice.recorder?.reset();voiceControls();
+      // Do not replace an error or a just-recognised preview with generic text.
+    }
+  }
+}
+async function startVoice() {
+  if(voiceBusy()||game.isGameOver())return;
+  if(!voice.ready||voice.readyKey!==voiceKey()) {if(!await prepareVoice())return;}
+  if(document.visibilityState==='hidden'||game.isGameOver())return;
+  // Only this explicit user action starts or re-starts a hands-free session.
+  voice.active=true;voice.serial++;voice.inputEpoch++;voice.restartCount=0;
+  const serial=voice.serial;voice.phase='starting';voiceControls();
+  if($('voice-backend').value==='browser') {
+    if(voiceAllowed())startNativeVoice();else syncHandsFree();
+    return;
+  }
+  const recorder=new ChessVoiceRecorder();voice.recorder=recorder;
+  const fail=error=>{if(voice.serial===serial&&voice.active){cancelVoice('',false);voiceMessage(error.message||String(error),'error');}};
+  try {
+    await recorder.start(transcribeVoiceChunk,fail);
+    if(voice.serial!==serial||!voice.active){recorder.cancel();return;}
+    voice.phase=voiceAllowed()?'listening':'waiting';voiceIdleMessage();voiceControls();
+  }catch(error){recorder.cancel();fail(error);}
+}
+function stopVoice(){cancelVoice('Hands-free stopped. Microphone off; click-to-move is ready.');}
+$('voice-toggle').onclick=()=>{
+  const open=$('voice-panel').hidden;$('voice-panel').hidden=!open;
+  $('voice-toggle').setAttribute('aria-pressed',String(open));
+  if(!open)cancelVoice('Voice panel closed. Microphone off.');voiceControls();
+};
+$('voice-prepare').onclick=prepareVoice;$('voice-start').onclick=startVoice;$('voice-stop').onclick=stopVoice;
+$('voice-cancel').onclick=()=>clearVoicePreview();$('voice-play').onclick=()=>playVoiceMove();
+$('voice-text').oninput=()=>{
+  invalidateVoiceUtterance();
+  if($('voice-text').value.trim())interpretVoice($('voice-text').value);
+  else{clearVoiceCandidate();voiceControls();}
+};
+$('voice-text').onkeydown=event=>{
+  if(event.key==='Enter'&&voicePreview()){event.preventDefault();playVoiceMove();}
+};
+$('voice-promotion').onchange=()=>{
+  const m=voice.promotionMoves.find(x=>x.promotion===$('voice-promotion').value);
+  if(m){invalidateVoiceUtterance();interpretVoice(m.from+' '+m.to+' '+m.promotion);}
+};
+for(const id of ['voice-backend','voice-language'])$(id).onchange=()=>{
+  cancelVoice();voice.whisper?.destroy();voice.whisper=null;voice.ready=false;voice.readyKey='';
+  saveSession();voiceMessage('Prepare this local speech method or click Start hands-free.');voiceControls();
+};
+$('voice-pause').onchange=()=>{voice.recorder?.reset();saveSession();};
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')cancelVoice('Tab hidden. Microphone off and preview cleared.');});
+window.addEventListener('pagehide',()=>{cancelVoice();voice.whisper?.destroy();voice.whisper=null;voice.ready=false;});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&(voiceBusy()||voice.candidate)){event.preventDefault();cancelVoice('Cancelled. Microphone off.');}
+});
+
+// END VOICE INPUT
+
 $('model').onchange = () => {lastChoice = null; saveSession(); startEngine(); queueSize();};
 $('new').onclick = () => {
   clearAutoplay(); game.reset(); gameSerial++; lastChoice = null;

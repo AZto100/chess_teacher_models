@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-10-19T09:55:53.822061+00:00",
+  "source": "https://ggml.ai/whisper.cpp/stream.wasm/",
+  "note": "Local integrity hashes, not publisher-signed checksums. Upstream demo is unversioned.",
+  "runtime_source": "https://github.com/ggml-org/whisper.cpp/tree/master/examples/stream.wasm",
+  "model_source": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.en-q5_1.bin",
+  "files": [
+    {
+      "path": "wasm/stream.js",
+      "bytes": 1771276,
+      "sha256": "9b0d56062d820164a6685332581faa0373c9324faae8181f26ac84e300ccbb07"
+    },
+    {
+      "path": "models/ggml-base.en-q5_1.bin",
+      "bytes": 59721011,
+      "sha256": "4baf70dd0d7c4247ba2b81fafd9c01005ac77c2f9ef064e00dcf195d0e2fdd2f"
+    }
+  ]
+}
