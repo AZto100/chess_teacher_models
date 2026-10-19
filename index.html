@@ -1892,15 +1892,7 @@ $('flip').onclick = () => {flipped = !flipped; saveSession(); requestAnalysis();
 $('mode').onchange = () => {if (!isPlay()) {maiaEngine?.destroy(); maiaEngine = null; maiaError = '';} saveSession(); requestAnalysis(); queueSize();};
 $('hintsWhite').onchange = () => {saveSession(); queueDraw();};
 $('hintsBlack').onchange = () => {saveSession(); queueDraw();};
-$('test-computer-voice').onclick = () => {
-  $('speakComputer').checked=true;saveSession();
-  announceComputerMove({piece:'n',from:'b8',to:'c6',flags:'n'},true);
-};
-if(!window.speechSynthesis||!window.SpeechSynthesisUtterance) {
-  $('speakComputer').disabled=true;$('test-computer-voice').disabled=true;
-  $('computer-voice-status').textContent='Browser speech synthesis is unavailable.';
-}
-$('speakComputer').onchange = () => {saveSession(); if (!$('speakComputer').checked) stopComputerAnnouncement();};
+
 $('talk').onchange = () => {saveSession(); queueDraw();};
 $('rating').onchange = () => {saveSession(); requestAnalysis();};
 $('allowBlunder').onchange = () => {saveSession(); if (isPlay()) requestAnalysis(); else queueDraw();};
