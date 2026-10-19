@@ -1,6 +1,6 @@
 /* Chess Teacher: opt-in, directory-scoped cross-origin isolation for local WASM.
  * No caching, telemetry, audio access or upload. Installed only by Prepare voice.
- * Original helper source; keep it beside index.html so its scope is this app.
+ * Original helper source; keep it beside index.html so its scope is this app. Work...
  */
 'use strict';
 self.addEventListener('install', event => event.waitUntil(self.skipWaiting()));
