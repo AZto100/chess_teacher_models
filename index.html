@@ -108,16 +108,15 @@ h1{font-size:22px;line-height:1.2}
 <button id="voice-toggle" type="button" aria-pressed="false" aria-controls="voice-panel" title="Optional voice input. Click-to-move is always available.">Voice (optional)</button><button id="fullscreen" aria-pressed="false" title="Use the full screen. Press Esc to leave." hidden>Full screen</button>
 </div></div>
 <div class="controls">
-<label>Engine <select id="model" aria-describedby="model-note"><option value="lite" selected>Stockfish Lite</option><option value="full">Stockfish Full</option><option value="maia">Maia-3 (human-like)</option></select></label>
-<label>Mode <select id="mode"><option value="practice" selected>Practice</option><option value="play">Play computer</option></select></label>
-<label title="Read the computer move aloud using your browser voice."><input type="checkbox" id="speakComputer" checked> Speak computer moves</label>
-<button id="test-computer-voice" type="button">Test voice</button>
+<label><select id="model" aria-describedby="model-note"><option value="lite" selected>Stockfish Lite</option><option value="full">Stockfish Full</option><option value="maia">Maia-3 (human-like)</option></select></label>
+<label><select id="mode"><option value="practice" selected>Practice</option><option value="play">Play computer</option></select></label>
+<label title="Read the computer move aloud using your browser voice."><input type="checkbox" id="speakComputer" checked>Speak</label>
 <span id="computer-voice-status" class="muted" role="status">Computer voice v3 — clear pauses</span>
 <button id="new">New game</button><button id="undo">Undo</button><button id="flip" title="Rotate the board. In Play computer, you always play the bottom colour.">Flip board</button>
 
 
 
-<label title="Training difficulty presets, not calibrated FIDE ratings."><span id="rating-label">Approx. rating</span> <select id="rating" aria-describedby="rating-caveat">
+<label title="Training difficulty presets, not calibrated FIDE ratings."><span id="rating-label">Rating</span> <select id="rating" aria-describedby="rating-caveat">
 <option value="600">600</option><option value="700">700</option><option value="800">800</option><option value="1000">1000</option><option value="1200">1200</option><option value="1400">1400</option><option value="1600" selected>1600</option><option value="1800">1800</option><option value="2000">2000</option><option value="2200">2200</option><option value="2400">2400</option>
 </select></label>
 <label id="blunder-control" title="Play computer only. Checked: your weighted top-four choice. Unchecked: Stockfish's final best move at this preset's search limits."><input type="checkbox" id="allowBlunder" checked disabled> Allow Blunder</label>
