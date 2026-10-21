@@ -3584,7 +3584,7 @@ function spokenComputerMoveParts(move, checkmate=false, check=false) {
   const parts=[];
   if(move.flags.includes('k'))parts.push('Castle kingside');
   else if(move.flags.includes('q'))parts.push('Castle queenside');
-  parts.push(pieces[move.piece],square(move.from),'to',square(move.castleKingTo || move.to));
+   parts.push(pieces[move.piece],square(move.from),square(move.castleKingTo || move.to));
   if(move.flags.includes('e'))parts.push('Capturing en passant');
   else if(move.captured)parts.push('Captures '+pieces[move.captured].toLowerCase());
   if(move.promotion)parts.push('Promotes to '+pieces[move.promotion].toLowerCase());
