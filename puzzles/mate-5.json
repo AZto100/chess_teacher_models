@@ -1,0 +1,168 @@
+{
+  "format": "chess-teacher-mate-puzzles-v1",
+  "level": 5,
+  "puzzles": [
+    {
+      "id": "m5-01",
+      "mate": 5,
+      "fen": "r6k/p1Q4p/2p1b1rq/4p3/B3P3/4P3/PPP3P1/4RRK1 b - - 0 1",
+      "attacker": "b",
+      "source": {
+        "game": "Louis Paulsen - Paul Morphy",
+        "place": "New York",
+        "year": 1857,
+        "url": "https://www.wtharvey.com/morp.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "g6g2",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 5,
+        "noMateWithin": 4,
+        "exactMate": true,
+        "checkedNodes": 72138,
+        "candidateId": "m5-01"
+      },
+      "exampleLine": [
+        "g6g2",
+        "g1g2",
+        "h6h3",
+        "g2g1",
+        "a8g8",
+        "g1f2",
+        "h3g2"
+      ]
+    },
+    {
+      "id": "m5-02",
+      "mate": 5,
+      "fen": "r1b2r2/pp4k1/1bpp1q1p/6pQ/2B2Np1/2P5/P5PP/R1B1R2K w - - 1 1",
+      "attacker": "w",
+      "source": {
+        "game": "Adolf Anderssen - Carl Mayet",
+        "place": "Berlin",
+        "year": 1851,
+        "url": "https://www.wtharvey.com/ande.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "e1e7",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 5,
+        "noMateWithin": 4,
+        "exactMate": true,
+        "checkedNodes": 116465,
+        "candidateId": "m5-02"
+      },
+      "exampleLine": [
+        "e1e7",
+        "f6e7",
+        "h5g6",
+        "g7h8",
+        "g6h6",
+        "e7h7",
+        "f4g6"
+      ]
+    },
+    {
+      "id": "m5-03",
+      "mate": 5,
+      "fen": "2rqnrk1/pp3ppp/1b1p4/3p2Q1/2n1P3/3B1P2/PB2NP1P/R5RK w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Adolf Anderssen - Berthold Suhle",
+        "place": "Germany",
+        "year": 1860,
+        "url": "https://www.wtharvey.com/ande.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "g5g7",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 5,
+        "noMateWithin": 4,
+        "exactMate": true,
+        "checkedNodes": 106246,
+        "candidateId": "m5-03"
+      },
+      "exampleLine": [
+        "g5g7",
+        "e8g7",
+        "g1g7",
+        "g8h8",
+        "g7g8",
+        "h8g8",
+        "a1g1",
+        "d8g5",
+        "g1g5"
+      ]
+    },
+    {
+      "id": "m5-04",
+      "mate": 5,
+      "fen": "1brrk3/pbq2p2/1p2pQ1N/3p4/2P5/1P4P1/P1B2P1P/3RR1K1 w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Jose Raul Capablanca - Scott",
+        "place": "Hastings",
+        "year": 1919,
+        "url": "https://www.wtharvey.com/capa.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "e1e6",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 5,
+        "noMateWithin": 4,
+        "exactMate": true,
+        "checkedNodes": 179917,
+        "candidateId": "m5-04"
+      },
+      "exampleLine": [
+        "e1e6",
+        "c7e7",
+        "e6e7",
+        "e8f8",
+        "f6f7"
+      ]
+    },
+    {
+      "id": "m5-05",
+      "mate": 5,
+      "fen": "1rn5/kr1q2p1/p2p1p2/2pPp2p/2P1Pn1P/QR2NP2/P2B2P1/K3R3 w - - 1 1",
+      "attacker": "w",
+      "source": {
+        "game": "Evgeny Vladimirov - Sergey Zagrebelny",
+        "place": "Barnaul",
+        "year": 1988,
+        "url": "https://www.wtharvey.com/vlae.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "a3a6",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 5,
+        "noMateWithin": 4,
+        "exactMate": true,
+        "checkedNodes": 41844,
+        "candidateId": "m5-05"
+      },
+      "exampleLine": [
+        "a3a6",
+        "a7a6",
+        "b3a3",
+        "a6b6",
+        "d2a5",
+        "b6a6",
+        "a5c7",
+        "d7a4",
+        "a3a4"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "format": "chess-teacher-mate-puzzles-v1",
+  "level": 3,
+  "puzzles": [
+    {
+      "id": "m3-01",
+      "mate": 3,
+      "fen": "r1b1k1nr/p2p1ppp/n2B4/1p1NPN1P/6P1/3P1Q2/P1P1K3/q5b1 w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Adolf Anderssen - Lionel Kieseritzky (Immortal Game)",
+        "place": "London",
+        "year": 1851,
+        "url": "https://www.wtharvey.com/ande.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "f5g7",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 3,
+        "noMateWithin": 2,
+        "exactMate": true,
+        "checkedNodes": 88,
+        "candidateId": "m3-01"
+      },
+      "exampleLine": [
+        "f5g7",
+        "e8d8",
+        "f3f6",
+        "g8f6",
+        "d6e7"
+      ]
+    },
+    {
+      "id": "m3-02",
+      "mate": 3,
+      "fen": "3rk2r/p1Rq1ppp/2Q4n/4p3/8/B4N2/P4PPP/1R4K1 w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Paul Morphy - Ernest Paul Morphy",
+        "place": "New Orleans",
+        "year": 1850,
+        "url": "https://www.wtharvey.com/morp.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "c7d7",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 3,
+        "noMateWithin": 2,
+        "exactMate": true,
+        "checkedNodes": 186,
+        "candidateId": "m3-02"
+      },
+      "exampleLine": [
+        "c7d7",
+        "e5e4",
+        "d7d1",
+        "d8d7",
+        "b1b8"
+      ]
+    },
+    {
+      "id": "m3-03",
+      "mate": 3,
+      "fen": "r2r4/pQ4pp/2pN4/k7/5B2/8/PPq4p/R6K w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Paul Morphy - Theodor Lichtenhein",
+        "place": "New York",
+        "year": 1857,
+        "url": "https://www.wtharvey.com/morp.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "f4d2",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 3,
+        "noMateWithin": 2,
+        "exactMate": true,
+        "checkedNodes": 100,
+        "candidateId": "m3-03"
+      },
+      "exampleLine": [
+        "f4d2",
+        "c2d2",
+        "d6c4",
+        "a5a4",
+        "b2b3"
+      ]
+    },
+    {
+      "id": "m3-04",
+      "mate": 3,
+      "fen": "6rk/p1q2p2/2p2b1P/1p2pN2/4P1Q1/2PP4/PPB5/2K4R w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Jose Raul Capablanca - T A Carter",
+        "place": "St. Louis",
+        "year": 1909,
+        "url": "https://www.wtharvey.com/capa.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "g4g7",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 3,
+        "noMateWithin": 2,
+        "exactMate": true,
+        "checkedNodes": 103,
+        "candidateId": "m3-04"
+      },
+      "exampleLine": [
+        "g4g7",
+        "f6g7",
+        "h6g7"
+      ]
+    },
+    {
+      "id": "m3-05",
+      "mate": 3,
+      "fen": "2Q2n2/2R4p/1p1qpp1k/8/3P3P/3B2P1/5PK1/r7 w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Jose Raul Capablanca - Emanuel Lasker",
+        "place": "Havana",
+        "year": 1921,
+        "url": "https://www.wtharvey.com/capa.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "c8f8",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 3,
+        "noMateWithin": 2,
+        "exactMate": true,
+        "checkedNodes": 100,
+        "candidateId": "m3-05"
+      },
+      "exampleLine": [
+        "c8f8",
+        "d6f8",
+        "c7h7"
+      ]
+    }
+  ]
+}

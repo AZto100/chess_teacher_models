@@ -1,0 +1,156 @@
+{
+  "format": "chess-teacher-mate-puzzles-v1",
+  "level": 1,
+  "puzzles": [
+    {
+      "id": "m1-01",
+      "mate": 1,
+      "fen": "2q3r1/p3Q3/1pk3p1/2rp3p/6P1/1NP2R2/P4P1P/4R1K1 w - - 1 2",
+      "attacker": "w",
+      "source": {
+        "game": "Adolf Anderssen - Jean Dufresne",
+        "place": "Berlin",
+        "year": 1851,
+        "url": "https://www.wtharvey.com/ande.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "Training continuation derived from the published position; not claimed as the original game continuation",
+        "parentPuzzle": "m2-01",
+        "continuationUci": [
+          "f7e7",
+          "d7c6"
+        ]
+      },
+      "firstMove": "b3d4",
+      "exampleLine": [
+        "b3d4"
+      ],
+      "validation": {
+        "method": "Legal move generation and actual checkmate",
+        "forcedMateWithin": 1,
+        "noMateWithin": 0,
+        "exactMate": true,
+        "candidateId": "m1-01"
+      }
+    },
+    {
+      "id": "m1-02",
+      "mate": 1,
+      "fen": "r4rk1/1pp2p1p/1p1p4/n2P4/4P3/3n4/PB3P1P/R6K w - - 0 2",
+      "attacker": "w",
+      "source": {
+        "game": "Adolf Anderssen - Anonymous",
+        "place": "Rotterdam",
+        "year": 1861,
+        "url": "https://www.wtharvey.com/ande.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "Training continuation derived from the published position; not claimed as the original game continuation",
+        "parentPuzzle": "m2-02",
+        "continuationUci": [
+          "g7g8",
+          "h8g8"
+        ]
+      },
+      "firstMove": "a1g1",
+      "exampleLine": [
+        "a1g1"
+      ],
+      "validation": {
+        "method": "Legal move generation and actual checkmate",
+        "forcedMateWithin": 1,
+        "noMateWithin": 0,
+        "exactMate": true,
+        "candidateId": "m1-02"
+      }
+    },
+    {
+      "id": "m1-03",
+      "mate": 1,
+      "fen": "4r3/1b3Qbk/2q3N1/p1npP1p1/2pP1P2/2B5/PP4K1/3R4 w - - 0 2",
+      "attacker": "w",
+      "source": {
+        "game": "Emanuel Lasker - Henry Bird",
+        "place": "Liverpool",
+        "year": 1890,
+        "url": "https://www.wtharvey.com/lask.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "Training continuation derived from the published position; not claimed as the original game continuation",
+        "parentPuzzle": "m2-03",
+        "continuationUci": [
+          "h3g5",
+          "h6g5"
+        ]
+      },
+      "firstMove": "d1h1",
+      "exampleLine": [
+        "d1h1"
+      ],
+      "validation": {
+        "method": "Legal move generation and actual checkmate",
+        "forcedMateWithin": 1,
+        "noMateWithin": 0,
+        "exactMate": true,
+        "candidateId": "m1-03"
+      }
+    },
+    {
+      "id": "m1-04",
+      "mate": 1,
+      "fen": "5qrk/5p1n/pp3prQ/2pPp3/2P1P3/2P4R/P5P1/2B3K1 w - - 0 2",
+      "attacker": "w",
+      "source": {
+        "game": "Alexander Riazantsev - Artem Iljin",
+        "place": "St. Petersburg",
+        "year": 1997,
+        "url": "https://www.wtharvey.com/riaz.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "Training continuation derived from the published position; not claimed as the original game continuation",
+        "parentPuzzle": "m2-04",
+        "continuationUci": [
+          "h4g6",
+          "g4g6"
+        ]
+      },
+      "firstMove": "h6h7",
+      "exampleLine": [
+        "h6h7"
+      ],
+      "validation": {
+        "method": "Legal move generation and actual checkmate",
+        "forcedMateWithin": 1,
+        "noMateWithin": 0,
+        "exactMate": true,
+        "candidateId": "m1-04"
+      }
+    },
+    {
+      "id": "m1-05",
+      "mate": 1,
+      "fen": "3r2k1/p4pp1/8/4r3/2P2n2/2Rp1Q2/P2R1N1P/7K b - - 0 2",
+      "attacker": "b",
+      "source": {
+        "game": "Vladislav Nasybullin - Evgeny Vladimirov",
+        "place": "Pavlodar",
+        "year": 1987,
+        "url": "https://www.wtharvey.com/vlae.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "Training continuation derived from the published position; not claimed as the original game continuation",
+        "parentPuzzle": "m2-05",
+        "continuationUci": [
+          "c6f3",
+          "d1f3"
+        ]
+      },
+      "firstMove": "e5e1",
+      "exampleLine": [
+        "e5e1"
+      ],
+      "validation": {
+        "method": "Legal move generation and actual checkmate",
+        "forcedMateWithin": 1,
+        "noMateWithin": 0,
+        "exactMate": true,
+        "candidateId": "m1-05"
+      }
+    }
+  ]
+}

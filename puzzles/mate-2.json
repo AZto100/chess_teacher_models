@@ -1,0 +1,146 @@
+{
+  "format": "chess-teacher-mate-puzzles-v1",
+  "level": 2,
+  "puzzles": [
+    {
+      "id": "m2-01",
+      "mate": 2,
+      "fen": "2q3r1/p2knQ2/1p4p1/2rp3p/6P1/1NP2R2/P4P1P/4R1K1 w - - 1 1",
+      "attacker": "w",
+      "source": {
+        "game": "Adolf Anderssen - Jean Dufresne",
+        "place": "Berlin",
+        "year": 1851,
+        "url": "https://www.wtharvey.com/ande.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "f7e7",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 2,
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "candidateId": "m2-01"
+      },
+      "exampleLine": [
+        "f7e7",
+        "d7c6",
+        "b3d4"
+      ]
+    },
+    {
+      "id": "m2-02",
+      "mate": 2,
+      "fen": "r4r1k/1pp2pRp/1p1p4/n2P4/4P3/3n4/PB3P1P/R6K w - - 1 1",
+      "attacker": "w",
+      "source": {
+        "game": "Adolf Anderssen - Anonymous",
+        "place": "Rotterdam",
+        "year": 1861,
+        "url": "https://www.wtharvey.com/ande.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "g7g8",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 2,
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "candidateId": "m2-02"
+      },
+      "exampleLine": [
+        "g7g8",
+        "h8g8",
+        "a1g1"
+      ]
+    },
+    {
+      "id": "m2-03",
+      "mate": 2,
+      "fen": "4r3/1b3Qbk/2q3Np/p1npP3/2pP1P2/2B4N/PP4K1/3R4 w - - 1 1",
+      "attacker": "w",
+      "source": {
+        "game": "Emanuel Lasker - Henry Bird",
+        "place": "Liverpool",
+        "year": 1890,
+        "url": "https://www.wtharvey.com/lask.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "h3g5",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 2,
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "candidateId": "m2-03"
+      },
+      "exampleLine": [
+        "h3g5",
+        "h6g5",
+        "d1h1"
+      ]
+    },
+    {
+      "id": "m2-04",
+      "mate": 2,
+      "fen": "5qrk/5p1n/pp3p1Q/2pPp3/2P1P1rN/2P4R/P5P1/2B3K1 w - - 0 1",
+      "attacker": "w",
+      "source": {
+        "game": "Alexander Riazantsev - Artem Iljin",
+        "place": "St. Petersburg",
+        "year": 1997,
+        "url": "https://www.wtharvey.com/riaz.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "h4g6",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 2,
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "candidateId": "m2-04"
+      },
+      "exampleLine": [
+        "h4g6",
+        "g4g6",
+        "h6h7"
+      ]
+    },
+    {
+      "id": "m2-05",
+      "mate": 2,
+      "fen": "3r2k1/p4pp1/2q5/4r3/2P2n2/2Rp1P2/P2R1N1P/3Q3K b - - 0 1",
+      "attacker": "b",
+      "source": {
+        "game": "Vladislav Nasybullin - Evgeny Vladimirov",
+        "place": "Pavlodar",
+        "year": 1987,
+        "url": "https://www.wtharvey.com/vlae.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "c6f3",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 2,
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 4,
+        "candidateId": "m2-05"
+      },
+      "exampleLine": [
+        "c6f3",
+        "d1f3",
+        "e5e1"
+      ]
+    }
+  ]
+}

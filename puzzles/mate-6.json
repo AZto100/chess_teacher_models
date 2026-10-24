@@ -1,0 +1,72 @@
+{
+  "format": "chess-teacher-mate-puzzles-v1",
+  "level": 6,
+  "puzzles": [
+    {
+      "id": "m6-01",
+      "mate": 6,
+      "fen": "4r1k1/p1p2ppp/Qbp3r1/8/1P6/2P2P1b/R2P1P1P/2BR3K b - - 0 1",
+      "attacker": "b",
+      "source": {
+        "game": "Louis Paulsen - Paul Morphy",
+        "place": "New York",
+        "year": 1857,
+        "url": "https://www.wtharvey.com/morp.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "h3g2",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 6,
+        "noMateWithin": 5,
+        "exactMate": true,
+        "checkedNodes": 894125,
+        "candidateId": "m6-02"
+      },
+      "exampleLine": [
+        "h3g2",
+        "h1g1",
+        "g2f3",
+        "g1f1",
+        "g6g2",
+        "c1b2",
+        "g2f2",
+        "f1g1",
+        "f2g2",
+        "g1f1",
+        "g2g1"
+      ]
+    },
+    {
+      "id": "m6-02",
+      "mate": 6,
+      "fen": "2Q2bk1/7R/6P1/3rq1P1/8/4PB2/3p1PK1/q7 w - - 1 1",
+      "attacker": "w",
+      "source": {
+        "game": "Evgeny Vladimirov - D Dontscheff",
+        "place": "Hallsberg",
+        "year": 1975,
+        "url": "https://www.wtharvey.com/vlae.html",
+        "credit": "Bill Harvey, wtharvey.com",
+        "kind": "published game position"
+      },
+      "firstMove": "h7h8",
+      "validation": {
+        "method": "Exhaustive bounded legal-move AND/OR search",
+        "forcedMateWithin": 6,
+        "noMateWithin": 5,
+        "exactMate": true,
+        "checkedNodes": 498460,
+        "candidateId": "m6-05"
+      },
+      "exampleLine": [
+        "h7h8",
+        "e5h8",
+        "c8e6",
+        "g8g7",
+        "e6f7"
+      ]
+    }
+  ]
+}

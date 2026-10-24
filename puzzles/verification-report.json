@@ -1,0 +1,267 @@
+[
+  {
+    "id": "m1-01",
+    "mate": 1,
+    "method": "Legal move generation and actual checkmate",
+    "forcedMateWithin": 1,
+    "noMateWithin": 0,
+    "exactMate": true,
+    "candidateId": "m1-01"
+  },
+  {
+    "id": "m1-02",
+    "mate": 1,
+    "method": "Legal move generation and actual checkmate",
+    "forcedMateWithin": 1,
+    "noMateWithin": 0,
+    "exactMate": true,
+    "candidateId": "m1-02"
+  },
+  {
+    "id": "m1-03",
+    "mate": 1,
+    "method": "Legal move generation and actual checkmate",
+    "forcedMateWithin": 1,
+    "noMateWithin": 0,
+    "exactMate": true,
+    "candidateId": "m1-03"
+  },
+  {
+    "id": "m1-04",
+    "mate": 1,
+    "method": "Legal move generation and actual checkmate",
+    "forcedMateWithin": 1,
+    "noMateWithin": 0,
+    "exactMate": true,
+    "candidateId": "m1-04"
+  },
+  {
+    "id": "m1-05",
+    "mate": 1,
+    "method": "Legal move generation and actual checkmate",
+    "forcedMateWithin": 1,
+    "noMateWithin": 0,
+    "exactMate": true,
+    "candidateId": "m1-05"
+  },
+  {
+    "id": "m2-01",
+    "mate": 2,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 2,
+    "noMateWithin": 1,
+    "exactMate": true,
+    "checkedNodes": 3,
+    "candidateId": "m2-01"
+  },
+  {
+    "id": "m2-02",
+    "mate": 2,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 2,
+    "noMateWithin": 1,
+    "exactMate": true,
+    "checkedNodes": 3,
+    "candidateId": "m2-02"
+  },
+  {
+    "id": "m2-03",
+    "mate": 2,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 2,
+    "noMateWithin": 1,
+    "exactMate": true,
+    "checkedNodes": 3,
+    "candidateId": "m2-03"
+  },
+  {
+    "id": "m2-04",
+    "mate": 2,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 2,
+    "noMateWithin": 1,
+    "exactMate": true,
+    "checkedNodes": 5,
+    "candidateId": "m2-04"
+  },
+  {
+    "id": "m2-05",
+    "mate": 2,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 2,
+    "noMateWithin": 1,
+    "exactMate": true,
+    "checkedNodes": 4,
+    "candidateId": "m2-05"
+  },
+  {
+    "id": "m3-01",
+    "mate": 3,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 3,
+    "noMateWithin": 2,
+    "exactMate": true,
+    "checkedNodes": 88,
+    "candidateId": "m3-01"
+  },
+  {
+    "id": "m3-02",
+    "mate": 3,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 3,
+    "noMateWithin": 2,
+    "exactMate": true,
+    "checkedNodes": 186,
+    "candidateId": "m3-02"
+  },
+  {
+    "id": "m3-03",
+    "mate": 3,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 3,
+    "noMateWithin": 2,
+    "exactMate": true,
+    "checkedNodes": 100,
+    "candidateId": "m3-03"
+  },
+  {
+    "id": "m3-04",
+    "mate": 3,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 3,
+    "noMateWithin": 2,
+    "exactMate": true,
+    "checkedNodes": 103,
+    "candidateId": "m3-04"
+  },
+  {
+    "id": "m3-05",
+    "mate": 3,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 3,
+    "noMateWithin": 2,
+    "exactMate": true,
+    "checkedNodes": 100,
+    "candidateId": "m3-05"
+  },
+  {
+    "id": "m4-01",
+    "mate": 4,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 4,
+    "noMateWithin": 3,
+    "exactMate": true,
+    "checkedNodes": 770,
+    "candidateId": "m4-01"
+  },
+  {
+    "id": "m4-02",
+    "mate": 4,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 4,
+    "noMateWithin": 3,
+    "exactMate": true,
+    "checkedNodes": 1877,
+    "candidateId": "m4-02"
+  },
+  {
+    "id": "m4-03",
+    "mate": 4,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 4,
+    "noMateWithin": 3,
+    "exactMate": true,
+    "checkedNodes": 4212,
+    "candidateId": "m4-03"
+  },
+  {
+    "id": "m4-04",
+    "mate": 4,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 4,
+    "noMateWithin": 3,
+    "exactMate": true,
+    "checkedNodes": 4348,
+    "candidateId": "m4-04"
+  },
+  {
+    "id": "m4-05",
+    "mate": 4,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 4,
+    "noMateWithin": 3,
+    "exactMate": true,
+    "checkedNodes": 845,
+    "candidateId": "m4-05"
+  },
+  {
+    "id": "m5-01",
+    "mate": 5,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 5,
+    "noMateWithin": 4,
+    "exactMate": true,
+    "checkedNodes": 72138,
+    "candidateId": "m5-01"
+  },
+  {
+    "id": "m5-02",
+    "mate": 5,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 5,
+    "noMateWithin": 4,
+    "exactMate": true,
+    "checkedNodes": 116465,
+    "candidateId": "m5-02"
+  },
+  {
+    "id": "m5-03",
+    "mate": 5,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 5,
+    "noMateWithin": 4,
+    "exactMate": true,
+    "checkedNodes": 106246,
+    "candidateId": "m5-03"
+  },
+  {
+    "id": "m5-04",
+    "mate": 5,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 5,
+    "noMateWithin": 4,
+    "exactMate": true,
+    "checkedNodes": 179917,
+    "candidateId": "m5-04"
+  },
+  {
+    "id": "m5-05",
+    "mate": 5,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 5,
+    "noMateWithin": 4,
+    "exactMate": true,
+    "checkedNodes": 41844,
+    "candidateId": "m5-05"
+  },
+  {
+    "id": "m6-01",
+    "mate": 6,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 6,
+    "noMateWithin": 5,
+    "exactMate": true,
+    "checkedNodes": 894125,
+    "candidateId": "m6-02"
+  },
+  {
+    "id": "m6-02",
+    "mate": 6,
+    "method": "Exhaustive bounded legal-move AND/OR search",
+    "forcedMateWithin": 6,
+    "noMateWithin": 5,
+    "exactMate": true,
+    "checkedNodes": 498460,
+    "candidateId": "m6-05"
+  }
+]
