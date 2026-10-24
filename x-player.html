@@ -1,0 +1,2624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<title>Mate puzzles</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;--board-size:320px;background:#111827;color:#f3f4f6}
+*{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden}body{height:100vh;height:100dvh;min-width:180px}
+.app{height:100%;width:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:max(4px,env(safe-area-inset-top)) max(4px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(4px,env(safe-area-inset-left));gap:4px}
+.top{display:flex;align-items:center;justify-content:center;gap:10px;min-height:29px;padding:1px 5px}
+h1{font-size:clamp(13px,3.7vw,21px);font-weight:650;margin:0;line-height:1.2;text-wrap:balance}
+.timer{font-variant-numeric:tabular-nums;font-size:clamp(13px,3.4vw,19px);font-weight:500;white-space:nowrap;color:#cbd5e1}
+.stage{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;overflow:hidden}
+.board-shell{position:relative;width:var(--board-size);height:var(--board-size);flex:none}
+.board{width:100%;height:100%;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);touch-action:manipulation;user-select:none;isolation:isolate}
+.sq{appearance:none;margin:0;border:0;border-radius:0;padding:0;position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;overflow:hidden;cursor:pointer}
+.sq.light{background:#eeeed2}.sq.dark{background:#769656}.sq.selected:after{content:"";position:absolute;inset:1px;border:3px solid #3185fb;pointer-events:none;z-index:3}
+.sq:focus-visible{outline:3px solid #1462dc;outline-offset:-3px;z-index:4}body[data-phase=defending] .sq{cursor:wait}
+.coord{position:absolute;top:1px;left:2px;font-size:clamp(7px,calc(var(--board-size)*.019),12px);font-weight:600;color:#24342a;pointer-events:none;opacity:.7;z-index:2}
+.piece{width:93%;height:93%;display:block;pointer-events:none;z-index:1;filter:drop-shadow(0 1px 1px #0003)}.piece.white{color:#fff;--piece-edge:#202020;--piece-detail:#202020}.piece.black{color:#080808;--piece-edge:#d5d9dd;--piece-detail:#e9edf1}
+.piece-body{fill:currentColor;stroke:var(--piece-edge);stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}.piece-detail{fill:none;stroke:var(--piece-detail);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}.piece-eye{fill:var(--piece-detail);stroke:none}
+.toolbar{display:flex;align-items:center;justify-content:center;gap:8px;min-height:33px;white-space:nowrap}
+button,select{font:inherit}button.action,select{background:#27364c;color:#fff;border:1px solid #5b6a80;border-radius:6px;font-size:14px;line-height:18px;padding:6px 10px;cursor:pointer}button:disabled{opacity:.4;cursor:default}select{max-width:110px}
+button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offset:2px}
+.feedback{position:absolute;top:9px;left:50%;transform:translateX(-50%);max-width:calc(100% - 16px);padding:8px 14px;border-radius:7px;background:#111827f5;color:#f1f5f9;box-shadow:0 2px 8px #0005;z-index:10;font-size:16px;font-weight:650;text-align:center;pointer-events:none}
+.feedback.correct{background:#104729f5;color:#e8fff0}.feedback.try-again{background:#4e2421f5;color:#fff0e9}.feedback.error{font-size:13px;font-weight:400;width:max-content}
+.promotion{position:absolute;inset:0;background:#111827b5;display:flex;align-items:center;justify-content:center;z-index:12}.promotion-card{width:min(290px,90%);background:#1f2937;border:1px solid #66768e;border-radius:9px;padding:12px;text-align:center}.promotion-card strong{display:block;margin-bottom:9px}#promotion-options{display:grid;grid-template-columns:1fr 1fr;gap:6px}#promotion-options button{padding:10px 6px;background:#334155;color:white;border:1px solid #789;border-radius:5px}#promotion-cancel{margin-top:10px}
+[hidden]{display:none!important}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:300px){.toolbar{gap:5px}.toolbar button.action,.toolbar select{font-size:12px;padding:5px 8px}.top{gap:7px;padding:0}h1{font-size:13px}.timer{font-size:12px}}
+@media(max-height:300px){.app{gap:1px;padding:2px}.top{min-height:21px}h1,.timer{font-size:12px}.toolbar{min-height:25px}.toolbar button.action,.toolbar select{padding:2px 8px;font-size:12px}}
+</style>
+</head>
+<body data-phase="loading">
+<main class="app">
+<header class="top"><h1 id="instruction">Loading puzzle...</h1><time class="timer" id="timer" aria-label="Elapsed time" aria-live="off">00:00</time></header>
+<section class="stage" id="stage" aria-label="Puzzle playing area"><div class="board-shell">
+<div class="board" id="board" role="group" aria-label="Chess puzzle" aria-busy="true"></div>
+<div class="feedback" id="feedback" role="status" aria-live="polite">Loading...</div>
+<div class="promotion" id="promotion" role="dialog" aria-modal="true" aria-labelledby="promotion-title" hidden><div class="promotion-card"><strong id="promotion-title">Promote pawn</strong><div id="promotion-options"></div><button type="button" id="promotion-cancel" class="action">Cancel</button></div></div>
+</div></section>
+<footer class="toolbar"><label><span class="visually-hidden">Puzzle level</span><select id="level" aria-label="Puzzle level"><option value="1">Mate in 1</option><option value="2">Mate in 2</option><option value="3">Mate in 3</option><option value="4">Mate in 4</option><option value="5">Mate in 5</option><option value="6">Mate in 6</option></select></label><button class="action" id="undo" type="button" disabled>Undo</button><button class="action" id="next" type="button" disabled>Next</button><button class="action" id="retry" type="button" hidden>Retry</button></footer>
+</main>
+<noscript>JavaScript is needed to play this puzzle.</noscript>
+<script>
+// Chess960-only rules: chessops 0.15.0 (Niklas Fiekas, GPL-3.0-or-later).
+// Source: https://github.com/niklasf/chessops/tree/v0.15.0/src
+// Standard modes continue to use the existing vendor/chess.js unchanged.
+/*
+                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU General Public License is a free, copyleft license for
+software and other kinds of works.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+the GNU General Public License is intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.  We, the Free Software Foundation, use the
+GNU General Public License for most of our software; it applies also to
+any other work released this way by its authors.  You can apply it to
+your programs, too.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+them if you wish), that you receive source code or can get it if you
+want it, that you can change the software or use pieces of it in new
+free programs, and that you know you can do these things.
+
+  To protect your rights, we need to prevent others from denying you
+these rights or asking you to surrender the rights.  Therefore, you have
+certain responsibilities if you distribute copies of the software, or if
+you modify it: responsibilities to respect the freedom of others.
+
+  For example, if you distribute copies of such a program, whether
+gratis or for a fee, you must pass on to the recipients the same
+freedoms that you received.  You must make sure that they, too, receive
+or can get the source code.  And you must show them these terms so they
+know their rights.
+
+  Developers that use the GNU GPL protect your rights with two steps:
+(1) assert copyright on the software, and (2) offer you this License
+giving you legal permission to copy, distribute and/or modify it.
+
+  For the developers' and authors' protection, the GPL clearly explains
+that there is no warranty for this free software.  For both users' and
+authors' sake, the GPL requires that modified versions be marked as
+changed, so that their problems will not be attributed erroneously to
+authors of previous versions.
+
+  Some devices are designed to deny users access to install or run
+modified versions of the software inside them, although the manufacturer
+can do so.  This is fundamentally incompatible with the aim of
+protecting users' freedom to change the software.  The systematic
+pattern of such abuse occurs in the area of products for individuals to
+use, which is precisely where it is most unacceptable.  Therefore, we
+have designed this version of the GPL to prohibit the practice for those
+products.  If such problems arise substantially in other domains, we
+stand ready to extend this provision to those domains in future versions
+of the GPL, as needed to protect the freedom of users.
+
+  Finally, every program is threatened constantly by software patents.
+States should not allow patents to restrict development and use of
+software on general-purpose computers, but in those that do, we wish to
+avoid the special danger that patents applied to a free program could
+make it effectively proprietary.  To prevent this, the GPL assures that
+patents cannot be used to render the program non-free.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+                       TERMS AND CONDITIONS
+
+  0. Definitions.
+
+  "This License" refers to version 3 of the GNU General Public License.
+
+  "Copyright" also means copyright-like laws that apply to other kinds of
+works, such as semiconductor masks.
+
+  "The Program" refers to any copyrightable work licensed under this
+License.  Each licensee is addressed as "you".  "Licensees" and
+"recipients" may be individuals or organizations.
+
+  To "modify" a work means to copy from or adapt all or part of the work
+in a fashion requiring copyright permission, other than the making of an
+exact copy.  The resulting work is called a "modified version" of the
+earlier work or a work "based on" the earlier work.
+
+  A "covered work" means either the unmodified Program or a work based
+on the Program.
+
+  To "propagate" a work means to do anything with it that, without
+permission, would make you directly or secondarily liable for
+infringement under applicable copyright law, except executing it on a
+computer or modifying a private copy.  Propagation includes copying,
+distribution (with or without modification), making available to the
+public, and in some countries other activities as well.
+
+  To "convey" a work means any kind of propagation that enables other
+parties to make or receive copies.  Mere interaction with a user through
+a computer network, with no transfer of a copy, is not conveying.
+
+  An interactive user interface displays "Appropriate Legal Notices"
+to the extent that it includes a convenient and prominently visible
+feature that (1) displays an appropriate copyright notice, and (2)
+tells the user that there is no warranty for the work (except to the
+extent that warranties are provided), that licensees may convey the
+work under this License, and how to view a copy of this License.  If
+the interface presents a list of user commands or options, such as a
+menu, a prominent item in the list meets this criterion.
+
+  1. Source Code.
+
+  The "source code" for a work means the preferred form of the work
+for making modifications to it.  "Object code" means any non-source
+form of a work.
+
+  A "Standard Interface" means an interface that either is an official
+standard defined by a recognized standards body, or, in the case of
+interfaces specified for a particular programming language, one that
+is widely used among developers working in that language.
+
+  The "System Libraries" of an executable work include anything, other
+than the work as a whole, that (a) is included in the normal form of
+packaging a Major Component, but which is not part of that Major
+Component, and (b) serves only to enable use of the work with that
+Major Component, or to implement a Standard Interface for which an
+implementation is available to the public in source code form.  A
+"Major Component", in this context, means a major essential component
+(kernel, window system, and so on) of the specific operating system
+(if any) on which the executable work runs, or a compiler used to
+produce the work, or an object code interpreter used to run it.
+
+  The "Corresponding Source" for a work in object code form means all
+the source code needed to generate, install, and (for an executable
+work) run the object code and to modify the work, including scripts to
+control those activities.  However, it does not include the work's
+System Libraries, or general-purpose tools or generally available free
+programs which are used unmodified in performing those activities but
+which are not part of the work.  For example, Corresponding Source
+includes interface definition files associated with source files for
+the work, and the source code for shared libraries and dynamically
+linked subprograms that the work is specifically designed to require,
+such as by intimate data communication or control flow between those
+subprograms and other parts of the work.
+
+  The Corresponding Source need not include anything that users
+can regenerate automatically from other parts of the Corresponding
+Source.
+
+  The Corresponding Source for a work in source code form is that
+same work.
+
+  2. Basic Permissions.
+
+  All rights granted under this License are granted for the term of
+copyright on the Program, and are irrevocable provided the stated
+conditions are met.  This License explicitly affirms your unlimited
+permission to run the unmodified Program.  The output from running a
+covered work is covered by this License only if the output, given its
+content, constitutes a covered work.  This License acknowledges your
+rights of fair use or other equivalent, as provided by copyright law.
+
+  You may make, run and propagate covered works that you do not
+convey, without conditions so long as your license otherwise remains
+in force.  You may convey covered works to others for the sole purpose
+of having them make modifications exclusively for you, or provide you
+with facilities for running those works, provided that you comply with
+the terms of this License in conveying all material for which you do
+not control copyright.  Those thus making or running the covered works
+for you must do so exclusively on your behalf, under your direction
+and control, on terms that prohibit them from making any copies of
+your copyrighted material outside their relationship with you.
+
+  Conveying under any other circumstances is permitted solely under
+the conditions stated below.  Sublicensing is not allowed; section 10
+makes it unnecessary.
+
+  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
+
+  No covered work shall be deemed part of an effective technological
+measure under any applicable law fulfilling obligations under article
+11 of the WIPO copyright treaty adopted on 20 December 1996, or
+similar laws prohibiting or restricting circumvention of such
+measures.
+
+  When you convey a covered work, you waive any legal power to forbid
+circumvention of technological measures to the extent such circumvention
+is effected by exercising rights under this License with respect to
+the covered work, and you disclaim any intention to limit operation or
+modification of the work as a means of enforcing, against the work's
+users, your or third parties' legal rights to forbid circumvention of
+technological measures.
+
+  4. Conveying Verbatim Copies.
+
+  You may convey verbatim copies of the Program's source code as you
+receive it, in any medium, provided that you conspicuously and
+appropriately publish on each copy an appropriate copyright notice;
+keep intact all notices stating that this License and any
+non-permissive terms added in accord with section 7 apply to the code;
+keep intact all notices of the absence of any warranty; and give all
+recipients a copy of this License along with the Program.
+
+  You may charge any price or no price for each copy that you convey,
+and you may offer support or warranty protection for a fee.
+
+  5. Conveying Modified Source Versions.
+
+  You may convey a work based on the Program, or the modifications to
+produce it from the Program, in the form of source code under the
+terms of section 4, provided that you also meet all of these conditions:
+
+    a) The work must carry prominent notices stating that you modified
+    it, and giving a relevant date.
+
+    b) The work must carry prominent notices stating that it is
+    released under this License and any conditions added under section
+    7.  This requirement modifies the requirement in section 4 to
+    "keep intact all notices".
+
+    c) You must license the entire work, as a whole, under this
+    License to anyone who comes into possession of a copy.  This
+    License will therefore apply, along with any applicable section 7
+    additional terms, to the whole of the work, and all its parts,
+    regardless of how they are packaged.  This License gives no
+    permission to license the work in any other way, but it does not
+    invalidate such permission if you have separately received it.
+
+    d) If the work has interactive user interfaces, each must display
+    Appropriate Legal Notices; however, if the Program has interactive
+    interfaces that do not display Appropriate Legal Notices, your
+    work need not make them do so.
+
+  A compilation of a covered work with other separate and independent
+works, which are not by their nature extensions of the covered work,
+and which are not combined with it such as to form a larger program,
+in or on a volume of a storage or distribution medium, is called an
+"aggregate" if the compilation and its resulting copyright are not
+used to limit the access or legal rights of the compilation's users
+beyond what the individual works permit.  Inclusion of a covered work
+in an aggregate does not cause this License to apply to the other
+parts of the aggregate.
+
+  6. Conveying Non-Source Forms.
+
+  You may convey a covered work in object code form under the terms
+of sections 4 and 5, provided that you also convey the
+machine-readable Corresponding Source under the terms of this License,
+in one of these ways:
+
+    a) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by the
+    Corresponding Source fixed on a durable physical medium
+    customarily used for software interchange.
+
+    b) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by a
+    written offer, valid for at least three years and valid for as
+    long as you offer spare parts or customer support for that product
+    model, to give anyone who possesses the object code either (1) a
+    copy of the Corresponding Source for all the software in the
+    product that is covered by this License, on a durable physical
+    medium customarily used for software interchange, for a price no
+    more than your reasonable cost of physically performing this
+    conveying of source, or (2) access to copy the
+    Corresponding Source from a network server at no charge.
+
+    c) Convey individual copies of the object code with a copy of the
+    written offer to provide the Corresponding Source.  This
+    alternative is allowed only occasionally and noncommercially, and
+    only if you received the object code with such an offer, in accord
+    with subsection 6b.
+
+    d) Convey the object code by offering access from a designated
+    place (gratis or for a charge), and offer equivalent access to the
+    Corresponding Source in the same way through the same place at no
+    further charge.  You need not require recipients to copy the
+    Corresponding Source along with the object code.  If the place to
+    copy the object code is a network server, the Corresponding Source
+    may be on a different server (operated by you or a third party)
+    that supports equivalent copying facilities, provided you maintain
+    clear directions next to the object code saying where to find the
+    Corresponding Source.  Regardless of what server hosts the
+    Corresponding Source, you remain obligated to ensure that it is
+    available for as long as needed to satisfy these requirements.
+
+    e) Convey the object code using peer-to-peer transmission, provided
+    you inform other peers where the object code and Corresponding
+    Source of the work are being offered to the general public at no
+    charge under subsection 6d.
+
+  A separable portion of the object code, whose source code is excluded
+from the Corresponding Source as a System Library, need not be
+included in conveying the object code work.
+
+  A "User Product" is either (1) a "consumer product", which means any
+tangible personal property which is normally used for personal, family,
+or household purposes, or (2) anything designed or sold for incorporation
+into a dwelling.  In determining whether a product is a consumer product,
+doubtful cases shall be resolved in favor of coverage.  For a particular
+product received by a particular user, "normally used" refers to a
+typical or common use of that class of product, regardless of the status
+of the particular user or of the way in which the particular user
+actually uses, or expects or is expected to use, the product.  A product
+is a consumer product regardless of whether the product has substantial
+commercial, industrial or non-consumer uses, unless such uses represent
+the only significant mode of use of the product.
+
+  "Installation Information" for a User Product means any methods,
+procedures, authorization keys, or other information required to install
+and execute modified versions of a covered work in that User Product from
+a modified version of its Corresponding Source.  The information must
+suffice to ensure that the continued functioning of the modified object
+code is in no case prevented or interfered with solely because
+modification has been made.
+
+  If you convey an object code work under this section in, or with, or
+specifically for use in, a User Product, and the conveying occurs as
+part of a transaction in which the right of possession and use of the
+User Product is transferred to the recipient in perpetuity or for a
+fixed term (regardless of how the transaction is characterized), the
+Corresponding Source conveyed under this section must be accompanied
+by the Installation Information.  But this requirement does not apply
+if neither you nor any third party retains the ability to install
+modified object code on the User Product (for example, the work has
+been installed in ROM).
+
+  The requirement to provide Installation Information does not include a
+requirement to continue to provide support service, warranty, or updates
+for a work that has been modified or installed by the recipient, or for
+the User Product in which it has been modified or installed.  Access to a
+network may be denied when the modification itself materially and
+adversely affects the operation of the network or violates the rules and
+protocols for communication across the network.
+
+  Corresponding Source conveyed, and Installation Information provided,
+in accord with this section must be in a format that is publicly
+documented (and with an implementation available to the public in
+source code form), and must require no special password or key for
+unpacking, reading or copying.
+
+  7. Additional Terms.
+
+  "Additional permissions" are terms that supplement the terms of this
+License by making exceptions from one or more of its conditions.
+Additional permissions that are applicable to the entire Program shall
+be treated as though they were included in this License, to the extent
+that they are valid under applicable law.  If additional permissions
+apply only to part of the Program, that part may be used separately
+under those permissions, but the entire Program remains governed by
+this License without regard to the additional permissions.
+
+  When you convey a copy of a covered work, you may at your option
+remove any additional permissions from that copy, or from any part of
+it.  (Additional permissions may be written to require their own
+removal in certain cases when you modify the work.)  You may place
+additional permissions on material, added by you to a covered work,
+for which you have or can give appropriate copyright permission.
+
+  Notwithstanding any other provision of this License, for material you
+add to a covered work, you may (if authorized by the copyright holders of
+that material) supplement the terms of this License with terms:
+
+    a) Disclaiming warranty or limiting liability differently from the
+    terms of sections 15 and 16 of this License; or
+
+    b) Requiring preservation of specified reasonable legal notices or
+    author attributions in that material or in the Appropriate Legal
+    Notices displayed by works containing it; or
+
+    c) Prohibiting misrepresentation of the origin of that material, or
+    requiring that modified versions of such material be marked in
+    reasonable ways as different from the original version; or
+
+    d) Limiting the use for publicity purposes of names of licensors or
+    authors of the material; or
+
+    e) Declining to grant rights under trademark law for use of some
+    trade names, trademarks, or service marks; or
+
+    f) Requiring indemnification of licensors and authors of that
+    material by anyone who conveys the material (or modified versions of
+    it) with contractual assumptions of liability to the recipient, for
+    any liability that these contractual assumptions directly impose on
+    those licensors and authors.
+
+  All other non-permissive additional terms are considered "further
+restrictions" within the meaning of section 10.  If the Program as you
+received it, or any part of it, contains a notice stating that it is
+governed by this License along with a term that is a further
+restriction, you may remove that term.  If a license document contains
+a further restriction but permits relicensing or conveying under this
+License, you may add to a covered work material governed by the terms
+of that license document, provided that the further restriction does
+not survive such relicensing or conveying.
+
+  If you add terms to a covered work in accord with this section, you
+must place, in the relevant source files, a statement of the
+additional terms that apply to those files, or a notice indicating
+where to find the applicable terms.
+
+  Additional terms, permissive or non-permissive, may be stated in the
+form of a separately written license, or stated as exceptions;
+the above requirements apply either way.
+
+  8. Termination.
+
+  You may not propagate or modify a covered work except as expressly
+provided under this License.  Any attempt otherwise to propagate or
+modify it is void, and will automatically terminate your rights under
+this License (including any patent licenses granted under the third
+paragraph of section 11).
+
+  However, if you cease all violation of this License, then your
+license from a particular copyright holder is reinstated (a)
+provisionally, unless and until the copyright holder explicitly and
+finally terminates your license, and (b) permanently, if the copyright
+holder fails to notify you of the violation by some reasonable means
+prior to 60 days after the cessation.
+
+  Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+  Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, you do not qualify to receive new licenses for the same
+material under section 10.
+
+  9. Acceptance Not Required for Having Copies.
+
+  You are not required to accept this License in order to receive or
+run a copy of the Program.  Ancillary propagation of a covered work
+occurring solely as a consequence of using peer-to-peer transmission
+to receive a copy likewise does not require acceptance.  However,
+nothing other than this License grants you permission to propagate or
+modify any covered work.  These actions infringe copyright if you do
+not accept this License.  Therefore, by modifying or propagating a
+covered work, you indicate your acceptance of this License to do so.
+
+  10. Automatic Licensing of Downstream Recipients.
+
+  Each time you convey a covered work, the recipient automatically
+receives a license from the original licensors, to run, modify and
+propagate that work, subject to this License.  You are not responsible
+for enforcing compliance by third parties with this License.
+
+  An "entity transaction" is a transaction transferring control of an
+organization, or substantially all assets of one, or subdividing an
+organization, or merging organizations.  If propagation of a covered
+work results from an entity transaction, each party to that
+transaction who receives a copy of the work also receives whatever
+licenses to the work the party's predecessor in interest had or could
+give under the previous paragraph, plus a right to possession of the
+Corresponding Source of the work from the predecessor in interest, if
+the predecessor has it or can get it with reasonable efforts.
+
+  You may not impose any further restrictions on the exercise of the
+rights granted or affirmed under this License.  For example, you may
+not impose a license fee, royalty, or other charge for exercise of
+rights granted under this License, and you may not initiate litigation
+(including a cross-claim or counterclaim in a lawsuit) alleging that
+any patent claim is infringed by making, using, selling, offering for
+sale, or importing the Program or any portion of it.
+
+  11. Patents.
+
+  A "contributor" is a copyright holder who authorizes use under this
+License of the Program or a work on which the Program is based.  The
+work thus licensed is called the contributor's "contributor version".
+
+  A contributor's "essential patent claims" are all patent claims
+owned or controlled by the contributor, whether already acquired or
+hereafter acquired, that would be infringed by some manner, permitted
+by this License, of making, using, or selling its contributor version,
+but do not include claims that would be infringed only as a
+consequence of further modification of the contributor version.  For
+purposes of this definition, "control" includes the right to grant
+patent sublicenses in a manner consistent with the requirements of
+this License.
+
+  Each contributor grants you a non-exclusive, worldwide, royalty-free
+patent license under the contributor's essential patent claims, to
+make, use, sell, offer for sale, import and otherwise run, modify and
+propagate the contents of its contributor version.
+
+  In the following three paragraphs, a "patent license" is any express
+agreement or commitment, however denominated, not to enforce a patent
+(such as an express permission to practice a patent or covenant not to
+sue for patent infringement).  To "grant" such a patent license to a
+party means to make such an agreement or commitment not to enforce a
+patent against the party.
+
+  If you convey a covered work, knowingly relying on a patent license,
+and the Corresponding Source of the work is not available for anyone
+to copy, free of charge and under the terms of this License, through a
+publicly available network server or other readily accessible means,
+then you must either (1) cause the Corresponding Source to be so
+available, or (2) arrange to deprive yourself of the benefit of the
+patent license for this particular work, or (3) arrange, in a manner
+consistent with the requirements of this License, to extend the patent
+license to downstream recipients.  "Knowingly relying" means you have
+actual knowledge that, but for the patent license, your conveying the
+covered work in a country, or your recipient's use of the covered work
+in a country, would infringe one or more identifiable patents in that
+country that you have reason to believe are valid.
+
+  If, pursuant to or in connection with a single transaction or
+arrangement, you convey, or propagate by procuring conveyance of, a
+covered work, and grant a patent license to some of the parties
+receiving the covered work authorizing them to use, propagate, modify
+or convey a specific copy of the covered work, then the patent license
+you grant is automatically extended to all recipients of the covered
+work and works based on it.
+
+  A patent license is "discriminatory" if it does not include within
+the scope of its coverage, prohibits the exercise of, or is
+conditioned on the non-exercise of one or more of the rights that are
+specifically granted under this License.  You may not convey a covered
+work if you are a party to an arrangement with a third party that is
+in the business of distributing software, under which you make payment
+to the third party based on the extent of your activity of conveying
+the work, and under which the third party grants, to any of the
+parties who would receive the covered work from you, a discriminatory
+patent license (a) in connection with copies of the covered work
+conveyed by you (or copies made from those copies), or (b) primarily
+for and in connection with specific products or compilations that
+contain the covered work, unless you entered into that arrangement,
+or that patent license was granted, prior to 28 March 2007.
+
+  Nothing in this License shall be construed as excluding or limiting
+any implied license or other defenses to infringement that may
+otherwise be available to you under applicable patent law.
+
+  12. No Surrender of Others' Freedom.
+
+  If conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot convey a
+covered work so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you may
+not convey it at all.  For example, if you agree to terms that obligate you
+to collect a royalty for further conveying from those to whom you convey
+the Program, the only way you could satisfy both those terms and this
+License would be to refrain entirely from conveying the Program.
+
+  13. Use with the GNU Affero General Public License.
+
+  Notwithstanding any other provision of this License, you have
+permission to link or combine any covered work with a work licensed
+under version 3 of the GNU Affero General Public License into a single
+combined work, and to convey the resulting work.  The terms of this
+License will continue to apply to the part which is the covered work,
+but the special requirements of the GNU Affero General Public License,
+section 13, concerning interaction through a network will apply to the
+combination as such.
+
+  14. Revised Versions of this License.
+
+  The Free Software Foundation may publish revised and/or new versions of
+the GNU General Public License from time to time.  Such new versions will
+be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+  Each version is given a distinguishing version number.  If the
+Program specifies that a certain numbered version of the GNU General
+Public License "or any later version" applies to it, you have the
+option of following the terms and conditions either of that numbered
+version or of any later version published by the Free Software
+Foundation.  If the Program does not specify a version number of the
+GNU General Public License, you may choose any version ever published
+by the Free Software Foundation.
+
+  If the Program specifies that a proxy can decide which future
+versions of the GNU General Public License can be used, that proxy's
+public statement of acceptance of a version permanently authorizes you
+to choose that version for the Program.
+
+  Later license versions may give you additional or different
+permissions.  However, no additional obligations are imposed on any
+author or copyright holder as a result of your choosing to follow a
+later version.
+
+  15. Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+  16. Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+  17. Interpretation of Sections 15 and 16.
+
+  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
+
+                     END OF TERMS AND CONDITIONS
+
+            How to Apply These Terms to Your New Programs
+
+  If you develop a new program, and you want it to be of the greatest
+possible use to the public, the best way to achieve this is to make it
+free software which everyone can redistribute and change under these terms.
+
+  To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+state the exclusion of warranty; and each file should have at least
+the "copyright" line and a pointer to where the full notice is found.
+
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) <year>  <name of author>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Also add information on how to contact you by electronic and paper mail.
+
+  If the program does terminal interaction, make it output a short
+notice like this when it starts in an interactive mode:
+
+    <program>  Copyright (C) <year>  <name of author>
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+
+The hypothetical commands `show w' and `show c' should show the appropriate
+parts of the General Public License.  Of course, your program's commands
+might be different; for a GUI interface, you would use an "about box".
+
+  You should also get your employer (if you work as a programmer) or school,
+if any, to sign a "copyright disclaimer" for the program, if necessary.
+For more information on this, and how to apply and follow the GNU GPL, see
+<http://www.gnu.org/licenses/>.
+
+  The GNU General Public License does not permit incorporating your program
+into proprietary programs.  If your program is a subroutine library, you
+may consider it more useful to permit linking proprietary applications with
+the library.  If this is what you want to do, use the GNU Lesser General
+Public License instead of this License.  But first, please read
+<http://www.gnu.org/philosophy/why-not-lgpl.html>.
+
+MIT License
+
+Copyright (c) 2018 Badrap Oy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+var Chess960Rules = (() => {
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+  // ../../../tmp/chess960-build/adapter.js
+  var adapter_exports = {};
+  __export(adapter_exports, {
+    Chess960: () => Chess960,
+    chess960StartFen: () => chess960StartFen
+  });
+
+  // ../../../tmp/chess960-build/node_modules/@badrap/result/dist/mjs/index.mjs
+  var _Result = class {
+    unwrap(ok, err) {
+      const r = this._chain((value) => Result.ok(ok ? ok(value) : value), (error) => err ? Result.ok(err(error)) : Result.err(error));
+      if (r.isErr) {
+        throw r.error;
+      }
+      return r.value;
+    }
+    map(ok, err) {
+      return this._chain((value) => Result.ok(ok(value)), (error) => Result.err(err ? err(error) : error));
+    }
+    chain(ok, err) {
+      return this._chain(ok, err !== null && err !== void 0 ? err : ((error) => Result.err(error)));
+    }
+  };
+  var _Ok = class extends _Result {
+    constructor(value) {
+      super();
+      this.value = value;
+      this.isOk = true;
+      this.isErr = false;
+    }
+    _chain(ok, _err) {
+      return ok(this.value);
+    }
+  };
+  var _Err = class extends _Result {
+    constructor(error) {
+      super();
+      this.error = error;
+      this.isOk = false;
+      this.isErr = true;
+    }
+    _chain(_ok, err) {
+      return err(this.error);
+    }
+  };
+  var Result;
+(function(Result2) {
+    function ok(value) {
+      return new _Ok(value);
+    }
+    Result2.ok = ok;
+    function err(error) {
+      return new _Err(error || new Error());
+    }
+    Result2.err = err;
+    function all(obj) {
+      if (Array.isArray(obj)) {
+        const res2 = [];
+        for (let i = 0; i < obj.length; i++) {
+          const item = obj[i];
+          if (item.isErr) {
+            return item;
+          }
+          res2.push(item.value);
+        }
+        return Result2.ok(res2);
+      }
+      const res = {};
+      const keys = Object.keys(obj);
+      for (let i = 0; i < keys.length; i++) {
+        const item = obj[keys[i]];
+        if (item.isErr) {
+          return item;
+        }
+        res[keys[i]] = item.value;
+      }
+      return Result2.ok(res);
+    }
+    Result2.all = all;
+  })(Result || (Result = {}));
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/squareSet.js
+  var popcnt32 = (n) => {
+    n = n - (n >>> 1 & 1431655765);
+    n = (n & 858993459) + (n >>> 2 & 858993459);
+    return Math.imul(n + (n >>> 4) & 252645135, 16843009) >> 24;
+  };
+  var bswap32 = (n) => {
+    n = n >>> 8 & 16711935 | (n & 16711935) << 8;
+    return n >>> 16 & 65535 | (n & 65535) << 16;
+  };
+  var rbit32 = (n) => {
+    n = n >>> 1 & 1431655765 | (n & 1431655765) << 1;
+    n = n >>> 2 & 858993459 | (n & 858993459) << 2;
+    n = n >>> 4 & 252645135 | (n & 252645135) << 4;
+    return bswap32(n);
+  };
+  var SquareSet = class _SquareSet {
+    constructor(lo, hi) {
+      this.lo = lo | 0;
+      this.hi = hi | 0;
+    }
+    static fromSquare(square) {
+      return square >= 32 ? new _SquareSet(0, 1 << square - 32) : new _SquareSet(1 << square, 0);
+    }
+    static fromRank(rank) {
+      return new _SquareSet(255, 0).shl64(8 * rank);
+    }
+    static fromFile(file) {
+      return new _SquareSet(16843009 << file, 16843009 << file);
+    }
+    static empty() {
+      return new _SquareSet(0, 0);
+    }
+    static full() {
+      return new _SquareSet(4294967295, 4294967295);
+    }
+    static corners() {
+      return new _SquareSet(129, 2164260864);
+    }
+    static center() {
+      return new _SquareSet(402653184, 24);
+    }
+    static backranks() {
+      return new _SquareSet(255, 4278190080);
+    }
+    static backrank(color) {
+      return color === "white" ? new _SquareSet(255, 0) : new _SquareSet(0, 4278190080);
+    }
+    static lightSquares() {
+      return new _SquareSet(1437226410, 1437226410);
+    }
+    static darkSquares() {
+      return new _SquareSet(2857740885, 2857740885);
+    }
+    complement() {
+      return new _SquareSet(~this.lo, ~this.hi);
+    }
+    xor(other) {
+      return new _SquareSet(this.lo ^ other.lo, this.hi ^ other.hi);
+    }
+    union(other) {
+      return new _SquareSet(this.lo | other.lo, this.hi | other.hi);
+    }
+    intersect(other) {
+      return new _SquareSet(this.lo & other.lo, this.hi & other.hi);
+    }
+    diff(other) {
+      return new _SquareSet(this.lo & ~other.lo, this.hi & ~other.hi);
+    }
+    intersects(other) {
+      return this.intersect(other).nonEmpty();
+    }
+    isDisjoint(other) {
+      return this.intersect(other).isEmpty();
+    }
+    supersetOf(other) {
+      return other.diff(this).isEmpty();
+    }
+    subsetOf(other) {
+      return this.diff(other).isEmpty();
+    }
+    shr64(shift) {
+      if (shift >= 64)
+        return _SquareSet.empty();
+      if (shift >= 32)
+        return new _SquareSet(this.hi >>> shift - 32, 0);
+      if (shift > 0)
+        return new _SquareSet(this.lo >>> shift ^ this.hi << 32 - shift, this.hi >>> shift);
+      return this;
+    }
+    shl64(shift) {
+      if (shift >= 64)
+        return _SquareSet.empty();
+      if (shift >= 32)
+        return new _SquareSet(0, this.lo << shift - 32);
+      if (shift > 0)
+        return new _SquareSet(this.lo << shift, this.hi << shift ^ this.lo >>> 32 - shift);
+      return this;
+    }
+    bswap64() {
+      return new _SquareSet(bswap32(this.hi), bswap32(this.lo));
+    }
+    rbit64() {
+      return new _SquareSet(rbit32(this.hi), rbit32(this.lo));
+    }
+    minus64(other) {
+      const lo = this.lo - other.lo;
+      const c = (lo & other.lo & 1) + (other.lo >>> 1) + (lo >>> 1) >>> 31;
+      return new _SquareSet(lo, this.hi - (other.hi + c));
+    }
+    equals(other) {
+      return this.lo === other.lo && this.hi === other.hi;
+    }
+    size() {
+      return popcnt32(this.lo) + popcnt32(this.hi);
+    }
+    isEmpty() {
+      return this.lo === 0 && this.hi === 0;
+    }
+    nonEmpty() {
+      return this.lo !== 0 || this.hi !== 0;
+    }
+    has(square) {
+      return (square >= 32 ? this.hi & 1 << square - 32 : this.lo & 1 << square) !== 0;
+    }
+    set(square, on) {
+      return on ? this.with(square) : this.without(square);
+    }
+    with(square) {
+      return square >= 32 ? new _SquareSet(this.lo, this.hi | 1 << square - 32) : new _SquareSet(this.lo | 1 << square, this.hi);
+    }
+    without(square) {
+      return square >= 32 ? new _SquareSet(this.lo, this.hi & ~(1 << square - 32)) : new _SquareSet(this.lo & ~(1 << square), this.hi);
+    }
+    toggle(square) {
+      return square >= 32 ? new _SquareSet(this.lo, this.hi ^ 1 << square - 32) : new _SquareSet(this.lo ^ 1 << square, this.hi);
+    }
+    last() {
+      if (this.hi !== 0)
+        return 63 - Math.clz32(this.hi);
+      if (this.lo !== 0)
+        return 31 - Math.clz32(this.lo);
+      return;
+    }
+    first() {
+      if (this.lo !== 0)
+        return 31 - Math.clz32(this.lo & -this.lo);
+      if (this.hi !== 0)
+        return 63 - Math.clz32(this.hi & -this.hi);
+      return;
+    }
+    withoutFirst() {
+      if (this.lo !== 0)
+        return new _SquareSet(this.lo & this.lo - 1, this.hi);
+      return new _SquareSet(0, this.hi & this.hi - 1);
+    }
+    moreThanOne() {
+      return this.hi !== 0 && this.lo !== 0 || (this.lo & this.lo - 1) !== 0 || (this.hi & this.hi - 1) !== 0;
+    }
+    singleSquare() {
+      return this.moreThanOne() ? void 0 : this.last();
+    }
+    *[Symbol.iterator]() {
+      let lo = this.lo;
+      let hi = this.hi;
+      while (lo !== 0) {
+        const idx = 31 - Math.clz32(lo & -lo);
+        lo ^= 1 << idx;
+        yield idx;
+      }
+      while (hi !== 0) {
+        const idx = 31 - Math.clz32(hi & -hi);
+        hi ^= 1 << idx;
+        yield 32 + idx;
+      }
+    }
+    *reversed() {
+      let lo = this.lo;
+      let hi = this.hi;
+      while (hi !== 0) {
+        const idx = 31 - Math.clz32(hi);
+        hi ^= 1 << idx;
+        yield 32 + idx;
+      }
+      while (lo !== 0) {
+        const idx = 31 - Math.clz32(lo);
+        lo ^= 1 << idx;
+        yield idx;
+      }
+    }
+  };
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/types.js
+  var FILE_NAMES = ["a", "b", "c", "d", "e", "f", "g", "h"];
+  var RANK_NAMES = ["1", "2", "3", "4", "5", "6", "7", "8"];
+  var COLORS = ["white", "black"];
+  var ROLES = ["pawn", "knight", "bishop", "rook", "queen", "king"];
+  var CASTLING_SIDES = ["a", "h"];
+  var isDrop = (v) => "role" in v;
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/util.js
+  var defined = (v) => v !== void 0;
+  var opposite = (color) => color === "white" ? "black" : "white";
+  var squareRank = (square) => square >> 3;
+  var squareFile = (square) => square & 7;
+  var squareFromCoords = (file, rank) => 0 <= file && file < 8 && 0 <= rank && rank < 8 ? file + 8 * rank : void 0;
+  var roleToChar = (role) => {
+    switch (role) {
+      case "pawn":
+        return "p";
+      case "knight":
+        return "n";
+      case "bishop":
+        return "b";
+      case "rook":
+        return "r";
+      case "queen":
+        return "q";
+      case "king":
+        return "k";
+    }
+  };
+  function charToRole(ch) {
+    switch (ch.toLowerCase()) {
+      case "p":
+        return "pawn";
+      case "n":
+        return "knight";
+      case "b":
+        return "bishop";
+      case "r":
+        return "rook";
+      case "q":
+        return "queen";
+      case "k":
+        return "king";
+      default:
+        return;
+    }
+  }
+  function parseSquare(str) {
+    if (str.length !== 2)
+      return;
+    return squareFromCoords(str.charCodeAt(0) - "a".charCodeAt(0), str.charCodeAt(1) - "1".charCodeAt(0));
+  }
+  var makeSquare = (square) => FILE_NAMES[squareFile(square)] + RANK_NAMES[squareRank(square)];
+  var kingCastlesTo = (color, side) => color === "white" ? side === "a" ? 2 : 6 : side === "a" ? 58 : 62;
+  var rookCastlesTo = (color, side) => color === "white" ? side === "a" ? 3 : 5 : side === "a" ? 59 : 61;
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/attacks.js
+  var computeRange = (square, deltas) => {
+    let range = SquareSet.empty();
+    for (const delta of deltas) {
+      const sq = square + delta;
+      if (0 <= sq && sq < 64 && Math.abs(squareFile(square) - squareFile(sq)) <= 2) {
+        range = range.with(sq);
+      }
+    }
+    return range;
+  };
+  var tabulate = (f) => {
+    const table = [];
+    for (let square = 0; square < 64; square++)
+      table[square] = f(square);
+    return table;
+  };
+  var KING_ATTACKS = tabulate((sq) => computeRange(sq, [-9, -8, -7, -1, 1, 7, 8, 9]));
+  var KNIGHT_ATTACKS = tabulate((sq) => computeRange(sq, [-17, -15, -10, -6, 6, 10, 15, 17]));
+  var PAWN_ATTACKS = {
+    white: tabulate((sq) => computeRange(sq, [7, 9])),
+    black: tabulate((sq) => computeRange(sq, [-7, -9]))
+  };
+  var kingAttacks = (square) => KING_ATTACKS[square];
+  var knightAttacks = (square) => KNIGHT_ATTACKS[square];
+  var pawnAttacks = (color, square) => PAWN_ATTACKS[color][square];
+  var FILE_RANGE = tabulate((sq) => SquareSet.fromFile(squareFile(sq)).without(sq));
+  var RANK_RANGE = tabulate((sq) => SquareSet.fromRank(squareRank(sq)).without(sq));
+  var DIAG_RANGE = tabulate((sq) => {
+    const diag = new SquareSet(134480385, 2151686160);
+    const shift = 8 * (squareRank(sq) - squareFile(sq));
+    return (shift >= 0 ? diag.shl64(shift) : diag.shr64(-shift)).without(sq);
+  });
+  var ANTI_DIAG_RANGE = tabulate((sq) => {
+    const diag = new SquareSet(270549120, 16909320);
+    const shift = 8 * (squareRank(sq) + squareFile(sq) - 7);
+    return (shift >= 0 ? diag.shl64(shift) : diag.shr64(-shift)).without(sq);
+  });
+  var hyperbola = (bit, range, occupied) => {
+    let forward = occupied.intersect(range);
+    let reverse = forward.bswap64();
+    forward = forward.minus64(bit);
+    reverse = reverse.minus64(bit.bswap64());
+    return forward.xor(reverse.bswap64()).intersect(range);
+  };
+  var fileAttacks = (square, occupied) => hyperbola(SquareSet.fromSquare(square), FILE_RANGE[square], occupied);
+  var rankAttacks = (square, occupied) => {
+    const range = RANK_RANGE[square];
+    let forward = occupied.intersect(range);
+    let reverse = forward.rbit64();
+    forward = forward.minus64(SquareSet.fromSquare(square));
+    reverse = reverse.minus64(SquareSet.fromSquare(63 - square));
+    return forward.xor(reverse.rbit64()).intersect(range);
+  };
+  var bishopAttacks = (square, occupied) => {
+    const bit = SquareSet.fromSquare(square);
+    return hyperbola(bit, DIAG_RANGE[square], occupied).xor(hyperbola(bit, ANTI_DIAG_RANGE[square], occupied));
+  };
+  var rookAttacks = (square, occupied) => fileAttacks(square, occupied).xor(rankAttacks(square, occupied));
+  var queenAttacks = (square, occupied) => bishopAttacks(square, occupied).xor(rookAttacks(square, occupied));
+  var ray = (a, b) => {
+    const other = SquareSet.fromSquare(b);
+    if (RANK_RANGE[a].intersects(other))
+      return RANK_RANGE[a].with(a);
+    if (ANTI_DIAG_RANGE[a].intersects(other))
+      return ANTI_DIAG_RANGE[a].with(a);
+    if (DIAG_RANGE[a].intersects(other))
+      return DIAG_RANGE[a].with(a);
+    if (FILE_RANGE[a].intersects(other))
+      return FILE_RANGE[a].with(a);
+    return SquareSet.empty();
+  };
+  var between = (a, b) => ray(a, b).intersect(SquareSet.full().shl64(a).xor(SquareSet.full().shl64(b))).withoutFirst();
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/board.js
+  var Board = class _Board {
+    constructor() {
+    }
+    static default() {
+      const board = new _Board();
+      board.reset();
+      return board;
+    }
+    /**
+     * Resets all pieces to the default starting position for standard chess.
+     */
+    reset() {
+      this.occupied = new SquareSet(65535, 4294901760);
+      this.promoted = SquareSet.empty();
+      this.white = new SquareSet(65535, 0);
+      this.black = new SquareSet(0, 4294901760);
+      this.pawn = new SquareSet(65280, 16711680);
+      this.knight = new SquareSet(66, 1107296256);
+      this.bishop = new SquareSet(36, 603979776);
+      this.rook = new SquareSet(129, 2164260864);
+      this.queen = new SquareSet(8, 134217728);
+      this.king = new SquareSet(16, 268435456);
+    }
+    static empty() {
+      const board = new _Board();
+      board.clear();
+      return board;
+    }
+    clear() {
+      this.occupied = SquareSet.empty();
+      this.promoted = SquareSet.empty();
+      for (const color of COLORS)
+        this[color] = SquareSet.empty();
+      for (const role of ROLES)
+        this[role] = SquareSet.empty();
+    }
+    clone() {
+      const board = new _Board();
+      board.occupied = this.occupied;
+      board.promoted = this.promoted;
+      for (const color of COLORS)
+        board[color] = this[color];
+      for (const role of ROLES)
+        board[role] = this[role];
+      return board;
+    }
+    getColor(square) {
+      if (this.white.has(square))
+        return "white";
+      if (this.black.has(square))
+        return "black";
+      return;
+    }
+    getRole(square) {
+      for (const role of ROLES) {
+        if (this[role].has(square))
+          return role;
+      }
+      return;
+    }
+    get(square) {
+      const color = this.getColor(square);
+      if (!color)
+        return;
+      const role = this.getRole(square);
+      const promoted = this.promoted.has(square);
+      return { color, role, promoted };
+    }
+    /**
+     * Removes and returns the piece from the given `square`, if any.
+     */
+    take(square) {
+      const piece = this.get(square);
+      if (piece) {
+        this.occupied = this.occupied.without(square);
+        this[piece.color] = this[piece.color].without(square);
+        this[piece.role] = this[piece.role].without(square);
+        if (piece.promoted)
+          this.promoted = this.promoted.without(square);
+      }
+      return piece;
+    }
+    /**
+     * Put `piece` onto `square`, potentially replacing an existing piece.
+     * Returns the existing piece, if any.
+     */
+    set(square, piece) {
+      const old = this.take(square);
+      this.occupied = this.occupied.with(square);
+      this[piece.color] = this[piece.color].with(square);
+      this[piece.role] = this[piece.role].with(square);
+      if (piece.promoted)
+        this.promoted = this.promoted.with(square);
+      return old;
+    }
+    has(square) {
+      return this.occupied.has(square);
+    }
+    *[Symbol.iterator]() {
+      for (const square of this.occupied) {
+        yield [square, this.get(square)];
+      }
+    }
+    pieces(color, role) {
+      return this[color].intersect(this[role]);
+    }
+    rooksAndQueens() {
+      return this.rook.union(this.queen);
+    }
+    bishopsAndQueens() {
+      return this.bishop.union(this.queen);
+    }
+    steppers() {
+      return this.knight.union(this.pawn).union(this.king);
+    }
+    sliders() {
+      return this.bishop.union(this.rook).union(this.queen);
+    }
+    /**
+     * Finds the unique king of the given `color`, if any.
+     */
+    kingOf(color) {
+      return this.pieces(color, "king").singleSquare();
+    }
+  };
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/chess.js
+  var IllegalSetup;
+  (function(IllegalSetup2) {
+    IllegalSetup2["Empty"] = "ERR_EMPTY";
+    IllegalSetup2["OppositeCheck"] = "ERR_OPPOSITE_CHECK";
+    IllegalSetup2["PawnsOnBackrank"] = "ERR_PAWNS_ON_BACKRANK";
+    IllegalSetup2["Kings"] = "ERR_KINGS";
+    IllegalSetup2["Variant"] = "ERR_VARIANT";
+  })(IllegalSetup || (IllegalSetup = {}));
+  var PositionError = class extends Error {
+  };
+  var attacksTo = (square, attacker, board, occupied) => board[attacker].intersect(rookAttacks(square, occupied).intersect(board.rooksAndQueens()).union(bishopAttacks(square, occupied).intersect(board.bishopsAndQueens())).union(knightAttacks(square).intersect(board.knight)).union(kingAttacks(square).intersect(board.king)).union(pawnAttacks(opposite(attacker), square).intersect(board.pawn)));
+  var Castles = class _Castles {
+    constructor() {
+    }
+    static default() {
+      const castles = new _Castles();
+      castles.castlingRights = SquareSet.corners();
+      castles.rook = {
+        white: { a: 0, h: 7 },
+        black: { a: 56, h: 63 }
+      };
+      castles.path = {
+        white: { a: new SquareSet(14, 0), h: new SquareSet(96, 0) },
+        black: { a: new SquareSet(0, 234881024), h: new SquareSet(0, 1610612736) }
+      };
+      return castles;
+    }
+    static empty() {
+      const castles = new _Castles();
+      castles.castlingRights = SquareSet.empty();
+      castles.rook = {
+        white: { a: void 0, h: void 0 },
+        black: { a: void 0, h: void 0 }
+      };
+      castles.path = {
+        white: { a: SquareSet.empty(), h: SquareSet.empty() },
+        black: { a: SquareSet.empty(), h: SquareSet.empty() }
+      };
+      return castles;
+    }
+    clone() {
+      const castles = new _Castles();
+      castles.castlingRights = this.castlingRights;
+      castles.rook = {
+        white: { a: this.rook.white.a, h: this.rook.white.h },
+        black: { a: this.rook.black.a, h: this.rook.black.h }
+      };
+      castles.path = {
+        white: { a: this.path.white.a, h: this.path.white.h },
+        black: { a: this.path.black.a, h: this.path.black.h }
+      };
+      return castles;
+    }
+    add(color, side, king, rook) {
+      const kingTo = kingCastlesTo(color, side);
+      const rookTo = rookCastlesTo(color, side);
+      this.castlingRights = this.castlingRights.with(rook);
+      this.rook[color][side] = rook;
+      this.path[color][side] = between(rook, rookTo).with(rookTo).union(between(king, kingTo).with(kingTo)).without(king).without(rook);
+    }
+    static fromSetup(setup) {
+      const castles = _Castles.empty();
+      const rooks = setup.castlingRights.intersect(setup.board.rook);
+      for (const color of COLORS) {
+        const backrank = SquareSet.backrank(color);
+        const king = setup.board.kingOf(color);
+        if (!defined(king) || !backrank.has(king))
+          continue;
+        const side = rooks.intersect(setup.board[color]).intersect(backrank);
+        const aSide = side.first();
+        if (defined(aSide) && aSide < king)
+          castles.add(color, "a", king, aSide);
+        const hSide = side.last();
+        if (defined(hSide) && king < hSide)
+          castles.add(color, "h", king, hSide);
+      }
+      return castles;
+    }
+    discardRook(square) {
+      if (this.castlingRights.has(square)) {
+        this.castlingRights = this.castlingRights.without(square);
+        for (const color of COLORS) {
+          for (const side of CASTLING_SIDES) {
+            if (this.rook[color][side] === square)
+              this.rook[color][side] = void 0;
+          }
+        }
+      }
+    }
+    discardColor(color) {
+      this.castlingRights = this.castlingRights.diff(SquareSet.backrank(color));
+      this.rook[color].a = void 0;
+      this.rook[color].h = void 0;
+    }
+  };
+  var Position = class {
+    constructor(rules) {
+      this.rules = rules;
+    }
+    reset() {
+      this.board = Board.default();
+      this.pockets = void 0;
+      this.turn = "white";
+      this.castles = Castles.default();
+      this.epSquare = void 0;
+      this.remainingChecks = void 0;
+      this.halfmoves = 0;
+      this.fullmoves = 1;
+    }
+    setupUnchecked(setup) {
+      this.board = setup.board.clone();
+      this.board.promoted = SquareSet.empty();
+      this.pockets = void 0;
+      this.turn = setup.turn;
+      this.castles = Castles.fromSetup(setup);
+      this.epSquare = validEpSquare(this, setup.epSquare);
+      this.remainingChecks = void 0;
+      this.halfmoves = setup.halfmoves;
+      this.fullmoves = setup.fullmoves;
+    }
+    // When subclassing overwrite at least:
+    //
+    // - static default()
+    // - static fromSetup()
+    // - static clone()
+    //
+    // - dests()
+    // - isVariantEnd()
+    // - variantOutcome()
+    // - hasInsufficientMaterial()
+    // - isStandardMaterial()
+    kingAttackers(square, attacker, occupied) {
+      return attacksTo(square, attacker, this.board, occupied);
+    }
+    playCaptureAt(square, captured) {
+      this.halfmoves = 0;
+      if (captured.role === "rook")
+        this.castles.discardRook(square);
+      if (this.pockets)
+        this.pockets[opposite(captured.color)][captured.promoted ? "pawn" : captured.role]++;
+    }
+    ctx() {
+      const variantEnd = this.isVariantEnd();
+      const king = this.board.kingOf(this.turn);
+      if (!defined(king)) {
+        return { king, blockers: SquareSet.empty(), checkers: SquareSet.empty(), variantEnd, mustCapture: false };
+      }
+      const snipers = rookAttacks(king, SquareSet.empty()).intersect(this.board.rooksAndQueens()).union(bishopAttacks(king, SquareSet.empty()).intersect(this.board.bishopsAndQueens())).intersect(this.board[opposite(this.turn)]);
+      let blockers = SquareSet.empty();
+      for (const sniper of snipers) {
+        const b = between(king, sniper).intersect(this.board.occupied);
+        if (!b.moreThanOne())
+          blockers = blockers.union(b);
+      }
+      const checkers = this.kingAttackers(king, opposite(this.turn), this.board.occupied);
+      return {
+        king,
+        blockers,
+        checkers,
+        variantEnd,
+        mustCapture: false
+      };
+    }
+    clone() {
+      var _a, _b;
+      const pos = new this.constructor();
+      pos.board = this.board.clone();
+      pos.pockets = (_a = this.pockets) === null || _a === void 0 ? void 0 : _a.clone();
+      pos.turn = this.turn;
+      pos.castles = this.castles.clone();
+      pos.epSquare = this.epSquare;
+      pos.remainingChecks = (_b = this.remainingChecks) === null || _b === void 0 ? void 0 : _b.clone();
+      pos.halfmoves = this.halfmoves;
+      pos.fullmoves = this.fullmoves;
+      return pos;
+    }
+    validate() {
+      if (this.board.occupied.isEmpty())
+        return Result.err(new PositionError(IllegalSetup.Empty));
+      if (this.board.king.size() !== 2)
+        return Result.err(new PositionError(IllegalSetup.Kings));
+      if (!defined(this.board.kingOf(this.turn)))
+        return Result.err(new PositionError(IllegalSetup.Kings));
+      const otherKing = this.board.kingOf(opposite(this.turn));
+      if (!defined(otherKing))
+        return Result.err(new PositionError(IllegalSetup.Kings));
+      if (this.kingAttackers(otherKing, this.turn, this.board.occupied).nonEmpty()) {
+        return Result.err(new PositionError(IllegalSetup.OppositeCheck));
+      }
+      if (SquareSet.backranks().intersects(this.board.pawn)) {
+        return Result.err(new PositionError(IllegalSetup.PawnsOnBackrank));
+      }
+      return Result.ok(void 0);
+    }
+    dropDests(_ctx) {
+      return SquareSet.empty();
+    }
+    dests(square, ctx) {
+      ctx = ctx || this.ctx();
+      if (ctx.variantEnd)
+        return SquareSet.empty();
+      const piece = this.board.get(square);
+      if (!piece || piece.color !== this.turn)
+        return SquareSet.empty();
+      let pseudo, legal;
+      if (piece.role === "pawn") {
+        pseudo = pawnAttacks(this.turn, square).intersect(this.board[opposite(this.turn)]);
+        const delta = this.turn === "white" ? 8 : -8;
+        const step = square + delta;
+        if (0 <= step && step < 64 && !this.board.occupied.has(step)) {
+          pseudo = pseudo.with(step);
+          const canDoubleStep = this.turn === "white" ? square < 16 : square >= 64 - 16;
+          const doubleStep = step + delta;
+          if (canDoubleStep && !this.board.occupied.has(doubleStep)) {
+            pseudo = pseudo.with(doubleStep);
+          }
+        }
+        if (defined(this.epSquare) && canCaptureEp(this, square, ctx)) {
+          legal = SquareSet.fromSquare(this.epSquare);
+        }
+      } else if (piece.role === "bishop")
+        pseudo = bishopAttacks(square, this.board.occupied);
+      else if (piece.role === "knight")
+        pseudo = knightAttacks(square);
+      else if (piece.role === "rook")
+        pseudo = rookAttacks(square, this.board.occupied);
+      else if (piece.role === "queen")
+        pseudo = queenAttacks(square, this.board.occupied);
+      else
+        pseudo = kingAttacks(square);
+      pseudo = pseudo.diff(this.board[this.turn]);
+      if (defined(ctx.king)) {
+        if (piece.role === "king") {
+          const occ = this.board.occupied.without(square);
+          for (const to of pseudo) {
+            if (this.kingAttackers(to, opposite(this.turn), occ).nonEmpty())
+              pseudo = pseudo.without(to);
+          }
+          return pseudo.union(castlingDest(this, "a", ctx)).union(castlingDest(this, "h", ctx));
+        }
+        if (ctx.checkers.nonEmpty()) {
+          const checker = ctx.checkers.singleSquare();
+          if (!defined(checker))
+            return SquareSet.empty();
+          pseudo = pseudo.intersect(between(checker, ctx.king).with(checker));
+        }
+        if (ctx.blockers.has(square))
+          pseudo = pseudo.intersect(ray(square, ctx.king));
+      }
+      if (legal)
+        pseudo = pseudo.union(legal);
+      return pseudo;
+    }
+    isVariantEnd() {
+      return false;
+    }
+    variantOutcome(_ctx) {
+      return;
+    }
+    hasInsufficientMaterial(color) {
+      if (this.board[color].intersect(this.board.pawn.union(this.board.rooksAndQueens())).nonEmpty())
+        return false;
+      if (this.board[color].intersects(this.board.knight)) {
+        return this.board[color].size() <= 2 && this.board[opposite(color)].diff(this.board.king).diff(this.board.queen).isEmpty();
+      }
+      if (this.board[color].intersects(this.board.bishop)) {
+        const sameColor = !this.board.bishop.intersects(SquareSet.darkSquares()) || !this.board.bishop.intersects(SquareSet.lightSquares());
+        return sameColor && this.board.pawn.isEmpty() && this.board.knight.isEmpty();
+      }
+      return true;
+    }
+    // The following should be identical in all subclasses
+    toSetup() {
+      var _a, _b;
+      return {
+        board: this.board.clone(),
+        pockets: (_a = this.pockets) === null || _a === void 0 ? void 0 : _a.clone(),
+        turn: this.turn,
+        castlingRights: this.castles.castlingRights,
+        epSquare: legalEpSquare(this),
+        remainingChecks: (_b = this.remainingChecks) === null || _b === void 0 ? void 0 : _b.clone(),
+        halfmoves: Math.min(this.halfmoves, 150),
+        fullmoves: Math.min(Math.max(this.fullmoves, 1), 9999)
+      };
+    }
+    isInsufficientMaterial() {
+      return COLORS.every((color) => this.hasInsufficientMaterial(color));
+    }
+    hasDests(ctx) {
+      ctx = ctx || this.ctx();
+      for (const square of this.board[this.turn]) {
+        if (this.dests(square, ctx).nonEmpty())
+          return true;
+      }
+      return this.dropDests(ctx).nonEmpty();
+    }
+    isLegal(move, ctx) {
+      if (isDrop(move)) {
+        if (!this.pockets || this.pockets[this.turn][move.role] <= 0)
+          return false;
+        if (move.role === "pawn" && SquareSet.backranks().has(move.to))
+          return false;
+        return this.dropDests(ctx).has(move.to);
+      } else {
+        if (move.promotion === "pawn")
+          return false;
+        if (move.promotion === "king" && this.rules !== "antichess")
+          return false;
+        if (!!move.promotion !== (this.board.pawn.has(move.from) && SquareSet.backranks().has(move.to)))
+          return false;
+        const dests = this.dests(move.from, ctx);
+        return dests.has(move.to) || dests.has(normalizeMove(this, move).to);
+      }
+    }
+    isCheck() {
+      const king = this.board.kingOf(this.turn);
+      return defined(king) && this.kingAttackers(king, opposite(this.turn), this.board.occupied).nonEmpty();
+    }
+    isEnd(ctx) {
+      if (ctx ? ctx.variantEnd : this.isVariantEnd())
+        return true;
+      return this.isInsufficientMaterial() || !this.hasDests(ctx);
+    }
+    isCheckmate(ctx) {
+      ctx = ctx || this.ctx();
+      return !ctx.variantEnd && ctx.checkers.nonEmpty() && !this.hasDests(ctx);
+    }
+    isStalemate(ctx) {
+      ctx = ctx || this.ctx();
+      return !ctx.variantEnd && ctx.checkers.isEmpty() && !this.hasDests(ctx);
+    }
+    outcome(ctx) {
+      const variantOutcome = this.variantOutcome(ctx);
+      if (variantOutcome)
+        return variantOutcome;
+      ctx = ctx || this.ctx();
+      if (this.isCheckmate(ctx))
+        return { winner: opposite(this.turn) };
+      else if (this.isInsufficientMaterial() || this.isStalemate(ctx))
+        return { winner: void 0 };
+      else
+        return;
+    }
+    allDests(ctx) {
+      ctx = ctx || this.ctx();
+      const d = /* @__PURE__ */ new Map();
+      if (ctx.variantEnd)
+        return d;
+      for (const square of this.board[this.turn]) {
+        d.set(square, this.dests(square, ctx));
+      }
+      return d;
+    }
+    play(move) {
+      const turn = this.turn;
+      const epSquare = this.epSquare;
+      const castling = castlingSide(this, move);
+      this.epSquare = void 0;
+      this.halfmoves += 1;
+      if (turn === "black")
+        this.fullmoves += 1;
+      this.turn = opposite(turn);
+      if (isDrop(move)) {
+        this.board.set(move.to, { role: move.role, color: turn });
+        if (this.pockets)
+          this.pockets[turn][move.role]--;
+        if (move.role === "pawn")
+          this.halfmoves = 0;
+      } else {
+        const piece = this.board.take(move.from);
+        if (!piece)
+          return;
+        let epCapture;
+        if (piece.role === "pawn") {
+          this.halfmoves = 0;
+          if (move.to === epSquare) {
+            epCapture = this.board.take(move.to + (turn === "white" ? -8 : 8));
+          }
+          const delta = move.from - move.to;
+          if (Math.abs(delta) === 16 && 8 <= move.from && move.from <= 55) {
+            this.epSquare = move.from + move.to >> 1;
+          }
+          if (move.promotion) {
+            piece.role = move.promotion;
+            piece.promoted = !!this.pockets;
+          }
+        } else if (piece.role === "rook") {
+          this.castles.discardRook(move.from);
+        } else if (piece.role === "king") {
+          if (castling) {
+            const rookFrom = this.castles.rook[turn][castling];
+            if (defined(rookFrom)) {
+              const rook = this.board.take(rookFrom);
+              this.board.set(kingCastlesTo(turn, castling), piece);
+              if (rook)
+                this.board.set(rookCastlesTo(turn, castling), rook);
+            }
+          }
+          this.castles.discardColor(turn);
+        }
+        if (!castling) {
+          const capture = this.board.set(move.to, piece) || epCapture;
+          if (capture)
+            this.playCaptureAt(move.to, capture);
+        }
+      }
+      if (this.remainingChecks) {
+        if (this.isCheck())
+          this.remainingChecks[turn] = Math.max(this.remainingChecks[turn] - 1, 0);
+      }
+    }
+  };
+  var Chess = class extends Position {
+    constructor() {
+      super("chess");
+    }
+    static default() {
+      const pos = new this();
+      pos.reset();
+      return pos;
+    }
+    static fromSetup(setup) {
+      const pos = new this();
+      pos.setupUnchecked(setup);
+      return pos.validate().map((_) => pos);
+    }
+    clone() {
+      return super.clone();
+    }
+  };
+  var validEpSquare = (pos, square) => {
+    if (!defined(square))
+      return;
+    const epRank = pos.turn === "white" ? 5 : 2;
+    const forward = pos.turn === "white" ? 8 : -8;
+    if (squareRank(square) !== epRank)
+      return;
+    if (pos.board.occupied.has(square + forward))
+      return;
+    const pawn = square - forward;
+    if (!pos.board.pawn.has(pawn) || !pos.board[opposite(pos.turn)].has(pawn))
+      return;
+    return square;
+  };
+  var legalEpSquare = (pos) => {
+    if (!defined(pos.epSquare))
+      return;
+    const ctx = pos.ctx();
+    const ourPawns = pos.board.pieces(pos.turn, "pawn");
+    const candidates = ourPawns.intersect(pawnAttacks(opposite(pos.turn), pos.epSquare));
+    for (const candidate of candidates) {
+      if (pos.dests(candidate, ctx).has(pos.epSquare))
+        return pos.epSquare;
+    }
+    return;
+  };
+  var canCaptureEp = (pos, pawnFrom, ctx) => {
+    if (!defined(pos.epSquare))
+      return false;
+    if (!pawnAttacks(pos.turn, pawnFrom).has(pos.epSquare))
+      return false;
+    if (!defined(ctx.king))
+      return true;
+    const delta = pos.turn === "white" ? 8 : -8;
+    const captured = pos.epSquare - delta;
+    return pos.kingAttackers(ctx.king, opposite(pos.turn), pos.board.occupied.toggle(pawnFrom).toggle(captured).with(pos.epSquare)).without(captured).isEmpty();
+  };
+  var castlingDest = (pos, side, ctx) => {
+    if (!defined(ctx.king) || ctx.checkers.nonEmpty())
+      return SquareSet.empty();
+    const rook = pos.castles.rook[pos.turn][side];
+    if (!defined(rook))
+      return SquareSet.empty();
+    if (pos.castles.path[pos.turn][side].intersects(pos.board.occupied))
+      return SquareSet.empty();
+    const kingTo = kingCastlesTo(pos.turn, side);
+    const kingPath = between(ctx.king, kingTo);
+    const occ = pos.board.occupied.without(ctx.king);
+    for (const sq of kingPath) {
+      if (pos.kingAttackers(sq, opposite(pos.turn), occ).nonEmpty())
+        return SquareSet.empty();
+    }
+    const rookTo = rookCastlesTo(pos.turn, side);
+    const after = pos.board.occupied.toggle(ctx.king).toggle(rook).toggle(rookTo);
+    if (pos.kingAttackers(kingTo, opposite(pos.turn), after).nonEmpty())
+      return SquareSet.empty();
+    return SquareSet.fromSquare(rook);
+  };
+  var castlingSide = (pos, move) => {
+    if (isDrop(move))
+      return;
+    const delta = move.to - move.from;
+    if (Math.abs(delta) !== 2 && !pos.board[pos.turn].has(move.to))
+      return;
+    if (!pos.board.king.has(move.from))
+      return;
+    return delta > 0 ? "h" : "a";
+  };
+  var normalizeMove = (pos, move) => {
+    const side = castlingSide(pos, move);
+    if (!side)
+      return move;
+    const rookFrom = pos.castles.rook[pos.turn][side];
+    return {
+      from: move.from,
+      to: defined(rookFrom) ? rookFrom : move.to
+    };
+  };
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/setup.js
+  var MaterialSide = class _MaterialSide {
+    constructor() {
+    }
+    static empty() {
+const m = new _MaterialSide();
+      for (const role of ROLES)
+        m[role] = 0;
+      return m;
+    }
+    static fromBoard(board, color) {
+      const m = new _MaterialSide();
+      for (const role of ROLES)
+        m[role] = board.pieces(color, role).size();
+      return m;
+    }
+    clone() {
+      const m = new _MaterialSide();
+      for (const role of ROLES)
+        m[role] = this[role];
+      return m;
+    }
+    equals(other) {
+      return ROLES.every((role) => this[role] === other[role]);
+    }
+    add(other) {
+      const m = new _MaterialSide();
+      for (const role of ROLES)
+        m[role] = this[role] + other[role];
+      return m;
+    }
+    subtract(other) {
+      const m = new _MaterialSide();
+      for (const role of ROLES)
+        m[role] = this[role] - other[role];
+      return m;
+    }
+    nonEmpty() {
+      return ROLES.some((role) => this[role] > 0);
+    }
+    isEmpty() {
+      return !this.nonEmpty();
+    }
+    hasPawns() {
+      return this.pawn > 0;
+    }
+    hasNonPawns() {
+      return this.knight > 0 || this.bishop > 0 || this.rook > 0 || this.queen > 0 || this.king > 0;
+    }
+    size() {
+      return this.pawn + this.knight + this.bishop + this.rook + this.queen + this.king;
+    }
+  };
+  var Material = class _Material {
+    constructor(white, black) {
+      this.white = white;
+      this.black = black;
+    }
+    static empty() {
+      return new _Material(MaterialSide.empty(), MaterialSide.empty());
+    }
+    static fromBoard(board) {
+      return new _Material(MaterialSide.fromBoard(board, "white"), MaterialSide.fromBoard(board, "black"));
+    }
+    clone() {
+      return new _Material(this.white.clone(), this.black.clone());
+    }
+    equals(other) {
+      return this.white.equals(other.white) && this.black.equals(other.black);
+    }
+    add(other) {
+      return new _Material(this.white.add(other.white), this.black.add(other.black));
+    }
+    subtract(other) {
+      return new _Material(this.white.subtract(other.white), this.black.subtract(other.black));
+    }
+    count(role) {
+      return this.white[role] + this.black[role];
+    }
+    size() {
+      return this.white.size() + this.black.size();
+    }
+    isEmpty() {
+      return this.white.isEmpty() && this.black.isEmpty();
+    }
+    nonEmpty() {
+      return !this.isEmpty();
+    }
+    hasPawns() {
+      return this.white.hasPawns() || this.black.hasPawns();
+    }
+    hasNonPawns() {
+      return this.white.hasNonPawns() || this.black.hasNonPawns();
+    }
+  };
+  var RemainingChecks = class _RemainingChecks {
+    constructor(white, black) {
+      this.white = white;
+      this.black = black;
+    }
+    static default() {
+      return new _RemainingChecks(3, 3);
+    }
+    clone() {
+      return new _RemainingChecks(this.white, this.black);
+    }
+    equals(other) {
+      return this.white === other.white && this.black === other.black;
+    }
+  };
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/fen.js
+  var INITIAL_BOARD_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
+  var INITIAL_EPD = INITIAL_BOARD_FEN + " w KQkq -";
+  var INITIAL_FEN = INITIAL_EPD + " 0 1";
+  var EMPTY_BOARD_FEN = "8/8/8/8/8/8/8/8";
+  var EMPTY_EPD = EMPTY_BOARD_FEN + " w - -";
+  var EMPTY_FEN = EMPTY_EPD + " 0 1";
+  var InvalidFen;
+  (function(InvalidFen2) {
+    InvalidFen2["Fen"] = "ERR_FEN";
+    InvalidFen2["Board"] = "ERR_BOARD";
+    InvalidFen2["Pockets"] = "ERR_POCKETS";
+    InvalidFen2["Turn"] = "ERR_TURN";
+    InvalidFen2["Castling"] = "ERR_CASTLING";
+    InvalidFen2["EpSquare"] = "ERR_EP_SQUARE";
+    InvalidFen2["RemainingChecks"] = "ERR_REMAINING_CHECKS";
+    InvalidFen2["Halfmoves"] = "ERR_HALFMOVES";
+    InvalidFen2["Fullmoves"] = "ERR_FULLMOVES";
+  })(InvalidFen || (InvalidFen = {}));
+  var FenError = class extends Error {
+  };
+  var nthIndexOf = (haystack, needle, n) => {
+    let index = haystack.indexOf(needle);
+    while (n-- > 0) {
+      if (index === -1)
+        break;
+      index = haystack.indexOf(needle, index + needle.length);
+    }
+    return index;
+  };
+  var parseSmallUint = (str) => /^\d{1,4}$/.test(str) ? parseInt(str, 10) : void 0;
+  var charToPiece = (ch) => {
+    const role = charToRole(ch);
+    return role && { role, color: ch.toLowerCase() === ch ? "black" : "white" };
+  };
+  var parseBoardFen = (boardPart) => {
+    const board = Board.empty();
+    let rank = 7;
+    let file = 0;
+    for (let i = 0; i < boardPart.length; i++) {
+      const c = boardPart[i];
+      if (c === "/" && file === 8) {
+        file = 0;
+        rank--;
+      } else {
+        const step = parseInt(c, 10);
+        if (step > 0)
+          file += step;
+        else {
+          if (file >= 8 || rank < 0)
+            return Result.err(new FenError(InvalidFen.Board));
+          const square = file + rank * 8;
+          const piece = charToPiece(c);
+          if (!piece)
+            return Result.err(new FenError(InvalidFen.Board));
+          if (boardPart[i + 1] === "~") {
+            piece.promoted = true;
+            i++;
+          }
+          board.set(square, piece);
+          file++;
+        }
+      }
+    }
+    if (rank !== 0 || file !== 8)
+      return Result.err(new FenError(InvalidFen.Board));
+    return Result.ok(board);
+  };
+  var parsePockets = (pocketPart) => {
+    if (pocketPart.length > 64)
+      return Result.err(new FenError(InvalidFen.Pockets));
+    const pockets = Material.empty();
+    for (const c of pocketPart) {
+      const piece = charToPiece(c);
+      if (!piece)
+        return Result.err(new FenError(InvalidFen.Pockets));
+      pockets[piece.color][piece.role]++;
+    }
+    return Result.ok(pockets);
+  };
+  var parseCastlingFen = (board, castlingPart) => {
+    let castlingRights = SquareSet.empty();
+    if (castlingPart === "-")
+      return Result.ok(castlingRights);
+    for (const c of castlingPart) {
+      const lower = c.toLowerCase();
+      const color = c === lower ? "black" : "white";
+      const rank = color === "white" ? 0 : 7;
+      if ("a" <= lower && lower <= "h") {
+        castlingRights = castlingRights.with(squareFromCoords(lower.charCodeAt(0) - "a".charCodeAt(0), rank));
+      } else if (lower === "k" || lower === "q") {
+        const rooksAndKings = board[color].intersect(SquareSet.backrank(color)).intersect(board.rook.union(board.king));
+        const candidate = lower === "k" ? rooksAndKings.last() : rooksAndKings.first();
+        castlingRights = castlingRights.with(defined(candidate) && board.rook.has(candidate) ? candidate : squareFromCoords(lower === "k" ? 7 : 0, rank));
+      } else
+        return Result.err(new FenError(InvalidFen.Castling));
+    }
+    if (COLORS.some((color) => SquareSet.backrank(color).intersect(castlingRights).size() > 2)) {
+      return Result.err(new FenError(InvalidFen.Castling));
+    }
+    return Result.ok(castlingRights);
+  };
+  var parseRemainingChecks = (part) => {
+    const parts = part.split("+");
+    if (parts.length === 3 && parts[0] === "") {
+      const white = parseSmallUint(parts[1]);
+      const black = parseSmallUint(parts[2]);
+      if (!defined(white) || white > 3 || !defined(black) || black > 3) {
+        return Result.err(new FenError(InvalidFen.RemainingChecks));
+      }
+      return Result.ok(new RemainingChecks(3 - white, 3 - black));
+    } else if (parts.length === 2) {
+      const white = parseSmallUint(parts[0]);
+      const black = parseSmallUint(parts[1]);
+      if (!defined(white) || white > 3 || !defined(black) || black > 3) {
+        return Result.err(new FenError(InvalidFen.RemainingChecks));
+      }
+      return Result.ok(new RemainingChecks(white, black));
+    } else
+      return Result.err(new FenError(InvalidFen.RemainingChecks));
+  };
+  var parseFen = (fen) => {
+    const parts = fen.split(/[\s_]+/);
+    const boardPart = parts.shift();
+    let board;
+    let pockets = Result.ok(void 0);
+    if (boardPart.endsWith("]")) {
+      const pocketStart = boardPart.indexOf("[");
+      if (pocketStart === -1)
+        return Result.err(new FenError(InvalidFen.Fen));
+      board = parseBoardFen(boardPart.slice(0, pocketStart));
+      pockets = parsePockets(boardPart.slice(pocketStart + 1, -1));
+    } else {
+      const pocketStart = nthIndexOf(boardPart, "/", 7);
+      if (pocketStart === -1)
+        board = parseBoardFen(boardPart);
+      else {
+        board = parseBoardFen(boardPart.slice(0, pocketStart));
+        pockets = parsePockets(boardPart.slice(pocketStart + 1));
+      }
+    }
+    let turn;
+    const turnPart = parts.shift();
+    if (!defined(turnPart) || turnPart === "w")
+      turn = "white";
+    else if (turnPart === "b")
+      turn = "black";
+    else
+      return Result.err(new FenError(InvalidFen.Turn));
+    return board.chain((board2) => {
+      const castlingPart = parts.shift();
+      const castlingRights = defined(castlingPart) ? parseCastlingFen(board2, castlingPart) : Result.ok(SquareSet.empty());
+      const epPart = parts.shift();
+      let epSquare;
+      if (defined(epPart) && epPart !== "-") {
+        epSquare = parseSquare(epPart);
+        if (!defined(epSquare))
+          return Result.err(new FenError(InvalidFen.EpSquare));
+      }
+      let halfmovePart = parts.shift();
+      let earlyRemainingChecks;
+      if (defined(halfmovePart) && halfmovePart.includes("+")) {
+        earlyRemainingChecks = parseRemainingChecks(halfmovePart);
+        halfmovePart = parts.shift();
+      }
+      const halfmoves = defined(halfmovePart) ? parseSmallUint(halfmovePart) : 0;
+      if (!defined(halfmoves))
+        return Result.err(new FenError(InvalidFen.Halfmoves));
+      const fullmovesPart = parts.shift();
+      const fullmoves = defined(fullmovesPart) ? parseSmallUint(fullmovesPart) : 1;
+      if (!defined(fullmoves))
+        return Result.err(new FenError(InvalidFen.Fullmoves));
+      const remainingChecksPart = parts.shift();
+      let remainingChecks = Result.ok(void 0);
+      if (defined(remainingChecksPart)) {
+        if (defined(earlyRemainingChecks))
+          return Result.err(new FenError(InvalidFen.RemainingChecks));
+        remainingChecks = parseRemainingChecks(remainingChecksPart);
+      } else if (defined(earlyRemainingChecks)) {
+        remainingChecks = earlyRemainingChecks;
+      }
+      if (parts.length > 0)
+        return Result.err(new FenError(InvalidFen.Fen));
+      return pockets.chain((pockets2) => castlingRights.chain((castlingRights2) => remainingChecks.map((remainingChecks2) => {
+        return {
+          board: board2,
+          pockets: pockets2,
+          turn,
+          castlingRights: castlingRights2,
+          remainingChecks: remainingChecks2,
+          epSquare,
+          halfmoves,
+          fullmoves: Math.max(1, fullmoves)
+        };
+      })));
+    });
+  };
+  var makePiece = (piece) => {
+    let r = roleToChar(piece.role);
+    if (piece.color === "white")
+      r = r.toUpperCase();
+    if (piece.promoted)
+      r += "~";
+    return r;
+  };
+  var makeBoardFen = (board) => {
+    let fen = "";
+    let empty = 0;
+    for (let rank = 7; rank >= 0; rank--) {
+      for (let file = 0; file < 8; file++) {
+        const square = file + rank * 8;
+        const piece = board.get(square);
+        if (!piece)
+          empty++;
+        else {
+          if (empty > 0) {
+            fen += empty;
+            empty = 0;
+          }
+          fen += makePiece(piece);
+        }
+        if (file === 7) {
+          if (empty > 0) {
+            fen += empty;
+            empty = 0;
+          }
+          if (rank !== 0)
+            fen += "/";
+        }
+      }
+    }
+    return fen;
+  };
+  var makePocket = (material) => ROLES.map((role) => roleToChar(role).repeat(material[role])).join("");
+  var makePockets = (pocket) => makePocket(pocket.white).toUpperCase() + makePocket(pocket.black);
+  var makeCastlingFen = (board, castlingRights) => {
+    let fen = "";
+    for (const color of COLORS) {
+      const backrank = SquareSet.backrank(color);
+      let king = board.kingOf(color);
+      if (defined(king) && !backrank.has(king))
+        king = void 0;
+      const candidates = board.pieces(color, "rook").intersect(backrank);
+      for (const rook of castlingRights.intersect(backrank).reversed()) {
+        if (rook === candidates.first() && defined(king) && rook < king) {
+          fen += color === "white" ? "Q" : "q";
+        } else if (rook === candidates.last() && defined(king) && king < rook) {
+          fen += color === "white" ? "K" : "k";
+        } else {
+          const file = FILE_NAMES[squareFile(rook)];
+          fen += color === "white" ? file.toUpperCase() : file;
+        }
+      }
+    }
+    return fen || "-";
+  };
+  var makeRemainingChecks = (checks) => `${checks.white}+${checks.black}`;
+  var makeFen = (setup, opts) => [
+    makeBoardFen(setup.board) + (setup.pockets ? `[${makePockets(setup.pockets)}]` : ""),
+    setup.turn[0],
+    makeCastlingFen(setup.board, setup.castlingRights),
+    defined(setup.epSquare) ? makeSquare(setup.epSquare) : "-",
+    ...setup.remainingChecks ? [makeRemainingChecks(setup.remainingChecks)] : [],
+    ...(opts === null || opts === void 0 ? void 0 : opts.epd) ? [] : [Math.max(0, Math.min(setup.halfmoves, 9999)), Math.max(1, Math.min(setup.fullmoves, 9999))]
+  ].join(" ");
+
+  // ../../../tmp/chess960-build/node_modules/chessops/dist/esm/san.js
+  var makeSanWithoutSuffix = (pos, move) => {
+    let san = "";
+    if (isDrop(move)) {
+      if (move.role !== "pawn")
+        san = roleToChar(move.role).toUpperCase();
+      san += "@" + makeSquare(move.to);
+    } else {
+      const role = pos.board.getRole(move.from);
+      if (!role)
+        return "--";
+      if (role === "king" && (pos.board[pos.turn].has(move.to) || Math.abs(move.to - move.from) === 2)) {
+        san = move.to > move.from ? "O-O" : "O-O-O";
+      } else {
+        const capture = pos.board.occupied.has(move.to) || role === "pawn" && squareFile(move.from) !== squareFile(move.to);
+        if (role !== "pawn") {
+          san = roleToChar(role).toUpperCase();
+          let others;
+          if (role === "king")
+            others = kingAttacks(move.to).intersect(pos.board.king);
+          else if (role === "queen")
+            others = queenAttacks(move.to, pos.board.occupied).intersect(pos.board.queen);
+          else if (role === "rook")
+            others = rookAttacks(move.to, pos.board.occupied).intersect(pos.board.rook);
+          else if (role === "bishop")
+            others = bishopAttacks(move.to, pos.board.occupied).intersect(pos.board.bishop);
+          else
+            others = knightAttacks(move.to).intersect(pos.board.knight);
+          others = others.intersect(pos.board[pos.turn]).without(move.from);
+          if (others.nonEmpty()) {
+            const ctx = pos.ctx();
+            for (const from of others) {
+              if (!pos.dests(from, ctx).has(move.to))
+                others = others.without(from);
+            }
+            if (others.nonEmpty()) {
+              let row = false;
+              let column = others.intersects(SquareSet.fromRank(squareRank(move.from)));
+              if (others.intersects(SquareSet.fromFile(squareFile(move.from))))
+                row = true;
+              else
+                column = true;
+              if (column)
+                san += FILE_NAMES[squareFile(move.from)];
+              if (row)
+                san += RANK_NAMES[squareRank(move.from)];
+            }
+          }
+        } else if (capture)
+          san = FILE_NAMES[squareFile(move.from)];
+        if (capture)
+          san += "x";
+        san += makeSquare(move.to);
+        if (move.promotion)
+          san += "=" + roleToChar(move.promotion).toUpperCase();
+      }
+    }
+    return san;
+  };
+  var makeSanAndPlay = (pos, move) => {
+    var _a;
+    const san = makeSanWithoutSuffix(pos, move);
+    pos.play(move);
+    if ((_a = pos.outcome()) === null || _a === void 0 ? void 0 : _a.winner)
+      return san + "#";
+    if (pos.isCheck())
+      return san + "+";
+    return san;
+  };
+  var makeSan = (pos, move) => makeSanAndPlay(pos.clone(), move);
+
+  // ../../../tmp/chess960-build/adapter.js
+  var Chess960 = class {
+    constructor(fen) {
+      this.pos = Chess.fromSetup(parseFen(fen).unwrap()).unwrap();
+      this.initialFen = this.fen();
+      this.stack = [];
+    }
+    fen() {
+      return makeFen(this.pos.toSetup());
+    }
+    turn() {
+      return this.pos.turn[0];
+    }
+    get(square) {
+      const p = this.pos.board.get(parseSquare(square));
+      return p ? { type: roleToChar(p.role), color: p.color[0] } : void 0;
+    }
+    moves(options = {}) {
+      const moves = [], ctx = this.pos.ctx();
+      for (const [from, dests] of this.pos.allDests(ctx)) for (const to of dests) {
+        const piece = this.pos.board.get(from);
+        const promotions = piece.role === "pawn" && (to < 8 || to >= 56) ? ["queen", "rook", "bishop", "knight"] : [void 0];
+        for (const promotion of promotions) {
+          const move = { from, to, ...promotion ? { promotion } : {} };
+          const side = castlingSide(this.pos, move);
+          const victim = side ? void 0 : this.pos.board.get(to);
+          const ep = piece.role === "pawn" && to === this.pos.epSquare && !victim;
+          let flags = side ? side === "h" ? "k" : "q" : ep ? "e" : victim ? "c" : piece.role === "pawn" && Math.abs(to - from) === 16 ? "b" : "n";
+          if (promotion) flags = (flags === "n" ? "" : flags) + "p";
+          moves.push({
+            color: this.turn(),
+            from: makeSquare(from),
+            to: makeSquare(to),
+            piece: roleToChar(piece.role),
+            flags,
+            ...victim || ep ? { captured: ep ? "p" : roleToChar(victim.role) } : {},
+            ...promotion ? { promotion: roleToChar(promotion) } : {},
+            ...side ? { castleKingTo: (side === "h" ? "g" : "c") + (this.turn() === "w" ? "1" : "8") } : {},
+            san: makeSan(this.pos, move)
+          });
+        }
+      }
+      return options.verbose ? moves : moves.map((m) => m.san);
+    }
+    move(input) {
+      const legal = this.moves({ verbose: true }).find((m) => typeof input === "string" ? m.san === input : m.from === input.from && m.to === input.to && (m.promotion || "") === (input.promotion || ""));
+      if (!legal) throw new Error("Illegal Chess960 move.");
+      const before = this.pos.clone(), beforeFen = this.fen();
+      const roles = { q: "queen", r: "rook", b: "bishop", n: "knight" };
+      this.pos.play({ from: parseSquare(legal.from), to: parseSquare(legal.to), ...legal.promotion ? { promotion: roles[legal.promotion] } : {} });
+      const record = { ...legal, before: beforeFen, after: this.fen() };
+      this.stack.push({ before, record });
+      return record;
+    }
+    history(options = {}) {
+      return this.stack.map((x) => options.verbose ? { ...x.record } : x.record.san);
+    }
+    undo() {
+      const entry = this.stack.pop();
+      if (!entry) return null;
+      this.pos = entry.before;
+      return { ...entry.record };
+    }
+    isCheck() {
+      return this.pos.isCheck();
+    }
+    isCheckmate() {
+      return this.pos.isCheckmate();
+    }
+    isStalemate() {
+      return this.pos.isStalemate();
+    }
+    isInsufficientMaterial() {
+      return this.pos.isInsufficientMaterial();
+    }
+    isThreefoldRepetition() {
+      const key = (fen) => fen.split(" ").slice(0, 4).join(" "), now = key(this.fen());
+      return [this.initialFen, ...this.stack.map((x) => x.record.after)].filter((fen) => key(fen) === now).length >= 3;
+    }
+    isGameOver() {
+      return this.pos.isEnd() || this.pos.halfmoves >= 100 || this.isThreefoldRepetition();
+    }
+  };
+  function chess960StartFen(id) {
+    if (!Number.isInteger(id) || id < 0 || id >= 960) throw new Error("Invalid Chess960 position number.");
+    let n = id;
+    const row = Array(8).fill("");
+    row[n % 4 * 2 + 1] = "B";
+    n = Math.floor(n / 4);
+    row[n % 4 * 2] = "B";
+    n = Math.floor(n / 4);
+    const empty = () => row.map((piece, i) => piece ? -1 : i).filter((i) => i >= 0);
+    row[empty()[n % 6]] = "Q";
+    n = Math.floor(n / 6);
+    const pairs = [];
+    for (let a = 0; a < 5; a++) for (let b = a + 1; b < 5; b++) pairs.push([a, b]);
+    const free = empty();
+    for (const index of pairs[n]) row[free[index]] = "N";
+    const rest = empty();
+    row[rest[0]] = "R";
+    row[rest[1]] = "K";
+    row[rest[2]] = "R";
+    const back = row.join("");
+    return back.toLowerCase() + "/pppppppp/8/8/8/8/PPPPPPPP/" + back + " w KQkq - 0 1";
+  }
+  return __toCommonJS(adapter_exports);
+})();
+
+
+const PIECE_ARTWORK = Object.freeze({
+  "p": "<g class=\"piece-body\"><path d=\"M26 31h12c0 10 3 15 8 19H18c5-4 8-9 8-19Z\"/><path d=\"M25 25h14l3 7H22Z\"/><circle cx=\"32\" cy=\"17\" r=\"8\"/><path d=\"M18 49h28l5 8H13Z\"/></g><path class=\"piece-detail\" d=\"M19 53h26\"/>",
+  "r": "<g class=\"piece-body\"><path d=\"M20 27h24v20l6 5H14l6-5Z\"/><path d=\"M12 9h9v8h7V9h8v8h7V9h9v15l-6 6H18l-6-6Z\"/><path d=\"M15 50h34l5 7H10Z\"/></g><path class=\"piece-detail\" d=\"M19 25h26M22 45h20M17 53h30\"/>",
+  "n": "<g class=\"piece-body\"><path d=\"M17 51c0-7 4-12 11-19l-4-2-7 5-9-6 6-10 10-8 1-7 8 6c14 2 20 15 18 28l-2 13Z\"/><path d=\"M17 50h31l6 7H11Z\"/></g><g class=\"piece-detail\"><path d=\"m22 18 5-3M27 23l-9 5M35 15c9 6 11 17 6 27M32 34c-5 6-7 11-7 16M17 53h31\"/></g><circle cx=\"25.5\" cy=\"21.5\" r=\"1.6\" class=\"piece-eye\"/>",
+  "b": "<g class=\"piece-body\"><path d=\"M28 29h8c0 9 4 16 10 21H18c6-5 10-12 10-21Z\"/><path d=\"M32 9c-4 5-13 10-13 17 0 6 6 10 13 10s13-4 13-10c0-7-9-12-13-17Z\"/><circle cx=\"32\" cy=\"8\" r=\"3\"/><path d=\"M22 37h20l2 5H20Z\"/><path d=\"M18 49h28l6 8H12Z\"/></g><g class=\"piece-detail\"><path d=\"m35 17-7 12M20 53h24\"/></g>",
+  "q": "<g class=\"piece-body\"><path d=\"M13 17 20 28 21 11 28 25 32 7 36 25 43 11 44 28 51 17 44 42H20Z\"/><circle cx=\"12\" cy=\"15\" r=\"3.5\"/><circle cx=\"21\" cy=\"10\" r=\"3.5\"/><circle cx=\"32\" cy=\"7\" r=\"3.5\"/><circle cx=\"43\" cy=\"10\" r=\"3.5\"/><circle cx=\"52\" cy=\"15\" r=\"3.5\"/><path d=\"M21 40h22l2 9H19Z\"/><path d=\"M17 48h30l7 9H10Z\"/></g><g class=\"piece-detail\"><path d=\"M22 36h20M23 44h18M17 53h30\"/></g>",
+  "k": "<g class=\"piece-body\"><path d=\"M29 4h6v6h6v6h-6v8h-6v-8h-6v-6h6Z\"/><path d=\"M21 38c-3-6-10-9-10-17 0-8 11-10 17-1l4 7 4-7c6-9 17-7 17 1 0 8-7 11-10 17Z\"/><path d=\"M22 35h20l3 15H19Z\"/><path d=\"M17 48h30l7 9H10Z\"/></g><g class=\"piece-detail\"><path d=\"M32 26v9M23 40h18M17 53h30\"/></g>"
+});
+/* Compact mate puzzles. The only analysis/opponent engine is Stockfish 19 Lite.
+   All puzzle outcomes are decided by actual legal checkmate, not a stored line.
+   SPDX-License-Identifier: GPL-3.0-or-later */
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const Rules = Chess960Rules.Chess960;
+const NAMES = {p:'pawn',n:'knight',b:'bishop',r:'rook',q:'queen',k:'king'};
+const ABORT = () => new DOMException('Search cancelled','AbortError');
+const ENGINE_URL = new URL('engine/stockfish-19-lite-single.js', location.href);
+const THINK_MS = [0,600,900,1200,1600,2000,2400];
+class LiteEngine {
+  constructor() {
+    this.active=null; this.pending=null; this.phase='boot'; this.worker=null;
+    this.ready=new Promise((resolve,reject)=>{this.resolveReady=resolve;this.rejectReady=reject;});
+    // A handler is attached immediately, including when puzzle JSON loads slowly.
+    this.ready.catch(()=>{});
+    this.bootTimer=setTimeout(()=>this.fail(new Error('Stockfish Lite did not start.')),45000);
+    try {
+      this.worker=new Worker(ENGINE_URL);
+      this.worker.onmessage=e=>String(e.data).split(/\r?\n/).forEach(line=>this.line(line.trim()));
+      this.worker.onerror=()=>this.fail(new Error('Stockfish Lite could not load. Keep the matching JS and WASM in engine/.'));
+      this.worker.onmessageerror=()=>this.fail(new Error('Stockfish Lite returned unreadable data.'));
+      this.send('uci');
+    } catch(e) { this.fail(e); }
+  }
+  send(s) { this.worker?.postMessage(s); }
+  line(s) {
+    if(this.phase==='dead')return;
+    if(s.includes('CRITICAL ERROR')){this.fail(new Error('Stockfish rejected the puzzle position.'));return;}
+    if(s==='uciok'&&this.phase==='boot') {
+      this.phase='config';
+      for(const option of ['Hash value 32','MultiPV value 1','Skill Level value 20','UCI_LimitStrength value false','UCI_Chess960 value true','Ponder value false'])this.send('setoption name '+option);
+      this.send('isready');
+    } else if(s==='readyok'&&this.phase==='config') {
+      clearTimeout(this.bootTimer);this.phase='idle';this.resolveReady();this.pump();
+    } else if(s==='readyok'&&this.phase==='preparing') {
+      clearTimeout(this.prepareTimer);
+      if(this.active.cancelled){this.active=null;this.phase='idle';this.pump();}
+      else this.startSearch();
+    } else if(s.startsWith('bestmove ')&&this.active&&this.phase==='search') {
+      const job=this.active; this.active=null; clearTimeout(this.searchTimer);clearTimeout(this.stopTimer);
+      this.phase='idle';
+      if(!job.cancelled) {
+        const move=s.split(/\s+/)[1];
+        if(/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(move))job.resolve(move);
+        else job.reject(new Error('Stockfish did not return a legal defensive move.'));
+      }
+      this.pump();
+    }
+  }
+  async search(fen,moves,level) {
+    await this.ready;
+    if(this.phase==='dead')throw new Error('Stockfish Lite is unavailable.');
+    return new Promise((resolve,reject)=>{
+      if(this.pending)this.pending.reject(ABORT());
+      this.pending={fen,moves:[...moves],level,resolve,reject,cancelled:false};
+      if(this.active)this.stopActive();else this.pump();
+    });
+  }
+  pump() {
+    if(this.phase!=='idle'||!this.pending)return;
+    const job=this.pending;this.pending=null;this.active=job;this.phase='preparing';
+    this.send('ucinewgame');this.send('isready');
+    this.prepareTimer=setTimeout(()=>this.fail(new Error('Stockfish Lite did not prepare the position.')),12000);
+  }
+  startSearch() {
+    const job=this.active;this.phase='search';
+    this.send('position fen '+job.fen+(job.moves.length?' moves '+job.moves.join(' '):''));
+    this.send('go depth 28 movetime '+THINK_MS[job.level]);
+    this.searchTimer=setTimeout(()=>{
+      this.send('stop');
+      this.stopTimer=setTimeout(()=>this.fail(new Error('Stockfish Lite stopped responding.')),2500);
+    },THINK_MS[job.level]+10000);
+  }
+  stopActive() {
+    if(!this.active||this.active.cancelled)return;
+    this.active.cancelled=true;this.active.reject(ABORT());
+    if(this.phase==='preparing')return;
+    this.send('stop');
+    // Do not reuse the worker until the old search's bestmove has been drained.
+    clearTimeout(this.searchTimer);
+    this.stopTimer=setTimeout(()=>this.fail(new Error('Stockfish Lite could not stop the previous search.')),5000);
+  }
+  cancel() { if(this.pending){this.pending.reject(ABORT());this.pending=null;}this.stopActive(); }
+  fail(error) {
+    if(this.phase==='dead')return;
+    clearTimeout(this.bootTimer);clearTimeout(this.searchTimer);clearTimeout(this.stopTimer);clearTimeout(this.prepareTimer);
+    this.phase='dead';this.rejectReady(error);
+    this.pending?.reject(error);if(!this.active?.cancelled)this.active?.reject(error);
+    this.pending=null;this.active=null;this.worker?.terminate();
+  }
+  destroy() { this.fail(ABORT()); }
+}
+let engine=new LiteEngine(),game=null,puzzle=null,pack=[],index=0,selected=null;
+let phase='loading',version=0,resetTimer=null,feedbackTimer=null,promotionOptions=null;
+let elapsed=0,startedAt=null,attackingMoves=0,loadLevel=1;
+const packs=new Map();
+const uci=m=>m.from+m.to+(m.promotion||'');
+const colour=c=>c==='w'?'White':'Black';
+function timeNow(){return elapsed+(startedAt===null?0:performance.now()-startedAt);}
+function tick(){const t=Math.floor(timeNow()/1000);$('timer').textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0');}
+function startClock(){if(startedAt===null)startedAt=performance.now();tick();}
+function stopClock(){if(startedAt!==null){elapsed+=performance.now()-startedAt;startedAt=null;}tick();}
+function newClock(){elapsed=0;startedAt=null;tick();}
+function setMessage(text,kind='neutral'){
+  $('feedback').textContent=text;$('feedback').className='feedback '+kind;$('feedback').hidden=!text;
+}
+function clearTransient(){clearTimeout(resetTimer);clearTimeout(feedbackTimer);resetTimer=null;feedbackTimer=null;closePromotion();setMessage('');}
+function invalidate(){version++;engine.cancel();selected=null;clearTransient();return version;}
+function setPhase(value){phase=value;document.body.dataset.phase=value;$('board').setAttribute('aria-busy',String(value==='defending'||value==='loading'));renderControls();}
+function renderControls(){
+  $('undo').disabled=!game||game.history().length===0||phase==='loading';
+  $('next').disabled=!puzzle||phase==='loading';
+  $('retry').hidden=phase!=='error';
+}
+function renderBoard(){
+  if(!game)return;
+  const board=$('board');board.replaceChildren();
+  const black=puzzle.attacker==='b';
+  for(let row=0;row<8;row++)for(let col=0;col<8;col++){
+    const file=black?7-col:col,rank=black?row+1:8-row;
+    const sq=String.fromCharCode(97+file)+rank,pc=game.get(sq);
+    const button=document.createElement('button');button.type='button';button.dataset.square=sq;
+    button.className='sq '+((file+rank)%2===1?'light':'dark')+(selected===sq?' selected':'');
+    button.setAttribute('aria-label',sq.toUpperCase()+(pc?' '+colour(pc.color)+' '+NAMES[pc.type]:''));
+    button.setAttribute('aria-pressed',String(selected===sq));
+    const coord=document.createElement('span');coord.className='coord';coord.textContent=sq;coord.setAttribute('aria-hidden','true');button.append(coord);
+    if(pc){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 64 64');svg.setAttribute('class','piece '+(pc.color==='w'?'white':'black'));svg.setAttribute('aria-hidden','true');svg.innerHTML=PIECE_ARTWORK[pc.type];button.append(svg);}
+    board.append(button);
+  }
+  renderControls();
+}
+function sizeBoard(){const r=$('stage').getBoundingClientRect();const n=Math.max(8,Math.floor((Math.min(r.width,r.height)-2)/8)*8);document.documentElement.style.setProperty('--board-size',n+'px');}
+async function getPack(level){
+  if(packs.has(level))return packs.get(level);
+  const response=await fetch(new URL('puzzles/mate-'+level+'.json',location.href));
+  if(!response.ok)throw new Error('Puzzle data could not load ('+response.status+').');
+  const data=await response.json();
+  if(!Array.isArray(data.puzzles)||!data.puzzles.length)throw new Error('This puzzle level is empty.');
+  const ids=new Set();
+  for(const p of data.puzzles){
+    if(!/^m[1-6]-\d{2}$/.test(p.id)||ids.has(p.id)||p.mate!==level||!['w','b'].includes(p.attacker))throw new Error('Puzzle data is not valid.');
+    const b=new Rules(p.fen);if(b.turn()!==p.attacker||b.isGameOver())throw new Error('Puzzle starting position is not playable.');ids.add(p.id);
+  }
+  packs.set(level,data.puzzles);return data.puzzles;
+}
+async function loadPuzzle(level,requestedId=null,offset=0){
+  const ticket=invalidate();loadLevel=level;setPhase('loading');newClock();setMessage('Loading...');
+  $('level').value=String(level);
+  try{
+    const data=await getPack(level);if(ticket!==version)return;
+    let at=requestedId?data.findIndex(p=>p.id===requestedId):((offset%data.length)+data.length)%data.length;
+    if(at<0)throw new Error('This puzzle link was not found.');
+    pack=data;index=at;puzzle=data[index];game=new Rules(puzzle.fen);attackingMoves=0;
+    $('instruction').textContent=colour(puzzle.attacker)+' to move. Mate in '+puzzle.mate+'!';
+    document.title=colour(puzzle.attacker)+' to move - Mate in '+puzzle.mate;
+    $('board').setAttribute('aria-label',colour(puzzle.attacker)+' playing from the bottom. Chess puzzle.');
+    renderBoard();sizeBoard();
+    try{const u=new URL(location.href);u.searchParams.set('p',puzzle.id);history.replaceState(null,'',u);}catch(_){/* Some sandbox configurations disallow History API writes. */}
+    await engine.ready;if(ticket!==version)return;
+    setMessage('');setPhase('human');startClock();
+  }catch(e){if(ticket!==version||e.name==='AbortError')return;engineError(e);}
+}
+function engineError(e){setPhase('error');selected=null;closePromotion();renderBoard();setMessage(e.message||'Unable to load the puzzle.','error');}
+function closePromotion(){promotionOptions=null;$('promotion').hidden=true;$('promotion-options').replaceChildren();}
+function askPromotion(options){
+  promotionOptions=options;$('promotion-options').replaceChildren();
+  for(const code of ['q','r','b','n']){const m=options.find(x=>x.promotion===code);if(!m)continue;
+    const b=document.createElement('button');b.type='button';b.textContent=NAMES[code][0].toUpperCase()+NAMES[code].slice(1);b.dataset.promotion=code;
+    b.addEventListener('click',()=>{if(phase==='human'&&promotionOptions?.includes(m)){closePromotion();humanMove(m);}});$('promotion-options').append(b);
+  }
+  $('promotion').hidden=false;$('promotion-options').querySelector('button')?.focus();
+}
+function clickSquare(square){
+  if(phase!=='human'||!game||game.turn()!==puzzle.attacker||promotionOptions)return;
+  const pc=game.get(square);
+  if(selected){
+    const moves=game.moves({verbose:true}).filter(m=>m.from===selected&&(m.to===square||m.castleKingTo===square));
+    if(moves.length){if(moves.some(m=>m.promotion))askPromotion(moves);else humanMove(moves[0]);return;}
+  }
+  selected=pc?.color===puzzle.attacker?(selected===square?null:square):null;renderBoard();
+}
+function actualOutcome(){
+  if(game.isCheckmate()){
+    if(game.turn()!==puzzle.attacker&&attackingMoves<=puzzle.mate){setPhase('solved');stopClock();setMessage('Correct!','correct');}
+    else failAttempt();return true;
+  }
+  if(game.isGameOver()){failAttempt();return true;}
+  return false;
+}
+function humanMove(move){
+  if(phase!=='human')return;
+  const legal=game.moves({verbose:true}).find(m=>uci(m)===uci(move));if(!legal)return;
+  game.move(legal);attackingMoves++;selected=null;setMessage('');renderBoard();
+  if(actualOutcome())return;
+  // No early best-move / wrong-move test. Let the user finish the attempt.
+  if(attackingMoves>=puzzle.mate){failAttempt();return;}
+  defend();
+}
+async function defend(){
+  if(!game||game.turn()===puzzle.attacker)return;
+  const ticket=version,fen=game.fen();setPhase('defending');
+  try{
+    const move=await engine.search(puzzle.fen,game.history({verbose:true}).map(uci),puzzle.mate);
+    if(ticket!==version||phase!=='defending'||game.fen()!==fen)return;
+    const legal=game.moves({verbose:true}).find(m=>uci(m)===move);
+    if(!legal)throw new Error('The engine returned an illegal move. Use Retry.');
+    game.move(legal);renderBoard();if(actualOutcome())return;setPhase('human');
+  }catch(e){if(ticket!==version||e.name==='AbortError')return;engineError(e);}
+}
+function failAttempt(){
+  setPhase('retry');selected=null;setMessage('Try again','try-again');const ticket=version;
+  resetTimer=setTimeout(()=>{
+    if(ticket!==version||phase!=='retry')return;
+    game=new Rules(puzzle.fen);attackingMoves=0;setPhase('human');renderBoard();
+    // Timer deliberately continues, including the visible reset interval.
+    feedbackTimer=setTimeout(()=>{if(ticket===version&&phase==='human')setMessage('');},900);
+  },850);
+}
+function undo(){
+  if(!game||!game.history().length||phase==='loading')return;
+  const wasSolved=phase==='solved';invalidate();
+  game.undo();if(game.turn()!==puzzle.attacker&&game.history().length)game.undo();
+  attackingMoves=game.history({verbose:true}).filter(m=>m.color===puzzle.attacker).length;
+  setPhase('human');renderBoard();if(wasSolved)startClock();
+}
+$('board').addEventListener('click',e=>{const s=e.target.closest('[data-square]');if(s)clickSquare(s.dataset.square);});
+$('level').addEventListener('change',()=>loadPuzzle(Number($('level').value)));
+$('next').addEventListener('click',()=>loadPuzzle(puzzle.mate,null,index+1));
+$('undo').addEventListener('click',undo);
+$('promotion-cancel').addEventListener('click',closePromotion);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePromotion();selected=null;renderBoard();}});
+$('retry').addEventListener('click',async()=>{
+  if(phase!=='error')return;
+  engine.destroy();engine=new LiteEngine();const ticket=++version;setPhase('loading');setMessage('Loading...');
+  try{await engine.ready;if(ticket!==version)return;setMessage('');if(!game){loadPuzzle(loadLevel);return;}startClock();if(game.turn()===puzzle.attacker)setPhase('human');else defend();}catch(e){if(ticket===version)engineError(e);}
+});
+new ResizeObserver(sizeBoard).observe($('stage'));
+window.visualViewport?.addEventListener('resize',sizeBoard);window.addEventListener('resize',sizeBoard);
+window.addEventListener('pagehide',()=>engine.cancel());
+window.addEventListener('pageshow',event=>{if(event.persisted&&phase==='defending'){version++;defend();}});
+setInterval(tick,150);
+const initial=new URLSearchParams(location.search).get('p');
+const valid=initial&&/^m([1-6])-\d{2}$/.exec(initial);
+loadPuzzle(valid?Number(valid[1]):1,valid?initial:null);
+})();
+
+</script>
+</body></html>
