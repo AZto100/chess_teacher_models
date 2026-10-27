@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Position Setup – Chess Teacher</title>
+<style>
+:root{font-family:system-ui,Arial,sans-serif;color:#e9edf5;background:#111827;--sq:64px}
+*{box-sizing:border-box}body{margin:0;padding:16px}
+button,select{font:inherit;background:#27364c;color:white;border:1px solid #56647a;border-radius:7px;padding:8px;cursor:pointer}
+button:hover{background:#3c516e}button:disabled{opacity:.45;cursor:default}
+label{display:inline-flex;gap:6px;align-items:center}
+input[type=checkbox]{accent-color:#53e68c;width:17px;height:17px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;align-items:center}
+.layout{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.board{display:grid;grid-template-columns:repeat(8,var(--sq));grid-template-rows:repeat(8,var(--sq));border:3px solid #65748b}
+.sq{width:var(--sq);height:var(--sq);position:relative;display:flex;justify-content:center;align-items:center;cursor:pointer}
+.light{background:#eeeed2}.dark{background:#769656}
+.sq.selected{outline:4px solid #44a9ff;outline-offset:-4px}
+.piece{display:block;width:calc(var(--sq)*.92);height:calc(var(--sq)*.92);pointer-events:none;user-select:none}
+.piece.white{color:#fff;--piece-edge:#202020;--piece-detail:#202020}
+.piece.black{color:#080808;--piece-edge:#d5d9dd;--piece-detail:#e9edf1}
+.piece-body{fill:currentColor;stroke:var(--piece-edge);stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+.piece-detail{fill:none;stroke:var(--piece-detail);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.palette{display:flex;flex-direction:column;gap:8px}
+.palette-row{display:flex;gap:6px;flex-wrap:wrap}
+.palette .sq{border:2px solid transparent;border-radius:4px}
+.palette .sq.active{border-color:#44a9ff;background:#1e3a5f}
+.status{margin-top:10px;color:#cbd5e1;min-height:24px}
+h1{margin:0 0 8px;font-size:22px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>♟ Position Setup</h1>
+
+  <div class="controls">
+    <button type="button" onclick="window.location.href='./index-9601.html'">Chess Teacher</button>
+
+    <label>
+      <input type="checkbox" id="hints" checked> Hints (both colours)
+    </label>
+
+    <label>
+      Who to play
+      <select id="sideToPlay">
+        <option value="w" selected>White</option>
+        <option value="b">Black</option>
+      </select>
+    </label>
+
+    <button id="start">Start</button>
+    <button id="clear">Clear Board</button>
+  </div>
+
+  <div class="layout">
+    <div>
+      <div class="board" id="board" role="group" aria-label="Chessboard"></div>
+      <div class="status" id="status">Place pieces, then press Start</div>
+    </div>
+
+    <!-- Piece palette: Black on top, White on bottom -->
+    <div class="palette">
+      <div class="palette-row" id="black-pieces"></div>
+      <div class="palette-row" id="white-pieces"></div>
+      <p style="font-size:13px;color:#afbed0;max-width:180px">
+        Click a piece, then click a square to place/replace it.<br>
+        Click an occupied square again (with same piece selected) or use Clear.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+// Re-use the same chess.js that index-9601 loads
+let Chess;
+try {
+  ({ Chess } = await import('./vendor/chess.js'));
+} catch (e) {
+  document.getElementById('status').textContent =
+    'Cannot load vendor/chess.js – keep the vendor folder and open via a local server.';
+  throw e;
+}
+
+// ---------- Piece SVG (same style as origin) ----------
+const PIECE_PATHS = {
+  k: { body: 'M22 12c0-2 1-4 3-5 1-1 2-2 2-4 0-1 0-2-1-2s-2 1-2 2c0 1-1 2-2 2s-2-1-2-2c0-1 0-2-1-2s-1 1-1 2c0 2 1 3 2 4 2 1 3 3 3 5v2H12v-2z', detail: '' },
+  q: { body: 'M12 6l2 4 3-5 2 5 3-4 1 6H9l1-6zm-1 8h10v2H11v-2zm0 3h10l-1 5H12l-1-5z', detail: '' },
+  r: { body: 'M9 6h2v2h2V6h2v2h2V6h2v4H9V6zm-1 5h12v2H8v-2zm1 3h10v7H9v-7z', detail: '' },
+  b: { body: 'M12 4c2 2 4 5 4 8 0 3-2 5-4 6-2-1-4-3-4-6 0-3 2-6 4-8z', detail: 'M12 10v6' },
+  n: { body: 'M8 18h12v2H8v-2zm1-2l2-4 1-3 3-1 2 2 1 4H9z', detail: '' },
+  p: { body: 'M12 6c1.5 0 2.5 1.5 2.5 3S13.5 12 12 12s-2.5-1.5-2.5-3S10.5 6 12 6zm-3 8h6v2H9v-2zm-1 3h8v3H8v-3z', detail: '' }
+};
+
+function makePieceSvg(type, color) {
+  const p = PIECE_PATHS[type.toLowerCase()] || PIECE_PATHS.p;
+  const cls = color === 'w' ? 'white' : 'black';
+  return `<svg class="piece ${cls}" viewBox="0 0 24 24" aria-hidden="true">
+    <path class="piece-body" d="${p.body}"/>
+    ${p.detail ? `<path class="piece-detail" d="${p.detail}"/>` : ''}
+  </svg>`;
+}
+
+// ---------- Board state ----------
+const FILES = 'abcdefgh';
+let game = new Chess();                 // starts empty after clear
+let selectedPiece = null;               // {type:'q', color:'w'} or null
+let orientationWhiteBottom = true;      // fixed as requested
+
+const boardEl = document.getElementById('board');
+const statusEl = document.getElementById('status');
+const sideSelect = document.getElementById('sideToPlay');
+const hintsCb = document.getElementById('hints');
+
+// Build empty board squares
+function buildBoard() {
+  boardEl.innerHTML = '';
+  for (let r = 7; r >= 0; r--) {
+    for (let f = 0; f < 8; f++) {
+      const sq = document.createElement('div');
+      const file = FILES[f];
+      const rank = r + 1;
+      const name = file + rank;
+      const isLight = (f + r) % 2 === 1;
+      sq.className = `sq ${isLight ? 'light' : 'dark'}`;
+      sq.dataset.square = name;
+      sq.addEventListener('click', () => onSquareClick(name));
+      boardEl.appendChild(sq);
+    }
+  }
+}
+
+function render() {
+  const fenParts = game.fen().split(' ');
+  const boardPart = fenParts[0];
+  const ranks = boardPart.split('/');
+  // ranks[0] = rank 8, ranks[7] = rank 1
+
+  document.querySelectorAll('#board .sq').forEach(sq => {
+    sq.innerHTML = '';
+    const name = sq.dataset.square;
+    const file = name.charCodeAt(0) - 97;
+    const rank = parseInt(name[1], 10);
+    const row = 8 - rank;
+    let col = 0;
+    let fenRank = ranks[row];
+    let i = 0;
+    while (col <= file && i < fenRank.length) {
+      const c = fenRank[i];
+      if (/\d/.test(c)) {
+        col += parseInt(c, 10);
+      } else {
+        if (col === file) {
+          const color = c === c.toUpperCase() ? 'w' : 'b';
+          const type = c.toLowerCase();
+          sq.innerHTML = makePieceSvg(type, color);
+        }
+        col++;
+      }
+      i++;
+    }
+  });
+}
+
+// ---------- Palette ----------
+const PIECES = ['k','q','r','b','n','p'];
+function buildPalette() {
+  const blackRow = document.getElementById('black-pieces');
+  const whiteRow = document.getElementById('white-pieces');
+  blackRow.innerHTML = '';
+  whiteRow.innerHTML = '';
+
+  PIECES.forEach(type => {
+    // Black
+    const b = document.createElement('div');
+    b.className = 'sq dark';
+    b.innerHTML = makePieceSvg(type, 'b');
+    b.title = `Black ${type.toUpperCase()}`;
+    b.addEventListener('click', () => selectPiece(type, 'b', b));
+    blackRow.appendChild(b);
+
+    // White
+    const w = document.createElement('div');
+    w.className = 'sq light';
+    w.innerHTML = makePieceSvg(type, 'w');
+    w.title = `White ${type.toUpperCase()}`;
+    w.addEventListener('click', () => selectPiece(type, 'w', w));
+    whiteRow.appendChild(w);
+  });
+}
+
+function selectPiece(type, color, el) {
+  document.querySelectorAll('.palette .sq').forEach(s => s.classList.remove('active'));
+  if (selectedPiece && selectedPiece.type === type && selectedPiece.color === color) {
+    selectedPiece = null;
+  } else {
+    selectedPiece = { type, color };
+    el.classList.add('active');
+  }
+}
+
+// ---------- Placement ----------
+function onSquareClick(square) {
+  if (!selectedPiece) {
+    // optional: remove piece if nothing selected
+    const piece = game.get(square);
+    if (piece) {
+      game.remove(square);
+      render();
+      statusEl.textContent = `Removed piece from ${square}`;
+    }
+    return;
+  }
+
+  const fenPiece = selectedPiece.color === 'w'
+    ? selectedPiece.type.toUpperCase()
+    : selectedPiece.type;
+
+  // Place / replace
+  game.put({ type: selectedPiece.type, color: selectedPiece.color }, square);
+  render();
+  statusEl.textContent = `Placed ${selectedPiece.color === 'w' ? 'White' : 'Black'} ${selectedPiece.type.toUpperCase()} on ${square}`;
+}
+
+// ---------- Controls ----------
+document.getElementById('clear').addEventListener('click', () => {
+  game = new Chess();
+  game.clear();                 // empty board
+  selectedPiece = null;
+  document.querySelectorAll('.palette .sq').forEach(s => s.classList.remove('active'));
+  render();
+  statusEl.textContent = 'Board cleared';
+});
+
+document.getElementById('start').addEventListener('click', () => {
+  const side = sideSelect.value;          // 'w' or 'b'
+  // Rebuild a legal FEN with the chosen side to move
+  const boardFen = game.fen().split(' ')[0];
+  const newFen = `${boardFen} ${side} - - 0 1`;
+
+  try {
+    const test = new Chess(newFen);
+    // Optional: you can store the FEN in sessionStorage and jump back,
+    // or keep playing here. For now we just confirm and show the FEN.
+    statusEl.textContent = `Position ready – ${side === 'w' ? 'White' : 'Black'} to move. FEN: ${newFen}`;
+    // If you want to hand the position back to the main teacher:
+    // sessionStorage.setItem('customFen', newFen);
+    // window.location.href = './index-9601.html';
+  } catch (e) {
+    statusEl.textContent = 'Illegal position (e.g. missing kings). Fix the board first.';
+  }
+});
+
+// Hints toggle (both colours together) – currently just stored;
+// (the main page already has the real hint logic)
+hintsCb.addEventListener('change', () => {
+  statusEl.textContent = hintsCb.checked ? 'Hints enabled (both colours)' : 'Hints disabled';
+});
+
+// ---------- Init ----------
+buildBoard();
+buildPalette();
+game.clear();          // start empty
+render();
+statusEl.textContent = 'Empty board – select a piece and click squares to place';
+</script>
+</body>
+</html>
