@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Position Setup - Chess Teacher</title>
 <!-- Modified 2026-10-27: position editor, vertical palettes and isolated local saves.
      Based on the supplied index-9601.html. Original licence notices are retained. -->
@@ -125,131 +126,160 @@ h1{font-size:22px;line-height:1.2}
 .fen-label{display:block;font-size:12px;margin:8px 0 5px}
 #position-fen{width:100%;resize:vertical;font:12px/1.5 ui-monospace,monospace;background:#111d2d;color:#e9edf5;border:1px solid #61758e;border-radius:6px;padding:8px;overflow-wrap:anywhere}
 @media(max-width:700px){.position-status{font-size:12px}.piece-palette{gap:3px;padding:3px}.position-tools{gap:6px 8px}.phase-label{font-size:9px}}
+
+/* Responsive position editor: board first, no teaching panels. */
+html,body{min-height:100%;margin:0}body{padding:4px;overflow-x:hidden}
+.wrap{display:grid;grid-template-columns:var(--boardcolumn-width) minmax(190px,1fr);grid-template-rows:minmax(0,1fr);grid-template-areas:"board controls";gap:8px 12px;height:calc(100dvh - 8px);align-items:start}
+.layout,.boardcolumn{display:contents!important}
+.boardgroup{grid-area:board;gap:4px;align-self:center;justify-self:center;width:max-content;max-width:none}
+.board{border-width:1px;width:calc(var(--sq)*8 + 2px);height:calc(var(--sq)*8 + 2px)}
+.eval{width:16px;min-width:16px}.evalnum{font-size:10px}
+.app-header{grid-area:controls;display:flex;flex-direction:column;height:100%;min-height:0;min-width:0;max-height:100%;overflow:hidden;margin:0;padding:0 2px 0 0;scrollbar-width:thin}
+.control-stack{min-height:0;overflow:auto;flex:1;scrollbar-width:thin}h1{font-size:16px}.titlebar{gap:5px}.header-actions{gap:5px}.save-status{font-size:10px;white-space:normal}
+.controls,.position-tools{gap:5px;margin:6px 0;padding:0;border:0}.controls button,.controls select,.header-actions button,button,select{font-size:12px;padding:5px 7px}
+.controls label{font-size:12px}.phase-label{font-size:9px;padding:4px}.position-status{font-size:12px;line-height:1.35;margin:4px 0;min-height:0}
+#black-pieces{grid-area:black}#white-pieces{grid-area:white}
+.piece-palette{grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;padding:0;margin:0;min-width:0;border:0;border-radius:0;background:none;width:100%;align-self:end}
+.palette-piece{height:clamp(26px,7vh,54px);padding:1px;border-radius:4px}.palette-piece .piece{width:100%;max-width:44px}
+.seat,.lastmove-text{display:none}#fen-details{font-size:12px;margin:6px 0}#fen-details p{font-size:11px;margin:5px 0}.castling-controls{gap:4px;margin:5px 0}.castling-controls button[aria-pressed=true]{background:#286345;border-color:#81d6a4}
+#position-fen{padding:5px}#app-header>details:last-child{font-size:11px;margin:5px 0}.status{font-size:11px;line-height:1.35;margin:4px 0;min-height:0}
+#voice-panel{max-height:none;overflow:visible;padding:0;margin:6px 0;background:none;border:0;border-radius:0}.voice-row{gap:5px;font-size:12px}.voice-row button,.voice-row select{font-size:12px}.voice-entry input{min-width:0;width:100%}
+.position-editing .status{display:none}
+#speak-toggle[aria-pressed=true]{background:#385a72;border-color:#8fbcdb}
+@media(orientation:landscape){
+ .palette-tray{display:grid;flex:none;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+ .palette-tray #black-pieces,.palette-tray #white-pieces{grid-area:auto}.piece-palette{grid-template-columns:40px;justify-content:center;align-self:start}
+ .palette-piece{height:clamp(20px,5vh,36px)}
+}
+@media(orientation:portrait){
+ body{padding:4px}
+ .wrap{height:auto;min-height:calc(100dvh - 8px);grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;grid-template-areas:"controls" "black" "board" "white";gap:5px;align-content:start}
+ .app-header,.palette-tray{display:contents}.control-stack{grid-area:controls;min-width:0;overflow:visible}.app-header{overflow:visible;max-height:none;padding:0}.titlebar{justify-content:flex-start}.header-actions{flex:1;justify-content:flex-end}
+ .boardgroup{align-self:start}.piece-palette{margin-left:20px;width:calc(100% - 20px)}
+ .palette-piece{height:clamp(28px,5vh,42px)}.position-status{margin:3px 0}
+ #fen-details,#app-header>details:last-child{margin:3px 0}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="app-header" id="app-header">
+<header class="app-header" id="app-header"><div class="control-stack">
 <div class="titlebar">
-<h1>&#9823; Position Setup</h1>
+<h1>♟ Position Setup</h1>
 <div class="header-actions">
-<button type="button" onclick="window.location.href='./index-9601.html'">Chess Teacher</button>
-<button type="button" onclick="window.location.href='./x-posts/m3-01.html'">Mate-in-X</button>
-<span class="save-status" id="save-status" role="status" aria-live="polite">Separate autosave starting...</span>
-<button id="focus" aria-pressed="false" title="Hide teaching panels; keep board and setup/play controls.">Focus board</button>
-<button id="voice-toggle" type="button" aria-pressed="false" aria-controls="voice-panel" title="Optional voice input during play.">Voice (optional)</button>
-<button id="fullscreen" aria-pressed="false" hidden>Full screen</button>
+<button onclick="window.location.href='./index-9601.html'" type="button">Chess Teacher</button>
+<button onclick="window.location.href='./x-posts/m3-01.html'" type="button">Mate-in-X</button>
+<span aria-live="polite" class="save-status" id="save-status" role="status">Separate autosave starting...</span>
+
+<button aria-controls="voice-panel" aria-pressed="false" id="voice-toggle" title="Optional voice input during play." type="button">Voice (optional)</button>
+<button aria-pressed="false" hidden="" id="fullscreen">Full screen</button>
 </div></div>
 <div class="controls">
-<label><select id="model" aria-describedby="model-note"><option value="lite" selected>Stockfish Lite</option><option value="full">Stockfish Full</option><option value="maia">Maia-3 (human-like)</option></select></label>
-<label><select id="mode"><option value="practice" selected>Practice</option><option value="play">Play computer</option><option value="practice960">Practice 960</option><option value="play960">Play 960</option></select></label>
-<label title="Read the computer move aloud using your browser voice."><input type="checkbox" id="speakComputer" checked>Speak</label>
-<span id="computer-voice-status" class="muted" role="status"></span>
+
+<label><select id="mode"><option selected="" value="practice">Practice</option><option value="play">Play computer</option><option value="practice960">Practice 960</option><option value="play960">Play 960</option></select></label>
+
+<span class="muted" id="computer-voice-status" role="status"></span>
 <button id="new" title="Return to the starting position of this custom game.">Restart position</button><button id="undo">Undo</button><button id="flip" title="Rotate the board. In Play computer, you always play the bottom colour.">Flip board</button>
 
 
-
-<label title="Training difficulty presets, not calibrated FIDE ratings."><span id="rating-label">Rating</span> <select id="rating" aria-describedby="rating-caveat">
-<option value="600">600</option><option value="700">700</option><option value="800">800</option><option value="1000">1000</option><option value="1200">1200</option><option value="1400">1400</option><option value="1600" selected>1600</option><option value="1800">1800</option><option value="2000">2000</option><option value="2200">2200</option><option value="2400">2400</option>
-</select></label>
-<label id="blunder-control" title="Play computer only. Checked: your weighted top-four choice. Unchecked: Stockfish's final best move at this preset's search limits."><input type="checkbox" id="allowBlunder" checked disabled> Allow Blunder</label>
-</div>
-
-
-<div class="controls position-tools" aria-label="Position editing controls">
-<span id="phase-label" class="phase-label">SETUP</span>
+<button aria-pressed="true" id="speak-toggle" type="button">Speak</button></div>
+<div aria-label="Position editing controls" class="controls position-tools">
+<span class="phase-label" id="phase-label">SETUP</span>
 <label id="side-control">To move <select id="sideToPlay"><option value="w">White</option><option value="b">Black</option></select></label>
 <button id="start" type="button">Start position</button>
-<button id="edit-position" type="button" hidden>Edit position</button>
+<button hidden="" id="edit-position" type="button">Edit position</button>
 <button id="clear" type="button">Clear Board</button>
 <button id="standard-position" type="button">Starting pieces</button>
-<button id="erase-piece" type="button" aria-pressed="false">Remove piece</button>
-<label title="Switch both side-specific hint settings together."><input id="hints" type="checkbox" checked>Hints (both colours)</label>
+<button aria-pressed="false" id="erase-piece" type="button">Remove piece</button>
+<label title="Switch both side-specific hint settings together."><input checked="" id="hints" type="checkbox"/>Hints</label>
 </div>
-<p id="position-status" class="position-status" role="status" aria-live="polite">Select a piece above or below the board, then select a square.</p>
-</header>
-<div class="layout" id="layout">
-<div class="boardcolumn">
-<div class="piece-palette" id="black-pieces" role="group" aria-label="Black pieces - select to place"></div>
-<div class="seat" id="top-seat">Black - top</div>
-<div class="boardgroup">
-<div class="eval" id="evaluation-bar" role="img" aria-label="Position evaluation: equal">
-<div class="whitefill" id="whitefill"></div><span class="eval-label black-label">B</span><span class="eval-label white-label">W</span><span class="evalnum" id="evalnum">0.00</span>
-</div>
-<div class="board" id="board" role="group" aria-label="Chessboard"></div>
-</div>
-<div class="seat" id="bottom-seat">White - bottom</div>
-<div class="piece-palette" id="white-pieces" role="group" aria-label="White pieces - select to place"></div>
-<div class="lastmove-text" id="lastmove">No moves yet.</div>
-
-</div>
-<aside class="side" aria-label="Teaching panels">
-<div class="panel" id="position-panel">
-<h2>Your position</h2>
-<p class="muted">Choose a piece above or below the board, then click to place it. Click the same piece again to remove it. With no palette piece selected, click a board piece and its new square to reposition it. Right-click or use Remove piece to erase.</p>
+<p aria-live="polite" class="position-status" id="position-status" role="status">Select a piece, then select a square.</p>
 <details id="fen-details"><summary>Position code (FEN) &amp; castling rights</summary>
 <p class="muted">A hand-built position starts with no castling rights. Enable a right only when that king and rook have not moved. Load a full FEN to retain en passant and move counters.</p>
 <div class="castling-controls" id="castling-controls">
-<label><input type="checkbox" data-castle="K">White O-O</label>
-<label><input type="checkbox" data-castle="Q">White O-O-O</label>
-<label><input type="checkbox" data-castle="k">Black O-O</label>
-<label><input type="checkbox" data-castle="q">Black O-O-O</label>
+<button aria-pressed="false" data-castle="K" type="button">White O-O</button>
+<button aria-pressed="false" data-castle="Q" type="button">White O-O-O</button>
+<button aria-pressed="false" data-castle="k" type="button">Black O-O</button>
+<button aria-pressed="false" data-castle="q" type="button">Black O-O-O</button>
 </div>
 <label class="fen-label" for="position-fen">FEN</label>
-<textarea id="position-fen" rows="3" spellcheck="false" autocomplete="off" aria-label="Position in FEN notation"></textarea>
-<div class="controls"><button type="button" id="load-fen">Load FEN</button><button type="button" id="copy-fen">Copy current FEN</button></div>
-</details>
-<p class="storage-help">This page has its own local save. It never reads, replaces or clears the main Chess Teacher saved game.</p>
-</div>
-<div class="panel" id="display-settings"><h2>Hints &amp; display</h2>
-<div class="hint-controls"><label><input type="checkbox" id="hintsWhite" checked> Show white hints</label><label><input type="checkbox" id="hintsBlack" checked> Show black hints</label><label title="For the selected piece: blue borders show legal moves; red borders show captures, including en passant."><input type="checkbox" id="showLegalMoves" checked> Show legal moves</label><label><input type="checkbox" id="talk" checked> Commentary</label></div>
-<p class="muted" id="board-size"></p><p class="muted legend" id="play-legend" hidden><span class="grey-swatch light"></span> / <span class="grey-swatch dark"></span> Grey = latest move's FROM and TO squares. Light squares become light grey; dark squares become dark grey. These remain visible when hints are off.</p>
-<p class="muted" id="model-note" style="margin:4px 0;line-height:1.4"></p>
-<div class="status"><span id="status" role="status" aria-live="polite">Loading chess rules...</span><button id="engine-retry" hidden>Retry engine</button></div>
-  <details><summary>Saved game on this device</summary>
-<p class="storage-help">Your unfinished setup, custom starting position, complete played move history, engine choice, strength, mode, hint switches, voice preferences and board orientation save automatically in this browser, in a separate Position Setup save. Reopening this page restores them. A computer turn resumes after fresh analysis.</p>
-<p class="storage-help">Restart position returns to the start of this custom game. Edit position lets you change the current board; Start position begins a new game from that setup. Clear Board clears only this page's setup. The main Chess Teacher save is untouched. This is local browser storage, not a cloud backup. Clearing site data may erase it; localhost and GitHub Pages have separate saves.</p>
-</details></div>
-<section id="voice-panel" class="side" aria-label="Spoken chess moves" hidden>
+<textarea aria-label="Position in FEN notation" autocomplete="off" id="position-fen" rows="3" spellcheck="false"></textarea>
+<div class="controls"><button id="load-fen" type="button">Load FEN</button><button id="copy-fen" type="button">Copy current FEN</button></div>
+</details><div class="status"><span aria-live="polite" id="status" role="status">Loading chess rules...</span><button hidden="" id="engine-retry">Retry engine</button></div><section aria-label="Spoken chess moves" class="side" hidden="" id="voice-panel">
 <div class="voice-row">
 <strong>Hands-free voice <small>(optional)</small></strong>
 <button id="voice-start" type="button">Start hands-free</button>
-<button id="voice-stop" type="button" disabled>Stop listening</button>
-<button id="voice-cancel" type="button" disabled>Clear preview</button>
-<span class="mic-indicator" id="voice-mic" aria-hidden="true"></span><span id="voice-live" class="muted" role="status">Microphone off</span>
-<button id="voice-play" type="button" disabled hidden>Play preview</button>
+<button disabled="" id="voice-stop" type="button">Stop listening</button>
+<button disabled="" id="voice-cancel" type="button">Clear preview</button>
+<span aria-hidden="true" class="mic-indicator" id="voice-mic"></span><span class="muted" id="voice-live" role="status">Microphone off</span>
+<button disabled="" hidden="" id="voice-play" type="button">Play preview</button>
 </div>
-<p id="voice-preview-banner" class="voice-preview-banner" role="status" hidden></p>
-<p id="voice-status" class="voice-status" role="status" aria-live="polite">Mouse play is always available. To use voice, start once, say coordinates, then say "move" after the green preview appears.</p>
+<p class="voice-preview-banner" hidden="" id="voice-preview-banner" role="status"></p>
+<p aria-live="polite" class="voice-status" id="voice-status" role="status">Mouse play is always available. To use voice, start once, say coordinates, then say "move" after the green preview appears.</p>
 <details id="voice-details"><summary>Voice settings, typed correction &amp; setup</summary>
 <div class="voice-row">
-<label>Speech <select id="voice-backend"><option value="whisper" selected>Whisper (local, oral-exam method)</option><option value="browser">Browser on-device (local only)</option></select></label>
+<label>Speech <select id="voice-backend"><option selected="" value="whisper">Whisper (local, oral-exam method)</option><option value="browser">Browser on-device (local only)</option></select></label>
 <label id="voice-language-wrap">Language <select id="voice-language"><option value="en-US">English (US)</option><option value="en-GB">English (UK)</option><option value="en-ZA">English (South Africa)</option></select></label>
 <button id="voice-prepare" type="button">Prepare voice</button>
 </div>
 <div class="voice-row voice-entry">
-<label for="voice-text">Heard / edit</label><input type="text" id="voice-text" placeholder="C2 to C4, or Charlie two to Charlie four" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="180" aria-describedby="voice-status">
-<label id="voice-promotion-wrap" hidden>Promote <select id="voice-promotion"><option value="">Choose piece</option><option value="q">Queen</option><option value="r">Rook</option><option value="b">Bishop</option><option value="n">Knight</option></select></label>
+<label for="voice-text">Heard / edit</label><input aria-describedby="voice-status" autocapitalize="off" autocomplete="off" id="voice-text" maxlength="180" placeholder="C2 to C4, or Charlie two to Charlie four" spellcheck="false" type="text"/>
+<label hidden="" id="voice-promotion-wrap">Promote <select id="voice-promotion"><option value="">Choose piece</option><option value="q">Queen</option><option value="r">Rook</option><option value="b">Bishop</option><option value="n">Knight</option></select></label>
 </div>
-<div class="voice-row"><label id="voice-pause-wrap">Whisper pause <select id="voice-pause"><option value="650">Short (0.65 s)</option><option value="950" selected>Normal (0.95 s)</option><option value="1400">Long (1.4 s)</option></select></label></div>
+<div class="voice-row"><label id="voice-pause-wrap">Whisper pause <select id="voice-pause"><option value="650">Short (0.65 s)</option><option selected="" value="950">Normal (0.95 s)</option><option value="1400">Long (1.4 s)</option></select></label></div>
 <p><strong>Click-to-move remains the default and always works.</strong> Hands-free is optional: start it once, say <strong>C two to C four</strong>, pause for the single green destination, then say <strong>move</strong> as a separate command. Say <strong>D two to D four</strong> to replace the preview; no piece moves until confirmed. Say <strong>cancel</strong> to clear the preview, or <strong>stop listening</strong> to turn the microphone off. Clicking the board clears the voice preview and takes priority.</p>
 <p>Phonetic coordinates (<strong>Charlie two to Charlie four</strong>), <strong>castle kingside</strong>, and <strong>E seven to E eight promote to queen</strong> are supported. A promotion without a piece first asks you to say <strong>queen</strong>, <strong>rook</strong>, <strong>bishop</strong> or <strong>knight</strong>; then confirm with <strong>move</strong>. In Play computer, speech controls only your bottom-side pieces. It waits through the computer turn and is ready again automatically.</p>
 <p><strong>Whisper:</strong> copy your oral-exam <code>wasm/stream.js</code> and its matching companion files into this site's <code>wasm/</code> folder, plus <code>models/ggml-base.en-q5_1.bin</code>. Alternatively run <code>py -3 install-voice.py</code> from this app folder. The helper <code>voice-coi-serviceworker.js</code> must be beside index.html. Prepare voice may reload this page once to enable local WASM threads; your game is saved first. No speech model loads until you request it.</p>
 <p><strong>Browser on-device:</strong> requires actual <code>processLocally</code> support and an installed language pack. Prepare voice checks/downloads the chosen pack. Unsupported browsers show an error rather than using a cloud recogniser. Both methods require microphone permission and HTTPS (GitHub Pages) or localhost.</p>
 <p>Whisper processes each short phrase locally after a pause. Wait until <strong>Listening</strong> is shown before your next command; audio spoken while it is processing or while the computer moves is discarded, not queued. Browser recognition processes final results only. There is no immediate-play option: coordinates always create a preview first. Ordinary moves keep hands-free enabled; New game, Undo, engine/side/settings changes, hiding the tab, closing this panel, or Escape turn it off. Microphone access never starts automatically on reload. Audio and transcripts are not saved or uploaded. <a href="VOICE_README.md">Voice setup and privacy notes</a>.</p>
 </details>
-</section>
-<div class="panel" id="play-settings" hidden>
+</section><details><summary>Source &amp; licences</summary><p><a download="" href="index-position.html">Download application source</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices and sources</a></p></details></div><div class="palette-tray"><div aria-label="Black pieces - select to place" class="piece-palette" id="black-pieces" role="group"></div><div aria-label="White pieces - select to place" class="piece-palette" id="white-pieces" role="group"></div></div></header>
+<div class="layout" id="layout">
+<div class="boardcolumn">
+
+<div class="seat" id="top-seat">Black - top</div>
+<div class="boardgroup">
+<div aria-label="Position evaluation: equal" class="eval" id="evaluation-bar" role="img">
+<div class="whitefill" id="whitefill"></div><span class="eval-label black-label">B</span><span class="eval-label white-label">W</span><span class="evalnum" id="evalnum">0.00</span>
+</div>
+<div aria-label="Chessboard" class="board" id="board" role="group"></div>
+</div>
+<div class="seat" id="bottom-seat">White - bottom</div>
+
+<div class="lastmove-text" id="lastmove">No moves yet.</div>
+</div>
+
+</div>
+
+<noscript><p>JavaScript must be enabled to use this chessboard.</p></noscript>
+<div hidden="" id="internal-ui"><aside aria-label="Teaching panels" class="side">
+<div class="panel" id="position-panel">
+<h2>Your position</h2>
+<p class="muted">Choose a piece above or below the board, then click to place it. Click the same piece again to remove it. With no palette piece selected, click a board piece and its new square to reposition it. Right-click or use Remove piece to erase.</p>
+
+<p class="storage-help">This page has its own local save. It never replaces or clears the main Chess Teacher saved game.</p>
+</div>
+<div class="panel" id="display-settings"><h2>Hints &amp; display</h2>
+<div class="hint-controls"><label><input checked="" id="hintsWhite" type="hidden"/> Show white hints</label><label><input checked="" id="hintsBlack" type="hidden"/> Show black hints</label><label title="For the selected piece: blue borders show legal moves; red borders show captures, including en passant."><input checked="" id="showLegalMoves" type="hidden"/> Show legal moves</label><label><input checked="" id="talk" type="hidden"/> Commentary</label></div>
+<p class="muted" id="board-size"></p><p class="muted legend" hidden="" id="play-legend"><span class="grey-swatch light"></span> / <span class="grey-swatch dark"></span> Grey = latest move's FROM and TO squares. Light squares become light grey; dark squares become dark grey. These remain visible when hints are off.</p>
+<p class="muted" id="model-note" style="margin:4px 0;line-height:1.4"></p>
+
+<details><summary>Saved game on this device</summary>
+<p class="storage-help">Your unfinished setup, custom starting position, complete played move history, engine choice, strength, mode, hint switches, voice preferences and board orientation save automatically in this browser, in a separate Position Setup save. Reopening this page restores them. A computer turn resumes after fresh analysis.</p>
+<p class="storage-help">Restart position returns to the start of this custom game. Edit position lets you change the current board; Start position begins a new game from that setup. Clear Board clears only this page's setup. The main Chess Teacher save is untouched. This is local browser storage, not a cloud backup. Clearing site data may erase it; localhost and GitHub Pages have separate saves.</p>
+</details></div>
+
+<div class="panel" hidden="" id="play-settings">
 <h2>Computer move selection</h2>
 <div class="settings">
-<label id="weighting-control">Weighting <select id="weighting"><option value="safe" selected>Score-gap (recommended)</option><option value="original">Your formula (guarded)</option></select></label>
-<label><span id="think-label">Think limit</span> <select id="think"><option value="1000">1 second</option><option value="3000" selected>3 seconds</option><option value="6000">6 seconds</option><option value="0">Preset budget only</option></select></label>
+<label id="weighting-control">Weighting <select id="weighting"><option selected="" value="safe">Score-gap (recommended)</option><option value="original">Your formula (guarded)</option></select></label>
+<label><span id="think-label">Think limit</span> <select id="think"><option value="1000">1 second</option><option selected="" value="3000">3 seconds</option><option value="6000">6 seconds</option><option value="0">Preset budget only</option></select></label>
 </div>
 <p class="muted" id="computer-note">The computer plays the top colour. You play the bottom colour.</p>
 <p class="selection-summary" id="selection-summary"></p>
-<p class="choice-note" id="choice-note" hidden></p>
+<p class="choice-note" hidden="" id="choice-note"></p>
 <details><summary>Allow Blunder and move probabilities</summary>
-<div id="maia-behaviour" hidden><p><strong>Maia-3:</strong> checked samples its predicted human-move distribution over all legal moves. Unchecked chooses the highest-probability human move with no randomness. This is <strong>not</strong> a Stockfish best move and can still be a blunder. Stockfish bonuses and mate safeguards are not applied to Maia; hints and the bar still use Stockfish Lite.</p><p>The rating is supplied as both player and opponent Elo to Maia. It is not a FIDE measurement. The think limit caps the Stockfish teacher, not Maia's single neural-network inference.</p></div>
+<div hidden="" id="maia-behaviour"><p><strong>Maia-3:</strong> checked samples its predicted human-move distribution over all legal moves. Unchecked chooses the highest-probability human move with no randomness. This is <strong>not</strong> a Stockfish best move and can still be a blunder. Stockfish bonuses and mate safeguards are not applied to Maia; hints and the bar still use Stockfish Lite.</p><p>The rating is supplied as both player and opponent Elo to Maia. It is not a FIDE measurement. The think limit caps the Stockfish teacher, not Maia's single neural-network inference.</p></div>
 <div id="sf-behaviour">
 <p><strong>Unchecked:</strong> use Stockfish's final <code>bestmove</code>, with no intentional random choice. This is the best move found within the selected search budget, not a promise that it is objectively perfect. The weighting selector is disabled.</p>
 <p><strong>Checked (default):</strong> preserve the existing weighted draw among the four best candidates. Allowing a lower-ranked move does not force a blunder, and the top four may all be good moves.</p>
@@ -260,10 +290,10 @@ h1{font-size:22px;line-height:1.2}
 <p>The computer waits for its search to end (depth, node budget or time limit) before choosing. A brief pause makes the reply visible. Changing engine or mode, flipping, undoing or starting a new game cancels a pending choice.</p>
 </div></details>
 </div>
-<div class="panel" id="maia-panel" hidden><h2>Maia: likely human moves</h2><div id="maia-suggestions"></div><p class="muted">Separate from the Stockfish best-move hints. These are move-likelihood predictions, not winning chances.</p></div>
+<div class="panel" hidden="" id="maia-panel"><h2>Maia: likely human moves</h2><div id="maia-suggestions"></div><p class="muted">Separate from the Stockfish best-move hints. These are move-likelihood predictions, not winning chances.</p></div>
 <div class="panel"><h2 id="suggestions-title">Best next moves</h2><div id="suggestions">Waiting for engine...</div><p class="muted" id="analysis-note"></p><p class="muted legend" id="hint-legend">Green = #1. Yellow = #2-4. Labels show rank and origin:destination. Dotted lines connect square centres. Hints apply only to the side whose turn it is.</p></div>
 <div class="panel"><h2>Teacher's commentary</h2><div id="commentary">Waiting for analysis.</div></div>
-<div class="panel"><h2>Move history</h2><div id="history" class="history">No moves yet.</div></div>
+<div class="panel"><h2>Move history</h2><div class="history" id="history">No moves yet.</div></div>
 <div class="panel"><h2>About strength settings</h2><p class="muted strength-note" id="rating-caveat"><strong>Training estimates, not measured FIDE ratings.</strong> Stockfish presets control search budgets. Maia receives the selected number as a human-play rating input. Neither is a measured FIDE strength; the Stockfish teacher uses its preset even when Maia is playing.</p>
 <details class="strength-details"><summary>Stockfish search presets and variety</summary>
 <p>These are hand-tuned search budgets, <strong>not a validated depth-to-FIDE conversion</strong>. The label 600 does not mean this engine has achieved a 600 FIDE rating. Actual strength depends on the position, engine build, thinking limit and move-selection policy. Proper rating calibration would need games against opponents with known ratings.</p>
@@ -273,17 +303,15 @@ h1{font-size:22px;line-height:1.2}
 <p><strong>Same position, same best move?</strong> Often, yes. Fixed single-thread search is not shuffled automatically here. Allow Blunder adds variety by sampling the best four analysed moves, without changing the preset. With it off, the board always uses the engine's final best move; even equal-score ties are not deliberately randomised. Different human opening moves also lead to different games.</p>
 <p>The hash/search cache is cleared before each search so changing from a stronger to a weaker preset does not reuse deeper analysis. The optional time cap may stop a search before its full budget is reached. The completed depth is shown below the hints. These limits apply in Practice too, so low-level hints are not full-strength analysis.</p>
 </details></div>
-</aside>
-</div>
-<div class="panel footer"><details><summary>Engine setup, source &amp; licences</summary>
+</aside><div class="panel footer"><details><summary>Engine setup, source &amp; licences</summary>
 <p>Keep the existing chess.js and Stockfish Lite files. For the extra engines, run <code>py -3 install-models.py</code> (Windows) or <code>python3 install-models.py</code> (WSL/Linux) once, from the app folder. Full Stockfish uses <code>engine/stockfish-19-single.js</code> and its matching WASM. Maia uses <code>models/maia3/maia3_simplified.onnx</code>, <code>models/maia3/all_moves.json</code> and the files in <code>vendor/ort/</code>.</p>
 <p>All play runs locally in your browser. Engines load only when needed. There is no automatic fallback to a different opponent when an engine fails: use Retry engine or choose another model. Switching models preserves the board and move history, but restarts analysis. This choice is autosaved.</p>
 <p>Maia model/version: the official CSSLab Maia-3 browser export, pinned to frontend commit <code>a6e52f5</code>. The 600-2400 choices are inputs to its rating-conditioned model, not independently measured FIDE ratings. Maia hints are listed separately; board colours and the bar remain Stockfish evaluations.</p>
-<p>This HTML is the editable application source. <a href="index-position.html" download>Download application source</a> &middot; <a href="THIRD_PARTY_NOTICES.md">Third-party notices and corresponding sources</a> &middot; <a href="README.md">Setup and test notes</a>. Preserve the relevant GPL/AGPL licences and source access when publishing, even for a free site.</p>
-</details></div>
-<noscript><p>JavaScript must be enabled to use this chessboard.</p></noscript>
-</div>
-<script src="whisper-loader.js"></script>
+<p>This HTML is the editable application source. <a download="" href="index-position.html">Download application source</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices and corresponding sources</a> · <a href="README.md">Setup and test notes</a>. Preserve the relevant GPL/AGPL licences and source access when publishing, even for a free site.</p>
+</details></div><label><select aria-describedby="model-note" id="model"><option selected="" value="lite">Stockfish Lite</option><option value="full">Stockfish Full</option><option value="maia">Maia-3 (human-like)</option></select></label><label title="Training difficulty presets, not calibrated FIDE ratings."><span id="rating-label">Rating</span> <select aria-describedby="rating-caveat" id="rating">
+<option value="600">600</option><option value="700">700</option><option value="800">800</option><option value="1000">1000</option><option value="1200">1200</option><option value="1400">1400</option><option selected="" value="1600">1600</option><option value="1800">1800</option><option value="2000">2000</option><option value="2200">2200</option><option value="2400">2400</option>
+</select></label><label id="blunder-control" title="Play computer only. Checked: your weighted top-four choice. Unchecked: Stockfish's final best move at this preset's search limits."><input checked="" disabled="" id="allowBlunder" type="hidden"/> Allow Blunder</label><label title="Read the computer move aloud using your browser voice."><input checked="" id="speakComputer" type="hidden"/>Speak</label></div></div>
+</body></html><script src="whisper-loader.js"></script>
 <script type="module">
 // Single-file UI; the rules library and the Stockfish worker remain local dependencies.
 let Chess;
@@ -2647,19 +2675,19 @@ const RATING_PRESETS = Object.freeze({
   2400: Object.freeze({depth:18, nodes:4000000})
 });
 const presetFor = rating => RATING_PRESETS[rating] || RATING_PRESETS[1600];
-const ratingLabel = () => Number($('rating').value);
-const allowBlunders = () => $('allowBlunder').checked;
+const ratingLabel = () => 2400;
+const allowBlunders = () => false;
 const numberText = number => Number(number).toLocaleString('en-US');
 let selected = null, flipped = false, recommendations = [], lastMove = null;
 let revision = 0, gameSerial = 1, busy = false, result = null, lastChoice = null;
 let autoTimer = null, drawFrame = null, sizeFrame = null, engineError = '', engine = null;
 let focusBoard = false, storageAvailable = true, storageWarning = '', lastSavedContent = null;
 const SAVE_VERSION = 1;
-// Page-specific namespace: NEVER read/migrate/write the main teacher's folder save.
+// Separate position save. Navigation may read only the main page's engine preference.
 // A fixed page identifier keeps cache-busting query strings from creating new saves.
 const SAVE_KEY = 'chess-teacher:index-position:v1:' + new URL('.', location.href).pathname;
-const SELECT_SETTINGS = ['model','mode','rating','weighting','think','voice-backend','voice-language','voice-pause'];
-const CHECK_SETTINGS = ['allowBlunder','hintsWhite','hintsBlack','talk','speakComputer','showLegalMoves'];
+const SELECT_SETTINGS = ['mode','voice-backend','voice-language','voice-pause'];
+const CHECK_SETTINGS = ['hintsWhite','hintsBlack','talk','speakComputer','showLegalMoves'];
 let legalMoves = [], moveHistory = [];
 let evaluation = {value:0, text:'0.00', description:'Equal position', known:false};
 const colourName = colour => colour === 'w' ? 'White' : 'Black';
@@ -2771,13 +2799,40 @@ function restoreSession() {
     setupError=true;
   }
 }
-function applyFocus() {
-  document.body.classList.toggle('focus-board', focusBoard);
-  $('focus').textContent = focusBoard ? 'Show panels' : 'Focus board';
-  $('focus').setAttribute('aria-pressed', String(focusBoard));
-  queueSize();
+function applyFocus() {focusBoard=false;queueSize();}
+// A normal navigation inherits only the main page's engine preference. Direct
+// visits default to Lite, regardless of this editor's older saved engine choice.
+function inheritedModel() {
+  const valid=x=>['lite','full','maia'].includes(x)?x:null;
+  const params=new URLSearchParams(location.search);
+  const explicit=valid(params.get('model'))||valid(params.get('engine'));
+  if(explicit)return explicit;
+  let ref;
+  try{ref=new URL(document.referrer);}catch{return 'lite';}
+  if(ref.origin!==location.origin || new URL('.',ref).href!==new URL('.',location.href).href ||
+    !/^(?:index|index-?9601)\.html$/i.test(ref.pathname.split('/').pop()))return 'lite';
+  const linked=valid(ref.searchParams.get('model'))||valid(ref.searchParams.get('engine'));
+  if(linked)return linked;
+  try {
+    const opener=window.opener;
+    if(opener && opener.location.origin===location.origin){
+      const selected=valid(opener.document.getElementById('model')?.value);
+      if(selected)return selected;
+    }
+    const folder=new URL('.',location.href).pathname;
+    const choices=[];
+    for(let i=0;i<localStorage.length;i++){
+      const key=localStorage.key(i);
+      if(!/chess[-_: ]?teacher/i.test(key)||key.includes('index-position')||!key.includes(folder))continue;
+      try{const state=JSON.parse(localStorage.getItem(key));
+        const model=valid(state?.settings?.model)||valid(state?.model);
+        if(model)choices.push({model,savedAt:Date.parse(state.savedAt)||0});
+      }catch{}
+    }
+    choices.sort((a,b)=>b.savedAt-a.savedAt);
+    return choices[0]?.model||'lite';
+  }catch{return 'lite';}
 }
-
 
 // ----- Position editor. FEN parser accepts incomplete boards for draft storage. -----
 function decodeSetupFen(fen) {
@@ -2931,7 +2986,7 @@ function syncPositionUI(){
     button.disabled=!positionEditing;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
     button.title=positionEditing?'Select '+colourName(button.dataset.color).toLowerCase()+' '+names[button.dataset.type]:'Choose Edit position to place pieces.';
   }
-  for(const box of document.querySelectorAll('[data-castle]')){box.checked=setupMeta.castling.includes(box.dataset.castle);box.disabled=!positionEditing;}
+  for(const box of document.querySelectorAll('[data-castle]')){box.checked=setupMeta.castling.includes(box.dataset.castle);box.disabled=!positionEditing;box.setAttribute('aria-pressed',String(box.checked));}
   if(document.activeElement!==$('position-fen'))$('position-fen').value=positionEditing?setupFen():game.fen();
   const white=$('hintsWhite').checked,black=$('hintsBlack').checked;
   $('hints').checked=white&&black;$('hints').indeterminate=white!==black;
@@ -3492,37 +3547,18 @@ function createPiece(piece) {
  * Width and height are CSS pixels. Integer squares keep all 64 cells identical.
  */
 function sizeBoard() {
-  const layout = $('layout'), board = $('board'), group = board.parentElement;
-  const style = getComputedStyle(document.body), boardStyle = getComputedStyle(board);
-  const vv = window.visualViewport;
-  // Honour mobile browser chrome/keyboard without fighting intentional pinch zoom.
-  const viewportHeight = vv && Math.abs(vv.scale - 1) < 0.02 ? vv.height : window.innerHeight;
-  const top = layout.getBoundingClientRect().top + window.scrollY;
-  const outerHeight = node => {
-    const css = getComputedStyle(node);
-    return node.getBoundingClientRect().height + parseFloat(css.marginTop || 0) + parseFloat(css.marginBottom || 0);
-  };
-  const borderX = parseFloat(boardStyle.borderLeftWidth) + parseFloat(boardStyle.borderRightWidth);
-  const borderY = parseFloat(boardStyle.borderTopWidth) + parseFloat(boardStyle.borderBottomWidth);
-  const boardChrome = outerHeight($('black-pieces')) + outerHeight($('top-seat')) + outerHeight($('bottom-seat')) + outerHeight($('white-pieces')) + outerHeight($('lastmove'));
-  const gap = parseFloat(getComputedStyle(group).columnGap) || 0;
-  const widthChrome = $('evaluation-bar').getBoundingClientRect().width + gap + borderX;
-  const width = layout.clientWidth;
-  const heightBudget = viewportHeight - top - parseFloat(style.paddingBottom) - boardChrome - borderY - 2;
-  const widthBudget = Math.max(0,width-widthChrome);
-  // On phones, scrolling is preferable to unusably small squares below a wrapped toolbar.
-  const minimumPlayable = Math.min(widthBudget,256);
-  const contentSize = width <= 700 ? widthBudget : Math.min(widthBudget,Math.max(minimumPlayable,heightBudget));
-  const square = Math.max(8, Math.floor(contentSize / 8));
-  const columnWidth = square * 8 + widthChrome;
-  const layoutGap = parseFloat(getComputedStyle(layout).columnGap) || 0;
-  const beside = !focusBoard && width - columnWidth - layoutGap >= 300;
-  document.documentElement.style.setProperty('--sq', square + 'px');
-  document.documentElement.style.setProperty('--boardcolumn-width', columnWidth + 'px');
-  document.documentElement.style.setProperty('--play-height', (square * 8 + borderY + boardChrome) + 'px');
-  layout.classList.toggle('with-sidebar', beside);
-  const dimensions = square * 8;
-  $('board-size').textContent = 'Auto-fit board: ' + dimensions + ' x ' + dimensions + ' px (' + square + ' px squares).';
+  const vv=window.visualViewport;
+  const height=vv&&Math.abs(vv.scale-1)<.02?vv.height:window.innerHeight;
+  const width=document.documentElement.clientWidth;
+  const portrait=matchMedia('(orientation: portrait)').matches;
+  const chrome=22; // evaluation bar, gap, and board borders
+  const budget=portrait?width-8-chrome:Math.min(height-8-2,width-8-12-190-chrome);
+  const square=Math.max(1,Math.floor(budget/8));
+  const column=square*8+chrome;
+  document.documentElement.style.setProperty('--sq',square+'px');
+  document.documentElement.style.setProperty('--boardcolumn-width',column+'px');
+  document.documentElement.style.setProperty('--play-height',(square*8+2)+'px');
+  $('board-size').textContent='Board: '+square*8+' × '+square*8+' px';
 }
 function queueSize() {
   if (sizeFrame !== null) return;
@@ -4522,7 +4558,8 @@ $('sideToPlay').onchange=()=>{
   if(!positionEditing)return;rememberSetup();setupMeta.turn=$('sideToPlay').value;setupMeta.ep='-';selected=null;
   setupChanged(colourName(setupMeta.turn)+' will move first.');
 };
-for(const box of document.querySelectorAll('[data-castle]'))box.onchange=()=>{
+for(const box of document.querySelectorAll('[data-castle]'))box.onclick=()=>{
+  box.checked=!box.checked;
   if(!positionEditing)return;rememberSetup();setupMeta.castling=[...document.querySelectorAll('[data-castle]')].filter(x=>x.checked).map(x=>x.dataset.castle).join('')||'-';
   setupChanged('Castling rights updated. Only enable rights for kings and rooks that have not moved.');
 };
@@ -4536,7 +4573,7 @@ $('copy-fen').onclick=async()=>{
   try{await navigator.clipboard.writeText(fen);$('copy-fen').textContent='Copied';setTimeout(()=>$('copy-fen').textContent='Copy current FEN',1500);}
   catch(error){$('fen-details').open=true;$('position-fen').focus();$('position-fen').select();$('position-status').textContent='Position code selected. Press Ctrl+C (or Copy on your device).';}
 };
-$('hints').onchange=()=>{$('hintsWhite').checked=$('hintsBlack').checked=$('hints').checked;saveSession();queueDraw();};
+$('hints').onchange=()=>{$('showLegalMoves').checked=$('hintsWhite').checked=$('hintsBlack').checked=$('hints').checked;saveSession();queueDraw();};
 $('new').onclick = () => {
   if(positionEditing)return;
   clearAutoplay();game=game instanceof Chess960?new Chess960(initialFen):new Chess(initialFen);gameSerial++;lastChoice=null;
@@ -4571,14 +4608,14 @@ $('allowBlunder').onchange = () => {saveSession(); if (isPlay()) requestAnalysis
 $('weighting').onchange = () => {saveSession(); if (!isMaia() && allowBlunders() && result?.complete && computerTurn()) scheduleComputerMove(); queueDraw();};
 $('think').onchange = () => {saveSession(); if (isPlay()) requestAnalysis();};
 $('engine-retry').onclick = startEngine;
-$('focus').onclick = () => {focusBoard = !focusBoard; applyFocus(); saveSession();};
+
 const fullscreenButton = $('fullscreen');
 fullscreenButton.hidden = !document.fullscreenEnabled || typeof document.documentElement.requestFullscreen !== 'function';
 fullscreenButton.onclick = async () => {
   try {
     if (document.fullscreenElement) await document.exitFullscreen();
     else await document.documentElement.requestFullscreen();
-  } catch (error) { fullscreenButton.title = 'Full screen was blocked by the browser. You can still resize the window or use Focus board.'; }
+  } catch (error) { fullscreenButton.title = 'Full screen was blocked by the browser. You can still resize the window rotate your device.'; }
   queueSize();
 };
 document.addEventListener('fullscreenchange', () => {
@@ -4607,7 +4644,18 @@ for (const [label, preset] of Object.entries(RATING_PRESETS)) {
   }
   $('preset-rows').appendChild(row);
 }
-buildPalettes(); restoreSession(); applyFocus(); refreshPositionCache(); draw(); sizeBoard(); if(!positionEditing)startEngine();
+buildPalettes(); restoreSession();
+$('model').value=inheritedModel();$('rating').value='2400';$('allowBlunder').checked=false;
+$('think').value='0';
+$('hintsBlack').checked=$('showLegalMoves').checked=$('hintsWhite').checked;
+$('speak-toggle').setAttribute('aria-pressed',String($('speakComputer').checked));
+$('speak-toggle').onclick=()=>{
+  $('speakComputer').checked=!$('speakComputer').checked;
+  $('speak-toggle').setAttribute('aria-pressed',String($('speakComputer').checked));
+  if(!$('speakComputer').checked)stopComputerAnnouncement();
+  saveSession();
+};
+applyFocus(); refreshPositionCache(); draw(); sizeBoard(); if(!positionEditing)startEngine();
 })();
 </script>
 </body>
