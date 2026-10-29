@@ -1,0 +1,15 @@
+{
+  "format": "chess-teacher-puzzle-collections-v1",
+  "collections": [
+    {
+      "id": "tournaments",
+      "name": "Tournament Games",
+      "basePath": "puzzles/"
+    },
+    {
+      "id": "famous",
+      "name": "Famous Games",
+      "basePath": "puzzles/famous/"
+    }
+  ]
+}
