@@ -1,11 +1,13 @@
 {
   "format": "chess-teacher-mate-puzzles-v1",
+  "collection": "tournaments",
   "level": 1,
+  "categoryPolicy": "exact-shortest-forced-mate",
+  "aliases": {},
   "puzzles": [
     {
       "fen": "r6k/1pp3p1/3p2pp/p1b1n3/P5Pq/6rP/R1B2P1K/Q1B2R2 b - - 11 24",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "h4h3"
       ],
@@ -20,25 +22,35 @@
         "round": "6.10",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 47
+        "startPly": 47,
+        "recordedContinuationUci": [
+          "h4h3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-01",
       "mate": 1,
       "exampleLine": [
         "h4h3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h4h3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/5pk1/6p1/8/1P4RP/4bQPK/2rq4/8 b - - 3 51",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "d2h2"
       ],
@@ -53,25 +65,35 @@
         "round": "4.11",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 101
+        "startPly": 101,
+        "recordedContinuationUci": [
+          "d2h2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-02",
       "mate": 1,
       "exampleLine": [
         "d2h2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d2h2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r4r1k/pp4p1/n1p1B1P1/7n/6P1/5P2/P5K1/2B4R w - - 1 23",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "h1h5"
       ],
@@ -86,29 +108,39 @@
         "round": "3.11",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 44
+        "startPly": 44,
+        "recordedContinuationUci": [
+          "h1h5"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-03",
       "mate": 1,
       "exampleLine": [
         "h1h5"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h1h5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7r/8/3R4/1rN2Pk1/1P2P1P1/P5K1/5P1p/8 w - - 0 43",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "f2f4"
       ],
-      "firstMove": "f2f4",
+      "firstMove": "d6g6",
       "source": {
         "game": "Michalik, Peter - Trost, Edvin",
         "white": "Michalik, Peter",
@@ -119,25 +151,35 @@
         "round": "5.10",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 84
+        "startPly": 84,
+        "recordedContinuationUci": [
+          "f2f4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-04",
       "mate": 1,
       "exampleLine": [
-        "f2f4"
-      ]
+        "d6g6"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d6g6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4r3/R1R2p2/4pkp1/7p/3pnP2/3P1KP1/1rP4P/8 w - - 0 35",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c7f7"
       ],
@@ -152,25 +194,35 @@
         "round": "1.2",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 68
+        "startPly": 68,
+        "recordedContinuationUci": [
+          "c7f7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-05",
       "mate": 1,
       "exampleLine": [
         "c7f7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c7f7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/5KBk/7p/6P1/8/8 w - - 1 64",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "g3g4"
       ],
@@ -185,25 +237,35 @@
         "round": "2.13",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 126
+        "startPly": 126,
+        "recordedContinuationUci": [
+          "g3g4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-06",
       "mate": 1,
       "exampleLine": [
         "g3g4"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g3g4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/7k/3p2p1/5p2/1P6/3n1P2/6BP/2q3QK b - - 1 52",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "d3f2"
       ],
@@ -218,25 +280,35 @@
         "round": "2.6",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 103
+        "startPly": 103,
+        "recordedContinuationUci": [
+          "d3f2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-07",
       "mate": 1,
       "exampleLine": [
         "d3f2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d3f2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/pp3p2/2p4p/1PP4k/8/5n1P/4BP2/1r4RK b - - 8 47",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "b1g1"
       ],
@@ -251,25 +323,35 @@
         "round": "4.7",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 93
+        "startPly": 93,
+        "recordedContinuationUci": [
+          "b1g1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-08",
       "mate": 1,
       "exampleLine": [
         "b1g1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b1g1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3r3r/2k3p1/QpPp1b2/7p/8/8/2q2PPP/4R1K1 w - - 2 29",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "a6b7"
       ],
@@ -284,25 +366,35 @@
         "round": "4.2",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 56
+        "startPly": 56,
+        "recordedContinuationUci": [
+          "a6b7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 11,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-09",
       "mate": 1,
       "exampleLine": [
         "a6b7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "a6b7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "R1N3k1/2pq1p1p/3p2pQ/3P4/4Pp1P/3n1P2/2p3P1/6K1 w - - 0 26",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c8e7"
       ],
@@ -317,29 +409,39 @@
         "round": "2.6",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/37th-ecc-open-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 50
+        "startPly": 50,
+        "recordedContinuationUci": [
+          "c8e7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 17,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-10",
       "mate": 1,
       "exampleLine": [
         "c8e7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c8e7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r3r1k1/pp3p2/7p/2p3p1/P1Pn4/1P1K4/4B3/2q5 b - - 9 37",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e8e3"
       ],
-      "firstMove": "e8e3",
+      "firstMove": "c1e3",
       "source": {
         "game": "Abdelmadjid Zakaria, Mahamat - Ndahangwapo, Heskiel",
         "white": "Abdelmadjid Zakaria, Mahamat",
@@ -350,29 +452,39 @@
         "round": "6.72",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 73
+        "startPly": 73,
+        "recordedContinuationUci": [
+          "e8e3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-11",
       "mate": 1,
       "exampleLine": [
-        "e8e3"
-      ]
+        "c1e3"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c1e3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/Bpp3p1/p7/4p2K/4b2P/1P6/6r1/8 b - - 2 37",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e4f3"
       ],
-      "firstMove": "e4f3",
+      "firstMove": "e4g6",
       "source": {
         "game": "Aboubacar Akarintkitt - Cottle, Brian S",
         "white": "Aboubacar Akarintkitt",
@@ -383,25 +495,35 @@
         "round": "8.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 73
+        "startPly": 73,
+        "recordedContinuationUci": [
+          "e4f3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-12",
       "mate": 1,
       "exampleLine": [
-        "e4f3"
-      ]
+        "e4g6"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e4g6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/5np1/8/2p3k1/p1P1b3/P4q1p/5N1K/8 b - - 3 59",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "f3g2"
       ],
@@ -416,29 +538,39 @@
         "round": "2.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 117
+        "startPly": 117,
+        "recordedContinuationUci": [
+          "f3g2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 11,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-13",
       "mate": 1,
       "exampleLine": [
         "f3g2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f3g2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4Q3/7k/6pp/q1p1RQ2/3p4/3P4/1PP3PP/6K1 w - - 0 46",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "f5f7"
       ],
-      "firstMove": "f5f7",
+      "firstMove": "f5g6",
       "source": {
         "game": "Aboubacar Akarintkitt - Hewlett, Leo",
         "white": "Aboubacar Akarintkitt",
@@ -449,25 +581,35 @@
         "round": "7.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 90
+        "startPly": 90,
+        "recordedContinuationUci": [
+          "f5f7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-14",
       "mate": 1,
       "exampleLine": [
-        "f5f7"
-      ]
+        "f5g6"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f5g6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/p4ppk/2p5/3p3p/2p5/B1PpP3/PR2nqPK/8 b - - 7 31",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "f2h4"
       ],
@@ -482,25 +624,35 @@
         "round": "5.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 61
+        "startPly": 61,
+        "recordedContinuationUci": [
+          "f2h4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-15",
       "mate": 1,
       "exampleLine": [
         "f2h4"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f2h4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3R4/7k/1p3Qr1/p3N2r/8/4P1p1/PP3P1p/2R4K w - - 0 34",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "f6g6"
       ],
@@ -515,25 +667,35 @@
         "round": "2.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 66
+        "startPly": 66,
+        "recordedContinuationUci": [
+          "f6g6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-16",
       "mate": 1,
       "exampleLine": [
         "f6g6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f6g6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/4Q1p1/6k1/1P3N1p/6P1/p4P2/P6P/6K1 w - - 5 50",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e7g7"
       ],
@@ -548,25 +710,35 @@
         "round": "2.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 98
+        "startPly": 98,
+        "recordedContinuationUci": [
+          "e7g7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-17",
       "mate": 1,
       "exampleLine": [
         "e7g7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e7g7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/2b3pp/p7/2p3k1/Pp2p1P1/5p1K/1P2r3/5R2 b - - 1 41",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e2h2"
       ],
@@ -581,25 +753,35 @@
         "round": "5.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 81
+        "startPly": 81,
+        "recordedContinuationUci": [
+          "e2h2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-18",
       "mate": 1,
       "exampleLine": [
         "e2h2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e2h2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/K1k4p/1p3pp1/3r4/4p3/8/8 b - - 3 51",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "d4a4"
       ],
@@ -614,25 +796,35 @@
         "round": "3.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 101
+        "startPly": 101,
+        "recordedContinuationUci": [
+          "d4a4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-19",
       "mate": 1,
       "exampleLine": [
         "d4a4"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d4a4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3rk2r/3qn1b1/5pP1/4p3/3pP2B/1Q3NPp/PP3P2/2R2RK1 w - - 5 33",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "b3f7"
       ],
@@ -647,25 +839,35 @@
         "round": "6.93",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 64
+        "startPly": 64,
+        "recordedContinuationUci": [
+          "b3f7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-20",
       "mate": 1,
       "exampleLine": [
         "b3f7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b3f7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/5R2/5KPp/7P/1p6/1P6/8/8 w - - 6 51",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "f7f8"
       ],
@@ -680,25 +882,35 @@
         "round": "5.67",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 100
+        "startPly": 100,
+        "recordedContinuationUci": [
+          "f7f8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-21",
       "mate": 1,
       "exampleLine": [
         "f7f8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f7f8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1R6/6pk/5pNp/3P3P/8/3rPK2/5PP1/8 w - - 3 39",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "b8h8"
       ],
@@ -713,25 +925,35 @@
         "round": "7.66",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 76
+        "startPly": 76,
+        "recordedContinuationUci": [
+          "b8h8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-22",
       "mate": 1,
       "exampleLine": [
         "b8h8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b8h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/2b3p1/2r4p/3k3P/8/K7/8/1r6 b - - 3 55",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c6a6"
       ],
@@ -746,25 +968,35 @@
         "round": "3.70",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 109
+        "startPly": 109,
+        "recordedContinuationUci": [
+          "c6a6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-23",
       "mate": 1,
       "exampleLine": [
         "c6a6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c6a6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/2R4r/5P2/6N1/P5p1/3p4/1P1K1P2/8 w - - 2 42",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c7c8"
       ],
@@ -779,25 +1011,35 @@
         "round": "3.76",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 82
+        "startPly": 82,
+        "recordedContinuationUci": [
+          "c7c8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-24",
       "mate": 1,
       "exampleLine": [
         "c7c8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c7c8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/4b3/6R1/7p/1p1rnP2/1P2N3/5N1k/5K2 w - - 9 62",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "g6g2"
       ],
@@ -812,25 +1054,35 @@
         "round": "5.52",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 122
+        "startPly": 122,
+        "recordedContinuationUci": [
+          "g6g2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-25",
       "mate": 1,
       "exampleLine": [
         "g6g2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g6g2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4Q3/1p4k1/8/7Q/PpPp4/1r6/5q2/4R2K w - - 1 46",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e8h8"
       ],
@@ -845,25 +1097,35 @@
         "round": "7.47",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 90
+        "startPly": 90,
+        "recordedContinuationUci": [
+          "e8h8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-26",
       "mate": 1,
       "exampleLine": [
         "e8h8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e8h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5rk1/pp2b1pp/8/8/3PR1Qq/8/PP3r2/1B1R2K1 b - - 1 31",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "h4h2"
       ],
@@ -878,25 +1140,35 @@
         "round": "1.37",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 61
+        "startPly": 61,
+        "recordedContinuationUci": [
+          "h4h2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-27",
       "mate": 1,
       "exampleLine": [
         "h4h2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h4h2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/8/8/PK4p1/3Q3P/1k6 w - - 0 61",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "d2d1"
       ],
@@ -911,29 +1183,39 @@
         "round": "2.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 120
+        "startPly": 120,
+        "recordedContinuationUci": [
+          "d2d1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-28",
       "mate": 1,
       "exampleLine": [
         "d2d1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d2d1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r5k1/ppp3pp/2n1p3/2bP4/1q6/3K4/PPP1B1PP/R1BQ1r1R b - - 6 16",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "b4d4"
       ],
-      "firstMove": "b4d4",
+      "firstMove": "c6e5",
       "source": {
         "game": "Alexander, Shakthi - Cu Hor, Winston Darwin",
         "white": "Alexander, Shakthi",
@@ -944,25 +1226,35 @@
         "round": "1.83",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 31
+        "startPly": 31,
+        "recordedContinuationUci": [
+          "b4d4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-29",
       "mate": 1,
       "exampleLine": [
-        "b4d4"
-      ]
+        "c6e5"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c6e5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r5k1/ppp3p1/3p1r1p/4p3/3bPp2/1PNQ1P1q/P1PBR3/1R2K3 b - - 1 28",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "h3h1"
       ],
@@ -977,25 +1269,35 @@
         "round": "11.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 55
+        "startPly": 55,
+        "recordedContinuationUci": [
+          "h3h1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-30",
       "mate": 1,
       "exampleLine": [
         "h3h1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h3h1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "Q7/1ppkp3/p3p2p/6p1/1P2q1P1/P1r4P/5P2/5K2 b - - 1 32",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c3c1"
       ],
@@ -1010,25 +1312,35 @@
         "round": "5.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 63
+        "startPly": 63,
+        "recordedContinuationUci": [
+          "c3c1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 17,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-31",
       "mate": 1,
       "exampleLine": [
         "c3c1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c3c1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5r2/5r1k/4R1p1/p1p3Q1/2q5/2B3P1/PP3P2/6K1 w - - 0 36",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "g5g6"
       ],
@@ -1043,25 +1355,35 @@
         "round": "5.63",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 70
+        "startPly": 70,
+        "recordedContinuationUci": [
+          "g5g6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-32",
       "mate": 1,
       "exampleLine": [
         "g5g6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g5g6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "b2qr3/5p1Q/2p2k1p/n7/1b1P4/8/1PB1RPPP/2B3K1 w - - 6 31",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "h7h6"
       ],
@@ -1076,25 +1398,35 @@
         "round": "6.77",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 60
+        "startPly": 60,
+        "recordedContinuationUci": [
+          "h7h6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-33",
       "mate": 1,
       "exampleLine": [
         "h7h6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h7h6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/5p2/4p2p/2n5/6PB/2b1P2P/3q1P2/1K6 b - - 1 43",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "d2b2"
       ],
@@ -1109,25 +1441,35 @@
         "round": "1.55",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 85
+        "startPly": 85,
+        "recordedContinuationUci": [
+          "d2b2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 11,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-34",
       "mate": 1,
       "exampleLine": [
         "d2b2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d2b2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1K3Q2/1P4Q1/8/8/7k/8/8/8 w - - 5 117",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "f8h8"
       ],
@@ -1142,25 +1484,35 @@
         "round": "7.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 232
+        "startPly": 232,
+        "recordedContinuationUci": [
+          "f8h8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 33,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-35",
       "mate": 1,
       "exampleLine": [
         "f8h8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f8h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4Q1R1/8/3p1prp/3P1n1k/8/1P3q1P/P6K/8 b - - 11 49",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "f3g2"
       ],
@@ -1175,25 +1527,35 @@
         "round": "9.54",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 97
+        "startPly": 97,
+        "recordedContinuationUci": [
+          "f3g2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-36",
       "mate": 1,
       "exampleLine": [
         "f3g2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f3g2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r2r2k1/4b1p1/3p2Pp/1Bn5/4bP2/8/PP2N3/K3RR2 b - - 5 31",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c5b3"
       ],
@@ -1208,25 +1570,35 @@
         "round": "4.75",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 61
+        "startPly": 61,
+        "recordedContinuationUci": [
+          "c5b3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-37",
       "mate": 1,
       "exampleLine": [
         "c5b3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c5b3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/4R2p/2p2K2/4p3/7P/5P2/6r1/8 w - - 0 42",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e7e8"
       ],
@@ -1241,25 +1613,35 @@
         "round": "5.78",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 82
+        "startPly": 82,
+        "recordedContinuationUci": [
+          "e7e8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-38",
       "mate": 1,
       "exampleLine": [
         "e7e8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e7e8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3Q4/7k/1R5p/7p/1P3p2/5Pn1/5KP1/3r4 b - - 0 51",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "d1f1"
       ],
@@ -1274,25 +1656,35 @@
         "round": "6.62",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 101
+        "startPly": 101,
+        "recordedContinuationUci": [
+          "d1f1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-39",
       "mate": 1,
       "exampleLine": [
         "d1f1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d1f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/8/7k/2r3pp/1R6/6K1 b - - 0 59",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c3c1"
       ],
@@ -1307,25 +1699,35 @@
         "round": "1.85",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 117
+        "startPly": 117,
+        "recordedContinuationUci": [
+          "c3c1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-40",
       "mate": 1,
       "exampleLine": [
         "c3c1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c3c1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/pQ3ppp/2n1b1n1/8/8/1P4KP/P5P1/4r1q1 b - - 2 34",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e1e3"
       ],
@@ -1340,25 +1742,35 @@
         "round": "10.81",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 67
+        "startPly": 67,
+        "recordedContinuationUci": [
+          "e1e3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 11,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-41",
       "mate": 1,
       "exampleLine": [
         "e1e3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e1e3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/2q4p/1q5P/8/K7/6k1/8/8 b - - 5 61",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c7a7"
       ],
@@ -1373,25 +1785,35 @@
         "round": "4.90",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 121
+        "startPly": 121,
+        "recordedContinuationUci": [
+          "c7a7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-42",
       "mate": 1,
       "exampleLine": [
         "c7a7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c7a7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1R6/8/p7/5p1p/7P/2rp2k1/K7/2q5 b - - 3 65",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c3a3"
       ],
@@ -1406,29 +1828,39 @@
         "round": "1.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 129
+        "startPly": 129,
+        "recordedContinuationUci": [
+          "c3a3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-43",
       "mate": 1,
       "exampleLine": [
         "c3a3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c3a3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/2p5/1p1p4/1PbP4/8/pk6/3rp3/K7 b - - 1 67",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "d2d1"
       ],
-      "firstMove": "d2d1",
+      "firstMove": "e2e1q",
       "source": {
         "game": "Aziradji Mohamed Ismael - Hasford, John Kojo",
         "white": "Aziradji Mohamed Ismael",
@@ -1439,25 +1871,35 @@
         "round": "2.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 133
+        "startPly": 133,
+        "recordedContinuationUci": [
+          "d2d1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-44",
       "mate": 1,
       "exampleLine": [
-        "d2d1"
-      ]
+        "e2e1q"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e2e1q"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2bk4/8/2PP1p2/1BK3p1/5P1p/6P1/7P/8 w - - 2 43",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c6c7"
       ],
@@ -1472,25 +1914,35 @@
         "round": "2.81",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 84
+        "startPly": 84,
+        "recordedContinuationUci": [
+          "c6c7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-45",
       "mate": 1,
       "exampleLine": [
         "c6c7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c6c7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/6p1/p1P1Q3/Pq2Pp1p/5P2/4P1P1/6KP/3r4 b - - 2 37",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "b5f1"
       ],
@@ -1505,25 +1957,35 @@
         "round": "5.65",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 73
+        "startPly": 73,
+        "recordedContinuationUci": [
+          "b5f1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-46",
       "mate": 1,
       "exampleLine": [
         "b5f1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b5f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/4B3/6KN/8/8/8/8/8 w - - 41 107",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e7f6"
       ],
@@ -1538,25 +2000,35 @@
         "round": "10.48",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 212
+        "startPly": 212,
+        "recordedContinuationUci": [
+          "e7f6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-47",
       "mate": 1,
       "exampleLine": [
         "e7f6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e7f6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/5p2/b6P/p1pk4/P4p2/1P5R/5KP1/1r6 b - - 0 49",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "b1f1"
       ],
@@ -1571,25 +2043,35 @@
         "round": "11.48",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 97
+        "startPly": 97,
+        "recordedContinuationUci": [
+          "b1f1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-48",
       "mate": 1,
       "exampleLine": [
         "b1f1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b1f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/1B4k1/p3R3/Pp3p2/2q4b/4PK2/1PP3P1/5R2 b - - 2 39",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c4f1"
       ],
@@ -1604,25 +2086,35 @@
         "round": "3.57",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 77
+        "startPly": 77,
+        "recordedContinuationUci": [
+          "c4f1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-49",
       "mate": 1,
       "exampleLine": [
         "c4f1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c4f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3r1k2/1R1P1Bb1/2p3P1/p4b2/5B2/8/PP6/2K5 w - - 1 39",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "f4d6"
       ],
@@ -1637,29 +2129,39 @@
         "round": "7.87",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 76
+        "startPly": 76,
+        "recordedContinuationUci": [
+          "f4d6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-50",
       "mate": 1,
       "exampleLine": [
         "f4d6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f4d6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/2q3k1/P5p1/5q2/4p2K/6PP/2P5/8 b - - 2 44",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "f5h5"
       ],
-      "firstMove": "f5h5",
+      "firstMove": "c7d8",
       "source": {
         "game": "Bongo Ngombele, Tary - AH KYE, Benitot",
         "white": "Bongo Ngombele, Tary",
@@ -1670,25 +2172,35 @@
         "round": "4.81",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 87
+        "startPly": 87,
+        "recordedContinuationUci": [
+          "f5h5"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-51",
       "mate": 1,
       "exampleLine": [
-        "f5h5"
-      ]
+        "c7d8"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c7d8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/p2Q1ppp/2p5/1qP5/8/K7/P5PP/2r5 b - - 11 38",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c1c3"
       ],
@@ -1703,25 +2215,35 @@
         "round": "3.76",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 75
+        "startPly": 75,
+        "recordedContinuationUci": [
+          "c1c3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-52",
       "mate": 1,
       "exampleLine": [
         "c1c3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c1c3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/5pkp/4p1P1/1R1pP3/2r5/1K6/8/r6q b - - 0 67",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "h1b1"
       ],
@@ -1736,25 +2258,35 @@
         "round": "6.84",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 133
+        "startPly": 133,
+        "recordedContinuationUci": [
+          "h1b1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 11,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-53",
       "mate": 1,
       "exampleLine": [
         "h1b1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h1b1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3r4/p5Q1/bq1Pk3/4p3/5n2/1p6/P1r2PP1/3RR1K1 w - - 0 39",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e1e5"
       ],
@@ -1769,25 +2301,35 @@
         "round": "2.41",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 76
+        "startPly": 76,
+        "recordedContinuationUci": [
+          "e1e5"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-54",
       "mate": 1,
       "exampleLine": [
         "e1e5"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e1e5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2r2bk1/1pqn3p/p2p1pPQ/3Pp3/2P1N3/1P4R1/P5PP/3R2K1 w - - 1 31",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "h6h7"
       ],
@@ -1802,25 +2344,35 @@
         "round": "1.41",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 60
+        "startPly": 60,
+        "recordedContinuationUci": [
+          "h6h7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-55",
       "mate": 1,
       "exampleLine": [
         "h6h7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h6h7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6kr/pp3p2/1b2pPp1/3pP2p/3q2P1/B2RRQKP/P1r5/8 b - - 1 36",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "h5h4"
       ],
@@ -1835,25 +2387,35 @@
         "round": "2.53",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 71
+        "startPly": 71,
+        "recordedContinuationUci": [
+          "h5h4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-56",
       "mate": 1,
       "exampleLine": [
         "h5h4"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h5h4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3r2k1/1p4pp/5p2/p2p1P1Q/3Pb1RN/4q3/6PP/2R2K2 b - - 1 26",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e4d3"
       ],
@@ -1868,25 +2430,35 @@
         "round": "5.26",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 51
+        "startPly": 51,
+        "recordedContinuationUci": [
+          "e4d3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 17,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-57",
       "mate": 1,
       "exampleLine": [
         "e4d3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e4d3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2Qq1k2/5r2/p7/1p2PNpp/2p5/P1P4P/1P3PP1/4R1K1 w - - 5 43",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c8d8"
       ],
@@ -1901,25 +2473,35 @@
         "round": "5.87",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 84
+        "startPly": 84,
+        "recordedContinuationUci": [
+          "c8d8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-58",
       "mate": 1,
       "exampleLine": [
         "c8d8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c8d8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/1R5p/4p1pk/3pN2q/2b2P1Q/6P1/r6P/6K1 w - - 9 33",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e5g4"
       ],
@@ -1934,25 +2516,35 @@
         "round": "8.44",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 64
+        "startPly": 64,
+        "recordedContinuationUci": [
+          "e5g4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-59",
       "mate": 1,
       "exampleLine": [
         "e5g4"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e5g4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/1p6/b1p1p1k1/P3pn2/8/2q5/K7 b - - 3 59",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "a5c3"
       ],
@@ -1967,25 +2559,35 @@
         "round": "3.87",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 117
+        "startPly": 117,
+        "recordedContinuationUci": [
+          "a5c3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-60",
       "mate": 1,
       "exampleLine": [
         "a5c3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "a5c3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/1p3pkp/6p1/2p5/2P2P2/1P4PP/7Q/3rqNK1 b - - 0 43",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e1f1"
       ],
@@ -2000,25 +2602,35 @@
         "round": "9.75",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 85
+        "startPly": 85,
+        "recordedContinuationUci": [
+          "e1f1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-61",
       "mate": 1,
       "exampleLine": [
         "e1f1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e1f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r3k3/p6q/1pnp2p1/3B1p2/3P4/2R1PQp1/PP1N2P1/5RK1 b q - 2 24",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "h7h2"
       ],
@@ -2033,25 +2645,35 @@
         "round": "10.87",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 47
+        "startPly": 47,
+        "recordedContinuationUci": [
+          "h7h2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-62",
       "mate": 1,
       "exampleLine": [
         "h7h2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h7h2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/1p5k/p1qprP2/P1p3Qp/2P3nP/1P3P2/8/6RK w - - 4 38",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "g5g7"
       ],
@@ -2066,25 +2688,35 @@
         "round": "2.15",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 74
+        "startPly": 74,
+        "recordedContinuationUci": [
+          "g5g7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-63",
       "mate": 1,
       "exampleLine": [
         "g5g7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g5g7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/4Q3/4P1k1/3p1pP1/3P1B2/5PP1/6K1/2q5 w - - 0 60",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e7f7"
       ],
@@ -2099,25 +2731,35 @@
         "round": "5.90",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 118
+        "startPly": 118,
+        "recordedContinuationUci": [
+          "e7f7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-64",
       "mate": 1,
       "exampleLine": [
         "e7f7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e7f7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2kr1bnr/1p3ppp/2nB4/pBpN4/Q1PP2b1/5N2/PP3PPP/R4RK1 w - - 0 13",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "d5b6"
       ],
@@ -2132,25 +2774,35 @@
         "round": "3.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 24
+        "startPly": 24,
+        "recordedContinuationUci": [
+          "d5b6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-65",
       "mate": 1,
       "exampleLine": [
         "d5b6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d5b6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2Q5/B7/3R4/4k3/8/5PPp/7P/5K2 w - - 3 48",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c8c5"
       ],
@@ -2165,29 +2817,39 @@
         "round": "3.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 94
+        "startPly": 94,
+        "recordedContinuationUci": [
+          "c8c5"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 9,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-66",
       "mate": 1,
       "exampleLine": [
         "c8c5"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c8c5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2k5/Q2r3n/1p2p2p/1N1pB1rB/3P1p2/P3P3/6PP/R4RK1 w - - 1 32",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "a7a8"
       ],
-      "firstMove": "a7a8",
+      "firstMove": "a7b8",
       "source": {
         "game": "Dalliah, Joseph - Nambi, Pradeep",
         "white": "Dalliah, Joseph",
@@ -2198,25 +2860,35 @@
         "round": "8.90",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 62
+        "startPly": 62,
+        "recordedContinuationUci": [
+          "a7a8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-67",
       "mate": 1,
       "exampleLine": [
-        "a7a8"
-      ]
+        "a7b8"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "a7b8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/1p3pp1/2b4p/2p2P1P/8/2q5/1q6/5K2 b - - 3 37",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c3c1"
       ],
@@ -2231,25 +2903,35 @@
         "round": "1.82",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 73
+        "startPly": 73,
+        "recordedContinuationUci": [
+          "c3c1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 17,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-68",
       "mate": 1,
       "exampleLine": [
         "c3c1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c3c1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r1b1k1nr/pppp1ppp/8/2bNp3/4P3/P7/1PQP1qPP/R1BK1BNR b kq - 1 8",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "f2f1"
       ],
@@ -2264,25 +2946,35 @@
         "round": "7.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 15
+        "startPly": 15,
+        "recordedContinuationUci": [
+          "f2f1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-69",
       "mate": 1,
       "exampleLine": [
         "f2f1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f2f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1k4r1/1pp1b2p/p7/8/P1PPPp2/BP1KN1q1/2Q4r/R7 b - - 2 34",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "g3e3"
       ],
@@ -2297,25 +2989,35 @@
         "round": "11.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 67
+        "startPly": 67,
+        "recordedContinuationUci": [
+          "g3e3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-70",
       "mate": 1,
       "exampleLine": [
         "g3e3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g3e3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5rk1/p1p3pp/1pb2pq1/4p3/5P2/3P4/P1P1QNPP/1R2R1K1 b - - 0 22",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "g6g2"
       ],
@@ -2330,25 +3032,35 @@
         "round": "6.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 43
+        "startPly": 43,
+        "recordedContinuationUci": [
+          "g6g2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-71",
       "mate": 1,
       "exampleLine": [
         "g6g2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g6g2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/kp6/6p1/p2p4/3n1PP1/P5K1/1P2q2r/4R3 b - - 1 38",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e2g2"
       ],
@@ -2363,25 +3075,35 @@
         "round": "4.93",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 75
+        "startPly": 75,
+        "recordedContinuationUci": [
+          "e2g2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 19,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-72",
       "mate": 1,
       "exampleLine": [
         "e2g2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e2g2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r4br1/pN6/1kn1Q2p/1ppPB2p/8/2P5/PP3PPP/RN4K1 w - - 0 24",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e6c6"
       ],
@@ -2396,25 +3118,35 @@
         "round": "3.81",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 46
+        "startPly": 46,
+        "recordedContinuationUci": [
+          "e6c6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-73",
       "mate": 1,
       "exampleLine": [
         "e6c6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e6c6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3rkb1r/1Q3ppp/p2pPnn1/8/1P3B2/2N5/P1P2P1P/R3K1N1 w Qk - 1 20",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "b7f7"
       ],
@@ -2429,25 +3161,35 @@
         "round": "5.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 38
+        "startPly": 38,
+        "recordedContinuationUci": [
+          "b7f7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-74",
       "mate": 1,
       "exampleLine": [
         "b7f7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b7f7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/4N1pp/7k/5Q2/P7/5P2/6K1 w - - 2 60",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e6g7"
       ],
@@ -2462,25 +3204,35 @@
         "round": "3.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 118
+        "startPly": 118,
+        "recordedContinuationUci": [
+          "e6g7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 13,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-75",
       "mate": 1,
       "exampleLine": [
         "e6g7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e6g7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5k2/1p2R1p1/1p1P1p2/r4B1p/4P3/8/1P3PPP/2R3K1 w - - 5 30",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c1c8"
       ],
@@ -2495,25 +3247,35 @@
         "round": "1.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 58
+        "startPly": 58,
+        "recordedContinuationUci": [
+          "c1c8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-76",
       "mate": 1,
       "exampleLine": [
         "c1c8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c1c8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r4r2/p3q1k1/bp2p1p1/3nN3/4Q3/1BP5/PP3P2/1K5R w - - 0 30",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e4g6"
       ],
@@ -2528,25 +3290,35 @@
         "round": "6.89",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 58
+        "startPly": 58,
+        "recordedContinuationUci": [
+          "e4g6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-77",
       "mate": 1,
       "exampleLine": [
         "e4g6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e4g6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6r1/p2p1pB1/2pP4/1r3N1k/1p6/6R1/PPB3PP/5RK1 w - - 4 33",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c2d1"
       ],
@@ -2561,25 +3333,35 @@
         "round": "3.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 64
+        "startPly": 64,
+        "recordedContinuationUci": [
+          "c2d1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-78",
       "mate": 1,
       "exampleLine": [
         "c2d1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c2d1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4r1k1/p4Rp1/1p2P1Qp/2pp4/3P4/1P4PB/P3q2P/7K w - - 4 42",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "g6g7"
       ],
@@ -2594,25 +3376,35 @@
         "round": "10.87",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 82
+        "startPly": 82,
+        "recordedContinuationUci": [
+          "g6g7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-79",
       "mate": 1,
       "exampleLine": [
         "g6g7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g6g7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/6B1/2N3K1/8/8/8/8/8 w - - 79 95",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c6e7"
       ],
@@ -2627,25 +3419,35 @@
         "round": "4.83",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 188
+        "startPly": 188,
+        "recordedContinuationUci": [
+          "c6e7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-80",
       "mate": 1,
       "exampleLine": [
         "c6e7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c6e7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4k3/1R3p2/r1PPp3/3n4/p2P2r1/3P1N2/P2B2P1/5RK1 w - - 3 32",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "b7b8"
       ],
@@ -2660,25 +3462,35 @@
         "round": "8.92",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 62
+        "startPly": 62,
+        "recordedContinuationUci": [
+          "b7b8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-81",
       "mate": 1,
       "exampleLine": [
         "b7b8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b7b8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2b4R/1p6/p1p3k1/2P1Kp2/1P3P2/P7/3r2N1/8 b - - 2 53",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "d2d5"
       ],
@@ -2693,29 +3505,39 @@
         "round": "6.46",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 105
+        "startPly": 105,
+        "recordedContinuationUci": [
+          "d2d5"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-82",
       "mate": 1,
       "exampleLine": [
         "d2d5"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d2d5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4kr2/p1Q4R/8/1p2p3/4P1p1/PN1P2P1/qPP2P2/2KR4 w - - 1 29",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c7e7"
       ],
-      "firstMove": "c7e7",
+      "firstMove": "h7e7",
       "source": {
         "game": "Estur, Gavino Aguilar - Kasongo Kazadi Olivier",
         "white": "Estur, Gavino Aguilar",
@@ -2726,25 +3548,35 @@
         "round": "4.79",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 56
+        "startPly": 56,
+        "recordedContinuationUci": [
+          "c7e7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-83",
       "mate": 1,
       "exampleLine": [
-        "c7e7"
-      ]
+        "h7e7"
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h7e7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3R4/4k1pp/8/1p2pQ2/4n3/P3B3/1p3PPP/3R2K1 w - - 2 32",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "d1d7"
       ],
@@ -2759,25 +3591,35 @@
         "round": "3.86",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 62
+        "startPly": 62,
+        "recordedContinuationUci": [
+          "d1d7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 15,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-84",
       "mate": 1,
       "exampleLine": [
         "d1d7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d1d7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/p1R5/6p1/8/8/PR2p1Pp/5P1P/6K1 w - - 0 39",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "b3b8"
       ],
@@ -2792,25 +3634,35 @@
         "round": "8.87",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 76
+        "startPly": 76,
+        "recordedContinuationUci": [
+          "b3b8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-85",
       "mate": 1,
       "exampleLine": [
         "b3b8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "b3b8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/6Pk/5P2/b5K1/2B5/8/P7/8 w - - 5 62",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "g7g8q"
       ],
@@ -2825,25 +3677,35 @@
         "round": "6.65",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 122
+        "startPly": 122,
+        "recordedContinuationUci": [
+          "g7g8q"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-86",
       "mate": 1,
       "exampleLine": [
         "g7g8q"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g7g8q"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1rb2k1r/ppN1n1qp/2n1pp2/7Q/3P1P2/3B1NP1/PPP2P1P/2KRR3 w - - 1 16",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "h5e8"
       ],
@@ -2858,25 +3720,35 @@
         "round": "2.81",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 30
+        "startPly": 30,
+        "recordedContinuationUci": [
+          "h5e8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-87",
       "mate": 1,
       "exampleLine": [
         "h5e8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h5e8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4k2r/1q3p1p/1nNQ4/3p2p1/3Pn3/BP2P3/P4PPP/2R2RK1 w k - 1 25",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "d6d8"
       ],
@@ -2891,25 +3763,35 @@
         "round": "6.69",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 48
+        "startPly": 48,
+        "recordedContinuationUci": [
+          "d6d8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 15,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-88",
       "mate": 1,
       "exampleLine": [
         "d6d8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d6d8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r1b4r/bp2qpk1/2p5/p3P2p/2B2P2/1QP5/PP1R2PK/5R2 b - - 0 23",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e7h4"
       ],
@@ -2924,25 +3806,35 @@
         "round": "10.55",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 45
+        "startPly": 45,
+        "recordedContinuationUci": [
+          "e7h4"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-89",
       "mate": 1,
       "exampleLine": [
         "e7h4"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e7h4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r3k2r/1p3pp1/p3p3/3pP2p/4bPn1/1Q2PBqP/PP4P1/R1B2RK1 b kq - 4 18",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "g3h2"
       ],
@@ -2957,25 +3849,35 @@
         "round": "3.82",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 35
+        "startPly": 35,
+        "recordedContinuationUci": [
+          "g3h2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-90",
       "mate": 1,
       "exampleLine": [
         "g3h2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g3h2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/p7/1p4k1/1P2q2p/2Q3pP/P4bP1/5K2/3r4 b - - 6 52",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e5e1"
       ],
@@ -2990,25 +3892,35 @@
         "round": "1.57",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 103
+        "startPly": 103,
+        "recordedContinuationUci": [
+          "e5e1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 5,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-91",
       "mate": 1,
       "exampleLine": [
         "e5e1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e5e1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r5kr/pp1RQ2p/2p1R3/8/6q1/1P6/P1P2PPP/6K1 w - - 5 29",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "e7f7"
       ],
@@ -3023,25 +3935,35 @@
         "round": "1.64",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 56
+        "startPly": 56,
+        "recordedContinuationUci": [
+          "e7f7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 13,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-92",
       "mate": 1,
       "exampleLine": [
         "e7f7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e7f7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5b1k/1p3P2/3p4/P3p3/8/2q5/2q5/5K2 b - - 4 52",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "c3a1"
       ],
@@ -3056,25 +3978,35 @@
         "round": "8.90",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 103
+        "startPly": 103,
+        "recordedContinuationUci": [
+          "c3a1"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-93",
       "mate": 1,
       "exampleLine": [
         "c3a1"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c3a1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/ppp2ppp/2n5/3r4/6b1/2KQ2P1/PP2q2P/R6R b - - 3 23",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "e2d3"
       ],
@@ -3089,25 +4021,35 @@
         "round": "10.86",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 45
+        "startPly": 45,
+        "recordedContinuationUci": [
+          "e2d3"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-94",
       "mate": 1,
       "exampleLine": [
         "e2d3"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "e2d3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r3k1r1/ppp2p2/1b1p3p/1P2p3/P3P3/B2B1n1b/2PP1P1P/1R1R3K b q - 1 17",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "h3g2"
       ],
@@ -3122,25 +4064,35 @@
         "round": "3.91",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 33
+        "startPly": 33,
+        "recordedContinuationUci": [
+          "h3g2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-95",
       "mate": 1,
       "exampleLine": [
         "h3g2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "h3g2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7r/p4p2/4kp1r/2Q5/4BPb1/5N2/1q4PP/3R3K w - - 3 41",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "c5d6"
       ],
@@ -3155,25 +4107,35 @@
         "round": "4.88",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 80
+        "startPly": 80,
+        "recordedContinuationUci": [
+          "c5d6"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 23,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-96",
       "mate": 1,
       "exampleLine": [
         "c5d6"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "c5d6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5rk1/p1pq2rp/7B/b1ppPR2/8/2P4P/PP4P1/5RK1 w - - 0 22",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "f5f8"
       ],
@@ -3188,25 +4150,35 @@
         "round": "3.53",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 42
+        "startPly": 42,
+        "recordedContinuationUci": [
+          "f5f8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-97",
       "mate": 1,
       "exampleLine": [
         "f5f8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "f5f8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3Q4/1b2Nppk/p6p/8/8/5q1P/PP3P2/6K1 w - - 2 35",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "d8g8"
       ],
@@ -3221,25 +4193,35 @@
         "round": "1.74",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 68
+        "startPly": 68,
+        "recordedContinuationUci": [
+          "d8g8"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 7,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-98",
       "mate": 1,
       "exampleLine": [
         "d8g8"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d8g8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5q2/3Q4/6k1/6P1/5p1Q/4P3/3K1P1P/8 w - - 0 48",
       "attacker": "w",
-      "actualMate": 1,
       "tournamentLine": [
         "d7h7"
       ],
@@ -3254,25 +4236,35 @@
         "round": "1.62",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 94
+        "startPly": 94,
+        "recordedContinuationUci": [
+          "d7h7"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 23,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-99",
       "mate": 1,
       "exampleLine": [
         "d7h7"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "d7h7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/1RR2pk1/8/6pp/8/4KP2/3r2r1/8 b - - 1 40",
       "attacker": "b",
-      "actualMate": 1,
       "tournamentLine": [
         "g2e2"
       ],
@@ -3287,20 +4279,31 @@
         "round": "6.79",
         "url": "https://github.com/fsmosca/games/blob/main/pgn/2022/44th-olympiad-2022.pgn",
         "kind": "Original tournament mainline ending in checkmate",
-        "startPly": 79
+        "startPly": 79,
+        "recordedContinuationUci": [
+          "g2e2"
+        ]
       },
       "validation": {
-        "method": "Stockfish 16 bounded search; complete recorded line checked with python-chess",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedMateIn": 1
+        "noMateWithin": 0,
+        "exactMate": true,
+        "checkedNodes": 3,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m1-100",
       "mate": 1,
       "exampleLine": [
         "g2e2"
-      ]
+      ],
+      "collection": "tournaments",
+      "engineMateBound": 1,
+      "defenceLine": [
+        "g2e2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     }
   ]
 }
