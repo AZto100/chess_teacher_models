@@ -17,7 +17,7 @@ h1{font-size:clamp(13px,3.7vw,21px);font-weight:650;margin:0;line-height:1.2;tex
 .board-shell{position:relative;width:var(--board-size);height:var(--board-size);flex:none}
 .board{width:100%;height:100%;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);touch-action:manipulation;user-select:none;isolation:isolate}
 .sq{appearance:none;margin:0;border:0;border-radius:0;padding:0;position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;overflow:hidden;cursor:pointer}
-.sq.light{background:#769656}.sq.dark{background:#eeeed2}.sq.selected:after{content:"";position:absolute;inset:1px;border:3px solid #3185fb;pointer-events:none;z-index:3}
+.sq.light{background:#eeeed2}.sq.dark{background:#769656}.sq.selected:after{content:"";position:absolute;inset:1px;border:3px solid #3185fb;pointer-events:none;z-index:3}
 .sq:focus-visible{outline:3px solid #1462dc;outline-offset:-3px;z-index:4}body[data-phase=defending] .sq{cursor:wait}
 .coord{position:absolute;top:1px;left:2px;font-size:clamp(7px,calc(var(--board-size)*.019),12px);font-weight:600;color:#24342a;pointer-events:none;opacity:.7;z-index:2}
 .piece{width:93%;height:93%;display:block;pointer-events:none;z-index:1;filter:drop-shadow(0 1px 1px #0003)}.piece.white{color:#fff;--piece-edge:#202020;--piece-detail:#202020}.piece.black{color:#080808;--piece-edge:#d5d9dd;--piece-detail:#e9edf1}
@@ -31,6 +31,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 [hidden]{display:none!important}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:300px){.toolbar{gap:5px}.toolbar button.action,.toolbar select{font-size:12px;padding:5px 8px}.top{gap:7px;padding:0}h1{font-size:13px}.timer{font-size:12px}}
 @media(max-height:300px){.app{gap:1px;padding:2px}.top{min-height:21px}h1,.timer{font-size:12px}.toolbar{min-height:25px}.toolbar button.action,.toolbar select{padding:2px 8px;font-size:12px}}
+#collection{max-width:145px;min-width:0}#level{max-width:100px}.toolbar{flex-wrap:wrap;gap:6px}.toolbar button.action,.toolbar select{padding:5px 6px;font-size:13px}@media(max-width:360px){#collection{max-width:130px}.toolbar{gap:4px}.toolbar button.action,.toolbar select{padding:4px 5px}}
 </style>
 </head>
 <body data-phase="loading">
@@ -41,7 +42,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 <div class="feedback" id="feedback" role="status" aria-live="polite">Loading...</div>
 <div class="promotion" id="promotion" role="dialog" aria-modal="true" aria-labelledby="promotion-title" hidden><div class="promotion-card"><strong id="promotion-title">Promote pawn</strong><div id="promotion-options"></div><button type="button" id="promotion-cancel" class="action">Cancel</button></div></div>
 </div></section>
-<footer class="toolbar"><label><span class="visually-hidden">Puzzle level</span><select id="level" aria-label="Puzzle level"><option value="1">Mate in 1</option><option value="2">Mate in 2</option><option value="3">Mate in 3</option><option value="4">Mate in 4</option><option value="5">Mate in 5</option><option value="6">Mate in 6</option></select></label><button class="action" id="undo" type="button" disabled>Undo</button><button class="action" id="next" type="button" disabled>Next</button><button class="action" id="retry" type="button" hidden>Retry</button></footer>
+<footer class="toolbar"><label><span class="visually-hidden">Puzzle collection</span><select id="collection" aria-label="Puzzle collection"><option value="tournaments">Tournament Games</option></select></label><label><span class="visually-hidden">Puzzle level</span><select id="level" aria-label="Puzzle level"><option value="1">Mate in 1</option><option value="2">Mate in 2</option><option value="3">Mate in 3</option><option value="4">Mate in 4</option><option value="5">Mate in 5</option><option value="6">Mate in 6</option></select></label><button class="action" id="undo" type="button" disabled>Undo</button><button class="action" id="next" type="button" disabled>Next</button><button class="action" id="retry" type="button" hidden>Retry</button></footer>
 </main>
 <noscript>JavaScript is needed to play this puzzle.</noscript>
 <script>
@@ -2470,6 +2471,30 @@ let engine=new LiteEngine(),game=null,puzzle=null,pack=[],index=0,selected=null;
 let phase='loading',version=0,resetTimer=null,feedbackTimer=null,promotionOptions=null;
 let elapsed=0,startedAt=null,attackingMoves=0,loadLevel=1;
 const packs=new Map();
+const defaultCollection={id:'tournaments',name:'Tournament Games',basePath:'puzzles/'};
+let collections=[defaultCollection],selectedCollection='tournaments';
+async function loadCollections(){
+  try{
+    const response=await fetch(new URL('puzzles/collections.json',location.href));
+    if(!response.ok)throw new Error('Catalogue unavailable');
+    const data=await response.json();
+    if(!Array.isArray(data.collections))throw new Error('Invalid catalogue');
+    const ids=new Set();
+    const entries=data.collections.map(c=>{
+      if(!/^[a-z0-9][a-z0-9_-]*$/.test(c.id)||ids.has(c.id)||typeof c.name!=='string'||typeof c.basePath!=='string')throw new Error('Invalid collection');
+      const path=new URL(c.basePath,location.href);
+      if(path.origin!==location.origin)throw new Error('Collection must be on this site');
+      ids.add(c.id);return {id:c.id,name:c.name,basePath:path.href.endsWith('/')?path.href:path.href+'/'};
+    });
+    collections=entries.some(c=>c.id==='tournaments')?entries:[defaultCollection,...entries];
+  }catch(error){console.warn('Using the default puzzle collection:',error.message);}
+  const requested=new URLSearchParams(location.search).get('c');
+  selectedCollection=collections.some(c=>c.id===requested)?requested:'tournaments';
+  $('collection').replaceChildren();
+  for(const c of collections){const option=document.createElement('option');option.value=c.id;option.textContent=c.name;$('collection').append(option);}
+  $('collection').value=selectedCollection;
+}
+
 const uci=m=>m.from+m.to+(m.promotion||'');
 const colour=c=>c==='w'?'White':'Black';
 function timeNow(){return elapsed+(startedAt===null?0:performance.now()-startedAt);}
@@ -2486,6 +2511,7 @@ function setPhase(value){phase=value;document.body.dataset.phase=value;$('board'
 function renderControls(){
   $('undo').disabled=!game||game.history().length===0||phase==='loading';
   $('next').disabled=!puzzle||phase==='loading';
+  $('collection').disabled=phase==='loading';
   $('retry').hidden=phase!=='error';
 }
 function renderBoard(){
@@ -2506,9 +2532,11 @@ function renderBoard(){
   renderControls();
 }
 function sizeBoard(){const r=$('stage').getBoundingClientRect();const n=Math.max(8,Math.floor((Math.min(r.width,r.height)-2)/8)*8);document.documentElement.style.setProperty('--board-size',n+'px');}
-async function getPack(level){
-  if(packs.has(level))return packs.get(level);
-  const response=await fetch(new URL('puzzles/mate-'+level+'.json',location.href));
+async function getPack(level,collectionId=selectedCollection){
+  const key=collectionId+':'+level;
+  if(packs.has(key))return packs.get(key);
+  const collection=collections.find(c=>c.id===collectionId)||defaultCollection;
+  const response=await fetch(new URL('mate-'+level+'.json',new URL(collection.basePath,location.href)));
   if(!response.ok)throw new Error('Puzzle data could not load ('+response.status+').');
   const data=await response.json();
   if(!Array.isArray(data.puzzles)||!data.puzzles.length)throw new Error('This puzzle level is empty.');
@@ -2517,7 +2545,7 @@ async function getPack(level){
     if(!/^m[1-6]-\d{2,}$/.test(p.id)||ids.has(p.id)||p.mate!==level||!['w','b'].includes(p.attacker))throw new Error('Puzzle data is not valid.');
     const b=new Rules(p.fen);if(b.turn()!==p.attacker||b.isGameOver())throw new Error('Puzzle starting position is not playable.');ids.add(p.id);
   }
-  packs.set(level,data.puzzles);return data.puzzles;
+  packs.set(key,data.puzzles);return data.puzzles;
 }
 async function loadPuzzle(level,requestedId=null,offset=0){
   const ticket=invalidate();loadLevel=level;setPhase('loading');newClock();setMessage('Loading...');
@@ -2527,11 +2555,11 @@ async function loadPuzzle(level,requestedId=null,offset=0){
     let at=requestedId?data.findIndex(p=>p.id===requestedId):((offset%data.length)+data.length)%data.length;
     if(at<0)throw new Error('This puzzle link was not found.');
     pack=data;index=at;puzzle=data[index];game=new Rules(puzzle.fen);attackingMoves=0;
-    $('instruction').textContent=colour(puzzle.attacker)+' to move. Mate in '+puzzle.mate+'!'+(puzzle.source?.game?' '+puzzle.source.game+(puzzle.source.year?' ('+puzzle.source.year+')':''):'');
+    $('instruction').textContent=colour(puzzle.attacker)+' to move. Mate in '+puzzle.mate+'!'+(puzzle.source?.game?' '+puzzle.source.game+(puzzle.source.year?' ('+puzzle.source.year+')':''):'')+(puzzle.source?.trainingContinuation?' · Training continuation':'');
     document.title=colour(puzzle.attacker)+' to move - Mate in '+puzzle.mate;
     $('board').setAttribute('aria-label',colour(puzzle.attacker)+' playing from the bottom. Chess puzzle.');
     renderBoard();sizeBoard();
-    try{const u=new URL(location.href);u.searchParams.set('p',puzzle.id);history.replaceState(null,'',u);}catch(_){/* Some sandbox configurations disallow History API writes. */}
+    try{const u=new URL(location.href);u.searchParams.set('p',puzzle.id);if(selectedCollection==='tournaments')u.searchParams.delete('c');else u.searchParams.set('c',selectedCollection);history.replaceState(null,'',u);}catch(_){/* Some sandbox configurations disallow History API writes. */}
     await engine.ready;if(ticket!==version)return;
     setMessage('');setPhase('human');startClock();
   }catch(e){if(ticket!==version||e.name==='AbortError')return;engineError(e);}
@@ -2609,6 +2637,7 @@ function undo(){
   setPhase('human');renderBoard();if(wasSolved)startClock();
 }
 $('board').addEventListener('click',e=>{const s=e.target.closest('[data-square]');if(s)clickSquare(s.dataset.square);});
+$('collection').addEventListener('change',()=>{selectedCollection=$('collection').value;loadPuzzle(Number($('level').value));});
 $('level').addEventListener('change',()=>loadPuzzle(Number($('level').value)));
 $('next').addEventListener('click',()=>loadPuzzle(puzzle.mate,null,index+1));
 $('undo').addEventListener('click',undo);
@@ -2626,7 +2655,7 @@ window.addEventListener('pageshow',event=>{if(event.persisted&&phase==='defendin
 setInterval(tick,150);
 const initial=new URLSearchParams(location.search).get('p');
 const valid=initial&&/^m([1-6])-\d{2,}$/.exec(initial);
-loadPuzzle(valid?Number(valid[1]):1,valid?initial:null);
+loadCollections().then(()=>loadPuzzle(valid?Number(valid[1]):1,valid?initial:null));
 })();
 
 </script>
