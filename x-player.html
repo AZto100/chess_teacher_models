@@ -2470,12 +2470,12 @@ class LiteEngine {
 let engine=new LiteEngine(),game=null,puzzle=null,pack=[],index=0,selected=null;
 let phase='loading',version=0,resetTimer=null,feedbackTimer=null,promotionOptions=null;
 let elapsed=0,startedAt=null,attackingMoves=0,loadLevel=1;
-const packs=new Map();
+const packs=new Map(),puzzleAliases=new Map();
 const defaultCollection={id:'tournaments',name:'Tournament Games',basePath:'puzzles/'};
 let collections=[defaultCollection],selectedCollection='tournaments';
 async function loadCollections(){
   try{
-    const response=await fetch(new URL('puzzles/collections.json',location.href));
+    const response=await fetch(new URL('puzzles/collections.json',location.href),{cache:'no-store'});
     if(!response.ok)throw new Error('Catalogue unavailable');
     const data=await response.json();
     if(!Array.isArray(data.collections))throw new Error('Invalid catalogue');
@@ -2536,7 +2536,7 @@ async function getPack(level,collectionId=selectedCollection){
   const key=collectionId+':'+level;
   if(packs.has(key))return packs.get(key);
   const collection=collections.find(c=>c.id===collectionId)||defaultCollection;
-  const response=await fetch(new URL('mate-'+level+'.json',new URL(collection.basePath,location.href)));
+  const response=await fetch(new URL('mate-'+level+'.json',new URL(collection.basePath,location.href)),{cache:'no-store'});
   if(!response.ok)throw new Error('Puzzle data could not load ('+response.status+').');
   const data=await response.json();
   if(!Array.isArray(data.puzzles)||!data.puzzles.length)throw new Error('This puzzle level is empty.');
@@ -2545,7 +2545,7 @@ async function getPack(level,collectionId=selectedCollection){
     if(!/^m[1-6]-\d{2,}$/.test(p.id)||ids.has(p.id)||p.mate!==level||!['w','b'].includes(p.attacker))throw new Error('Puzzle data is not valid.');
     const b=new Rules(p.fen);if(b.turn()!==p.attacker||b.isGameOver())throw new Error('Puzzle starting position is not playable.');ids.add(p.id);
   }
-  packs.set(key,data.puzzles);return data.puzzles;
+  puzzleAliases.set(key,data.aliases||{});packs.set(key,data.puzzles);return data.puzzles;
 }
 async function loadPuzzle(level,requestedId=null,offset=0){
   const ticket=invalidate();loadLevel=level;setPhase('loading');newClock();setMessage('Loading...');
@@ -2553,6 +2553,7 @@ async function loadPuzzle(level,requestedId=null,offset=0){
   try{
     const data=await getPack(level);if(ticket!==version)return;
     let at=requestedId?data.findIndex(p=>p.id===requestedId):((offset%data.length)+data.length)%data.length;
+    if(at<0){const alias=puzzleAliases.get(selectedCollection+':'+level)?.[requestedId];at=data.findIndex(p=>p.id===alias);}
     if(at<0)throw new Error('This puzzle link was not found.');
     pack=data;index=at;puzzle=data[index];game=new Rules(puzzle.fen);attackingMoves=0;
     $('instruction').textContent=colour(puzzle.attacker)+' to move. Mate in '+puzzle.mate+'!'+(puzzle.source?.game?' '+puzzle.source.game+(puzzle.source.year?' ('+puzzle.source.year+')':''):'')+(puzzle.source?.trainingContinuation?' · Training continuation':'');
@@ -2605,7 +2606,8 @@ async function defend(){
   const ticket=version,fen=game.fen();setPhase('defending');
   try{
     const history=game.history({verbose:true});
-    const line=puzzle.tournamentLine||[];
+    const line=puzzle.defenceLine||puzzle.tournamentLine||[];
+    // Verified packs use a best-resistance line; older packs retain their recorded line.
     // Compare the whole prefix: a later transposition does not erase a deviation.
     // Recorded UCI uses king destinations for castling; the engine uses rook squares.
     const onLine=history.every((m,i)=>
