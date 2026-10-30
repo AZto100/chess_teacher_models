@@ -35,7 +35,6 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 </style>
 </head>
 <body data-phase="loading">
-  https://azto100.github.io/chess_teacher_models/famous-games.html
 <main class="app">
 <header class="top"><h1 id="instruction">Loading puzzle...</h1><time class="timer" id="timer" aria-label="Elapsed time" aria-live="off">00:00</time></header>
 <section class="stage" id="stage" aria-label="Puzzle playing area"><div class="board-shell">
@@ -43,7 +42,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 <div class="feedback" id="feedback" role="status" aria-live="polite">Loading...</div>
 <div class="promotion" id="promotion" role="dialog" aria-modal="true" aria-labelledby="promotion-title" hidden><div class="promotion-card"><strong id="promotion-title">Promote pawn</strong><div id="promotion-options"></div><button type="button" id="promotion-cancel" class="action">Cancel</button></div></div>
 </div></section>
-<footer class="toolbar"><label><span class="visually-hidden">Puzzle collection</span><select id="collection" aria-label="Puzzle collection"><option value="tournaments">Tournament Games</option></select></label><label><span class="visually-hidden">Puzzle level</span><select id="level" aria-label="Puzzle level"><option value="1">Mate in 1</option><option value="2">Mate in 2</option><option value="3">Mate in 3</option><option value="4">Mate in 4</option><option value="5">Mate in 5</option><option value="6">Mate in 6</option></select></label><button class="action" id="undo" type="button" disabled>Undo</button><button class="action" id="next" type="button" disabled>Next</button><button class="action" id="retry" type="button" hidden>Retry</button></footer>
+<footer class="toolbar"><button type="button" onclick="window.location.href='./famous-games.html'">Select a game?</button><label><span class="visually-hidden">Puzzle collection</span><select id="collection" aria-label="Puzzle collection"><option value="tournaments">Tournament Games</option></select></label><label><span class="visually-hidden">Puzzle level</span><select id="level" aria-label="Puzzle level"><option value="1">Mate in 1</option><option value="2">Mate in 2</option><option value="3">Mate in 3</option><option value="4">Mate in 4</option><option value="5">Mate in 5</option><option value="6">Mate in 6</option></select></label><button class="action" id="undo" type="button" disabled>Undo</button><button class="action" id="next" type="button" disabled>Next</button><button class="action" id="retry" type="button" hidden>Retry</button></footer>
 </main>
 <noscript>JavaScript is needed to play this puzzle.</noscript>
 <script>
