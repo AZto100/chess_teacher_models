@@ -1,47 +1,64 @@
 {
   "format": "chess-teacher-mate-puzzles-v1",
-  "level": 2,
   "collection": "famous",
+  "level": 2,
+  "categoryPolicy": "exact-shortest-forced-mate",
+  "aliases": {},
   "puzzles": [
     {
-      "fen": "rnb3r1/pp1pb2p/2pk1nq1/6BQ/8/8/PPP3PP/4RRK1 w - - 0 18",
+      "fen": "8/R7/2p2p1p/1kB5/R2P4/2pKr3/6P1/8 w - - 3 36",
       "attacker": "w",
       "source": {
-        "game": "McDonnell - La Bourdonnais",
-        "white": "McDonnell",
-        "black": "La Bourdonnais",
-        "year": 1834,
-        "event": "McDonnell - La Bourdonnais (King�s Gambit) ",
-        "place": "London",
-        "round": "?",
-        "url": "https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn",
-        "selectionCollection": "Immortal games anthology",
+        "game": "Mikhail Botvinnik - Mikhail Tal",
+        "white": "Mikhail Botvinnik",
+        "black": "Mikhail Tal",
+        "year": 1961,
+        "event": "Tal - Botvinnik World Championship Rematch",
+        "place": "Moscow URS",
+        "round": "7",
+        "url": "https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn",
+        "selectionCollection": "The Life and Games of Mikhail Tal",
         "title": "",
-        "gameKey": "a79a5dcb9b7965d4",
-        "startPly": 34,
-        "recordedPlyCount": 35,
-        "kind": "recorded game position",
-        "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "gameKey": "b01e177bf80815ec",
+        "startPly": 70,
+        "recordedPlyCount": 65,
+        "kind": "engine training continuation after the recorded game",
+        "trainingContinuation": true,
+        "trainingMovesFromRecordedEnd": [
+          "e4e2",
+          "f2e2",
+          "c8e8",
+          "e2d3",
+          "e8e3"
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "g5f4",
+      "firstMove": "d3e3",
       "exampleLine": [
-        "g5f4"
+        "d3e3",
+        "c3c2",
+        "a4b4"
       ],
-      "tournamentLine": [
-        "g5f4"
-      ],
-      "engineMateBound": 1,
+      "tournamentLine": [],
+      "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
-        "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedContinuationEndsBeforeMate": false
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
+        "forcedMateWithin": 2,
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 15,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-01",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d3e3",
+        "c3c2",
+        "a4b4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6rk/3P2pp/8/p7/7b/7P/PP1p1pPK/2Qq4 b - - 3 40",
@@ -68,26 +85,35 @@
           "h1h2",
           "d8h4",
           "c3c1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "d2c1q",
+      "firstMove": "d2c1r",
       "exampleLine": [
-        "d2c1q",
-        "a2a3",
-        "d1g1"
+        "d2c1r",
+        "d7d8q",
+        "d1h1"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 216,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-02",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d2c1r",
+        "d7d8q",
+        "d1h1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/7Q/1p1p1kr1/4p3/4Pp1K/P1r1n3/7P/8 b - - 0 37",
@@ -108,7 +134,12 @@
         "recordedPlyCount": 76,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "e3g2",
+          "h4h5",
+          "c3h3"
+        ]
       },
       "firstMove": "e3g2",
       "exampleLine": [
@@ -123,15 +154,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 79,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-03",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e3g2",
+        "h4h5",
+        "c3h3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r1bk2nr/p2p1pNp/n2B4/1p1NP2P/6P1/3P1Q2/P1P1K3/q5b1 w - - 1 22",
@@ -152,7 +191,12 @@
         "recordedPlyCount": 45,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "f3f6",
+          "g8f6",
+          "d6e7"
+        ]
       },
       "firstMove": "f3f6",
       "exampleLine": [
@@ -167,15 +211,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 48,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-04",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f3f6",
+        "g8f6",
+        "d6e7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1r2k1r1/pbp1np1p/1b3P2/5B2/8/B1P2q2/P4PPP/3R2K1 w - - 2 23",
@@ -196,13 +248,18 @@
         "recordedPlyCount": 47,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "f5d7",
+          "e8f8",
+          "a3e7"
+        ]
       },
       "firstMove": "f5d7",
       "exampleLine": [
         "f5d7",
-        "e8f8",
-        "a3e7"
+        "e8d8",
+        "f6e7"
       ],
       "tournamentLine": [
         "f5d7",
@@ -211,15 +268,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 75,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-05",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f5d7",
+        "e8d8",
+        "f6e7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4r1k1/5P2/4p3/2b4p/8/2n4K/1p6/6q1 b - - 0 51",
@@ -304,7 +369,8 @@
           "g2h3",
           "h7h5",
           "f6f7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g8f7",
       "exampleLine": [
@@ -315,15 +381,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 20,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-06",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g8f7",
+        "h3h4",
+        "g1g4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/k3P3/2Q4p/p7/PP6/8/1K5P/8 w - - 0 53",
@@ -416,7 +490,8 @@
           "a6a5",
           "e8c6",
           "h7h6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "c6c7",
       "exampleLine": [
@@ -427,15 +502,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 157,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-07",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c6c7",
+        "a7a6",
+        "b4b5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
@@ -456,7 +539,12 @@
         "recordedPlyCount": 33,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "b3b8",
+          "d7b8",
+          "d1d8"
+        ]
       },
       "firstMove": "b3b8",
       "exampleLine": [
@@ -471,15 +559,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 88,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-08",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "b3b8",
+        "d7b8",
+        "d1d8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r2k4/pbpqb3/1p4Q1/3pP1B1/3P4/8/PPP4P/5RK1 w - - 1 28",
@@ -500,7 +596,12 @@
         "recordedPlyCount": 57,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "f1f8",
+          "d7e8",
+          "g6e8"
+        ]
       },
       "firstMove": "f1f8",
       "exampleLine": [
@@ -515,15 +616,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 179,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-09",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f1f8",
+        "d7e8",
+        "g6e8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r2k4/pp1b3p/3p4/3P1p2/6pP/PPP5/5q2/7K b - - 0 37",
@@ -570,7 +679,8 @@
           "f1f2",
           "g3f2",
           "c2c3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g4g3",
       "exampleLine": [
@@ -581,15 +691,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 894,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-10",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g4g3",
+        "a3a4",
+        "f2f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4QR2/4B2k/8/8/4P3/5p1P/5K1P/8 w - - 3 58",
@@ -656,26 +774,35 @@
           "g6g7",
           "b8e8",
           "g7h7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "f8h8",
+      "firstMove": "e8f7",
       "exampleLine": [
-        "f8h8",
-        "h7g7",
-        "e8g8"
+        "e8f7",
+        "h7h6",
+        "f8h8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 79,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-11",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e8f7",
+        "h7h6",
+        "f8h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "Q7/6k1/3Q4/8/8/1P6/3P2P1/6K1 w - - 3 55",
@@ -730,7 +857,8 @@
           "e5f6",
           "b4d6",
           "f6g7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "a8f8",
       "exampleLine": [
@@ -741,15 +869,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 181,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-12",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "a8f8",
+        "g7h7",
+        "d6h6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4rr2/1ppb4/2q3pB/p3k3/3n3Q/1BP5/PP3PP1/2K5 w - - 6 28",
@@ -770,7 +906,10 @@
         "recordedPlyCount": 55,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "h4d4"
+        ]
       },
       "firstMove": "h4d4",
       "exampleLine": [
@@ -783,15 +922,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": true
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 54,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-13",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h4d4",
+        "e5f5",
+        "d4f4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5Q2/8/6k1/p7/3PpP2/P2B1P2/1P6/2K5 w - - 0 45",
@@ -842,7 +989,8 @@
           "e6e5",
           "b5d3",
           "e5e4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d3e4",
       "exampleLine": [
@@ -853,15 +1001,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 41,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-14",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d3e4",
+        "g6h5",
+        "f8h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3R3Q/8/4R3/1k3PK1/8/1P6/8/8 w - - 3 65",
@@ -940,66 +1096,187 @@
           "b6c6",
           "e8e6",
           "c6b5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d8b8",
       "exampleLine": [
         "d8b8",
-        "b5c5",
-        "h8e5"
+        "b5a5",
+        "h8c3"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 169,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-15",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d8b8",
+        "b5a5",
+        "h8c3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
-      "fen": "8/3Q3p/8/6pk/1p1Pp3/1r2P2P/2p5/7K w - - 0 52",
+      "fen": "4r1k1/8/6KP/4P1B1/5P2/8/8/8 w - - 0 95",
       "attacker": "w",
       "source": {
-        "game": "Harry Nelson Pillsbury - Siegbert Tarrasch",
-        "white": "Harry Nelson Pillsbury",
-        "black": "Siegbert Tarrasch",
-        "year": 1895,
-        "event": "Hastings",
-        "place": "Hastings ENG",
+        "game": "Robert James Fischer - Vasily Smyslov",
+        "white": "Robert James Fischer",
+        "black": "Vasily Smyslov",
+        "year": 1965,
+        "event": "Havana",
+        "place": "Havana CUB",
         "round": "2",
-        "url": "https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn",
-        "selectionCollection": "Masters of the Chessboard — Richard Réti",
+        "url": "https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn",
+        "selectionCollection": "My 60 Memorable Games — Bobby Fischer",
         "title": "",
-        "gameKey": "6834c6c8c864ad09",
-        "startPly": 102,
-        "recordedPlyCount": 103,
-        "kind": "recorded game position",
-        "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "gameKey": "c456969505fc000c",
+        "startPly": 188,
+        "recordedPlyCount": 86,
+        "kind": "engine training continuation after the recorded game",
+        "trainingContinuation": true,
+        "trainingMovesFromRecordedEnd": [
+          "b2c1",
+          "b5d4",
+          "c5d7",
+          "f6e7",
+          "d7b8",
+          "g7g5",
+          "b4b5",
+          "c8c4",
+          "b8c6",
+          "e7f6",
+          "c6d4",
+          "e5d4",
+          "f1e2",
+          "c4a4",
+          "b6a6",
+          "a4b4",
+          "b5b6",
+          "b4b1",
+          "c1a3",
+          "h6h5",
+          "e2d3",
+          "b1d1",
+          "d3c2",
+          "d1d2",
+          "c2b3",
+          "d2d1",
+          "b6b7",
+          "d1b1",
+          "b3c4",
+          "b1b7",
+          "c4d4",
+          "b7b2",
+          "d4e3",
+          "b2b1",
+          "a6c6",
+          "c3c2",
+          "e3e2",
+          "h5h4",
+          "g3h4",
+          "g5h4",
+          "c6c2",
+          "b1b3",
+          "a3b2",
+          "f6g6",
+          "b2c3",
+          "b3b8",
+          "c3e1",
+          "b8a8",
+          "e1d2",
+          "a8f8",
+          "c2c5",
+          "f8b8",
+          "c5g5",
+          "g6f7",
+          "g5g4",
+          "b8h8",
+          "d2e3",
+          "f7f6",
+          "e3g5",
+          "f6g6",
+          "e2f1",
+          "h8a8",
+          "g5e3",
+          "g6f7",
+          "f1g2",
+          "a8h8",
+          "e3g5",
+          "h8h5",
+          "g4f4",
+          "f7g6",
+          "g5h4",
+          "g6g7",
+          "g2g3",
+          "h5b5",
+          "f4f6",
+          "b5b3",
+          "g3g4",
+          "b3b6",
+          "e4e5",
+          "b6a6",
+          "f2f4",
+          "a6c6",
+          "h4g5",
+          "c6a6",
+          "g4h5",
+          "g7h7",
+          "h3h4",
+          "h7h8",
+          "h5g6",
+          "a6a8",
+          "f6e6",
+          "a8g8",
+          "g6h6",
+          "g8f8",
+          "h4h5",
+          "h8g8",
+          "h6g6",
+          "f8f7",
+          "e6e8",
+          "f7f8",
+          "h5h6",
+          "f8e8"
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "d7h7",
+      "firstMove": "h6h7",
       "exampleLine": [
-        "d7h7"
+        "h6h7",
+        "g8f8",
+        "h7h8q"
       ],
-      "tournamentLine": [
-        "d7h7"
-      ],
-      "engineMateBound": 1,
+      "tournamentLine": [],
+      "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
-        "forcedMateWithin": 1,
-        "exactMate": false,
-        "engineDepth": null,
-        "recordedContinuationEndsBeforeMate": false
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
+        "forcedMateWithin": 2,
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 19,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-16",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h6h7",
+        "g8f8",
+        "h7h8q"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r1rkqQ2/pp6/5pp1/3p2N1/8/8/PP3PPP/2R3K1 w - - 12 34",
@@ -1038,7 +1315,8 @@
           "e7d8",
           "f7f8",
           "d7e8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g5f7",
       "exampleLine": [
@@ -1049,15 +1327,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 253,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-17",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g5f7",
+        "d8d7",
+        "f8d6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r4k2/5p1Q/1q1pbRB1/2pP4/1pP5/1P4B1/8/4R2K w - - 3 38",
@@ -1086,26 +1372,35 @@
           "d7e6",
           "h4h7",
           "g8f8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "h7h8",
+      "firstMove": "f6f7",
       "exampleLine": [
-        "h7h8",
-        "f8e7",
-        "f6f7"
+        "f6f7",
+        "f8e8",
+        "h7g8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 81,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-18",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f6f7",
+        "f8e8",
+        "h7g8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5k2/1b1Q4/r5p1/p2p2B1/2pP4/4P3/PPp3PP/6K1 w - - 0 27",
@@ -1130,7 +1425,8 @@
           "f7f8",
           "h7d7",
           "c3c2"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g5h6",
       "exampleLine": [
@@ -1141,15 +1437,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 246,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-19",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g5h6",
+        "f8g8",
+        "d7g7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1Q6/8/2Q5/8/8/4k1K1/6P1/8 w - - 1 74",
@@ -1230,26 +1534,35 @@
           "e5d4",
           "b7b8q",
           "d4e3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "b8b4",
       "exampleLine": [
         "b8b4",
-        "e3d3",
-        "c6e4"
+        "e3e2",
+        "c6f3"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 864,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-20",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "b8b4",
+        "e3e2",
+        "c6f3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r1bqr1k1/p1R4p/1p3bpQ/3pB3/3p4/4P3/PP3PPP/5RK1 w - - 2 19",
@@ -1270,7 +1583,12 @@
         "recordedPlyCount": 39,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "h6h7",
+          "g8f8",
+          "h7f7"
+        ]
       },
       "firstMove": "h6h7",
       "exampleLine": [
@@ -1285,15 +1603,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 59,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-21",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h6h7",
+        "g8f8",
+        "h7f7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/p7/P1P4p/2KN3P/3pk3/1q2b3/5q2 b - - 5 58",
@@ -1330,7 +1656,8 @@
           "e6d4",
           "c1b2",
           "b4c4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f1f7",
       "exampleLine": [
@@ -1341,15 +1668,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 93,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-22",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f1f7",
+        "d4e6",
+        "f7e6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2rqk2r/pb1n2p1/1pnb1p1p/3B4/1P1P1P2/P3B1P1/2QNP2P/R3K2R w KQk - 3 16",
@@ -1370,12 +1705,17 @@
         "recordedPlyCount": 33,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "c2g6",
+          "e8f8",
+          "g6f7"
+        ]
       },
       "firstMove": "c2g6",
       "exampleLine": [
         "c2g6",
-        "e8f8",
+        "e8e7",
         "g6f7"
       ],
       "tournamentLine": [
@@ -1385,15 +1725,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 71,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-23",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c2g6",
+        "e8e7",
+        "g6f7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r4k2/6RR/b3p2p/3pK2P/p2P1p2/Pp2PPP1/1P6/8 w - - 4 42",
@@ -1422,26 +1770,35 @@
           "h8g8",
           "f7g7",
           "g8f8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e5f6",
       "exampleLine": [
         "e5f6",
-        "e6e5",
+        "f8e8",
         "h7h8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 471,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-24",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e5f6",
+        "f8e8",
+        "h7h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4K3/8/1k6/8/5R2/2Q5/8/8 w - - 5 76",
@@ -1514,7 +1871,8 @@
           "b4b5",
           "f3f4",
           "b5b6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f4b4",
       "exampleLine": [
@@ -1525,15 +1883,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 277,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-25",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f4b4",
+        "b6a5",
+        "c3a3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/8/p4p2/1P5p/8/1P1b1qRP/8/6K1 b - - 0 44",
@@ -1592,7 +1958,8 @@
           "d5f6",
           "g7f6",
           "g2g3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f3g3",
       "exampleLine": [
@@ -1603,15 +1970,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 24,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-26",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f3g3",
+        "g1h1",
+        "d3e4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3R1b1k/p4p1p/7Q/6r1/3pP3/6P1/6KP/8 w - - 2 45",
@@ -1644,7 +2019,8 @@
           "f1f5",
           "h5h6",
           "f5g5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "h6f8",
       "exampleLine": [
@@ -1655,15 +2031,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 40,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-27",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h6f8",
+        "g5g8",
+        "f8g8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/5pb1/p5pp/1p6/4PP2/P7/NP4PP/3r1QK1 b - - 1 34",
@@ -1684,7 +2068,10 @@
         "recordedPlyCount": 68,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "g7d4"
+        ]
       },
       "firstMove": "g7d4",
       "exampleLine": [
@@ -1697,15 +2084,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": true
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 54,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-28",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g7d4",
+        "g1h1",
+        "d1f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/3Q4/4K3/8/8/8/8/8 w - - 8 63",
@@ -1748,26 +2143,35 @@
           "g8h8",
           "d5e6",
           "h8g8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e6f6",
       "exampleLine": [
         "e6f6",
-        "g8h8",
-        "d7g7"
+        "g8f8",
+        "d7d8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 641,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-29",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e6f6",
+        "g8f8",
+        "d7d8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5q2/1R4pk/5Q1p/3B1P2/2pP4/2P5/5PPP/6K1 w - - 3 37",
@@ -1810,7 +2214,8 @@
           "f8h8",
           "e5f6",
           "h8f8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f6f8",
       "exampleLine": [
@@ -1821,15 +2226,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 238,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-30",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f6f8",
+        "h6h5",
+        "f8g7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2r1nr2/p3qp1k/1p2p1p1/nP1bR3/8/P2B4/1BP2PPP/3R2K1 w - - 0 27",
@@ -1850,7 +2263,12 @@
         "recordedPlyCount": 55,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "e5h5",
+          "h7g8",
+          "h5h8"
+        ]
       },
       "firstMove": "e5h5",
       "exampleLine": [
@@ -1865,15 +2283,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 79,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-31",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e5h5",
+        "h7g8",
+        "h5h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3Q4/8/2k3K1/1R6/4P3/4P3/8/8 w - - 5 70",
@@ -1924,26 +2350,35 @@
           "c6b7",
           "f5b5",
           "b7c6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "b5b6",
       "exampleLine": [
         "b5b6",
         "c6c5",
-        "d8c7"
+        "d8d4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 95,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-32",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "b5b6",
+        "c6c5",
+        "d8d4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/7p/7P/P3Q3/5p1k/5Pp1/1P3PK1/8 w - - 0 51",
@@ -2008,7 +2443,8 @@
           "g5g4",
           "e8e5",
           "g4g3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e5f5",
       "exampleLine": [
@@ -2019,15 +2455,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 438,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-33",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e5f5",
+        "g3f2",
+        "f5g4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7Q/8/2P1B3/3R4/8/1P4k1/4K3/8 w - - 1 52",
@@ -2098,26 +2542,35 @@
           "g3h4",
           "h7h8q",
           "h4g3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "d5g5",
+      "firstMove": "h8g8",
       "exampleLine": [
-        "d5g5",
-        "g3f4",
-        "h8h4"
+        "h8g8",
+        "g3h2",
+        "d5h5"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 73,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-34",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h8g8",
+        "g3h2",
+        "d5h5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/3R4/8/5K2/4P3/4k3/7Q/8 w - - 2 78",
@@ -2186,7 +2639,8 @@
           "e3f3",
           "g6f5",
           "f3e3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "h2d2",
       "exampleLine": [
@@ -2197,15 +2651,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 139,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-35",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h2d2",
+        "e3f3",
+        "d7d3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/5R1P/6P1/4KP2/p7/8/1P6/8 w - - 1 71",
@@ -2298,7 +2760,8 @@
           "h8g8",
           "h6h7",
           "g8h8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f7f8",
       "exampleLine": [
@@ -2309,15 +2772,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 50,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-36",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f7f8",
+        "h8g7",
+        "h7h8q"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/p3Q3/1p5p/3p3K/2pP2P1/1nP5/7P/8 w - - 3 46",
@@ -2348,26 +2819,35 @@
           "h8g7",
           "e8e7",
           "g7h8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "h5g6",
+      "firstMove": "h5h6",
       "exampleLine": [
-        "h5g6",
-        "b6b5",
+        "h5h6",
+        "h8g8",
         "e7e8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 208,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-37",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h5h6",
+        "h8g8",
+        "e7e8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/6k1/2Q5/6p1/p2P2P1/4P3/5P2/1R4K1 w - - 0 53",
@@ -2436,26 +2916,35 @@
           "f6g7",
           "e1b1",
           "a5a4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "b1b7",
+      "firstMove": "c6d7",
       "exampleLine": [
-        "b1b7",
-        "g7h8",
-        "c6c8"
+        "c6d7",
+        "g7f6",
+        "b1b6"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 68,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-38",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c6d7",
+        "g7f6",
+        "b1b6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/6P1/8/k7/8/8/6P1/1R4K1 w - - 1 64",
@@ -2562,26 +3051,35 @@
           "a7a6",
           "g6g7",
           "a6a5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g7g8q",
       "exampleLine": [
         "g7g8q",
         "a5a4",
-        "g8a8"
+        "g8a2"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 76,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-39",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g7g8q",
+        "a5a4",
+        "g8a2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6kr/2P1q2p/4P2B/p3pR2/4P3/2P3p1/P5KP/8 w - - 0 38",
@@ -2604,7 +3102,8 @@
         "trainingContinuation": true,
         "trainingMovesFromRecordedEnd": [
           "g4g3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "c7c8q",
       "exampleLine": [
@@ -2615,15 +3114,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 44,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-40",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c7c8q",
+        "e7d8",
+        "c8d8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/1p5p/8/1bb5/8/7r/3K4/5q2 b - - 1 52",
@@ -2688,26 +3195,35 @@
           "e2d1",
           "f2f1q",
           "d1d2"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "f1g2",
+      "firstMove": "f1f2",
       "exampleLine": [
-        "f1g2",
+        "f1f2",
         "d2c1",
         "h3h1"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 79,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-41",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f1f2",
+        "d2c1",
+        "h3h1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/4Q3/3B4/8/6P1/8/1Pp4K/8 w - - 2 60",
@@ -2784,7 +3300,8 @@
           "c3c2",
           "e4e7",
           "f7g8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d6e5",
       "exampleLine": [
@@ -2795,15 +3312,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 1225,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-42",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d6e5",
+        "c2c1q",
+        "e7g7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/8/6k1/8/3q4/6K1 b - - 17 76",
@@ -2892,7 +3417,8 @@
           "g2h2",
           "d3d2",
           "h2g1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g4f3",
       "exampleLine": [
@@ -2903,15 +3429,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 544,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-43",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g4f3",
+        "g1f1",
+        "d2c1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3N4/2R5/k7/8/3QP3/8/7K/8 w - - 3 66",
@@ -3020,26 +3554,35 @@
           "b4b5",
           "h8d4",
           "b5a6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "c7b7",
+      "firstMove": "d4a4",
       "exampleLine": [
-        "c7b7",
-        "a6a5",
-        "d4a7"
+        "d4a4",
+        "a6b6",
+        "c7c6"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 262,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-44",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d4a4",
+        "a6b6",
+        "c7c6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4k3/pb1p2p1/5p1B/1p6/3P3R/P5qP/6r1/3K4 b - - 1 31",
@@ -3070,26 +3613,35 @@
           "h2h3",
           "f3g3",
           "e1d1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g3d3",
       "exampleLine": [
         "g3d3",
-        "h6d2",
-        "d3d2"
+        "d1c1",
+        "d3f1"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 174,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-45",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g3d3",
+        "d1c1",
+        "d3f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/1k6/8/2Q4p/R4P2/6P1/2n5/6K1 w - - 3 75",
@@ -3136,7 +3688,8 @@
           "b5a6",
           "c4a4",
           "a6b7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "a4a7",
       "exampleLine": [
@@ -3147,15 +3700,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 73,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-46",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "a4a7",
+        "b7b8",
+        "c5c7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1Q6/5pk1/2p3p1/1p2N2p/1b5P/1b6/r3n1P1/1K6 b - - 13 40",
@@ -3176,13 +3737,18 @@
         "recordedPlyCount": 82,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "e2c3",
+          "b1c1",
+          "a2c2"
+        ]
       },
       "firstMove": "e2c3",
       "exampleLine": [
         "e2c3",
         "b1c1",
-        "a2c2"
+        "b4a3"
       ],
       "tournamentLine": [
         "e2c3",
@@ -3191,15 +3757,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 77,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-47",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e2c3",
+        "b1c1",
+        "b4a3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5q1k/pp6/5PQ1/7P/3p4/8/8/4R1K1 w - - 1 44",
@@ -3228,7 +3802,8 @@
           "c5f8",
           "e8g6",
           "g8h8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e1e8",
       "exampleLine": [
@@ -3239,15 +3814,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 129,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-48",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e1e8",
+        "d4d3",
+        "e8f8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "k7/2Q5/1p1P4/p7/2p5/2P2p2/PP3P2/4K3 w - - 2 46",
@@ -3294,7 +3877,8 @@
           "a7a5",
           "d7c7",
           "b8a8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d6d7",
       "exampleLine": [
@@ -3305,15 +3889,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 284,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-49",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d6d7",
+        "a5a4",
+        "d7d8q"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "1r4k1/p5bp/8/K2p4/Pn4p1/1P1n1rP1/1B2N2R/R2Q4 b - - 3 33",
@@ -3334,28 +3926,39 @@
         "recordedPlyCount": 66,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "b4c6"
+        ]
       },
       "firstMove": "b4c6",
       "exampleLine": [
         "b4c6",
         "a5a6",
-        "d3c5"
+        "b8b6"
       ],
       "tournamentLine": [
         "b4c6"
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": true
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 50,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-50",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "b4c6",
+        "a5a6",
+        "b8b6"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6Q1/1p1k4/8/2Q5/8/P1p5/P1PK4/8 w - - 0 50",
@@ -3420,7 +4023,8 @@
           "c7d7",
           "g7g8q",
           "c4c3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d2c3",
       "exampleLine": [
@@ -3431,15 +4035,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 59,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-51",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d2c3",
+        "b7b6",
+        "g8c8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5k2/8/Q7/2R5/3P1N2/8/KP6/8 w - - 3 77",
@@ -3504,26 +4116,35 @@
           "d6e7",
           "a8a6",
           "e7f8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "a6b7",
+      "firstMove": "c5c7",
       "exampleLine": [
-        "a6b7",
-        "f8g8",
-        "c5c8"
+        "c5c7",
+        "f8e8",
+        "a6c8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 587,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-52",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c5c7",
+        "f8e8",
+        "a6c8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/8/2k5/3b4/K7/1r6 b - - 7 64",
@@ -3630,7 +4251,8 @@
           "b3a3",
           "d4c4",
           "a3a2"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "c4c3",
       "exampleLine": [
@@ -3641,15 +4263,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 74,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-53",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c4c3",
+        "a2a3",
+        "b1a1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2R5/Q7/8/8/4Bp2/1P3P2/3k4/7K w - - 5 79",
@@ -3786,26 +4416,35 @@
           "d2e3",
           "a8a7",
           "e3d2"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "c8c2",
       "exampleLine": [
         "c8c2",
-        "d2e1",
+        "d2d1",
         "a7a1"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 291,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-54",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c8c2",
+        "d2d1",
+        "a7a1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/k7/1R6/2R5/5KPP/1P6/8 w - - 5 46",
@@ -3868,26 +4507,35 @@
           "b6b7",
           "c5b5",
           "b7a6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "c4b4",
       "exampleLine": [
         "c4b4",
         "a6a7",
-        "b4a4"
+        "b5a5"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 1027,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-55",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c4b4",
+        "a6a7",
+        "b5a5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3K4/1p4q1/7p/2r5/3k4/8/8/8 b - - 5 69",
@@ -3968,26 +4616,35 @@
           "b8c8",
           "h5c5",
           "c8d8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "h6h5",
+      "firstMove": "g7h7",
       "exampleLine": [
-        "h6h5",
+        "g7h7",
         "d8e8",
         "c5c8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 499,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-56",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g7h7",
+        "d8e8",
+        "c5c8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/6R1/8/8/8/5K2/8/7k w - - 20 70",
@@ -4054,7 +4711,8 @@
           "h3h2",
           "f4f3",
           "h2h1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f3f2",
       "exampleLine": [
@@ -4065,15 +4723,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 438,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-57",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f3f2",
+        "h1h2",
+        "g7h7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/4q3/8/5Kp1/p7/8/4k3/2q5 b - - 3 67",
@@ -4158,26 +4824,35 @@
           "h5g6",
           "a3e7",
           "g6f5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e7f7",
       "exampleLine": [
         "e7f7",
         "f5e4",
-        "c1f4"
+        "c1e3"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 233,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-58",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e7f7",
+        "f5e4",
+        "c1e3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2r2q2/r4p1k/b3pBp1/n3P2P/p2p3R/P5P1/2p2PB1/R5K1 w - - 0 32",
@@ -4200,7 +4875,8 @@
         "trainingContinuation": true,
         "trainingMovesFromRecordedEnd": [
           "g8h7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "h5g6",
       "exampleLine": [
@@ -4211,15 +4887,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 48,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-59",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h5g6",
+        "h7g6",
+        "g2e4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/8/4p1p1/4b2p/4b2P/8/p5n1/2K5 b - - 1 66",
@@ -4308,7 +4992,8 @@
           "e2d1",
           "a3a2",
           "d1c1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "a2a1q",
       "exampleLine": [
@@ -4319,15 +5004,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 53,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-60",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "a2a1q",
+        "c1d2",
+        "a1e1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/2Q5/8/5K2/8/8/8/8 w - - 11 84",
@@ -4404,26 +5097,35 @@
           "g7f7",
           "d8c7",
           "f7g8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "f5f6",
+      "firstMove": "f5g6",
       "exampleLine": [
-        "f5f6",
-        "g8h8",
-        "c7g7"
+        "f5g6",
+        "g8f8",
+        "c7d8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 696,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-61",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f5g6",
+        "g8f8",
+        "c7d8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3r3k/5q1p/8/P7/8/1P2rp2/KP6/8 b - - 0 72",
@@ -4542,26 +5244,35 @@
           "a3a2",
           "e5e3",
           "a4a5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f7b3",
       "exampleLine": [
         "f7b3",
         "a2a1",
-        "d8d1"
+        "e3e1"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 61,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-62",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f7b3",
+        "a2a1",
+        "e3e1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/7p/4p2n/3k3K/5q2/8 b - - 1 73",
@@ -4606,7 +5317,8 @@
           "h3f2",
           "d2f2",
           "h2h3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f2g2",
       "exampleLine": [
@@ -4617,15 +5329,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 43,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-63",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f2g2",
+        "h3h4",
+        "g2g4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5QQ1/4K3/8/3p4/4k3/8/4P3/8 w - - 1 62",
@@ -4718,26 +5438,35 @@
           "g6f5",
           "f7f8q",
           "f5e4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "f8f3",
+      "firstMove": "g8g4",
       "exampleLine": [
-        "f8f3",
-        "e4e5",
-        "g8d5"
+        "g8g4",
+        "e4e3",
+        "f8f4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 243,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-64",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g8g4",
+        "e4e3",
+        "f8f4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/3N4/8/7k/4K3/8/6Q1/8 w - - 5 97",
@@ -4826,26 +5555,35 @@
           "g3h4",
           "f3g2",
           "h4h5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "e4f5",
+      "firstMove": "d7e5",
       "exampleLine": [
-        "e4f5",
-        "h5h6",
-        "g2g6"
+        "d7e5",
+        "h5h4",
+        "g2g4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 775,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-65",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d7e5",
+        "h5h4",
+        "g2g4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/pp3Rp1/6Kp/6Q1/7P/P6P/Bq6/6r1 w - - 0 35",
@@ -4866,12 +5604,15 @@
         "recordedPlyCount": 69,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "f7g7"
+        ]
       },
       "firstMove": "f7g7",
       "exampleLine": [
         "f7g7",
-        "g8h8",
+        "g8f8",
         "g7g8"
       ],
       "tournamentLine": [
@@ -4879,15 +5620,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": true
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 68,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-66",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f7g7",
+        "g8f8",
+        "g7g8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6Q1/5N2/5P2/BP1Pp2k/2p1P2P/2P1b3/6K1/8 w - - 3 71",
@@ -4962,26 +5711,35 @@
           "h6g6",
           "c8g8",
           "g6h5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "g2f3",
+      "firstMove": "g2h3",
       "exampleLine": [
-        "g2f3",
+        "g2h3",
         "e3c1",
         "g8g4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 899,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-67",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g2h3",
+        "e3c1",
+        "g8g4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2Q5/3Q4/8/8/8/8/6PK/k7 w - - 1 79",
@@ -5090,26 +5848,35 @@
           "b3a2",
           "c7c8q",
           "a2a1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "d7a4",
+      "firstMove": "c8c1",
       "exampleLine": [
-        "d7a4",
-        "a1b1",
-        "c8c2"
+        "c8c1",
+        "a1a2",
+        "d7a4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 157,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-68",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c8c1",
+        "a1a2",
+        "d7a4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "3k4/8/p3Q3/P2P3B/1P2p3/6P1/K1P5/8 w - - 3 47",
@@ -5160,7 +5927,8 @@
           "f8e7",
           "g6e6",
           "e7d8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d5d6",
       "exampleLine": [
@@ -5171,15 +5939,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 949,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-69",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d5d6",
+        "e4e3",
+        "e6e8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/7p/4k3/6K1/1p1q2PP/8/7r/8 b - - 3 62",
@@ -5268,26 +6044,35 @@
           "g5h5",
           "d2h2",
           "h5g5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "d4f6",
+      "firstMove": "d4e5",
       "exampleLine": [
-        "d4f6",
-        "g5h5",
+        "d4e5",
+        "g5h6",
         "h2h4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 267,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-70",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d4e5",
+        "g5h6",
+        "h2h4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "r4k2/7r/pBP5/4Q2p/2B5/8/PP4PP/6K1 w - - 3 39",
@@ -5318,7 +6103,8 @@
           "h8h7",
           "c7e5",
           "e8f8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "b6c5",
       "exampleLine": [
@@ -5329,15 +6115,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 96,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-71",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "b6c5",
+        "h7e7",
+        "e5e7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/p1r1b3/1p3p2/3Qn3/3R2P1/P1q5/4kP1P/3R2K1 w - - 7 37",
@@ -5362,7 +6156,8 @@
           "c5c3",
           "b3d5",
           "f3e2"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d5e4",
       "exampleLine": [
@@ -5373,15 +6168,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 216,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-72",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d5e4",
+        "c3e3",
+        "e4e3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/5pk1/7p/8/1p4P1/1P1R2P1/5qBP/3NrN1K b - - 2 41",
@@ -5404,7 +6207,8 @@
         "trainingContinuation": true,
         "trainingMovesFromRecordedEnd": [
           "d2f1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e1f1",
       "exampleLine": [
@@ -5415,15 +6219,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 85,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-73",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e1f1",
+        "g2f1",
+        "f2f1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7Q/8/1k6/8/8/2Q5/5PPK/8 w - - 3 60",
@@ -5482,26 +6294,35 @@
           "b6b5",
           "d2c3",
           "b5b6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "h8b8",
       "exampleLine": [
         "h8b8",
         "b6a6",
-        "c3a1"
+        "c3a3"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 600,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-74",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h8b8",
+        "b6a6",
+        "c3a3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/1R6/8/2Q5/1n1p4/8/6PK/1k6 w - - 0 62",
@@ -5564,7 +6385,8 @@
           "c1b1",
           "a5c5",
           "d5d4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "b7b4",
       "exampleLine": [
@@ -5575,15 +6397,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 88,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-75",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "b7b4",
+        "b1a1",
+        "c5a5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/6p1/3Kn3/5k2/qr6/8 b - - 3 69",
@@ -5688,7 +6518,8 @@
           "b4c4",
           "b1a2",
           "c4d4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "b2d2",
       "exampleLine": [
@@ -5699,15 +6530,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 157,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-76",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "b2d2",
+        "d4e5",
+        "a2d5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/1pp5/3p3p/p2P3P/2Pb1n2/1P5r/3K1Nq1/2RB4 b - - 3 46",
@@ -5742,7 +6581,8 @@
           "e1d2",
           "g1g2",
           "g4f2"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g2f2",
       "exampleLine": [
@@ -5753,15 +6593,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 56,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-77",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g2f2",
+        "d1e2",
+        "f2e2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6Q1/2k5/8/2P5/p7/1p3Q2/1P2pP2/4K3 w - - 1 50",
@@ -5810,26 +6658,35 @@
           "a5a4",
           "g7g8q",
           "d7c7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g8f7",
       "exampleLine": [
         "g8f7",
-        "c7d8",
-        "f3a8"
+        "c7b8",
+        "f3b7"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 213,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-78",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g8f7",
+        "c7b8",
+        "f3b7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2k5/7p/3Q1N1P/3B1KP1/1p6/p7/P7/8 w - - 5 61",
@@ -5896,7 +6753,8 @@
           "b6b7",
           "b3d5",
           "b7c8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d6d7",
       "exampleLine": [
@@ -5907,15 +6765,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 196,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-79",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d6d7",
+        "c8b8",
+        "d7b7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6Q1/8/8/8/7k/4K3/8/8 w - - 9 71",
@@ -5990,26 +6856,35 @@
           "g2h3",
           "f8g8",
           "h3h4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e3f4",
       "exampleLine": [
         "e3f4",
-        "h4h5",
-        "g8g5"
+        "h4h3",
+        "g8g3"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 524,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-80",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e3f4",
+        "h4h3",
+        "g8g3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/5p1k/p2pp1pP/1b6/4P2K/1r3P2/6q1/8 b - - 3 48",
@@ -6074,26 +6949,35 @@
           "f4g4",
           "d2g2",
           "g4h4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "b3f3",
+      "firstMove": "h7h6",
       "exampleLine": [
-        "b3f3",
-        "e4e5",
-        "g2g3"
+        "h7h6",
+        "f3f4",
+        "g2h3"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 339,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-81",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h7h6",
+        "f3f4",
+        "g2h3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "Q1Q5/6k1/8/8/5P2/6PK/8/8 w - - 1 61",
@@ -6196,26 +7080,35 @@
           "e8f7",
           "a7a8q",
           "f7g7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "c8f5",
       "exampleLine": [
         "c8f5",
         "g7h6",
-        "a8f8"
+        "a8h8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 801,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-82",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c8f5",
+        "g7h6",
+        "a8h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7Q/4K3/2k1P3/8/1R6/8/8/8 w - - 1 94",
@@ -6270,26 +7163,35 @@
           "g5e6",
           "f5e6",
           "d5c6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "h8d4",
+      "firstMove": "h8e8",
       "exampleLine": [
-        "h8d4",
-        "c6c7",
-        "d4c4"
+        "h8e8",
+        "c6c5",
+        "e8b5"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 105,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-83",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h8e8",
+        "c6c5",
+        "e8b5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/3P4/4Np1p/2Q2P2/8/5K2/7P/8 w - - 0 60",
@@ -6344,26 +7246,35 @@
           "f7g8",
           "d8e6",
           "h7h6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "d7d8q",
       "exampleLine": [
         "d7d8q",
         "g8f7",
-        "c5a7"
+        "d8f8"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 57,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-84",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "d7d8q",
+        "g8f7",
+        "d8f8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "4R3/k7/2K5/8/8/8/8/8 w - - 25 92",
@@ -6413,7 +7324,8 @@
           "c8b8",
           "e7e8",
           "b8a7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e8h8",
       "exampleLine": [
@@ -6424,15 +7336,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 74,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-85",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e8h8",
+        "a7a6",
+        "h8a8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2Q5/8/7k/8/4Q3/4K3/1P6/8 w - - 1 69",
@@ -6509,26 +7429,35 @@
           "f6g5",
           "a8e4",
           "g5h6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "c8g8",
+      "firstMove": "c8h8",
       "exampleLine": [
-        "c8g8",
-        "h6h5",
-        "e4h1"
+        "c8h8",
+        "h6g5",
+        "h8h4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 113,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-86",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c8h8",
+        "h6g5",
+        "h8h4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/2RN1B2/3B3K/1k6/6P1/8 w - - 1 61",
@@ -6599,7 +7528,8 @@
           "a3a2",
           "f6d5",
           "a2b3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f5c2",
       "exampleLine": [
@@ -6610,15 +7540,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 105,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-87",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f5c2",
+        "b3a2",
+        "c5a5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/5rp1/2n1pBQ1/qp1pP3/n1pP4/2P3P1/1P3PK1/7R w - - 8 31",
@@ -6639,7 +7577,12 @@
         "recordedPlyCount": 63,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "g6h7",
+          "g8f8",
+          "h7h8"
+        ]
       },
       "firstMove": "g6h7",
       "exampleLine": [
@@ -6654,15 +7597,23 @@
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 116,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-88",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g6h7",
+        "g8f8",
+        "h7h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "Q4Q2/8/4k3/8/8/1P3K2/8/8 w - - 3 72",
@@ -6767,26 +7718,35 @@
           "d6e7",
           "c8f8",
           "e7e6"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "a8c6",
+      "firstMove": "a8e8",
       "exampleLine": [
-        "a8c6",
-        "e6e5",
-        "c6d6"
+        "a8e8",
+        "e6d5",
+        "e8e4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 78,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-89",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "a8e8",
+        "e6d5",
+        "e8e4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/4Q3/1k6/8/4QP1K/8 w - - 3 69",
@@ -6849,7 +7809,8 @@
           "b4c5",
           "h8e5",
           "c5b4"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "e2b5",
       "exampleLine": [
@@ -6860,15 +7821,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 256,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-90",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "e2b5",
+        "b4a3",
+        "e5a1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/3K4/8/6Q1/8/8/2B5/8 w - - 3 97",
@@ -6899,7 +7868,8 @@
           "f6g7",
           "c5g5",
           "g7h8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g5h6",
       "exampleLine": [
@@ -6910,15 +7880,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 230,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-91",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g5h6",
+        "h8g8",
+        "c2b3"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/8/8/3b1k1p/7P/8/3q4/1K3n2 b - - 7 118",
@@ -6997,26 +7975,35 @@
           "b3c2",
           "a5d2",
           "c2b1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "f5e4",
+      "firstMove": "f5f4",
       "exampleLine": [
-        "f5e4",
+        "f5f4",
         "b1a1",
         "d2c1"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 1001,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-92",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f5f4",
+        "b1a1",
+        "d2c1"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "Q6Q/4R3/2r5/3k4/K7/2p5/8/8 w - - 0 75",
@@ -7071,7 +8058,8 @@
           "b6c6",
           "g7e7",
           "c4c3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "h8c3",
       "exampleLine": [
@@ -7082,15 +8070,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 645,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-93",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h8c3",
+        "d5d6",
+        "c3e5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "6k1/2Q5/P4pp1/5P1p/7P/5pP1/2P2P1K/8 w - - 2 46",
@@ -7133,26 +8129,35 @@
           "g7g6",
           "d8c7",
           "f7g8"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "a6a7",
       "exampleLine": [
         "a6a7",
-        "g6g5",
+        "g8f8",
         "a7a8q"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 608,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-94",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "a6a7",
+        "g8f8",
+        "a7a8q"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2Q5/3RK3/8/8/8/k7/8/8 w - - 5 81",
@@ -7249,26 +8254,35 @@
           "b5b4",
           "f8c8",
           "b4a3"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "d7b7",
+      "firstMove": "c8b8",
       "exampleLine": [
-        "d7b7",
+        "c8b8",
         "a3a2",
-        "c8a8"
+        "d7a7"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 362,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-95",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "c8b8",
+        "a3a2",
+        "d7a7"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "2R5/4bppk/1p1p4/5R1P/4PQ2/5P2/r4q1P/7K w - - 5 50",
@@ -7289,28 +8303,39 @@
         "recordedPlyCount": 99,
         "kind": "recorded game position",
         "trainingContinuation": false,
-        "trainingMovesFromRecordedEnd": []
+        "trainingMovesFromRecordedEnd": [],
+        "recordedContinuationUci": [
+          "f4h6"
+        ]
       },
       "firstMove": "f4h6",
       "exampleLine": [
         "f4h6",
-        "g7h6",
-        "f5f7"
+        "h7h6",
+        "c8h8"
       ],
       "tournamentLine": [
         "f4h6"
       ],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": true
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 45,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-96",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f4h6",
+        "h7h6",
+        "c8h8"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/5K2/8/3k4/5R2/2Q5/8/8 w - - 7 81",
@@ -7383,7 +8408,8 @@
           "d5d6",
           "g8f7",
           "d6d5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "f4d4",
       "exampleLine": [
@@ -7394,15 +8420,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 352,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-97",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "f4d4",
+        "d5e5",
+        "c3c5"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "5K2/4N3/5B2/8/8/8/6Q1/2k5 w - - 11 93",
@@ -7517,7 +8551,8 @@
           "e1d1",
           "d4f6",
           "d1c1"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
       "firstMove": "g2e2",
       "exampleLine": [
@@ -7528,15 +8563,23 @@
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 477,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-98",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g2e2",
+        "c1b1",
+        "e2b2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "7k/2p4p/8/pp2P1Q1/P1Pp4/3P1PK1/2P5/6R1 w - - 0 43",
@@ -7569,26 +8612,35 @@
           "c5d4",
           "g2g3",
           "b6b5"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "g3h4",
+      "firstMove": "g5f6",
       "exampleLine": [
-        "g3h4",
-        "b5b4",
-        "g5g7"
+        "g5f6",
+        "h8g8",
+        "g3f2"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 71,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-99",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "g5f6",
+        "h8g8",
+        "g3f2"
+      ],
+      "defencePolicy": "verified-best-resistance"
     },
     {
       "fen": "8/4K3/8/8/2b5/2k3q1/8/7q b - - 1 77",
@@ -7653,26 +8705,35 @@
           "e7f8",
           "h2h1q",
           "f8e7"
-        ]
+        ],
+        "recordedContinuationUci": []
       },
-      "firstMove": "h1b7",
+      "firstMove": "h1h7",
       "exampleLine": [
-        "h1b7",
-        "e7f8",
-        "g3b8"
+        "h1h7",
+        "e7f6",
+        "g3f4"
       ],
       "tournamentLine": [],
       "engineMateBound": 2,
       "validation": {
-        "method": "Legal replay plus Stockfish 16 at 200,000 and 1,000,000 nodes; mate-in-1 directly verified",
+        "method": "Exhaustive bounded legal-move AND/OR search with transposition caching",
         "forcedMateWithin": 2,
-        "exactMate": false,
-        "engineDepth": 245,
-        "recordedContinuationEndsBeforeMate": false
+        "noMateWithin": 1,
+        "exactMate": true,
+        "checkedNodes": 329,
+        "status": "EXACT",
+        "defence": "Shortest winning attack and longest legal resistance on the stored line; Stockfish after deviation."
       },
       "id": "m2-100",
       "mate": 2,
-      "collection": "famous"
+      "collection": "famous",
+      "defenceLine": [
+        "h1h7",
+        "e7f6",
+        "g3f4"
+      ],
+      "defencePolicy": "verified-best-resistance"
     }
   ]
 }
