@@ -1,0 +1,1086 @@
+collection,id,game,year,mate,noMateWithin,fen,proofNodes,verifiedLine
+famous,m1-01,McDonnell - La Bourdonnais,1834,1,0,rnb3r1/pp1pb2p/2pk1nq1/6BQ/8/8/PPP3PP/4RRK1 w - - 0 18,9,g5f4
+famous,m1-02,Alexander McDonnell - Louis Charles Mahe De La Bourdonnais,1834,1,0,6rk/3P2pp/8/p7/7b/P6P/1P3pPK/2qq4 b - - 0 41,7,d1h1
+famous,m1-03,La Bourdonnais - McDonnell,1834,1,0,8/7Q/1p1p1kr1/4p2K/4Pp2/P1r5/6nP/8 b - - 2 38,7,c3h3
+famous,m1-04,Anderssen - Lionel Kieseritzky,1851,1,0,r1bk3r/p2p1pNp/n2B1n2/1p1NP2P/6P1/3P4/P1P1K3/q5b1 w - - 0 23,3,d6e7
+famous,m1-05,Adolf Anderssen - Jean Dufresne,1852,1,0,1r3kr1/pbpBnp1p/1b3P2/8/8/B1P2q2/P4PPP/3R2K1 w - - 4 24,5,a3e7
+famous,m1-06,Marache - Morphy,1857,1,0,4r3/5k2/4p3/2b4p/7K/2n5/1p6/6q1 b - - 1 52,11,g1g4
+famous,m1-07,Morphy - Anderssen,1858,1,0,8/2Q1P3/k6p/p7/PP6/8/1K5P/8 w - - 2 54,17,b4b5
+famous,m1-08,Morphy - Duke of Brunswick,1858,1,0,1n2kb1r/p4ppp/4q3/4p1B1/4P3/8/PPP2PPP/2KR4 w k - 0 17,3,d1d8
+famous,m1-09,Steinitz - Mongredian,1862,1,0,r2kqR2/pbp1b3/1p4Q1/3pP1B1/3P4/8/PPP4P/6K1 w - - 3 29,3,g6e8
+famous,m1-10,Steinitz - Anderssen,1866,1,0,r2k4/pp1b3p/3p4/3P1p2/P6P/1PP3p1/5q2/7K b - - 0 38,7,f2f1
+famous,m1-11,"Steinitz, W - Sellman, A.G.",1885,1,0,4Q2R/4B1k1/8/8/4P3/5p1P/5K1P/8 w - - 5 59,17,e8g8
+famous,m1-12,Emanuel Lasker - Johann Hermann Bauer,1889,1,0,5Q2/7k/3Q4/8/8/1P6/3P2P1/6K1 w - - 5 56,25,d6h6
+famous,m1-13,Steinitz - Tchigorin,1892,1,0,4rr2/1ppb4/2q3pB/p4k2/3Q4/1BP5/PP3PP1/2K5 w - - 1 29,13,d4f4
+famous,m1-14,"Tarrasch, S - Von Scheve, T",1894,1,0,5Q2/8/8/p6k/3PBP2/P4P2/1P6/2K5 w - - 1 46,3,f8h8
+famous,m1-15,Tarrasch - Schlecter,1894,1,0,1R5Q/8/4R3/2k2PK1/8/1P6/8/8 w - - 5 66,13,h8e5
+famous,m1-16,Harry Nelson Pillsbury - Siegbert Tarrasch,1895,1,0,8/3Q3p/8/6pk/1p1Pp3/1r2P2P/2p5/7K w - - 0 52,3,d7h7
+famous,m1-17,Wilhelm Steinitz - Curt von Bardeleben,1895,1,0,r1r1qQ2/pp1k1N2/5pp1/3p4/8/8/PP3PPP/2R3K1 w - - 14 35,7,f8d6
+famous,m1-18,Siegbert Tarrasch - Georg Marco,1898,1,0,r6Q/4kp2/1q1pbRB1/2pP4/1pP5/1P4B1/8/4R2K w - - 5 39,3,f6f7
+famous,m1-19,Pillsbury - Marco,1900,1,0,6k1/1b1Q4/r5pB/p2p4/2pP4/4P3/PPp3PP/6K1 w - - 2 28,13,d7g7
+famous,m1-20,Carl Schlechter - Isidor Gunsberg,1901,1,0,8/8/2Q5/8/1Q6/3k2K1/6P1/8 w - - 3 75,13,c6e4
+famous,m1-21,Schlecter - Przepiorka,1906,1,0,r1bqrk2/p1R4Q/1p3bp1/3pB3/3p4/4P3/PP3PPP/5RK1 w - - 1 20,9,h7f7
+famous,m1-22,Marshall - Lasker,1907,1,0,8/5q2/p3N3/P1P4p/2K4P/3pk3/1q2b3/8 b - - 7 59,3,f7e6
+famous,m1-23,Reshevsky - Traube,1920,1,0,2rq1k1r/pb1n2p1/1pnb1pQp/3B4/1P1P1P2/P3B1P1/3NP2P/R3K2R w KQ - 5 17,9,g6f7
+famous,m1-24,Alexander Alekhine - Fred Dewhirst Yates,1922,1,0,r4k2/6RR/b4K1p/3pp2P/p2P1p2/Pp2PPP1/1P6/8 w - - 0 43,3,h7h8
+famous,m1-25,Richard Reti - Akiba Rubinstein,1923,1,0,4K3/8/8/k7/1R6/2Q5/8/8 w - - 7 77,9,c3a3
+famous,m1-26,Friedrich Saemisch - Aron Nimzowitsch,1923,1,0,6k1/8/p4p2/1P5p/8/1P1b2qP/8/7K b - - 1 45,13,d3e4
+famous,m1-27,Richard Reti - F Fischer,1923,1,0,3R1Qrk/p4p1p/8/8/3pP3/6P1/6KP/8 w - - 1 46,3,f8g8
+famous,m1-28,Gruenfeld - Alekhine,1923,1,0,6k1/5p2/p5pp/1p6/3bPP2/P7/NP4PP/3r1Q1K b - - 3 35,3,d1f1
+famous,m1-29,Jose Raul Capablanca - Savielly Tartakower,1924,1,0,7k/3Q4/5K2/8/8/8/8/8 w - - 10 64,11,d7g7
+famous,m1-30,Capablanca - Spielmann,1927,1,0,5Q2/1R4pk/8/3B1P1p/2pP4/2P5/5PPP/6K1 w - - 0 38,5,f8g7
+famous,m1-31,Spielmann - Hunlinger,1929,1,0,2r1nrk1/p3qp2/1p2p1p1/nP1b3R/8/P2B4/1BP2PPP/3R2K1 w - - 2 28,3,h5h8
+famous,m1-32,Mikhail Botvinnik - Nikolay Tikhonovich Sorokin,1931,1,0,3Q4/8/1R4K1/2k5/4P3/4P3/8/8 w - - 7 71,5,d8d4
+famous,m1-33,Alexander Alekhine - Salomon Flohr,1931,1,0,8/7p/7P/P4Q2/5p1k/5P2/1P3pK1/8 w - - 0 52,11,f5g4
+famous,m1-34,Alekhine - Alexander,1936,1,0,7Q/8/2P1B3/6R1/5k2/1P6/4K3/8 w - - 3 53,3,h8e5
+famous,m1-35,Jose Raul Capablanca - Andre Lilienthal,1936,1,0,8/3R4/8/5K2/4P3/5k2/3Q4/8 w - - 4 79,7,d7d3
+famous,m1-36,Euwe - Maroczy,1936,1,0,5R2/6kP/6P1/4KP2/p7/8/1P6/8 w - - 3 72,3,h7h8q
+famous,m1-37,Botvinnik - Capablanca,1938,1,0,7k/p3Q3/6Kp/1p1p4/2pP2P1/1nP5/7P/8 w - - 0 47,3,e7f8
+famous,m1-38,"Capablanca - Golombek, H",1939,1,0,7k/1R6/2Q5/6p1/p2P2P1/4P3/5P2/6K1 w - - 2 54,3,c6e8
+famous,m1-39,"Smyslov, V - Kottnauer, C",1946,1,0,6Q1/8/8/8/k7/8/6P1/1R4K1 w - - 1 65,9,g8a2
+famous,m1-40,Yuri S Gusev - E Auerbach,1946,1,0,2Qq2kr/7p/4P2B/p3pR2/4P3/2P3p1/P5KP/8 w - - 1 39,3,c8d8
+famous,m1-41,Frantisek Zita - David Bronstein,1946,1,0,6k1/1p5p/8/1bb5/8/7r/6q1/2K5 b - - 3 53,7,h3h1
+famous,m1-42,Mikhail Botvinnik - Max Euwe,1948,1,0,6k1/4Q3/8/4B3/6P1/8/1P5K/2q5 w - - 0 61,11,e7g7
+famous,m1-43,Tartakover - Euwe,1948,1,0,8/8/8/8/8/5k2/3q4/5K2 b - - 19 77,5,d2c1
+famous,m1-44,Isaac Boleslavsky - Vasily Smyslov,1950,1,0,3N4/1R6/8/k7/3QP3/8/7K/8 w - - 5 67,3,d4a1
+famous,m1-45,Efim Geller - Max Euwe,1953,1,0,4k3/pb1p2p1/5p2/1p6/3P3R/P2q3P/3B2r1/3K4 b - - 3 32,3,d3d2
+famous,m1-46,Tigran Vartanovich Petrosian - Carlos Enrique Guimard,1955,1,0,1k6/R7/8/2Q4p/5P2/6P1/2n5/6K1 w - - 5 76,7,c5c7
+famous,m1-47,Donald Byrne - Robert James Fischer,1956,1,0,1Q6/5pk1/2p3p1/1p2N2p/1b5P/1bn5/r5P1/2K5 b - - 15 41,3,b4a3
+famous,m1-48,Bent Larsen - Berndt Soderborg,1957,1,0,4Rq1k/pp6/5PQ1/7P/8/3p4/8/6K1 w - - 0 45,3,e8f8
+famous,m1-49,Fischer - Sherwin,1957,1,0,k7/2QP4/1p6/8/p1p5/2P2p2/PP3P2/4K3 w - - 0 47,3,d7d8q
+famous,m1-50,Lev Polugaevsky - Rashid Gibiatovich Nezhmetdinov,1958,1,0,1r4k1/p5bp/K1n5/3p4/P5p1/1P1n1rP1/1B2N2R/R2Q4 b - - 5 34,3,b8b6
+famous,m1-51,Tal - Furster,1958,1,0,6Q1/3k4/1p6/2Q5/8/P1K5/P1P5/8 w - - 0 51,29,g8c8
+famous,m1-52,Tigran Vartanovich Petrosian - Wolfgang Unzicker,1960,1,0,6k1/1Q6/8/2R5/3P1N2/8/KP6/8 w - - 5 78,11,c5c8
+famous,m1-53,Robert Eugene Byrne - Robert James Fischer,1963,1,0,8/8/8/8/8/K1kb4/8/1r6 b - - 9 65,5,b1a1
+famous,m1-54,Robert James Fischer - Pal Benko,1963,1,0,8/Q7/8/8/4Bp2/1P3P2/2R5/4k2K w - - 7 80,3,a7a1
+famous,m1-55,Robert James Fischer - Svetozar Gligoric,1966,1,0,8/k7/8/1R6/1R6/5KPP/1P6/8 w - - 7 47,5,b5a5
+famous,m1-56,Lehman - Smyslov,1966,1,0,4K3/1p4q1/8/2r4p/3k4/8/8/8 b - - 1 70,5,c5c8
+famous,m1-57,Robert James Fischer - Miguel Najdorf,1966,1,0,8/6R1/8/8/8/8/5K1k/8 w - - 22 71,3,g7h7
+famous,m1-58,Lajos Portisch - Robert James Fischer,1966,1,0,8/5q2/8/6p1/p3K3/8/4k3/2q5 b - - 5 68,5,c1e3
+famous,m1-59,Robert James Fischer - Lhamsuren Myagmarsuren,1967,1,0,2r2q2/r4p2/b3pBk1/n3P3/p2p3R/P5P1/2p2PB1/R5K1 w - - 0 33,7,g2e4
+famous,m1-60,Ratmir Kholmov - Robert James Fischer,1967,1,0,6k1/8/4p1p1/4b2p/4b2P/8/3K2n1/q7 b - - 1 67,13,a1e1
+famous,m1-61,Robert James Fischer - Leonid Stein,1967,1,0,7k/2Q5/5K2/8/8/8/8/8 w - - 13 85,11,c7g7
+famous,m1-62,Robert James Fischer - Efim Geller,1967,1,0,3r3k/7p/8/P7/8/1q2rp2/1P6/K7 b - - 1 73,7,e3e1
+famous,m1-63,Bent Larsen - Robert James Fischer,1967,1,0,8/8/8/7p/4p2K/3k4/6q1/8 b - - 0 74,5,g2g4
+famous,m1-64,Petrosian - Estrin,1968,1,0,6Q1/4K3/8/3pk3/8/5Q2/4P3/8 w - - 3 63,3,g8d5
+famous,m1-65,Anatoly Karpov - Svetozar Gligoric,1973,1,0,8/3N4/7k/5K2/8/8/6Q1/8 w - - 7 98,7,g2g6
+famous,m1-66,Alexsander A Shashin - Viktor Korchnoi,1973,1,0,7k/pp4R1/6Kp/6Q1/7P/P6P/Bq6/6r1 w - - 1 36,3,g7g8
+famous,m1-67,Anatoly Karpov - Wolfgang Unzicker,1974,1,0,6Q1/5N2/5P2/BP1Pp2k/2p1P2P/2P2K2/8/2b5 w - - 5 72,11,g8g4
+famous,m1-68,Anatoly Karpov - Boris Spassky,1974,1,0,2Q5/8/8/8/Q7/8/6PK/1k6 w - - 3 80,27,c8c2
+famous,m1-69,Garry Kasparov - Andrei Sokolov,1975,1,0,3k4/8/p2PQ3/P6B/1P6/4p1P1/K1P5/8 w - - 0 48,13,e6e8
+famous,m1-70,Tigran Vartanovich Petrosian - Mikhail Tal,1976,1,0,8/7p/4kq2/7K/1p4PP/8/7r/8 b - - 5 63,3,h2h4
+famous,m1-71,Eduard Gufeld - Bozidar Ivanovic,1979,1,0,r4k2/4r3/p1P5/2B1Q2p/2B5/8/PP4PP/6K1 w - - 5 40,5,e5e7
+famous,m1-72,Garry Kasparov - Lajos Portisch,1983,1,0,8/p1r1b3/1p3p2/4n3/3RQ1P1/P3q3/4kP1P/3R2K1 w - - 9 38,3,e4e3
+famous,m1-73,Anatoly Karpov - Garry Kasparov,1985,1,0,8/5pk1/7p/8/1p4P1/1P1R2P1/5q1P/3N1B1K b - - 0 42,3,f2f1
+famous,m1-74,Garry Kasparov - Anatoly Karpov,1986,1,0,1Q6/8/k7/8/8/2Q5/5PPK/8 w - - 5 61,11,c3a3
+famous,m1-75,Garry Kasparov - Anatoly Karpov,1990,1,0,8/8/8/2Q5/1R1p4/8/6PK/k7 w - - 1 63,5,c5a5
+famous,m1-76,Anatoly Karpov - Garry Kasparov,1993,1,0,8/8/8/4K1p1/4n3/5k2/q2r4/8 b - - 5 70,9,a2d5
+famous,m1-77,Vladimir Kramnik - Garry Kasparov,1994,1,0,7k/1pp5/3p3p/p2P3P/2Pb1n2/1P5r/3KBq2/2R5 b - - 1 47,3,f2e2
+famous,m1-78,Garry Kasparov - Vladimir Kramnik,1994,1,0,3k4/5Q2/8/2P5/p7/1p3Q2/1P2pP2/4K3 w - - 3 51,21,f3a8
+famous,m1-79,Garry Kasparov - Viswanathan Anand,1995,1,0,1k6/3Q3p/5N1P/3B1KP1/1p6/p7/P7/8 w - - 7 62,11,d7b7
+famous,m1-80,Garry Kasparov - Veselin Topalov,1999,1,0,6Q1/8/8/7k/5K2/8/8/8 w - - 11 72,9,g8h7
+famous,m1-81,Michael Adams - Garry Kasparov,2005,1,0,8/5p1k/p2pp1pP/1b2P3/7K/5r2/6q1/8 b - - 0 49,9,g2g3
+famous,m1-82,Magnus Carlsen - Alexander Beliavsky,2006,1,0,Q7/8/7k/5Q2/5P2/6PK/8/8 w - - 3 62,3,a8h8
+famous,m1-83,Magnus Carlsen - Michael Adams,2007,1,0,8/2k1K3/4P3/8/1R1Q4/8/8/8 w - - 3 95,5,d4c3
+famous,m1-84,Magnus Carlsen - Vladimir Kramnik,2009,1,0,3Q4/5k2/4Np1p/2Q2P2/8/5K2/7P/8 w - - 1 61,7,d8f8
+famous,m1-85,Magnus Carlsen - Viswanathan Anand,2009,1,0,7R/8/k1K5/8/8/8/8/8 w - - 27 93,3,h8a8
+famous,m1-86,Magnus Carlsen - Veselin Topalov,2009,1,0,6Q1/8/8/7k/4Q3/4K3/1P6/8 w - - 3 70,13,g8g6
+famous,m1-87,Magnus Carlsen - Veselin Topalov,2010,1,0,8/8/8/2RN4/3B3K/8/k1B3P1/8 w - - 3 62,3,c5a5
+famous,m1-88,Magnus Carlsen - Wang Hao,2011,1,0,5k2/5rpQ/2n1pB2/qp1pP3/n1pP4/2P3P1/1P3PK1/7R w - - 10 32,7,h7h8
+famous,m1-89,Magnus Carlsen - Viswanathan Anand,2012,1,0,5Q2/8/2Q5/4k3/8/1P3K2/8/8 w - - 5 73,7,f8f4
+famous,m1-90,Magnus Carlsen - Boris Gelfand,2013,1,0,8/8/8/1Q2Q3/8/k7/5P1K/8 w - - 5 70,25,e5a1
+famous,m1-91,Magnus Carlsen - Sergey Karjakin,2013,1,0,6k1/3K4/7Q/8/8/8/2B5/8 w - - 5 98,9,c2b3
+famous,m1-92,Teimour Radjabov - Magnus Carlsen,2013,1,0,8/8/8/3b3p/4k2P/8/3q4/K4n2 b - - 9 119,3,d2c1
+famous,m1-93,Magnus Carlsen - Viswanathan Anand,2013,1,0,Q7/4R3/2rk4/8/K7/2Q5/8/8 w - - 1 76,11,c3e5
+famous,m1-94,Magnus Carlsen - Viswanathan Anand,2014,1,0,6k1/P1Q5/5p2/5Ppp/7P/5pP1/2P2P1K/8 w - - 0 47,3,a7a8q
+famous,m1-95,Magnus Carlsen - Maxime Vachier-Lagrave,2015,1,0,2Q5/1R2K3/8/8/8/8/k7/8 w - - 7 82,9,c8a8
+famous,m1-96,Magnus Carlsen - Sergey Karjakin,2016,1,0,2R5/4bp1k/1p1p3p/5R1P/4P3/5P2/r4q1P/7K w - - 0 51,3,f5f7
+famous,m1-97,Magnus Carlsen - Fabiano Caruana,2018,1,0,8/5K2/8/4k3/3R4/2Q5/8/8 w - - 9 82,37,c3c5
+famous,m1-98,"Erdogmus, Yagiz Kaan - Van Foreest, Jorden",2026,1,0,5K2/4N3/5B2/8/8/8/4Q3/1k6 w - - 13 94,13,e2b2
+famous,m1-99,"Abdusattorov, Nodirbek - Gukesh D",2026,1,0,7k/2p4p/8/p3P1Q1/PpPp3K/3P1P2/2P5/6R1 w - - 0 44,3,g5g8
+famous,m1-100,"Erigaisi Arjun - Abdusattorov, Nodirbek",2026,1,0,5K2/1q6/8/8/2b5/2k3q1/8/8 b - - 3 78,9,g3b8
+famous,m2-01,Mikhail Botvinnik - Mikhail Tal,1961,2,1,8/R7/2p2p1p/1kB5/R2P4/2pKr3/6P1/8 w - - 3 36,15,d3e3 c3c2 a4b4
+famous,m2-02,Alexander McDonnell - Louis Charles Mahe De La Bourdonnais,1834,2,1,6rk/3P2pp/8/p7/7b/7P/PP1p1pPK/2Qq4 b - - 3 40,216,d2c1r d7d8q d1h1
+famous,m2-03,La Bourdonnais - McDonnell,1834,2,1,8/7Q/1p1p1kr1/4p3/4Pp1K/P1r1n3/7P/8 b - - 0 37,79,e3g2 h4h5 c3h3
+famous,m2-04,Anderssen - Lionel Kieseritzky,1851,2,1,r1bk2nr/p2p1pNp/n2B4/1p1NP2P/6P1/3P1Q2/P1P1K3/q5b1 w - - 1 22,48,f3f6 g8f6 d6e7
+famous,m2-05,Adolf Anderssen - Jean Dufresne,1852,2,1,1r2k1r1/pbp1np1p/1b3P2/5B2/8/B1P2q2/P4PPP/3R2K1 w - - 2 23,75,f5d7 e8d8 f6e7
+famous,m2-06,Marache - Morphy,1857,2,1,4r1k1/5P2/4p3/2b4p/8/2n4K/1p6/6q1 b - - 0 51,20,g8f7 h3h4 g1g4
+famous,m2-07,Morphy - Anderssen,1858,2,1,8/k3P3/2Q4p/p7/PP6/8/1K5P/8 w - - 0 53,157,c6c7 a7a6 b4b5
+famous,m2-08,Morphy - Duke of Brunswick,1858,2,1,4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16,88,b3b8 d7b8 d1d8
+famous,m2-09,Steinitz - Mongredian,1862,2,1,r2k4/pbpqb3/1p4Q1/3pP1B1/3P4/8/PPP4P/5RK1 w - - 1 28,179,f1f8 d7e8 g6e8
+famous,m2-10,Steinitz - Anderssen,1866,2,1,r2k4/pp1b3p/3p4/3P1p2/6pP/PPP5/5q2/7K b - - 0 37,894,g4g3 a3a4 f2f1
+famous,m2-11,"Steinitz, W - Sellman, A.G.",1885,2,1,4QR2/4B2k/8/8/4P3/5p1P/5K1P/8 w - - 3 58,79,e8f7 h7h6 f8h8
+famous,m2-12,Emanuel Lasker - Johann Hermann Bauer,1889,2,1,Q7/6k1/3Q4/8/8/1P6/3P2P1/6K1 w - - 3 55,181,a8f8 g7h7 d6h6
+famous,m2-13,Steinitz - Tchigorin,1892,2,1,4rr2/1ppb4/2q3pB/p3k3/3n3Q/1BP5/PP3PP1/2K5 w - - 6 28,54,h4d4 e5f5 d4f4
+famous,m2-14,"Tarrasch, S - Von Scheve, T",1894,2,1,5Q2/8/6k1/p7/3PpP2/P2B1P2/1P6/2K5 w - - 0 45,41,d3e4 g6h5 f8h8
+famous,m2-15,Tarrasch - Schlecter,1894,2,1,3R3Q/8/4R3/1k3PK1/8/1P6/8/8 w - - 3 65,169,d8b8 b5a5 h8c3
+famous,m2-16,Robert James Fischer - Vasily Smyslov,1965,2,1,4r1k1/8/6KP/4P1B1/5P2/8/8/8 w - - 0 95,19,h6h7 g8f8 h7h8q
+famous,m2-17,Wilhelm Steinitz - Curt von Bardeleben,1895,2,1,r1rkqQ2/pp6/5pp1/3p2N1/8/8/PP3PPP/2R3K1 w - - 12 34,253,g5f7 d8d7 f8d6
+famous,m2-18,Siegbert Tarrasch - Georg Marco,1898,2,1,r4k2/5p1Q/1q1pbRB1/2pP4/1pP5/1P4B1/8/4R2K w - - 3 38,81,f6f7 f8e8 h7g8
+famous,m2-19,Pillsbury - Marco,1900,2,1,5k2/1b1Q4/r5p1/p2p2B1/2pP4/4P3/PPp3PP/6K1 w - - 0 27,246,g5h6 f8g8 d7g7
+famous,m2-20,Carl Schlechter - Isidor Gunsberg,1901,2,1,1Q6/8/2Q5/8/8/4k1K1/6P1/8 w - - 1 74,864,b8b4 e3e2 c6f3
+famous,m2-21,Schlecter - Przepiorka,1906,2,1,r1bqr1k1/p1R4p/1p3bpQ/3pB3/3p4/4P3/PP3PPP/5RK1 w - - 2 19,59,h6h7 g8f8 h7f7
+famous,m2-22,Marshall - Lasker,1907,2,1,8/8/p7/P1P4p/2KN3P/3pk3/1q2b3/5q2 b - - 5 58,93,f1f7 d4e6 f7e6
+famous,m2-23,Reshevsky - Traube,1920,2,1,2rqk2r/pb1n2p1/1pnb1p1p/3B4/1P1P1P2/P3B1P1/2QNP2P/R3K2R w KQk - 3 16,71,c2g6 e8e7 g6f7
+famous,m2-24,Alexander Alekhine - Fred Dewhirst Yates,1922,2,1,r4k2/6RR/b3p2p/3pK2P/p2P1p2/Pp2PPP1/1P6/8 w - - 4 42,471,e5f6 f8e8 h7h8
+famous,m2-25,Richard Reti - Akiba Rubinstein,1923,2,1,4K3/8/1k6/8/5R2/2Q5/8/8 w - - 5 76,277,f4b4 b6a5 c3a3
+famous,m2-26,Friedrich Saemisch - Aron Nimzowitsch,1923,2,1,6k1/8/p4p2/1P5p/8/1P1b1qRP/8/6K1 b - - 0 44,24,f3g3 g1h1 d3e4
+famous,m2-27,Richard Reti - F Fischer,1923,2,1,3R1b1k/p4p1p/7Q/6r1/3pP3/6P1/6KP/8 w - - 2 45,40,h6f8 g5g8 f8g8
+famous,m2-28,Gruenfeld - Alekhine,1923,2,1,6k1/5pb1/p5pp/1p6/4PP2/P7/NP4PP/3r1QK1 b - - 1 34,54,g7d4 g1h1 d1f1
+famous,m2-29,Jose Raul Capablanca - Savielly Tartakower,1924,2,1,6k1/3Q4/4K3/8/8/8/8/8 w - - 8 63,641,e6f6 g8f8 d7d8
+famous,m2-30,Capablanca - Spielmann,1927,2,1,5q2/1R4pk/5Q1p/3B1P2/2pP4/2P5/5PPP/6K1 w - - 3 37,238,f6f8 h6h5 f8g7
+famous,m2-31,Spielmann - Hunlinger,1929,2,1,2r1nr2/p3qp1k/1p2p1p1/nP1bR3/8/P2B4/1BP2PPP/3R2K1 w - - 0 27,79,e5h5 h7g8 h5h8
+famous,m2-32,Mikhail Botvinnik - Nikolay Tikhonovich Sorokin,1931,2,1,3Q4/8/2k3K1/1R6/4P3/4P3/8/8 w - - 5 70,95,b5b6 c6c5 d8d4
+famous,m2-33,Alexander Alekhine - Salomon Flohr,1931,2,1,8/7p/7P/P3Q3/5p1k/5Pp1/1P3PK1/8 w - - 0 51,438,e5f5 g3f2 f5g4
+famous,m2-34,Alekhine - Alexander,1936,2,1,7Q/8/2P1B3/3R4/8/1P4k1/4K3/8 w - - 1 52,73,h8g8 g3h2 d5h5
+famous,m2-35,Jose Raul Capablanca - Andre Lilienthal,1936,2,1,8/3R4/8/5K2/4P3/4k3/7Q/8 w - - 2 78,139,h2d2 e3f3 d7d3
+famous,m2-36,Euwe - Maroczy,1936,2,1,7k/5R1P/6P1/4KP2/p7/8/1P6/8 w - - 1 71,50,f7f8 h8g7 h7h8q
+famous,m2-37,Botvinnik - Capablanca,1938,2,1,7k/p3Q3/1p5p/3p3K/2pP2P1/1nP5/7P/8 w - - 3 46,208,h5h6 h8g8 e7e8
+famous,m2-38,"Capablanca - Golombek, H",1939,2,1,8/6k1/2Q5/6p1/p2P2P1/4P3/5P2/1R4K1 w - - 0 53,68,c6d7 g7f6 b1b6
+famous,m2-39,"Smyslov, V - Kottnauer, C",1946,2,1,8/6P1/8/k7/8/8/6P1/1R4K1 w - - 1 64,76,g7g8q a5a4 g8a2
+famous,m2-40,Yuri S Gusev - E Auerbach,1946,2,1,6kr/2P1q2p/4P2B/p3pR2/4P3/2P3p1/P5KP/8 w - - 0 38,44,c7c8q e7d8 c8d8
+famous,m2-41,Frantisek Zita - David Bronstein,1946,2,1,6k1/1p5p/8/1bb5/8/7r/3K4/5q2 b - - 1 52,79,f1f2 d2c1 h3h1
+famous,m2-42,Mikhail Botvinnik - Max Euwe,1948,2,1,6k1/4Q3/3B4/8/6P1/8/1Pp4K/8 w - - 2 60,1225,d6e5 c2c1q e7g7
+famous,m2-43,Tartakover - Euwe,1948,2,1,8/8/8/8/6k1/8/3q4/6K1 b - - 17 76,544,g4f3 g1f1 d2c1
+famous,m2-44,Isaac Boleslavsky - Vasily Smyslov,1950,2,1,3N4/2R5/k7/8/3QP3/8/7K/8 w - - 3 66,262,d4a4 a6b6 c7c6
+famous,m2-45,Efim Geller - Max Euwe,1953,2,1,4k3/pb1p2p1/5p1B/1p6/3P3R/P5qP/6r1/3K4 b - - 1 31,174,g3d3 d1c1 d3f1
+famous,m2-46,Tigran Vartanovich Petrosian - Carlos Enrique Guimard,1955,2,1,8/1k6/8/2Q4p/R4P2/6P1/2n5/6K1 w - - 3 75,73,a4a7 b7b8 c5c7
+famous,m2-47,Donald Byrne - Robert James Fischer,1956,2,1,1Q6/5pk1/2p3p1/1p2N2p/1b5P/1b6/r3n1P1/1K6 b - - 13 40,77,e2c3 b1c1 b4a3
+famous,m2-48,Bent Larsen - Berndt Soderborg,1957,2,1,5q1k/pp6/5PQ1/7P/3p4/8/8/4R1K1 w - - 1 44,129,e1e8 d4d3 e8f8
+famous,m2-49,Fischer - Sherwin,1957,2,1,k7/2Q5/1p1P4/p7/2p5/2P2p2/PP3P2/4K3 w - - 2 46,284,d6d7 a5a4 d7d8q
+famous,m2-50,Lev Polugaevsky - Rashid Gibiatovich Nezhmetdinov,1958,2,1,1r4k1/p5bp/8/K2p4/Pn4p1/1P1n1rP1/1B2N2R/R2Q4 b - - 3 33,50,b4c6 a5a6 b8b6
+famous,m2-51,Tal - Furster,1958,2,1,6Q1/1p1k4/8/2Q5/8/P1p5/P1PK4/8 w - - 0 50,59,d2c3 b7b6 g8c8
+famous,m2-52,Tigran Vartanovich Petrosian - Wolfgang Unzicker,1960,2,1,5k2/8/Q7/2R5/3P1N2/8/KP6/8 w - - 3 77,587,c5c7 f8e8 a6c8
+famous,m2-53,Robert Eugene Byrne - Robert James Fischer,1963,2,1,8/8/8/8/2k5/3b4/K7/1r6 b - - 7 64,74,c4c3 a2a3 b1a1
+famous,m2-54,Robert James Fischer - Pal Benko,1963,2,1,2R5/Q7/8/8/4Bp2/1P3P2/3k4/7K w - - 5 79,291,c8c2 d2d1 a7a1
+famous,m2-55,Robert James Fischer - Svetozar Gligoric,1966,2,1,8/8/k7/1R6/2R5/5KPP/1P6/8 w - - 5 46,1027,c4b4 a6a7 b5a5
+famous,m2-56,Lehman - Smyslov,1966,2,1,3K4/1p4q1/7p/2r5/3k4/8/8/8 b - - 5 69,499,g7h7 d8e8 c5c8
+famous,m2-57,Robert James Fischer - Miguel Najdorf,1966,2,1,8/6R1/8/8/8/5K2/8/7k w - - 20 70,438,f3f2 h1h2 g7h7
+famous,m2-58,Lajos Portisch - Robert James Fischer,1966,2,1,8/4q3/8/5Kp1/p7/8/4k3/2q5 b - - 3 67,233,e7f7 f5e4 c1e3
+famous,m2-59,Robert James Fischer - Lhamsuren Myagmarsuren,1967,2,1,2r2q2/r4p1k/b3pBp1/n3P2P/p2p3R/P5P1/2p2PB1/R5K1 w - - 0 32,48,h5g6 h7g6 g2e4
+famous,m2-60,Ratmir Kholmov - Robert James Fischer,1967,2,1,6k1/8/4p1p1/4b2p/4b2P/8/p5n1/2K5 b - - 1 66,53,a2a1q c1d2 a1e1
+famous,m2-61,Robert James Fischer - Leonid Stein,1967,2,1,6k1/2Q5/8/5K2/8/8/8/8 w - - 11 84,696,f5g6 g8f8 c7d8
+famous,m2-62,Robert James Fischer - Efim Geller,1967,2,1,3r3k/5q1p/8/P7/8/1P2rp2/KP6/8 b - - 0 72,61,f7b3 a2a1 e3e1
+famous,m2-63,Bent Larsen - Robert James Fischer,1967,2,1,8/8/8/7p/4p2n/3k3K/5q2/8 b - - 1 73,43,f2g2 h3h4 g2g4
+famous,m2-64,Petrosian - Estrin,1968,2,1,5QQ1/4K3/8/3p4/4k3/8/4P3/8 w - - 1 62,243,g8g4 e4e3 f8f4
+famous,m2-65,Anatoly Karpov - Svetozar Gligoric,1973,2,1,8/3N4/8/7k/4K3/8/6Q1/8 w - - 5 97,775,d7e5 h5h4 g2g4
+famous,m2-66,Alexsander A Shashin - Viktor Korchnoi,1973,2,1,6k1/pp3Rp1/6Kp/6Q1/7P/P6P/Bq6/6r1 w - - 0 35,68,f7g7 g8f8 g7g8
+famous,m2-67,Anatoly Karpov - Wolfgang Unzicker,1974,2,1,6Q1/5N2/5P2/BP1Pp2k/2p1P2P/2P1b3/6K1/8 w - - 3 71,899,g2h3 e3c1 g8g4
+famous,m2-68,Anatoly Karpov - Boris Spassky,1974,2,1,2Q5/3Q4/8/8/8/8/6PK/k7 w - - 1 79,157,c8c1 a1a2 d7a4
+famous,m2-69,Garry Kasparov - Andrei Sokolov,1975,2,1,3k4/8/p3Q3/P2P3B/1P2p3/6P1/K1P5/8 w - - 3 47,949,d5d6 e4e3 e6e8
+famous,m2-70,Tigran Vartanovich Petrosian - Mikhail Tal,1976,2,1,8/7p/4k3/6K1/1p1q2PP/8/7r/8 b - - 3 62,267,d4e5 g5h6 h2h4
+famous,m2-71,Eduard Gufeld - Bozidar Ivanovic,1979,2,1,r4k2/7r/pBP5/4Q2p/2B5/8/PP4PP/6K1 w - - 3 39,96,b6c5 h7e7 e5e7
+famous,m2-72,Garry Kasparov - Lajos Portisch,1983,2,1,8/p1r1b3/1p3p2/3Qn3/3R2P1/P1q5/4kP1P/3R2K1 w - - 7 37,216,d5e4 c3e3 e4e3
+famous,m2-73,Anatoly Karpov - Garry Kasparov,1985,2,1,8/5pk1/7p/8/1p4P1/1P1R2P1/5qBP/3NrN1K b - - 2 41,85,e1f1 g2f1 f2f1
+famous,m2-74,Garry Kasparov - Anatoly Karpov,1986,2,1,7Q/8/1k6/8/8/2Q5/5PPK/8 w - - 3 60,600,h8b8 b6a6 c3a3
+famous,m2-75,Garry Kasparov - Anatoly Karpov,1990,2,1,8/1R6/8/2Q5/1n1p4/8/6PK/1k6 w - - 0 62,88,b7b4 b1a1 c5a5
+famous,m2-76,Anatoly Karpov - Garry Kasparov,1993,2,1,8/8/8/6p1/3Kn3/5k2/qr6/8 b - - 3 69,157,b2d2 d4e5 a2d5
+famous,m2-77,Vladimir Kramnik - Garry Kasparov,1994,2,1,7k/1pp5/3p3p/p2P3P/2Pb1n2/1P5r/3K1Nq1/2RB4 b - - 3 46,56,g2f2 d1e2 f2e2
+famous,m2-78,Garry Kasparov - Vladimir Kramnik,1994,2,1,6Q1/2k5/8/2P5/p7/1p3Q2/1P2pP2/4K3 w - - 1 50,213,g8f7 c7b8 f3b7
+famous,m2-79,Garry Kasparov - Viswanathan Anand,1995,2,1,2k5/7p/3Q1N1P/3B1KP1/1p6/p7/P7/8 w - - 5 61,196,d6d7 c8b8 d7b7
+famous,m2-80,Garry Kasparov - Veselin Topalov,1999,2,1,6Q1/8/8/8/7k/4K3/8/8 w - - 9 71,524,e3f4 h4h3 g8g3
+famous,m2-81,Michael Adams - Garry Kasparov,2005,2,1,8/5p1k/p2pp1pP/1b6/4P2K/1r3P2/6q1/8 b - - 3 48,339,h7h6 f3f4 g2h3
+famous,m2-82,Magnus Carlsen - Alexander Beliavsky,2006,2,1,Q1Q5/6k1/8/8/5P2/6PK/8/8 w - - 1 61,801,c8f5 g7h6 a8h8
+famous,m2-83,Magnus Carlsen - Michael Adams,2007,2,1,7Q/4K3/2k1P3/8/1R6/8/8/8 w - - 1 94,105,h8e8 c6c5 e8b5
+famous,m2-84,Magnus Carlsen - Vladimir Kramnik,2009,2,1,6k1/3P4/4Np1p/2Q2P2/8/5K2/7P/8 w - - 0 60,57,d7d8q g8f7 d8f8
+famous,m2-85,Magnus Carlsen - Viswanathan Anand,2009,2,1,4R3/k7/2K5/8/8/8/8/8 w - - 25 92,74,e8h8 a7a6 h8a8
+famous,m2-86,Magnus Carlsen - Veselin Topalov,2009,2,1,2Q5/8/7k/8/4Q3/4K3/1P6/8 w - - 1 69,113,c8h8 h6g5 h8h4
+famous,m2-87,Magnus Carlsen - Veselin Topalov,2010,2,1,8/8/8/2RN1B2/3B3K/1k6/6P1/8 w - - 1 61,105,f5c2 b3a2 c5a5
+famous,m2-88,Magnus Carlsen - Wang Hao,2011,2,1,6k1/5rp1/2n1pBQ1/qp1pP3/n1pP4/2P3P1/1P3PK1/7R w - - 8 31,116,g6h7 g8f8 h7h8
+famous,m2-89,Magnus Carlsen - Viswanathan Anand,2012,2,1,Q4Q2/8/4k3/8/8/1P3K2/8/8 w - - 3 72,78,a8e8 e6d5 e8e4
+famous,m2-90,Magnus Carlsen - Boris Gelfand,2013,2,1,8/8/8/4Q3/1k6/8/4QP1K/8 w - - 3 69,256,e2b5 b4a3 e5a1
+famous,m2-91,Magnus Carlsen - Sergey Karjakin,2013,2,1,7k/3K4/8/6Q1/8/8/2B5/8 w - - 3 97,230,g5h6 h8g8 c2b3
+famous,m2-92,Teimour Radjabov - Magnus Carlsen,2013,2,1,8/8/8/3b1k1p/7P/8/3q4/1K3n2 b - - 7 118,1001,f5f4 b1a1 d2c1
+famous,m2-93,Magnus Carlsen - Viswanathan Anand,2013,2,1,Q6Q/4R3/2r5/3k4/K7/2p5/8/8 w - - 0 75,645,h8c3 d5d6 c3e5
+famous,m2-94,Magnus Carlsen - Viswanathan Anand,2014,2,1,6k1/2Q5/P4pp1/5P1p/7P/5pP1/2P2P1K/8 w - - 2 46,608,a6a7 g8f8 a7a8q
+famous,m2-95,Magnus Carlsen - Maxime Vachier-Lagrave,2015,2,1,2Q5/3RK3/8/8/8/k7/8/8 w - - 5 81,362,c8b8 a3a2 d7a7
+famous,m2-96,Magnus Carlsen - Sergey Karjakin,2016,2,1,2R5/4bppk/1p1p4/5R1P/4PQ2/5P2/r4q1P/7K w - - 5 50,45,f4h6 h7h6 c8h8
+famous,m2-97,Magnus Carlsen - Fabiano Caruana,2018,2,1,8/5K2/8/3k4/5R2/2Q5/8/8 w - - 7 81,352,f4d4 d5e5 c3c5
+famous,m2-98,"Erdogmus, Yagiz Kaan - Van Foreest, Jorden",2026,2,1,5K2/4N3/5B2/8/8/8/6Q1/2k5 w - - 11 93,477,g2e2 c1b1 e2b2
+famous,m2-99,"Abdusattorov, Nodirbek - Gukesh D",2026,2,1,7k/2p4p/8/pp2P1Q1/P1Pp4/3P1PK1/2P5/6R1 w - - 0 43,71,g5f6 h8g8 g3f2
+famous,m2-100,"Erigaisi Arjun - Abdusattorov, Nodirbek",2026,2,1,8/4K3/8/8/2b5/2k3q1/8/7q b - - 1 77,329,h1h7 e7f6 g3f4
+famous,m3-01,Arkady Novopashin - Mikhail Tal,1962,3,2,8/5p2/5P1k/8/5b2/4p1p1/7R/3q1BK1 b - - 0 68,123,g3h2 g1g2 h2h1q g2h1 d1f1
+famous,m3-02,Alexander McDonnell - Louis Charles Mahe De La Bourdonnais,1834,3,2,3b2rk/3P2pp/8/p7/8/2Q4P/PP1p1pPK/3q4 b - - 1 39,9017,d8h4 c3g7 h8g7 d7d8q d1g1
+famous,m3-03,Ratmir Kholmov - Mikhail Tal,1949,3,2,R3k1r1/1b3p2/2p1p2p/6q1/2p5/2P2P2/2Q2P1P/5R1K b - - 4 22,244,b7a8 c2g6 g5g6 h2h3 g6g2
+famous,m3-04,Anderssen - Lionel Kieseritzky,1851,3,2,r1b1k1nr/p2p1ppp/n2B4/1p1NPN1P/6P1/3P1Q2/P1P1K3/q5b1 w kq - 2 21,999,f5g7 e8d8 f3f6 g8f6 d6e7
+famous,m3-05,Adolf Anderssen - Jean Dufresne,1852,3,2,1r4r1/pbpknp1p/1b3P2/8/8/B1PB1q2/P4PPP/3R2K1 w - - 0 22,2807,d3f5 d7e8 f5d7 e8d8 f6e7
+famous,m3-06,Marache - Morphy,1857,3,2,4r1k1/7p/4pP2/2b5/8/2n4K/1p6/6q1 b - - 2 50,37382,h7h5 f6f7 g8f7 h3h4 g1g4
+famous,m3-07,Morphy - Anderssen,1858,3,2,4Q3/k3P2p/8/p7/PP6/8/1K5P/8 w - - 0 52,3839,e8b5 a7a8 e7e8q a8a7 e8b8
+famous,m3-08,"Alekhine - Marshall, F.J.",1927,3,2,2Q5/8/8/3Q3p/p4k1P/P1P5/5KP1/5r2 w - - 3 51,274,f2f1 f4g3 d5e5 g3h4 e5f4
+famous,m3-09,Steinitz - Mongredian,1862,3,2,r3k3/pbpqb3/1p2Q1r1/3pP1B1/3P4/8/PPP4P/5RK1 w - - 0 27,2018,e6g6 e8d8 f1f8 d7e8 g6e8
+famous,m3-10,Steinitz - Anderssen,1866,3,2,r2k4/pp1b3p/3p4/3P1p2/6pP/PP4q1/2P2R2/7K b - - 0 36,9160,g3f2 c2c3 g4g3 a3a4 f2f1
+famous,m3-11,"Steinitz, W - Sellman, A.G.",1885,3,2,1Q3R2/4B1k1/8/8/4P3/5p1P/5K1P/8 w - - 1 57,5315,b8b2 g7g6 b2f6 g6h5 f8h8
+famous,m3-12,Emanuel Lasker - Johann Hermann Bauer,1889,3,2,Q7/8/5k2/8/1Q6/1P6/3P2P1/6K1 w - - 1 54,9707,b4f8 f6e5 f8e7 e5d4 a8e4
+famous,m3-13,Steinitz - Tchigorin,1892,3,2,4rr2/1ppb4/2q2kpB/p7/3n4/1BP5/PP3PP1/2K4Q w - - 4 27,705,h1h4 f6e5 h4d4 e5f5 d4f4
+famous,m3-14,"Tarrasch, S - Von Scheve, T",1894,3,2,5Q2/8/6k1/pB2p3/3P1P2/P4P2/1P6/2K5 w - - 0 44,3017,f8g8 g6f6 f4e5 f6f5 g8g4
+famous,m3-15,Tarrasch - Schlecter,1894,3,2,3RR2Q/8/2k5/5PK1/8/1P6/8/8 w - - 1 64,2619,e8e6 c6b5 d8b8 b5a5 h8c3
+famous,m3-16,Vasily Smyslov - Robert James Fischer,1959,3,2,8/8/8/p7/P7/K7/2r5/2k5 b - - 17 77,348,c2c3 a3a2 c1c2 a2a1 c3a3
+famous,m3-17,Wilhelm Steinitz - Curt von Bardeleben,1895,3,2,r1rk4/pp1q1Q2/5pp1/3p2N1/8/8/PP3PPP/2R3K1 w - - 10 33,5598,f7f8 d7e8 g5f7 d8d7 f8d6
+famous,m3-18,Siegbert Tarrasch - Georg Marco,1898,3,2,r5k1/5p2/1q1pbRB1/2pP4/1pP4Q/1P4B1/8/4R2K w - - 1 37,3548,h4h7 g8f8 f6f7 f8e8 h7g8
+famous,m3-19,Pillsbury - Marco,1900,3,2,5k2/1b1q3Q/r5p1/p2p2B1/2pP4/2p1P3/PP4PP/6K1 w - - 4 26,8136,h7d7 f8g8 g5h6 g8h8 d7g7
+famous,m3-20,Carl Schlechter - Isidor Gunsberg,1901,3,2,8/1P6/2Q5/8/3k4/6K1/6P1/8 w - - 1 73,11514,b7b8q d4d3 b8b4 d3e2 c6f3
+famous,m3-21,Borislav Ivkov - Mikhail Tal,1961,3,2,6K1/4r3/5k2/8/8/8/8/8 b - - 17 84,452,e7e8 g8h7 e8f8 h7h6 f8h8
+famous,m3-22,Marshall - Lasker,1907,3,2,8/8/p7/P1P4p/1K1N3P/3pk3/4b3/2q2q2 b - - 3 57,1850,f1e1 b4b3 c1c3 b3a2 e1a1
+famous,m3-23,Efim Bogoljubov - Jacques Mieses,1925,3,2,7k/p3Prr1/8/1p2Q2p/8/2P1P3/P4P1K/8 w - - 0 40,485,e7e8q f7f8 e8f8 h8h7 e5g7
+famous,m3-24,Alexander Alekhine - Fred Dewhirst Yates,1922,3,2,r5k1/5R1R/b3p2p/3pK2P/p2P1p2/Pp2PPP1/1P6/8 w - - 2 41,1852,f7g7 g8f8 e5f6 f8e8 h7h8
+famous,m3-25,Richard Reti - Akiba Rubinstein,1923,3,2,4K3/8/8/1k6/8/2Q2R2/8/8 w - - 3 75,14449,c3d4 b5a5 f3b3 a5a6 d4a4
+famous,m3-26,Friedrich Saemisch - Aron Nimzowitsch,1923,3,2,6k1/6p1/p4N2/1P5p/8/1P1b1qbP/6R1/6K1 b - - 4 43,1202,g7f6 g1h1 f3d1 g2g1 d3e4
+famous,m3-27,Richard Reti - F Fischer,1923,3,2,3R1b1k/p4p1p/8/5r1Q/3pP3/6P1/6KP/8 w - - 0 44,2420,e4f5 h8g7 h5g5 g7h8 d8f8
+famous,m3-28,Samuel Reshevsky - Robert James Fischer,1961,3,2,8/8/P3pk2/8/8/r1Q4K/8/4q3 b - - 26 63,600,a3c3 h3g2 e1e2 g2g1 c3c1
+famous,m3-29,Jose Raul Capablanca - Savielly Tartakower,1924,3,2,7k/3Q4/8/3K4/8/8/8/8 w - - 6 62,8751,d5e6 h8g8 e6f6 g8f8 d7d8
+famous,m3-30,Capablanca - Spielmann,1927,3,2,7q/1R4pk/7p/3BQP2/2pP4/2P5/5PPP/6K1 w - - 1 36,28535,e5f6 h8f8 f6f8 h6h5 f8g7
+famous,m3-31,Spielmann - Hunlinger,1929,3,2,2r1nrk1/p3qp1p/1p2p1pQ/nP1bR3/8/P2B4/1BP2PPP/3R2K1 w - - 0 26,3681,h6h7 g8h7 e5h5 h7g8 h5h8
+famous,m3-32,Mikhail Botvinnik - Nikolay Tikhonovich Sorokin,1931,3,2,3Q4/1k6/6K1/5R2/4P3/4P3/8/8 w - - 3 69,2718,f5f7 b7a6 d8b8 a6a5 f7a7
+famous,m3-33,Alexander Alekhine - Salomon Flohr,1931,3,2,4Q3/7p/7P/P7/5ppk/5P2/1P3PK1/8 w - - 0 50,3017,e8e5 g4f3 g2f3 h4h3 e5h5
+famous,m3-34,Alekhine - Alexander,1936,3,2,8/7P/2P1B3/3R4/7k/1P6/4K3/8 w - - 1 51,1158,h7h8q h4g3 h8g8 g3h2 d5h5
+famous,m3-35,Jose Raul Capablanca - Andre Lilienthal,1936,3,2,8/3R4/6K1/8/4P3/5k2/7Q/8 w - - 0 77,2142,d7d3 f3e4 h2h3 e4f4 h3f5
+famous,m3-36,Euwe - Maroczy,1936,3,2,6k1/5R2/6PP/4KP2/p7/8/1P6/8 w - - 1 70,507,h6h7 g8h8 f7f8 h8g7 h7h8q
+famous,m3-37,Botvinnik - Capablanca,1938,3,2,4Q3/p5k1/1p5p/3p3K/2pP2P1/1nP5/7P/8 w - - 1 45,979,e8e7 g7g8 h5h6 g8h8 e7f8
+famous,m3-38,"Capablanca - Golombek, H",1939,3,2,8/6k1/2Q5/p5p1/3P2P1/4P3/5P2/4R1K1 w - - 3 52,4356,c6d7 g7f6 e1c1 f6g6 c1c6
+famous,m3-39,"Smyslov, V - Kottnauer, C",1946,3,2,8/8/k5P1/8/8/8/6P1/1R4K1 w - - 1 63,3729,g6g7 a6a5 g7g8q a5a4 g8a2
+famous,m3-40,Yuri S Gusev - E Auerbach,1946,3,2,6kr/4q2p/2P1P2B/p3pR2/4P1p1/2P5/P5KP/8 w - - 1 37,8477,c6c7 e7e8 f5g5 e8g6 c7c8q
+famous,m3-41,Frantisek Zita - David Bronstein,1946,3,2,6k1/1p5p/8/1bb5/8/7r/5p2/3K4 b - - 3 51,1967,f2f1q d1c2 f1e2 c2b1 h3h1
+famous,m3-42,Mikhail Botvinnik - Max Euwe,1948,3,2,8/5k2/3B4/8/4Q1P1/8/1Pp4K/8 w - - 0 59,12682,e4e7 f7g6 d6e5 g6h6 e7g7
+famous,m3-43,Tartakover - Euwe,1948,3,2,8/8/8/8/6k1/3q4/7K/8 b - - 15 75,1992,d3c2 h2g1 g4f3 g1f1 c2b1
+famous,m3-44,Isaac Boleslavsky - Vasily Smyslov,1950,3,2,3N3Q/2R5/8/1k6/4P3/8/7K/8 w - - 1 65,5047,h8b2 b5a6 c7a7 a6a7 b2b7
+famous,m3-45,Efim Geller - Max Euwe,1953,3,2,4k3/pb1p2p1/5p1B/1p6/3P3R/P4qNP/6r1/4K3 b - - 0 30,1936,f3g3 e1d1 g3d3 d1c1 d3f1
+famous,m3-46,Tigran Vartanovich Petrosian - Carlos Enrique Guimard,1955,3,2,8/8/k7/2Q4p/2R2P2/6P1/2n5/6K1 w - - 1 74,1123,c4a4 a6b7 a4a7 b7b8 c5c7
+famous,m3-47,Donald Byrne - Robert James Fischer,1956,3,2,1Q6/5pk1/2p3p1/1p2N2p/1b5P/1b4n1/r5P1/2K5 b - - 11 39,3993,g3e2 c1b1 e2c3 b1c1 b4a3
+famous,m3-48,Bent Larsen - Berndt Soderborg,1957,3,2,4Qqk1/pp6/5Pp1/7P/3p4/8/8/4R1K1 w - - 1 43,1722,e8g6 g8h8 e1e8 d4d3 e8f8
+famous,m3-49,Fischer - Sherwin,1957,3,2,1k6/3Q4/1p1P4/p7/2p5/2P2p2/PP3P2/4K3 w - - 0 45,2002,d7c7 b8a8 d6d7 a5a4 d7d8q
+famous,m3-50,Lev Polugaevsky - Rashid Gibiatovich Nezhmetdinov,1958,3,2,r5k1/p5bp/8/1K1p4/Pn4p1/1P1n1rP1/1B2N2R/R2Q4 b - - 1 32,2630,a8b8 b5a5 b4c6 a5a6 b8b6
+famous,m3-51,Tal - Furster,1958,3,2,8/1p1k2P1/8/2Q5/2p5/P7/P1PK4/8 w - - 2 49,6260,g7g8q c4c3 d2c3 b7b6 g8c8
+famous,m3-52,Tigran Vartanovich Petrosian - Wolfgang Unzicker,1960,3,2,Q7/4k3/8/2R5/3P1N2/8/KP6/8 w - - 1 76,16667,c5c7 e7f6 a8g2 f6f5 c7f7
+famous,m3-53,Robert Eugene Byrne - Robert James Fischer,1963,3,2,8/8/8/8/3k4/K2b4/8/1r6 b - - 5 63,5834,b1b6 a3a2 d4c3 a2a1 b6a6
+famous,m3-54,Robert James Fischer - Pal Benko,1963,3,2,Q1R5/8/8/8/4Bp2/1P2kP2/8/7K w - - 3 78,1904,a8a7 e3d2 c8c2 d2d1 a7a1
+famous,m3-55,Robert James Fischer - Svetozar Gligoric,1966,3,2,8/1k6/8/2R5/2R5/5KPP/1P6/8 w - - 3 45,3273,c5b5 b7a6 c4b4 a6a7 b5a5
+famous,m3-56,Lehman - Smyslov,1966,3,2,2K5/1p4q1/7p/7r/3k4/8/8/8 b - - 3 68,5585,h5c5 c8b8 g7c7 b8a7 c5a5
+famous,m3-57,Robert James Fischer - Miguel Najdorf,1966,3,2,8/6R1/8/8/5K2/8/7k/8 w - - 18 69,6670,f4f3 h2h1 f3f2 h1h2 g7h7
+famous,m3-58,Lajos Portisch - Robert James Fischer,1966,3,2,8/8/6K1/6p1/p7/q7/4k3/2q5 b - - 1 66,5862,a3d6 g6h5 d6c6 h5g4 c6f3
+famous,m3-59,Robert James Fischer - Lhamsuren Myagmarsuren,1967,3,2,2r2qk1/r4p1p/b3pBpQ/n3P2P/p2p3R/P5P1/2p2PB1/R5K1 w - - 2 31,2759,h6h7 g8h7 h5g6 h7g6 g2e4
+famous,m3-60,Ratmir Kholmov - Robert James Fischer,1967,3,2,6k1/8/4p1p1/4b2p/4b2P/p7/6n1/3K4 b - - 1 65,20498,a3a2 d1c1 a2a1q c1d2 a1e1
+famous,m3-61,Robert James Fischer - Leonid Stein,1967,3,2,3Q4/5k2/8/5K2/8/8/8/8 w - - 9 83,1530,d8d7 f7f8 f5g6 f8g8 d7e8
+famous,m3-62,Robert James Fischer - Efim Geller,1967,3,2,3r3k/5q1p/8/4r3/P7/1P3p2/KP6/8 b - - 1 71,60371,e5e1 a2a3 d8b8 a3a2 f7b3
+famous,m3-63,Bent Larsen - Robert James Fischer,1967,3,2,8/8/8/7p/4p2n/3k4/3q1N1K/8 b - - 3 72,237,d2f2 h2h3 f2g2 h3h4 g2g4
+famous,m3-64,Petrosian - Estrin,1968,3,2,6Q1/4KP2/8/3p1k2/8/8/4P3/8 w - - 0 61,974,f7f8q f5e4 g8g4 e4e3 f8f4
+famous,m3-65,Anatoly Karpov - Svetozar Gligoric,1973,3,2,8/3N4/8/8/4K2k/5Q2/8/8 w - - 3 96,9925,f3g2 h4h5 d7e5 h5h4 g2g4
+famous,m3-66,Vliet - Znosko-Borovsky,1907,3,2,8/8/3Pp1p1/5p1P/4pk2/6p1/6K1/1q6 b - - 0 49,703,b1c2 g2g1 c2f2 g1h1 f2h2
+famous,m3-67,Anatoly Karpov - Wolfgang Unzicker,1974,3,2,2Q5/5N2/5Pk1/BP1Pp3/2p1P2P/2P1b3/6K1/8 w - - 1 70,3889,c8g8 g6h5 g2h3 e3c1 g8g4
+famous,m3-68,Anatoly Karpov - Boris Spassky,1974,3,2,8/2PQ4/8/8/8/8/k5PK/8 w - - 1 78,2435,d7a4 a2b1 c7c8q b1b2 c8c2
+famous,m3-69,Garry Kasparov - Andrei Sokolov,1975,3,2,8/4k3/p5Q1/P2P3B/1P2p3/6P1/K1P5/8 w - - 1 46,7568,g6e6 e7d8 d5d6 e4e3 e6e8
+famous,m3-70,Tigran Vartanovich Petrosian - Mikhail Tal,1976,3,2,8/7p/4k3/7K/1p1q2PP/8/3r4/8 b - - 1 61,11942,d4e3 g4g5 e3e4 h5h6 e4g6
+famous,m3-71,Eduard Gufeld - Bozidar Ivanovic,1979,3,2,r3k3/2Q4r/pBP5/7p/2B5/8/PP4PP/6K1 w - - 1 38,6670,c7e5 e8f8 b6c5 h7e7 e5e7
+famous,m3-72,Garry Kasparov - Lajos Portisch,1983,3,2,8/p1r1b3/1p3p2/4n3/3R2P1/PQq2k2/5P1P/3R2K1 w - - 5 36,3208,b3d5 f3e2 d5e4 c3e3 e4e3
+famous,m3-73,Anatoly Karpov - Garry Kasparov,1985,3,2,4r3/5pk1/7p/8/1p4P1/1P1R2P1/3N1qBP/3N3K b - - 0 40,3487,e8e1 d2f1 e1f1 g2f1 f2f1
+famous,m3-74,Garry Kasparov - Anatoly Karpov,1986,3,2,7Q/8/8/1k6/8/8/3Q1PPK/8 w - - 1 59,7283,d2d3 b5a4 h8a1 a4b4 a1a3
+famous,m3-75,Garry Kasparov - Anatoly Karpov,1990,3,2,8/1R6/8/Q2p4/1n6/8/6PK/1k6 w - - 0 61,9268,a5c7 b1a1 b7b4 a1a2 c7a5
+famous,m3-76,Anatoly Karpov - Garry Kasparov,1993,3,2,8/8/8/6p1/2K1n3/5k2/1r6/1q6 b - - 1 68,12600,b1a2 c4d4 b2d2 d4e5 a2d5
+famous,m3-77,Vladimir Kramnik - Garry Kasparov,1994,3,2,7k/1pp5/3p3p/p2P3P/2Pb1nN1/1P5r/3K4/2RB2q1 b - - 1 45,3262,h3h2 g4f2 h2f2 d1e2 f2e2
+famous,m3-78,Garry Kasparov - Vladimir Kramnik,1994,3,2,8/3k2P1/8/2P5/p7/1p3Q2/1P2pP2/4K3 w - - 0 49,2956,f3d5 d7c7 g7g8q a4a3 g8d8
+famous,m3-79,Garry Kasparov - Viswanathan Anand,1995,3,2,8/1k5p/3Q1N1P/5KP1/1p6/pB6/P7/8 w - - 3 60,10933,b3d5 b7a7 d6c7 a7a6 d5c4
+famous,m3-80,Garry Kasparov - Veselin Topalov,1999,3,2,5Q2/8/8/8/8/4K2k/8/8 w - - 7 70,4970,f8g8 h3h2 e3f3 h2h1 g8g2
+famous,m3-81,Michael Adams - Garry Kasparov,2005,3,2,8/5p1k/p2pp1pP/1b6/4P1K1/1r3P2/3q4/8 b - - 1 47,2859,d2g2 g4h4 h7h6 f3f4 g2h3
+famous,m3-82,Magnus Carlsen - Alexander Beliavsky,2006,3,2,2Q5/P4k2/8/8/5P2/6PK/8/8 w - - 1 60,6775,a7a8q f7f6 c8g8 f6f5 g8f7
+famous,m3-83,Magnus Carlsen - Michael Adams,2007,3,2,7Q/4K3/4n3/3k1P2/1R6/8/8/8 w - - 5 93,6755,f5e6 d5c5 h8d4 c5c6 d4c4
+famous,m3-84,Magnus Carlsen - Vladimir Kramnik,2009,3,2,3N2k1/3P3p/5p2/2Q2P2/8/5K2/7P/8 w - - 1 59,13492,c5e7 h7h6 d8b7 g8h8 d7d8q
+famous,m3-85,Magnus Carlsen - Viswanathan Anand,2009,3,2,1k6/4R3/2K5/8/8/8/8/8 w - - 23 91,479,e7e8 b8a7 e8h8 a7a6 h8a8
+famous,m3-86,Magnus Carlsen - Veselin Topalov,2009,3,2,Q1Q5/8/8/6k1/4p3/4K3/1P6/8 w - - 1 68,2614,c8g8 g5h4 a8e4 h4h3 e4h7
+famous,m3-87,Magnus Carlsen - Veselin Topalov,2010,3,2,8/8/5N2/2Rp1B2/3B3K/8/k5P1/8 w - - 8 60,8401,f6d5 a2a3 f5c2 a3a2 c5a5
+famous,m3-88,Mikhail Tal - Anatoly Shmit,1965,3,2,5k2/2n1ppbQ/7B/4P3/1p6/1P4Pb/r4PKP/3R4 w - - 1 34,716,g2h3 f8e8 h7g8 g7f8 g8f8
+famous,m3-89,Magnus Carlsen - Viswanathan Anand,2012,3,2,Q1Q5/4k3/8/8/8/1P3K2/8/8 w - - 1 71,3616,c8c7 e7e6 a8e4 e6f6 c7e7
+famous,m3-90,Magnus Carlsen - Boris Gelfand,2013,3,2,7Q/8/8/2k5/8/8/4QP1K/8 w - - 1 68,7956,h8e5 c5b4 e2b5 b4a3 e5a1
+famous,m3-91,Magnus Carlsen - Sergey Karjakin,2013,3,2,8/3K2k1/8/2Q5/8/8/2B5/8 w - - 1 96,4845,c5e7 g7h6 e7f6 h6h5 c2d1
+famous,m3-92,Teimour Radjabov - Magnus Carlsen,2013,3,2,8/8/8/q2b1k1p/7P/8/2K5/5n2 b - - 5 117,7420,a5a2 c2c1 d5a8 c1d1 a2d2
+famous,m3-93,Magnus Carlsen - Viswanathan Anand,2013,3,2,Q6Q/6R1/2r5/3k4/K1p5/8/8/8 w - - 1 74,47056,g7g3 d5e4 a8c6 e4f4 c6f3
+famous,m3-94,Magnus Carlsen - Viswanathan Anand,2014,3,2,3Q4/5k2/P4pp1/5P1p/7P/5pP1/2P2P1K/8 w - - 0 45,2637,d8d7 f7f8 a6a7 f8g8 a7a8q
+famous,m3-95,Magnus Carlsen - Maxime Vachier-Lagrave,2015,3,2,5Q2/3RK3/8/8/1k6/8/8/8 w - - 3 80,16825,f8c8 b4a3 c8b8 a3a2 d7a7
+famous,m3-96,Robert James Fischer - Vasily Smyslov,1965,3,2,4Rrk1/8/6K1/4P1BP/5P2/8/8/8 w - - 5 94,714,h5h6 f8e8 h6h7 g8f8 h7h8q
+famous,m3-97,Magnus Carlsen - Fabiano Caruana,2018,3,2,6K1/8/3k4/8/5R2/2Q5/8/8 w - - 5 80,44730,g8f7 d6d5 f4d4 d5e5 c3c5
+famous,m3-98,"Erdogmus, Yagiz Kaan - Van Foreest, Jorden",2026,3,2,5K2/4N3/8/8/3B4/8/6Q1/3k4 w - - 9 92,13243,g2a2 d1c1 d4e3 c1d1 a2d2
+famous,m3-99,"Abdusattorov, Nodirbek - Gukesh D",2026,3,2,7k/2p4p/1p6/p3P1Q1/P1Pp4/3P1Pp1/2P3K1/6R1 w - - 0 42,4007,g2g3 b6b5 g5f6 h8g8 g3f2
+famous,m3-100,"Erigaisi Arjun - Abdusattorov, Nodirbek",2026,3,2,5K2/8/8/8/2b5/2k3q1/7p/8 b - - 1 76,12606,h2h1q f8e7 h1h7 e7f6 g3f4
+famous,m4-01,Efim Bogoljubov - Jacques Mieses,1925,4,3,5r1k/p3PPr1/8/1p2Q2p/8/2P1P3/P4P1p/6K1 w - - 0 39,2143,g1h2 f8f7 e7e8q f7f8 e8f8 h8h7 e5g7
+famous,m4-02,Alexander McDonnell - Louis Charles Mahe De La Bourdonnais,1834,4,3,3b2rk/3P2pp/8/p7/8/2Q4P/PP1pppP1/3R3K b - - 0 38,16363,e2d1q h1h2 d8h4 c3g7 h8g7 d7d8q d1g1
+famous,m4-03,Mikhail Botvinnik - Mikhail Tal,1961,4,3,2r5/R7/2p2p1p/1kB5/R2P4/2p5/4rKP1/8 w - - 4 34,3476,f2e2 c8e8 e2f1 e8e1 f1e1 c3c2 a7a5
+famous,m4-04,Mikhail Tal - Anatoly Shmit,1965,4,3,5k2/2nbppbQ/7B/4P3/1p6/1P4P1/r4PqP/3R2K1 w - - 2 33,3925,g1g2 a2f2 g2f2 f8e8 h7g8 g7f8 g8f8
+famous,m4-05,Adolf Anderssen - Jean Dufresne,1852,4,3,1r2k1r1/pbppnp1p/1b3P2/8/Q7/B1PB1q2/P4PPP/3R2K1 w - - 0 21,15203,a4d7 e8d7 d3f5 d7e8 f5d7 e8d8 f6e7
+famous,m4-06,Marache - Morphy,1857,4,3,4r1k1/7p/4pP2/2b5/8/2n5/1p4K1/q7 b - - 0 49,225497,a1a8 g2h2 g8f7 h2g3 e8g8 g3h2 a8g2
+famous,m4-07,Morphy - Anderssen,1858,4,3,2Q1b3/k3P2p/p7/8/PP6/8/1K5P/8 w - - 3 51,47760,c8e8 a7b6 e8d8 b6c6 e7e8q c6b7 d8b8
+famous,m4-08,Robert James Fischer - Vasily Smyslov,1965,4,3,6k1/5r2/4R1K1/4P1BP/5P2/8/8/8 w - - 3 93,4206,e6e8 f7f8 h5h6 f8e8 h6h7 g8f8 h7h8q
+famous,m4-09,Steinitz - Mongredian,1862,4,3,r3k3/pbpqb1r1/1p2Q1p1/3pP1B1/3P4/3B4/PPP4P/5RK1 w - - 15 26,106295,d3g6 g7g6 e6g6 e8d8 f1f8 d7e8 g6e8
+famous,m4-10,Steinitz - Anderssen,1866,4,3,r2k4/pp1b3p/3p4/3P1p2/4n1pP/PP4q1/2P5/5R1K b - - 1 35,171457,e4f2 f1f2 g3f2 c2c3 g4g3 a3a4 f2f1
+famous,m4-11,"Steinitz, W - Sellman, A.G.",1885,4,3,5R2/1P2B3/6k1/8/4P3/5p1P/5K1P/8 w - - 1 56,59765,f8f6 g6g5 b7b8b g5h5 b8f4 h5h4 f6h6
+famous,m4-12,Emanuel Lasker - Johann Hermann Bauer,1889,4,3,8/P7/8/4k3/1Q6/1P6/3P2P1/6K1 w - - 1 53,68305,b4b5 e5f4 a7a8q f4g4 a8a4 g4g3 b5d3
+famous,m4-13,Steinitz - Tchigorin,1892,4,3,4rr2/1ppb2k1/2q3p1/p7/3n4/1BP1B3/PP3PP1/2K4Q w - - 2 26,58848,h1h6 g7f6 h6h4 f6e5 h4d4 e5f5 d4f4
+famous,m4-14,"Tarrasch, S - Von Scheve, T",1894,4,3,5Q2/8/4p1k1/pB6/3P1p2/P3PP2/1P6/2K5 w - - 3 43,37885,b5e8 g6h7 e8f7 f4e3 f8g8 h7h6 g8g6
+famous,m4-15,Tarrasch - Schlecter,1894,4,3,3RR2Q/8/1k6/5PK1/8/1r6/P7/8 w - - 0 63,106575,e8e6 b6a5 a2b3 a5b4 d8b8 b4a3 h8a1
+famous,m4-16,"Alekhine - Marshall, F.J.",1927,4,3,2Q5/8/8/3Q3p/p4k1P/P1P5/6P1/4r1K1 w - - 1 50,4532,g1f2 e1f1 f2f1 f4g3 d5e5 g3h4 e5f4
+famous,m4-17,Wilhelm Steinitz - Curt von Bardeleben,1895,4,3,r1r3Q1/pp1qk3/5pp1/3p2N1/8/8/PP3PPP/2R3K1 w - - 8 32,59709,g8f7 e7d8 f7f8 d7e8 g5f7 d8d7 f8d6
+famous,m4-18,Siegbert Tarrasch - Georg Marco,1898,4,3,r5k1/3b1p2/1q1p1RB1/2pP4/1pP4b/1P4B1/7Q/4R2K w - - 1 36,162683,h2h4 d7e6 h4h7 g8f8 f6f7 f8e8 h7g8
+famous,m4-19,Pillsbury - Marco,1900,4,3,7Q/1b1q1k2/r5p1/p2p2B1/2pP4/2p1P3/PP4PP/6K1 w - - 2 25,30106,h8h7 f7f8 h7d7 f8g8 g5h6 g8h8 d7g7
+famous,m4-20,Carl Schlechter - Isidor Gunsberg,1901,4,3,8/1P6/2Q5/4k3/8/6p1/6PK/8 w - - 0 72,23735,h2g3 e5d4 b7b8q d4d3 b8b4 d3e2 c6f3
+famous,m4-21,Carl Schlechter - Walter John,1905,4,3,6k1/3R4/4KPp1/3p2Pp/2pP3P/8/8/8 w - - 2 67,4550,f6f7 g8g7 e6e7 g7h7 f7f8q c4c3 e7e6
+famous,m4-22,Marshall - Lasker,1907,4,3,8/8/p3N3/P1P4p/1K3k1P/3p4/4b3/2q2q2 b - - 1 56,26780,f4e3 e6d4 f1e1 b4b3 c1c3 b3a2 e1a1
+famous,m4-23,Paul F Johner - Aron Nimzowitsch,1926,4,3,6rk/5p2/1p1p4/p1pP4/P1P2P2/2P5/4RK2/2BN2Rq b - - 0 51,5937,h1g1 f2f3 g1g3 f3e4 f7f5 e4f5 g3g6
+famous,m4-24,Alexander Alekhine - Fred Dewhirst Yates,1922,4,3,r6k/5RR1/b3p2p/3pK2P/p2P1p2/Pp2PPP1/1P6/8 w - - 0 40,10910,g7h7 h8g8 f7g7 g8f8 e5f6 f8e8 h7h8
+famous,m4-25,Richard Reti - Akiba Rubinstein,1923,4,3,4K2Q/8/8/8/1k6/5R2/8/8 w - - 1 74,137391,h8c3 b4b5 c3d4 b5a5 f3b3 a5a6 d4a4
+famous,m4-26,Friedrich Saemisch - Aron Nimzowitsch,1923,4,3,6k1/6p1/p7/1P1N3p/8/1P1b1q1P/6R1/4b1K1 b - - 2 42,160828,e1g3 d5f6 g7f6 g1h1 f3d1 g2g1 d3e4
+famous,m4-27,Richard Reti - F Fischer,1923,4,3,3R1b1k/p4p1p/8/5N1Q/3pP3/5KP1/7P/5r2 w - - 1 43,18385,f3g2 f1f5 e4f5 h8g7 h5g5 g7h8 d8f8
+famous,m4-28,Alexander Alekhine - Heinrich Wolf,1922,4,3,8/8/5Qpk/1p6/1P6/1r4P1/5PK1/8 w - - 0 46,6262,f6h8 h6g5 f2f4 g5f5 h8e5 f5g4 e5g5
+famous,m4-29,Jose Raul Capablanca - Savielly Tartakower,1924,4,3,6k1/3Q4/8/2K5/8/8/8/8 w - - 4 61,100171,c5d6 g8h8 d6e6 h8g8 e6f6 g8f8 d7d8
+famous,m4-30,Mikhail Tal - Istvan Bilek,1963,4,3,1Q6/7k/4R2p/8/1P6/8/1P4p1/7K w - - 0 48,7477,h1g2 h7g7 b8c7 g7f8 c7d7 f8g8 e6e8
+famous,m4-31,Spielmann - Hunlinger,1929,4,3,2r1nrk1/p4p1p/1p2p1pQ/nPqbRN2/8/P2B4/1BP2PPP/3R2K1 w - - 10 25,199379,f5e7 c5e7 h6h7 g8h7 e5h5 h7g8 h5h8
+famous,m4-32,Mikhail Botvinnik - Nikolay Tikhonovich Sorokin,1931,4,3,7Q/8/2k3K1/5R2/4P3/4P3/8/8 w - - 1 68,69769,h8e8 c6b6 e8b5 b6a7 f5f7 a7a8 b5e8
+famous,m4-33,Alexander Alekhine - Salomon Flohr,1931,4,3,4r3/5Q1p/7P/P5p1/5p1k/5P2/1P3PK1/8 w - - 0 49,11676,f7e8 g5g4 e8e5 g4f3 g2f3 h4h3 e5h5
+famous,m4-34,Alekhine - Alexander,1936,4,3,8/8/2P1B2P/3R4/8/1P4k1/4K3/8 w - - 1 50,118151,d5h5 g3g2 h5g5 g2h1 h6h7 h1h2 h7h8q
+famous,m4-35,Jose Raul Capablanca - Andre Lilienthal,1936,4,3,3R4/3n4/6K1/8/4P3/4kP2/7Q/8 w - - 3 76,66369,d8d7 e3f3 d7d3 f3e4 h2h3 e4f4 h3f5
+famous,m4-36,Euwe - Maroczy,1936,4,3,7k/5R2/7P/4KPP1/p7/8/1P6/8 w - - 0 69,10635,f7f8 h8h7 e5f6 a4a3 g5g6 h7h6 f8h8
+famous,m4-37,Botvinnik - Capablanca,1938,4,3,4q2k/p7/1p4Qp/3p3K/2pP2P1/1nP5/7P/8 w - - 0 44,1535,g6e8 h8g7 e8e7 g7g8 h5h6 g8h8 e7f8
+famous,m4-38,"Capablanca - Golombek, H",1939,4,3,8/8/5k2/p5p1/3P2P1/4P3/2Q2P2/4R1K1 w - - 1 51,35015,c2c6 f6e7 c6b7 e7d6 e1b1 d6e6 b1b6
+famous,m4-39,"Smyslov, V - Kottnauer, C",1946,4,3,8/k7/6P1/8/8/1R6/6P1/1r4K1 w - - 0 62,7075,b3b1 a7a6 g6g7 a6a5 g7g8q a5a4 g8a2
+famous,m4-40,Vasily Smyslov - Robert James Fischer,1959,4,3,8/8/8/p7/P7/1K6/2rk4/8 b - - 15 76,7809,d2c1 b3a3 c2c3 a3a2 c1c2 a2a1 c3a3
+famous,m4-41,Frantisek Zita - David Bronstein,1946,4,3,6k1/1p5p/2b5/2b5/8/7r/4Kp2/8 b - - 1 50,56306,f2f1q e2f1 c6f3 f1e1 c5e3 e1f1 h3h1
+famous,m4-42,Mikhail Botvinnik - Max Euwe,1948,4,3,1B6/5k2/8/8/4Q1P1/2p5/1P5K/8 w - - 0 58,438795,b8d6 f7f6 e4e7 f6g6 d6e5 g6h6 e7g7
+famous,m4-43,Tartakover - Euwe,1948,4,3,8/8/8/5k2/8/3q4/6K1/8 b - - 13 74,41277,d3e2 g2g1 f5e4 g1h1 e4f3 h1g1 e2g2
+famous,m4-44,Isaac Boleslavsky - Vasily Smyslov,1950,4,3,3N4/2R4P/8/8/1k2P3/8/7K/8 w - - 3 64,64753,h7h8q b4b3 h8c3 b3a2 c7a7 a2b1 a7a1
+famous,m4-45,Efim Geller - Max Euwe,1953,4,3,4R3/pb1pk1p1/5p1B/1p6/3P3R/P4qN1/6rP/4K3 b - - 3 29,52828,e7e8 h4h5 f3c3 e1d1 b7f3 g3e2 f3e2
+famous,m4-46,Tigran Vartanovich Petrosian - Carlos Enrique Guimard,1955,4,3,8/8/8/1kp1Q2p/2R2P2/6P1/2n5/6K1 w - - 6 73,20262,e5c5 b5a6 c4a4 a6b7 a4a7 b7b8 c5c7
+famous,m4-47,Donald Byrne - Robert James Fischer,1956,4,3,1Q6/5pk1/2p3p1/1p1bN2p/1b5P/6n1/r5P1/3K4 b - - 9 38,42103,d5b3 d1c1 g3e2 c1b1 e2c3 b1c1 b4a3
+famous,m4-48,Bent Larsen - Berndt Soderborg,1957,4,3,6k1/pp2P3/5Pp1/2q4P/3p4/8/8/4R1K1 w - - 0 42,7427,e7e8q c5f8 e8g6 g8h8 e1e8 d4d3 e8f8
+famous,m4-49,Fischer - Sherwin,1957,4,3,1k6/p2Q4/1p6/3P4/2p5/2P2p2/PP3P2/4K3 w - - 0 44,100901,d5d6 a7a6 d7c7 b8a8 d6d7 a6a5 d7d8q
+famous,m4-50,Lev Polugaevsky - Rashid Gibiatovich Nezhmetdinov,1958,4,3,r5k1/p5bp/2p5/3P4/PnK3p1/1P1n1rP1/1B2N2R/R2Q4 b - - 0 31,31726,c6d5 c4b5 a8b8 b5a5 b4c6 a5a6 b8b6
+famous,m4-51,Tal - Furster,1958,4,3,5Q2/1pk3P1/8/8/2p5/P7/P1PK4/8 w - - 0 48,24212,f8c5 c7d7 g7g8q c4c3 d2c3 b7b6 g8c8
+famous,m4-52,Tigran Vartanovich Petrosian - Wolfgang Unzicker,1960,4,3,8/P7/3k4/2R5/3P1N2/8/KP6/8 w - - 1 75,67459,a7a8q d6e7 c5c7 e7f6 a8g2 f6f5 c7f7
+famous,m4-53,Robert Eugene Byrne - Robert James Fischer,1963,4,3,8/8/8/8/3k4/1K1b4/8/6r1 b - - 3 62,52654,g1b1 b3a3 b1b6 a3a2 d4c3 a2a1 b6a6
+famous,m4-54,Robert James Fischer - Pal Benko,1963,4,3,Q6R/8/8/8/4Bp2/1P3P2/3k4/7K w - - 1 77,106470,a8d5 d2c1 d5c4 c1d1 h8h2 d1e1 c4c1
+famous,m4-55,Robert James Fischer - Svetozar Gligoric,1966,4,3,8/2R5/1k6/8/2R5/5KPP/1P6/8 w - - 1 44,115383,c7c5 b6a7 c4b4 a7a6 c5b5 a6a7 b5a5
+famous,m4-56,Lehman - Smyslov,1966,4,3,1K6/1p6/7p/7r/3k4/8/8/6q1 b - - 1 67,120923,g1g3 b8b7 h5c5 b7a6 g3b3 a6a7 c5a5
+famous,m4-57,Robert James Fischer - Miguel Najdorf,1966,4,3,8/6R1/8/5K2/8/7k/8/8 w - - 16 68,48700,f5f4 h3h2 f4f3 h2h1 f3f2 h1h2 g7h7
+famous,m4-58,Lajos Portisch - Robert James Fischer,1966,4,3,8/8/8/6pK/p7/q7/2p1k3/8 b - - 1 65,81285,c2c1q h5g6 a3d6 g6h5 d6c6 h5g4 c6f3
+famous,m4-59,Karpov - Hartinov,1988,4,3,5k2/4R3/6K1/3pPN2/6P1/4P2P/7r/8 w - - 5 59,9322,e7f7 f8e8 f5d6 e8d8 e5e6 d5d4 f7d7
+famous,m4-60,Ratmir Kholmov - Robert James Fischer,1967,4,3,6k1/8/4p1p1/4b2p/p3b2P/8/4K1n1/8 b - - 3 64,329133,a4a3 e2d1 a3a2 d1c1 a2a1q c1d2 a1e1
+famous,m4-61,Robert James Fischer - Leonid Stein,1967,4,3,3Q4/6k1/8/8/4K3/8/8/8 w - - 7 82,36321,d8e7 g7g6 e4f4 g6h6 f4f5 h6h5 e7h7
+famous,m4-62,Robert James Fischer - Efim Geller,1967,4,3,3r3k/5q1p/8/4Q3/P7/KP2rp2/1P6/8 b - - 5 70,63351,e3e5 a3a2 e5e1 a2a3 d8b8 a3a2 f7b3
+famous,m4-63,Bent Larsen - Robert James Fischer,1967,4,3,8/8/8/7p/4p2n/3k3N/7K/2q5 b - - 1 71,77398,c1d2 h3f2 d2f2 h2h3 f2g2 h3h4 g2g4
+famous,m4-64,Petrosian - Estrin,1968,4,3,8/4KPP1/6k1/3p1N2/8/8/4P3/8 w - - 1 60,16660,g7g8q g6f5 f7f8q f5e4 g8g4 e4e3 f8f4
+famous,m4-65,Anatoly Karpov - Svetozar Gligoric,1973,4,3,5Q2/3N4/8/8/4K3/6k1/8/8 w - - 1 95,87131,f8f3 g3h2 f3g4 h2h1 e4f3 h1h2 g4g2
+famous,m4-66,Mikhail Tal - Vladimir Alexandrovich Soloviev,1955,4,3,R7/3P4/1k6/2p5/1pP1r3/pP6/P2K4/8 w - - 0 71,10146,d7d8q b6c6 a8a6 c6b7 a6b6 b7a7 d8b8
+famous,m4-67,Anatoly Karpov - Wolfgang Unzicker,1974,4,3,2Q5/5n2/3N1P1k/BP1Pp3/2p1P2P/2P1b3/6K1/8 w - - 1 69,20017,d6f7 h6g6 c8g8 g6h5 g2h3 e3c1 g8g4
+famous,m4-68,Anatoly Karpov - Boris Spassky,1974,4,3,8/3Q4/2P5/8/8/1k6/6PK/8 w - - 3 77,93817,c6c7 b3a2 d7a4 a2b1 c7c8q b1b2 c8c2
+famous,m4-69,Garry Kasparov - Andrei Sokolov,1975,4,3,5k2/8/p5Q1/P2P3r/1P2p3/6P1/K1P1B3/8 w - - 3 45,128389,e2h5 f8e7 g6e6 e7d8 d5d6 e4e3 e6e8
+famous,m4-70,Tigran Vartanovich Petrosian - Mikhail Tal,1976,4,3,8/5k1p/4R3/6K1/1p1q2PP/8/3r4/8 b - - 5 60,209158,f7e6 g5h5 d4e3 g4g5 e3e4 h5h6 e4g6
+famous,m4-71,Eduard Gufeld - Bozidar Ivanovic,1979,4,3,r3k2r/2q5/pBPQ4/7p/2B5/8/PP4PP/6K1 w - - 7 37,134762,b6c7 h8h7 d6g6 e8e7 c7d6 e7d8 g6g8
+famous,m4-72,Garry Kasparov - Lajos Portisch,1983,4,3,6Q1/p1r1b3/1p3p2/2q1n3/3R2P1/P4k2/5P1P/3R2K1 w - - 3 35,29465,g8b3 c5c3 b3d5 f3e2 d5e4 c3e3 e4e3
+famous,m4-73,Vliet - Znosko-Borovsky,1907,4,3,8/8/4p1p1/3P1p1P/4pP2/4k1p1/6K1/1q6 b - - 0 48,10856,b1a2 g2g3 a2f2 g3h3 e3f4 h5g6 f2g3
+famous,m4-74,Garry Kasparov - Anatoly Karpov,1986,4,3,8/7P/1k6/8/8/8/3Q1PPK/8 w - - 1 58,117035,d2d4 b6a5 h7h8q a5b5 h8b8 b5a5 d4a7
+famous,m4-75,Anatoly Karpov - Lajos Portisch,1982,4,3,7k/3Q4/5p1p/5B2/p7/8/5P1P/6rK w - - 8 49,12001,h1g1 h8g8 d7h7 g8f8 f5g6 a4a3 h7f7
+famous,m4-76,Anatoly Karpov - Garry Kasparov,1993,4,3,8/8/8/6p1/1K2n3/5k2/1N2r3/1q6 b - - 5 67,50152,e2b2 b4c4 b1a2 c4d4 b2d2 d4e5 a2d5
+famous,m4-77,Vladimir Kramnik - Garry Kasparov,1994,4,3,7k/1pp5/3p3p/p2P3P/2Pb1nN1/1P5r/6p1/2RBK3 b - - 7 44,36905,g2g1q e1d2 h3h2 g4f2 h2f2 d1e2 f2e2
+famous,m4-78,Garry Kasparov - Vladimir Kramnik,1994,4,3,8/3k4/6P1/p1P5/8/1p3Q2/1P2pP2/4K3 w - - 0 48,52727,f3d5 d7c7 g6g7 c7b8 g7g8q b8a7 g8a8
+famous,m4-79,Garry Kasparov - Viswanathan Anand,1995,4,3,5Q2/7p/1k3N1P/5KP1/1p6/pB6/P7/8 w - - 1 59,85661,f8b4 b6c6 b3d5 c6c7 b4b7 c7d6 f6e4
+famous,m4-80,Garry Kasparov - Veselin Topalov,1999,4,3,5Q2/8/8/8/4K3/8/6k1/8 w - - 5 69,36252,f8f3 g2g1 f3e2 g1h1 e4f3 h1g1 e2g2
+famous,m4-81,Michael Adams - Garry Kasparov,2005,4,3,8/5p1k/p2pp1pP/1b6/4PK2/1r3P2/3R4/2q5 b - - 1 46,80903,c1d2 f4g3 d2g5 g3f2 b3b2 f2e1 g5c1
+famous,m4-82,Magnus Carlsen - Alexander Beliavsky,2006,4,3,2r1k3/PQ6/8/8/5P2/6PK/8/8 w - - 1 59,20431,b7c8 e8e7 a7a8q e7d6 a8c6 d6e7 c6e6
+famous,m4-83,Magnus Carlsen - Michael Adams,2007,4,3,1R5Q/4K3/8/3k1Pn1/8/8/8/8 w - - 3 92,365297,h8c3 d5e4 b8b4 e4d5 c3d4 d5c6 d4c4
+famous,m4-84,Magnus Carlsen - Vladimir Kramnik,2009,4,3,3q4/3P1k1p/4Np2/2Q2P2/8/5K2/7P/8 w - - 1 58,44949,e6d8 f7g7 c5e7 g7h6 d8e6 h6h5 e7h7
+famous,m4-85,Magnus Carlsen - Viswanathan Anand,2009,4,3,2k5/4R3/3K4/8/8/8/8/8 w - - 21 90,18333,e7h7 c8b8 d6c6 b8a8 c6b6 a8b8 h7h8
+famous,m4-86,Magnus Carlsen - Veselin Topalov,2009,4,3,2Q5/P7/5k2/8/4p3/4K3/1P6/8 w - - 1 67,55742,c8a6 f6e5 a7a8q e5f5 a8e4 f5g5 a6g6
+famous,m4-87,Magnus Carlsen - Veselin Topalov,2010,4,3,8/8/5N2/3p1B2/3B3K/k7/6P1/2R5 w - - 6 59,319890,f6d5 a3b3 f5d3 b3a2 d3c4 a2a3 c1a1
+famous,m4-88,Marshall - Tarrasch,1905,4,3,8/pp4p1/6Pk/4p3/P6P/4Qp2/5q2/3rN2K b - - 1 49,13190,f2e3 h1h2 e3f4 h2g1 f4g3 g1f1 g3e1
+famous,m4-89,Magnus Carlsen - Viswanathan Anand,2012,4,3,Q7/2P5/3k4/8/8/1P3K2/8/8 w - - 1 70,120494,c7c8r d6e5 a8a6 e5d5 f3e3 d5e5 c8c5
+famous,m4-90,Magnus Carlsen - Boris Gelfand,2013,4,3,8/7P/8/8/1k6/8/4QP1K/8 w - - 1 67,158345,h7h8q b4c5 h8e5 c5b4 e2b5 b4a3 e5a1
+famous,m4-91,Magnus Carlsen - Sergey Karjakin,2013,4,3,8/3K4/5k2/2b5/8/4Q3/2B5/8 w - - 3 95,67657,e3f4 f6g7 f4g5 g7f7 c2b3 f7f8 g5g8
+famous,m4-92,Teimour Radjabov - Magnus Carlsen,2013,4,3,8/8/8/q4k1p/7P/1K3b2/8/5n2 b - - 3 116,45661,f3d5 b3b2 a5a2 b2c1 d5a8 c1d1 a2d2
+famous,m4-93,Magnus Carlsen - Viswanathan Anand,2013,4,3,7Q/P5R1/1r6/3k4/K1p5/8/8/8 w - - 7 73,103330,a7a8q d5d4 g7g3 b6f6 h8f6 d4c5 a8a5
+famous,m4-94,Magnus Carlsen - Viswanathan Anand,2014,4,3,3Q4/5kp1/5p2/P4P1p/7P/5pP1/2P2P1K/8 w - - 3 44,74430,a5a6 g7g6 d8d7 f7f8 a6a7 f8g8 a7a8q
+famous,m4-95,Magnus Carlsen - Maxime Vachier-Lagrave,2015,4,3,5Q2/4K3/8/1k6/8/3R4/8/8 w - - 1 79,115054,f8b8 b5c4 b8b3 c4c5 d3d8 c5c6 d8c8
+famous,m4-96,Magnus Carlsen - Geir Sune Tallaksen Ostmoe,2005,4,3,5r2/p3bp1Q/4p3/8/3p2k1/1P2P1P1/P5KP/2r5 w - - 0 34,13433,h2h3 g4g5 h7g7 g5f5 g3g4 f5e4 g7d4
+famous,m4-97,Magnus Carlsen - Fabiano Caruana,2018,4,3,5RK1/8/8/3k4/8/2Q5/8/8 w - - 3 79,404297,g8g7 d5e4 f8e8 e4f4 g7g6 f4g4 e8e4
+famous,m4-98,"Erdogmus, Yagiz Kaan - Van Foreest, Jorden",2026,4,3,5K2/4N3/8/8/3B2Q1/8/8/4k3 w - - 7 91,315405,g4g2 e1d1 g2a2 d1c1 d4e3 c1d1 a2d2
+famous,m4-99,"Abdusattorov, Nodirbek - Gukesh D",2026,4,3,7k/2p4p/1p6/p1p1P1Q1/P1PrR3/3P1Pp1/2P3K1/6R1 w - - 1 41,56850,g5f6 h8g8 g2g3 h7h6 g3f2 g8h7 f6g7
+famous,m4-100,"Erigaisi Arjun - Abdusattorov, Nodirbek",2026,4,3,8/4K3/8/8/2b5/2k3qp/8/8 b - - 1 75,475649,h3h2 e7f6 h2h1r f6f5 h1h5 f5e4 c4d3
+famous,m5-01,Mikhail Tal - Vladimir Alexandrovich Soloviev,1955,5,4,R7/3P4/1k6/2p5/1pP1B3/pP2K3/P7/4r3 w - - 1 70,27149,e3d2 e1e4 d7d8q b6c6 a8a6 c6b7 a6b6 b7a7 d8b8
+famous,m5-02,Vliet - Znosko-Borovsky,1907,5,4,8/8/4p1p1/3P1p2/4pP1P/4k1p1/1p4K1/8 b - - 1 47,40578,b2b1q h4h5 b1a2 g2g3 a2f2 g3h3 e3f4 h5g6 f2g3
+famous,m5-03,Mikhail Tal - Reinhart Fuchs,1964,5,4,5k2/Q7/4K3/2n3p1/6P1/8/8/8 w - - 11 63,41999,a7c5 f8g7 c5g5 g7f8 g5e7 f8g8 e6f6 g8h8 e7g7
+famous,m5-04,Vasily Smyslov - Robert James Fischer,1959,5,4,8/8/8/p1r5/P7/8/1K1k4/8 b - - 13 75,49713,c5c2 b2b1 d2c3 b1a1 c2c1 a1a2 c3c2 a2a3 c1a1
+famous,m5-05,Grunfeld - Schenkein,1915,5,4,5k2/7R/2p5/2P2p1P/2B2p2/5P2/5KP1/4q3 w - - 0 53,54794,f2e1 f8e8 h7g7 e8d8 h5h6 d8c8 h6h7 c8b8 h7h8q
+famous,m5-06,Marache - Morphy,1857,5,4,4r1k1/5p1p/4R3/2b2P2/8/2n5/1p4K1/q7 b - - 1 48,1294432,a1a8 g2h2 f7e6 h2g3 b2b1q g3h2 b1g1 h2h3 a8h1
+famous,m5-07,Morphy - Anderssen,1858,5,4,k3b3/2Q1P2p/p7/8/PP6/8/1K5P/8 w - - 1 50,211299,c7d8 a8a7 d8e8 a7b6 e8d8 b6c6 e7e8q c6b7 d8b8
+famous,m5-08,Borislav Ivkov - Mikhail Tal,1961,5,4,8/6K1/8/5k2/8/8/4r3/8 b - - 13 82,87978,e2e7 g7f8 f5f6 f8g8 e7e8 g8h7 e8f8 h7h6 f8h8
+famous,m5-09,Larry Melvyn Evans - Mikhail Tal,1964,5,4,8/8/8/8/8/3k4/6r1/4K3 b - - 21 74,96736,g2d2 e1f1 d3e3 f1e1 d2d8 e1f1 d8g8 f1e1 g8g1
+famous,m5-10,Steinitz - Anderssen,1866,5,4,r2k4/pp1b3p/3p4/3P1p2/4n1pP/PP2q1P1/2P3K1/5R2 b - - 0 34,1251909,e3g3 g2h1 e4f2 f1f2 g3f2 c2c3 g4g3 a3a4 f2f1
+famous,m5-11,"Steinitz, W - Sellman, A.G.",1885,5,4,5R2/4B2k/1P6/8/4P3/5p1P/5K1P/8 w - - 1 55,1658090,f8f6 h7g7 b6b7 g7h7 b7b8q h7g7 b8f8 g7h7 f6h6
+famous,m5-12,Emanuel Lasker - Johann Hermann Bauer,1889,5,4,8/8/P4k2/8/1Q6/1P6/3P2P1/6K1 w - - 1 52,754250,b4d6 f6f5 a6a7 f5e4 a7a8q e4f5 a8f3 f5g5 d6f6
+famous,m5-13,Paul F Johner - Aron Nimzowitsch,1926,5,4,6rk/5p2/1p1p4/p1pP4/P1P2P2/2P5/4RKp1/2BNR2q b - - 3 50,105944,g2g1q e1g1 h1g1 f2f3 g1g3 f3e4 f7f5 e4f5 g3g6
+famous,m5-14,"Tarrasch, S - Von Scheve, T",1894,5,4,4Q3/8/4pk2/pB6/3P1p2/P3PP2/1P6/2K5 w - - 1 42,753581,e8h8 f6f7 e3e4 f7g6 b5e8 g6g5 h8g7 g5h4 g7g4
+famous,m5-15,Tarrasch - Schlecter,1894,5,4,3RR3/7P/1k6/5PK1/1r6/1P6/P7/8 w - - 1 62,1265276,e8e6 b6a5 h7h8q b4b3 a2b3 a5b4 d8b8 b4a3 h8a1
+famous,m5-16,Mikhail Tal - Nikola Padevsky,1963,5,4,3K3k/8/3R4/8/4P3/2P5/8/8 w - - 7 65,106983,d6d7 h8g8 d8e8 g8h8 e8f7 h8h7 d7d6 h7h8 d6h6
+famous,m5-17,Wilhelm Steinitz - Curt von Bardeleben,1895,5,4,r1r1k3/pp1q2Q1/5pp1/3p2N1/8/8/PP3PPP/2R3K1 w - - 6 31,1660020,g7g8 e8e7 g8f7 e7d8 f7f8 d7e8 g5f7 d8d7 f8d6
+famous,m5-18,Siegbert Tarrasch - Georg Marco,1898,5,4,r5k1/3b1p2/1q1p1nB1/2pP2b1/1pP5/1P4B1/7Q/4RR1K w - - 0 35,4440640,f1f6 d7h3 h2h3 g5h4 h3h4 a8d8 g6f7 g8g7 h4h6
+famous,m5-19,Pillsbury - Marco,1900,5,4,5k2/1b1q4/r5p1/p2p2B1/2pP3Q/2p1P3/PP4PP/6K1 w - - 0 24,305271,h4h8 f8f7 h8h7 f7f8 h7d7 f8g8 g5h6 g8h8 d7g7
+famous,m5-20,Carl Schlechter - Isidor Gunsberg,1901,5,4,8/8/1PQ5/4k3/6p1/8/6PK/8 w - - 1 71,811610,b6b7 e5d4 b7b8q d4d3 b8d6 d3e2 c6e8 e2f1 d6f8
+famous,m5-21,Isaak Birbrager - Mikhail Tal,1953,5,4,8/8/2r5/1k6/8/8/K7/8 b - - 10 116,121317,b5a4 a2b2 a4b4 b2a1 b4a3 a1b1 c6c8 b1a1 c8c1
+famous,m5-22,Marshall - Lasker,1907,5,4,8/8/p7/P1P4p/1K1N1k1P/3p4/4bp2/2q5 b - - 5 55,1782272,f2f1q d4e6 f4e3 e6d4 f1e1 b4b3 c1c3 b3a2 e1a1
+famous,m5-23,Anatoly Karpov - Veselin Topalov,1994,5,4,8/6k1/1P4q1/3B1QP1/5P2/8/5PK1/8 w - - 3 57,130018,f5g6 g7g6 b6b7 g6f5 g2g3 f5g6 b7b8q g6f5 b8b1
+famous,m5-24,Alexander Alekhine - Fred Dewhirst Yates,1922,5,4,r6k/2R2rR1/b3p2p/3pKp1P/p2P4/Pp2PPP1/1P6/8 w - - 2 39,296142,c7f7 f5f4 g7h7 h8g8 f7g7 g8f8 e5f6 f8e8 h7h8
+famous,m5-25,Richard Reti - Akiba Rubinstein,1923,5,4,4K3/7P/8/2k5/8/5R2/8/8 w - - 1 73,738086,h7h8q c5b4 h8c3 b4b5 c3d4 b5a5 f3b3 a5a6 d4a4
+famous,m5-26,Mikhail Botvinnik - Mikhail Tal,1961,5,4,8/8/8/7K/5k2/8/8/6r1 b - - 23 95,132124,g1g4 h5h6 f4f5 h6h5 g4b4 h5h6 b4b7 h6h5 b7h7
+famous,m5-27,Richard Reti - F Fischer,1923,5,4,3R1b1k/p4p1p/8/5N1Q/3pP1K1/5qP1/7P/1r6 w - - 0 42,241087,g4f3 b1f1 f3g2 f1f5 e4f5 h8g7 h5g5 g7h8 d8f8
+famous,m5-28,Boris Spassky - Mikhail Tal,1958,5,4,8/8/6p1/3p3p/3k3P/K7/5p2/8 b - - 1 84,135050,f2f1q a3b2 f1f5 b2a1 d4c3 a1a2 f5c2 a2a1 c2b2
+famous,m5-29,Jose Raul Capablanca - Savielly Tartakower,1924,5,4,7k/8/4Q3/2K5/8/8/8/8 w - - 2 60,292174,e6h6 h8g8 c5d6 g8f7 h6g5 f7f8 d6e6 f8e8 g5g8
+famous,m5-30,Mikhail Tal - Anatolij Bannik,1962,5,4,8/5pk1/p1nQ4/5P2/2p3K1/8/8/8 w - - 1 43,150790,f5f6 g7g6 d6f4 g6h7 g4h5 h7g8 f4h6 c4c3 h6g7
+famous,m5-31,Carl Schlechter - Walter John,1905,5,4,5k2/3R4/3K1Pp1/3p2Pp/2pP3P/8/8/8 w - - 0 66,151170,d6e6 f8g8 f6f7 g8g7 e6e7 g7h7 f7f8q c4c3 e7e6
+famous,m5-32,Mikhail Botvinnik - Nikolay Tikhonovich Sorokin,1931,5,4,8/7P/1k4K1/5R2/4P3/4P3/8/8 w - - 1 67,519339,h7h8q b6c6 h8e8 c6b6 e8b5 b6a7 f5f7 a7a8 b5e8
+famous,m5-33,Alexander Alekhine - Salomon Flohr,1931,5,4,1r6/4PQ1p/7P/P5p1/5p1k/5P2/1P3PK1/8 w - - 1 48,136488,e7e8q b8e8 f7e8 g5g4 e8e5 g4f3 g2f3 h4h3 e5h5
+famous,m5-34,Alekhine - Alexander,1936,5,4,8/8/2P1B3/3R3P/7k/1P6/4K3/8 w - - 1 49,1796180,d5c5 h4g3 h5h6 g3g2 c5g5 g2h1 h6h7 h1h2 h7h8q
+famous,m5-35,Jose Raul Capablanca - Andre Lilienthal,1936,5,4,3R3Q/3n4/6K1/8/4Pk2/5P2/8/8 w - - 1 75,458470,h8h2 f4e3 d8d7 e3f3 d7d3 f3e4 h2h3 e4f4 h3f5
+famous,m5-36,Euwe - Maroczy,1936,5,4,7k/2R2b2/7P/p3KPP1/8/8/1P6/8 w - - 0 68,175582,c7f7 h8g8 f7g7 g8f8 f5f6 f8e8 h6h7 e8d8 h7h8q
+famous,m5-37,Botvinnik - Capablanca,1938,5,4,7k/p3P3/1p4Qp/3p3K/2pP2P1/1nP5/7P/4q3 w - - 2 43,29513,e7e8q e1e8 g6e8 h8g7 e8e7 g7g8 h5h6 g8h8 e7f8
+famous,m5-38,"Capablanca - Golombek, H",1939,5,4,8/6k1/8/p4Qp1/3P2P1/4P3/2r2P2/4R1K1 w - - 2 50,1279296,f5d7 g7f6 e1b1 c2c6 d7c6 f6e7 b1b7 e7d8 c6d7
+famous,m5-39,"Smyslov, V - Kottnauer, C",1946,5,4,8/k7/6P1/8/8/4R3/6P1/rR4K1 w - - 1 61,354788,b1a1 a7b6 e3c3 b6b5 a1b1 b5a4 c3f3 a4a5 f3a3
+famous,m5-40,Samuel Reshevsky - Robert James Fischer,1961,5,4,8/8/P1Q1pk2/8/8/8/6K1/r3q3 b - - 22 61,151672,e1f1 g2h2 f1g1 h2h3 a1a3 c6c3 a3c3 h3h4 g1g5
+famous,m5-41,Frantisek Zita - David Bronstein,1946,5,4,6k1/1p5p/2b5/2b5/8/5p1r/3K4/8 b - - 1 49,1389355,h3h2 d2c3 c6b5 c3b3 f3f2 b3a2 f2f1q a2b3 f1d3
+famous,m5-42,Mikhail Tal - Straume,1953,5,4,8/8/8/6K1/3Q4/6k1/8/8 w - - 9 73,159757,d4g4 g3f2 g5f4 f2e1 f4e3 e1f1 g4g6 f1e1 g6b1
+famous,m5-43,Adolf Anderssen - Louis Paulsen,1873,5,4,8/8/6P1/2Q5/2b5/4K3/2k5/8 w - - 7 59,170384,c5c4 c2b1 c4b4 b1a1 e3d2 a1a2 d2c1 a2a1 b4a5
+famous,m5-44,Isaac Boleslavsky - Vasily Smyslov,1950,5,4,3N4/4R2P/8/8/4P3/1k6/7K/8 w - - 1 63,1226569,h7h8q b3c2 h8d4 c2b1 e7b7 b1c1 d4f2 c1d1 b7b1
+famous,m5-45,Mikhail Tal - Mikhail Botvinnik,1960,5,4,8/5PP1/8/4K3/8/k7/8/8 w - - 1 86,187244,f7f8q a3b3 g7g8q b3b2 f8b8 b2a1 g8g1 a1a2 g1a7
+famous,m5-46,Aron Nimzowitsch - Jose Raul Capablanca,1927,5,4,8/5p2/4p1k1/4PpPp/3R4/1P6/3p3K/5q2 b - - 3 59,190807,f1f2 h2h1 f2d4 h1g2 d4g4 g2f1 d2d1q f1f2 d1e2
+famous,m5-47,Gerhard Kraehenbuehl - Ralf Akesson,1981,5,4,8/6R1/5B1p/P6k/8/1p6/1p6/1K6 w - - 0 58,194048,f6b2 h5h4 a5a6 h4h3 a6a7 h3h2 a7a8q h2h3 a8h1
+famous,m5-48,Bent Larsen - Berndt Soderborg,1957,5,4,6k1/pp2P2p/5Pb1/2q4P/3p4/8/6R1/4R1K1 w - - 3 41,213316,e7e8q c5f8 g2g6 h7g6 e8g6 g8h8 e1e8 d4d3 e8f8
+famous,m5-49,Fischer - Sherwin,1957,5,4,1k6/p2Q4/1p6/8/2pP1p2/2P5/PP3P2/4K3 w - - 0 43,1692614,d4d5 f4f3 d5d6 a7a6 d7c7 b8a8 d6d7 a6a5 d7d8q
+famous,m5-50,Lev Polugaevsky - Rashid Gibiatovich Nezhmetdinov,1958,5,4,r5k1/p5bp/2pp4/8/PnK1P1p1/1P1n1rP1/1B2N2R/R2Q4 b - - 1 30,866871,d6d5 e4d5 c6d5 c4b5 a8b8 b5a5 b4c6 a5a6 b8b6
+famous,m5-51,Tal - Furster,1958,5,4,5Q2/1pk5/6P1/2p5/8/P7/P1PK4/8 w - - 0 47,410958,f8c5 c7d7 g6g7 b7b6 c5d5 d7c7 g7g8q b6b5 g8d8
+famous,m5-52,Tigran Vartanovich Petrosian - Wolfgang Unzicker,1960,5,4,8/4k3/P7/2R5/3P1N2/8/KP6/8 w - - 1 74,2055981,a6a7 e7d6 a7a8q d6e7 c5c7 e7f6 a8g2 f6f5 c7f7
+famous,m5-53,Robert Eugene Byrne - Robert James Fischer,1963,5,4,8/8/8/8/4k3/3b4/1K6/6r1 b - - 1 61,374879,g1b1 b2a2 b1b6 a2a1 e4d4 a1a2 d4c3 a2a1 b6a6
+famous,m5-54,Robert James Fischer - Pal Benko,1963,5,4,7R/P7/8/8/4Bp2/1P2kP2/8/7K w - - 1 76,484342,a7a8q e3d2 a8d5 d2c1 d5c4 c1d1 h8h2 d1e1 c4c1
+famous,m5-55,Robert James Fischer - Svetozar Gligoric,1966,5,4,8/2p4R/k7/8/2R5/5KPP/1P6/8 w - - 7 43,1309204,h7c7 a6a5 c7b7 a5a6 c4c7 a6a5 c7c6 a5a4 c6a6
+famous,m5-56,Lehman - Smyslov,1966,5,4,8/Kp6/7p/7r/3k4/8/6p1/8 b - - 1 66,707097,g2g1q a7b7 g1g7 b7b6 g7d7 b6a6 d4c5 a6a5 d7b5
+famous,m5-57,Robert James Fischer - Miguel Najdorf,1966,5,4,6R1/8/8/5K2/7k/8/8/8 w - - 14 67,98518,g8g5 h4h3 f5f4 h3h2 f4f3 h2h1 f3f2 h1h2 g5h5
+famous,m5-58,Lajos Portisch - Robert James Fischer,1966,5,4,8/8/8/6p1/p5K1/B3q3/2p1k3/8 b - - 3 64,711887,e3a3 g4f5 a3f8 f5e4 c2c1q e4d4 f8f4 d4d5 c1c4
+famous,m5-59,Ratmir Kholmov - Mikhail Tal,1949,5,4,4k2r/Rb3p2/2p1p2p/1q6/2p5/2P2P2/2Q2P1P/5RK1 b k - 0 20,197051,b5g5 g1h1 h8g8 c2g6 g5g6 a7a8 b7a8 h2h3 g6g2
+famous,m5-60,Ratmir Kholmov - Robert James Fischer,1967,5,4,6k1/8/4p1p1/4b2p/p3bn1P/8/5K2/8 b - - 1 63,593986,e5d4 f2e1 d4e3 e1d1 a4a3 d1e1 a3a2 e1d1 a2a1q
+famous,m5-61,Robert James Fischer - Leonid Stein,1967,5,4,3Q4/8/6k1/8/8/4K3/8/8 w - - 5 81,418148,d8e7 g6f5 e3f3 f5g6 f3g4 g6h6 g4f5 h6h5 e7h7
+famous,m5-62,Robert James Fischer - Efim Geller,1967,5,4,3r3k/7p/5q2/8/P7/KP2rpQ1/1P6/8 b - - 3 69,2887225,f6e6 g3e5 e3e5 a3a2 e5e1 a2a3 d8d4 a3a2 d4a4
+famous,m5-63,Bent Larsen - Robert James Fischer,1967,5,4,8/8/6n1/6Np/4p2P/3k4/7K/2q5 b - - 1 70,439982,c1f4 h2h1 f4f1 h1h2 f1f2 h2h1 g6h4 g5f3 f2g2
+famous,m5-64,Petrosian - Estrin,1968,5,4,8/4rPPk/4K3/3p1N2/8/8/4P3/8 w - - 0 59,41837,e6e7 h7g6 g7g8q g6f5 f7f8q f5e4 g8g4 e4e3 f8f4
+famous,m5-65,Anatoly Karpov - Svetozar Gligoric,1973,5,4,8/3N1P2/8/8/4K1k1/8/8/8 w - - 1 94,406995,f7f8q g4g3 f8f3 g3h2 f3g4 h2h1 e4f3 h1h2 g4g2
+famous,m5-66,Robert James Fischer - Paul Keres,1959,5,4,5k2/5P2/4K3/3B4/8/8/8/8 w - - 3 89,202626,d5f3 f8g7 e6e7 g7h6 f7f8q h6g6 f8h8 g6f5 h8f6
+famous,m5-67,Anatoly Karpov - Wolfgang Unzicker,1974,5,4,2Q5/5nk1/3N4/BP1PpP2/2p1P2P/2P1b3/6K1/8 w - - 1 68,706238,f5f6 g7h6 d6f7 h6g6 c8g8 g6h5 g2h3 e3c1 g8g4
+famous,m5-68,Anatoly Karpov - Boris Spassky,1974,5,4,2Q5/8/2P5/8/2k5/8/6PK/8 w - - 1 76,358795,c8g4 c4b3 c6c7 b3a2 g4a4 a2b1 c7c8q b1b2 c8c2
+famous,m5-69,Garry Kasparov - Andrei Sokolov,1975,5,4,6k1/8/p2Q4/P2P3r/1P2p3/6P1/K1P1B3/8 w - - 1 44,707690,d6g6 g8f8 e2h5 f8e7 g6e6 e7d8 d5d6 e4e3 e6e8
+famous,m5-70,Tigran Vartanovich Petrosian - Mikhail Tal,1976,5,4,8/5k1p/4R3/5K2/1p4PP/8/3r4/q7 b - - 3 59,1420977,a1f1 f5e5 f1e1 e5f4 d2f2 f4g3 e1g1 g3h3 f2f3
+famous,m5-71,Mikhail Tal - Svetozar Gligoric,1959,5,4,4Q3/8/7K/6P1/8/8/8/1k6 w - - 3 72,203492,e8e2 b1a1 g5g6 a1b1 g6g7 b1a1 g7g8q a1b1 g8g1
+famous,m5-72,Garry Kasparov - Lajos Portisch,1983,5,4,6Q1/p1r1b3/1p3p2/2q1n3/5kP1/P2R4/5P1P/3R2K1 w - - 1 34,226229,d3d4 f4f3 g8b3 c5c3 b3d5 f3e2 d5e4 c3e3 e4e3
+famous,m5-73,Anatoly Karpov - Garry Kasparov,1985,5,4,4r3/5pk1/7p/8/1p4P1/1P1Rq1P1/1N4BP/1NrR3K b - - 2 38,3158364,e3f2 d3e3 e8e3 d1c1 e3e1 c1e1 f2e1 g2f1 e1f1
+famous,m5-74,Garry Kasparov - Anatoly Karpov,1986,5,4,8/2k5/7P/8/8/8/3Q1PPK/8 w - - 1 57,659166,d2a5 c7c6 h6h7 c6d6 h7h8q d6c6 h8c8 c6d6 a5c5
+famous,m5-75,Mikhail Tal - Istvan Bilek,1963,5,4,8/1P5k/4R2p/8/1P6/7p/1P4P1/7K w - - 0 47,212892,b7b8q h7g7 b8c7 g7f8 c7d8 f8f7 d8d7 f7f8 e6e8
+famous,m5-76,Anatoly Karpov - Garry Kasparov,1993,5,4,8/8/8/6p1/1KN1n3/5k2/4r3/q7 b - - 3 66,898195,a1c3 b4b5 c3b3 b5a6 b3c4 a6a5 c4b3 a5a6 e2a2
+famous,m5-77,Vladimir Kramnik - Garry Kasparov,1994,5,4,7k/1pp5/3p3p/p2P3P/2Pb1nN1/1P2r3/5Kp1/2RB4 b - - 5 43,3195895,e3h3 f2e1 g2g1q e1d2 h3h2 g4f2 h2f2 d1e2 f2e2
+famous,m5-78,Garry Kasparov - Vladimir Kramnik,1994,5,4,8/3k4/p7/2P3P1/8/1p3Q2/1P2pP2/4K3 w - - 0 47,558532,f3d5 d7c7 d5d6 c7b7 d6d7 b7a8 c5c6 a8b8 d7b7
+famous,m5-79,Garry Kasparov - Viswanathan Anand,1995,5,4,8/5P1p/2k2N1P/5KP1/1p6/pB6/P7/8 w - - 3 58,780963,f7f8q c6b6 f8b4 b6c6 b3d5 c6c7 b4b7 c7d6 f6e4
+famous,m5-80,Garry Kasparov - Veselin Topalov,1999,5,4,5Q2/8/8/8/3K4/6k1/8/8 w - - 3 68,386756,f8f6 g3g2 d4e3 g2g1 f6g5 g1f1 g5g8 f1e1 g8g1
+famous,m5-81,Michael Adams - Garry Kasparov,2005,5,4,8/5p1k/p2pp1pP/1b6/4P3/rB2KP2/3R4/2q5 b - - 7 45,828708,a3b3 e3f2 c1d2 f2g3 d2g5 g3f2 b3b2 f2e1 g5c1
+famous,m5-82,Mikhail Botvinnik - Mikhail Tal,1960,5,4,8/5K2/8/5k2/8/4r3/8/8 b - - 17 79,205604,f5g5 f7g7 e3f3 g7h7 g5f6 h7g8 f3h3 g8f8 h3h8
+famous,m5-83,Robert James Fischer - Vasily Smyslov,1965,5,4,5rk1/8/4R2K/4P1BP/5P2/8/8/8 w - - 1 92,207177,h6g6 g8h8 g5f6 h8g8 h5h6 f8f6 e6f6 g8h8 f6f8
+famous,m5-84,Magnus Carlsen - Vladimir Kramnik,2009,5,4,3q4/3Pk2p/4Np2/2pQ1P2/8/5K2/7P/8 w - - 5 57,225662,d5c5 e7d7 c5d5 d7c8 d5c6 c8b8 e6d8 b8a7 c6b7
+famous,m5-85,Magnus Carlsen - Viswanathan Anand,2009,5,4,3k4/4R3/4K3/8/8/8/8/8 w - - 19 89,60821,e6d6 d8c8 e7h7 c8b8 d6c6 b8a8 c6b6 a8b8 h7h8
+famous,m5-86,Magnus Carlsen - Veselin Topalov,2009,5,4,2r5/PQ6/8/4k3/4p3/4K3/1P6/8 w - - 3 66,1237304,b7c8 e5d6 c8d8 d6c5 a7a8q c5b4 d8a5 b4b3 a5c3
+famous,m5-87,Magnus Carlsen - Veselin Topalov,2010,5,4,8/8/5N2/3p1B2/1k5K/8/1B4P1/2R5 w - - 4 58,1354652,f6d5 b4b3 b2a1 b3a2 f5c2 a2a3 a1g7 a3a2 c1a1
+famous,m5-88,Akiba Rubinstein - Karel Hromadka,1923,5,4,2k5/7R/8/Pp1Kp3/4P3/8/8/8 w - - 0 57,211759,d5c5 c8b8 c5b6 b8c8 a5a6 c8d8 a6a7 d8c8 a7a8q
+famous,m5-89,Magnus Carlsen - Viswanathan Anand,2012,5,4,Q7/8/2P5/4k3/8/1P3K2/8/8 w - - 1 69,716420,a8a5 e5d6 c6c7 d6e6 c7c8q e6f6 c8f8 f6e6 a5f5
+famous,m5-90,Magnus Carlsen - Boris Gelfand,2013,5,4,8/8/7P/2k5/8/8/4QP1K/8 w - - 1 66,840859,e2d3 c5b4 h6h7 b4a4 h7h8q a4b4 h8c3 b4a4 d3c4
+famous,m5-91,Magnus Carlsen - Sergey Karjakin,2013,5,4,4Q3/3K4/5k2/8/8/b7/2B5/8 w - - 1 94,1107373,e8e3 a3b4 e3f4 f6g7 f4g5 g7f7 c2b3 f7f8 g5g8
+famous,m5-92,Teimour Radjabov - Magnus Carlsen,2013,5,4,8/8/8/5k1p/2K4P/5b2/8/4qn2 b - - 1 115,2186771,e1c1 c4b3 f1d2 b3a4 c1b1 a4a5 d2c4 a5a4 f3c6
+famous,m5-93,Grigory Yuryevich Serper - Ioannis Nikolaidis,1993,5,4,8/8/5k2/5P2/8/1p2QP1p/1P2p2P/4K3 w - - 1 56,212687,e3e6 f6g5 e1e2 g5f4 e2f2 f4g5 f2g3 g5h5 e6g6
+famous,m5-94,Magnus Carlsen - Viswanathan Anand,2014,5,4,6k1/2Q3p1/5p2/P4P1p/7P/5pP1/2P2P1K/8 w - - 1 43,162111,c7d8 g8f7 a5a6 g7g6 d8d7 f7f8 a6a7 f8g8 a7a8q
+famous,m5-95,Magnus Carlsen - Maxime Vachier-Lagrave,2015,5,4,8/4KP2/8/8/k7/3R4/8/8 w - - 3 78,507663,f7f8q a4b4 e7e6 b4c4 f8a3 c4b5 d3b3 b5c4 a3b4
+famous,m5-96,Vasily Smyslov - Mikhail Tal,1964,5,4,8/8/1K6/8/4k3/8/8/3q4 b - - 3 83,244679,d1d6 b6a5 d6b8 a5a4 e4d4 a4a3 d4c3 a3a2 b8b2
+famous,m5-97,Magnus Carlsen - Fabiano Caruana,2018,5,4,5RKQ/8/8/8/4k3/8/8/8 w - - 1 78,776992,f8e8 e4d3 h8h4 d3c2 h4c4 c2b1 e8b8 b1a1 c4a4
+famous,m5-98,Veselin Topalov - Alexey Shirov,1998,5,4,8/2K5/8/8/1k2q3/8/8/8 b - - 15 79,246787,e4e7 c7c6 e7d8 c6b7 b4c5 b7a7 c5c6 a7a6 d8a8
+famous,m5-99,"Abdusattorov, Nodirbek - Gukesh D",2026,5,4,3r3k/2p4p/1p6/p1p1P1Q1/P1P1R3/3P1Pp1/2P3K1/5Rq1 w - - 3 40,539182,g2g1 h7h6 g5d8 h8g7 e4g4 g7f7 d8g8 f7e7 g4g7
+famous,m5-100,"Erigaisi Arjun - Abdusattorov, Nodirbek",2026,5,4,8/8/5K2/8/2b4p/2k3q1/8/8 b - - 1 74,1790057,g3d6 f6f5 d6e6 f5f4 c4e2 f4g5 c3d3 g5f4 e6f6
+famous,m6-01,Isaak Birbrager - Mikhail Tal,1953,6,5,8/8/2r5/k7/8/1K6/8/8 b - - 8 115,195815,c6c8 b3a2 a5a4 a2b2 a4b4 b2a1 b4a3 a1b1 c8c6 b1a1 c6c1
+famous,m6-02,Vasily Smyslov - Robert James Fischer,1959,6,5,8/8/8/p1r5/P7/1K2k3/8/8 b - - 11 74,233668,c5c8 b3a2 c8b8 a2a1 b8b4 a1a2 e3d2 a2a1 d2c2 a1a2 b4a4
+famous,m6-03,Akiba Rubinstein - Karel Hromadka,1923,6,5,2k5/7R/p2K4/PP1rp3/4P3/8/8/8 w - - 0 56,530364,d6d5 a6b5 d5c5 c8b8 c5b6 b8c8 a5a6 c8d8 a6a7 d8c8 a7a8q
+famous,m6-04,Larry Melvyn Evans - Mikhail Tal,1964,6,5,8/8/8/8/2k5/8/6r1/3K4 b - - 19 73,577017,g2a2 d1c1 c4d3 c1b1 a2c2 b1a1 d3c4 a1b1 c4b3 b1a1 c2c1
+famous,m6-05,"Tarrasch, S - Vogel, S",1910,6,5,2k5/5Q2/8/8/8/8/7K/8 w - - 5 63,619131,f7a7 c8d8 h2g3 d8c8 g3g4 c8d8 g4f5 d8c8 f5e6 c8d8 a7b8
+famous,m6-06,Marache - Morphy,1857,6,5,4r1k1/5p1p/2R5/2b2P2/8/2n5/pp4K1/8 b - - 1 47,23343372,a2a1q c6e6 a1a8 g2h2 f7e6 h2g3 b2b1q g3h2 b1g1 h2h3 a8h1
+famous,m6-07,Vliet - Znosko-Borovsky,1907,6,5,8/8/4p1p1/3P1p2/4pP1P/1p2k1p1/8/5K2 b - - 0 46,662962,b3b2 f1g2 b2b1q h4h5 b1a2 g2g3 a2f2 g3h3 e3f4 h5g6 f2g3
+famous,m6-08,Mikhail Tal - Lev Polugaevsky,1959,6,5,8/5kP1/R7/1P6/8/P7/7K/8 w - - 1 58,679080,g7g8q f7g8 b5b6 g8f7 b6b7 f7e7 b7b8q e7d7 b8b7 d7d8 a6a8
+famous,m6-09,Mikhail Botvinnik - Mikhail Tal,1960,6,5,8/6K1/8/8/6k1/4r3/8/8 b - - 15 78,682875,g4g5 g7f7 e3e5 f7g7 e5f5 g7h7 g5f6 h7h6 f6f7 h6h7 f5h5
+famous,m6-10,Mikhail Tal - Svetozar Gligoric,1959,6,5,4Q3/6K1/8/6P1/8/8/8/k7 w - - 1 71,729737,e8b8 a1a2 g7f6 a2a1 f6e5 a1a2 e5d4 a2a1 d4c3 a1a2 b8b2
+famous,m6-11,"Steinitz, W - Sellman, A.G.",1885,6,5,5R2/4B1k1/8/1P6/4P3/5p1P/5K1P/8 w - - 0 54,4679119,f2f3 g7g6 e7f6 g6h5 h3h4 h5g6 f3g4 g6h6 h4h5 h6h7 f8h8
+famous,m6-12,Emanuel Lasker - Johann Hermann Bauer,1889,6,5,8/8/8/P3k3/1Q6/1P6/3P2P1/6K1 w - - 1 51,6510786,b4c5 e5e4 g2g4 e4d3 c5c4 d3d2 g1f2 d2d1 f2e3 d1e1 c4e2
+famous,m6-13,Mikhail Botvinnik - Mikhail Tal,1961,6,5,8/8/8/4k3/7K/8/8/6r1 b - - 21 94,740245,e5f5 h4h3 f5f4 h3h2 g1g3 h2h1 f4e3 h1h2 e3f2 h2h1 g3h3
+famous,m6-14,"Tarrasch, S - Von Scheve, T",1894,6,5,1Q2b3/4k3/4p3/pB6/3P1p2/P3PP2/1P6/2K5 w - - 3 41,4006969,b8e8 e7f6 e8h8 f6f7 e3e4 f7g6 b5e8 g6g5 h8g7 g5h4 g7g4
+famous,m6-15,Borislav Ivkov - Mikhail Tal,1961,6,5,8/5K2/8/5k2/8/8/5r2/8 b - - 11 81,807122,f2e2 f7g7 e2e7 g7f8 f5f6 f8g8 e7e8 g8h7 e8f8 h7h6 f8h8
+famous,m6-16,Carl Schlechter - Walter John,1905,6,5,5k2/R2b4/3K1Pp1/2pp2Pp/3P3P/8/8/8 w - - 0 65,835181,a7d7 c5d4 d6e6 f8g8 f6f7 g8g7 e6e7 g7h7 f7f8q d4d3 e7e6
+famous,m6-17,Wilhelm Steinitz - Curt von Bardeleben,1895,6,5,r1r4Q/pp1qk3/5pp1/3p2N1/8/8/PP3PPP/2R3K1 w - - 4 30,10174565,h8g7 e7e8 g7g8 e8e7 g8f7 e7d8 f7f8 d7e8 g5f7 d8d7 f8d6
+famous,m6-18,Mikhail Tal - Mikhail Botvinnik,1960,6,5,8/6P1/5P2/4K3/k7/8/8/8 w - - 1 85,1002206,g7g8q a4b4 e5d4 b4b5 g8b8 b5c6 f6f7 c6d7 f7f8q d7c6 f8d6
+famous,m6-19,Pillsbury - Marco,1900,6,5,5bk1/1b1q4/r5p1/p2p2B1/2pP3Q/2p1P3/PP4PP/5RK1 w - - 0 23,3474856,f1f8 g8f8 h4h8 f8f7 h8h7 f7f8 h7d7 f8g8 g5h6 g8h8 d7g7
+famous,m6-20,Carl Schlechter - Isidor Gunsberg,1901,6,5,8/2Q5/1Pb1k3/8/6p1/8/6PK/8 w - - 3 70,1918358,c7c6 e6e5 b6b7 e5d4 b7b8q d4d3 b8d6 d3e2 c6e8 e2f1 d6f8
+famous,m6-21,Jan Hein Donner - Mikhail Tal,1959,6,5,8/8/8/5p1p/4k3/3r4/8/1K6 b - - 1 70,1031363,e4e3 b1a1 e3d2 a1b2 d3e3 b2a1 d2c1 a1a2 e3c3 a2a1 c3a3
+famous,m6-22,Robert James Fischer - Mikhail Tal,1961,6,5,2Q5/8/8/1P6/3k4/8/8/1K6 w - - 1 64,1076142,c8f5 d4e3 b5b6 e3d2 f5e4 d2d1 b6b7 d1d2 b7b8q d2d1 b8d6
+famous,m6-23,Mikhail Tal - Oscar Panno,1958,6,5,5K2/8/8/8/5k2/8/4Q3/8 w - - 5 91,1119873,f8e7 f4g3 e7f7 g3h3 f7e6 h3g3 e6f5 g3h3 f5f4 h3h4 e2g4
+famous,m6-24,Alexander Alekhine - Fred Dewhirst Yates,1922,6,5,r6k/2R3R1/b3pr1p/3p1p1P/p2P1K2/Pp2PPP1/1P6/8 w - - 0 38,2297612,f4e5 f6f7 c7f7 f5f4 g7h7 h8g8 f7g7 g8f8 e5f6 f8e8 h7h8
+famous,m6-25,Richard Reti - Akiba Rubinstein,1923,6,5,4K3/8/7P/8/1k6/5R2/8/8 w - - 3 72,1955296,e8d7 b4a4 d7c6 a4b4 h6h7 b4c4 h7h8q c4b4 h8b2 b4a4 b2b5
+famous,m6-26,Paul F Johner - Aron Nimzowitsch,1926,6,5,6rk/5p2/1p1p4/p1pP4/P1P2P2/2P4q/4R1p1/2BNR1K1 b - - 1 49,1282383,h3h1 g1f2 g2g1q e1g1 h1g1 f2f3 g1g3 f3e4 f7f5 e4f5 g3g6
+famous,m6-27,Richard Reti - F Fischer,1923,6,5,3R1b1k/p4p1p/8/5N1p/3pP1KQ/5PP1/7P/1r1q4 w - - 0 41,746828,h4h5 d1f3 g4f3 b1f1 f3g2 f1f5 e4f5 h8g7 h5g5 g7h8 d8f8
+famous,m6-28,Veselin Topalov - Alexey Shirov,1998,6,5,8/8/3K4/8/1k6/4q3/8/8 b - - 13 78,1291284,e3f4 d6d5 b4b5 d5e6 b5c6 e6e7 f4f5 e7e8 c6d6 e8d8 f5f8
+famous,m6-29,Jose Raul Capablanca - Savielly Tartakower,1924,6,5,2Q5/6k1/8/2K5/8/8/8/8 w - - 0 59,1149158,c8g4 g7f7 g4g5 f7e6 c5c6 e6f7 c6d7 f7f8 d7e6 f8e8 g5g8
+famous,m6-30,William James Lombardy - Robert James Fischer,1960,6,5,8/7p/7P/8/6p1/8/1K4k1/5q2 b - - 1 52,1368412,f1c4 b2a1 c4e2 a1b1 g4g3 b1a1 g2h3 a1b1 g3g2 b1a1 g2g1q
+famous,m6-31,Mikhail Tal - Robert James Fischer,1959,6,5,1k6/R7/8/p7/N5PK/8/8/8 w - - 1 57,1375422,a7d7 b8a8 a4b6 a8b8 g4g5 a5a4 g5g6 a4a3 g6g7 a3a2 g7g8q
+famous,m6-32,Mikhail Botvinnik - Nikolay Tikhonovich Sorokin,1931,6,5,8/8/2k3KP/5R2/4P3/4P3/8/8 w - - 1 66,1885939,f5h5 c6b6 h6h7 b6a6 h7h8q a6b6 h8f6 b6a7 h5h7 a7a8 f6h8
+famous,m6-33,Alexander Alekhine - Salomon Flohr,1931,6,5,3r4/5Q1p/4P2P/P5p1/5p1k/5P2/1P3PK1/8 w - - 1 47,5917397,e6e7 d8a8 e7e8q a8e8 f7e8 g5g4 e8e5 g4f3 g2f3 h4h3 e5h5
+famous,m6-34,Arinbjorn Gudmundsson - Robert James Fischer,1960,6,5,8/5pkp/2p5/6P1/p4P1K/1Br4P/8/8 b - - 0 40,1377940,a4b3 h4g4 b3b2 g4h4 b2b1q h4g4 b1g1 g4h4 g1g3 h4h5 g3h3
+famous,m6-35,Jose Raul Capablanca - Andre Lilienthal,1936,6,5,3R4/3n3P/6K1/4k3/4P3/5P2/8/8 w - - 5 74,2519264,h7h8q e5f4 h8h2 f4e3 d8d7 e3f3 d7d3 f3e4 h2h3 e4f4 h3f5
+famous,m6-36,Euwe - Maroczy,1936,6,5,7k/2R2b2/p4K1P/4nPP1/8/8/1P6/8 w - - 1 67,3152745,f6e5 h8h7 c7f7 h7g8 f7g7 g8f8 f5f6 f8e8 h6h7 e8d8 h7h8q
+famous,m6-37,Botvinnik - Capablanca,1938,6,5,6k1/p3P3/1p3Q1p/3p3K/2pP2P1/1nP5/7P/4q3 w - - 0 42,351856,f6f8 g8h7 e7e8r e1e8 f8e8 h7g7 e8e7 g7g8 h5h6 g8h8 e7f8
+famous,m6-38,"Capablanca - Golombek, H",1939,6,5,8/8/6k1/p5p1/3P1QP1/4P3/2r2P2/4R1K1 w - - 0 49,2954283,f4d6 g6f7 d6d7 f7f6 e1b1 c2c6 d7c6 f6e7 b1b7 e7d8 c6d7
+famous,m6-39,"Smyslov, V - Kottnauer, C",1946,6,5,8/k7/8/6P1/r7/4R3/6P1/1R4K1 w - - 3 60,9745658,e3b3 a7a6 g5g6 a6a7 g6g7 a7a6 b3b6 a6a7 g7g8q a4a1 g8b8
+famous,m6-40,Efim Bogoljubov - Heinrich Wolf,1922,6,5,6k1/8/6rQ/p1pP4/2P5/P7/5K1P/8 w - - 0 49,1411514,h6g6 g8h8 g6f6 h8h7 d5d6 h7g8 f6e7 g8h8 d6d7 h8g8 d7d8r
+famous,m6-41,Mikhail Tal - Klaus Viktor Darga,1960,6,5,8/2P5/5k2/1K1R4/8/1r6/P7/8 w - - 0 58,1468875,a2b3 f6e6 d5c5 e6d6 c7c8q d6e7 c5c6 e7f7 c8d7 f7f8 c6c8
+famous,m6-42,Mikhail Tal - Mikhail Botvinnik,1960,6,5,8/8/2K5/8/3q1k2/8/8/8 b - - 3 78,1479639,d4c4 c6b6 f4e5 b6a5 c4b3 a5a6 e5d6 a6a5 d6c5 a5a6 b3b6
+famous,m6-43,Paul Keres - Mikhail Tal,1957,6,5,8/4K3/8/5q2/4p3/8/1k6/8 b - - 1 60,1522105,f5h7 e7d6 e4e3 d6c5 e3e2 c5b4 e2e1q b4c4 h7f5 c4d4 e1e4
+famous,m6-44,Isaac Boleslavsky - Vasily Smyslov,1950,6,5,3r4/4R2P/2N5/8/4P3/k7/7K/8 w - - 2 62,7594255,c6d8 a3b3 h7h8q b3c2 h8d4 c2b1 e7b7 b1c1 d4f2 c1d1 b7b1
+famous,m6-45,Lawrence Day - Sylvain Barbeau,1980,6,5,4K3/p7/1r6/8/p7/8/4k3/8 b - - 3 69,1616947,b6b7 e8d8 a4a3 d8c8 b7h7 c8b8 a3a2 b8a8 a2a1q a8b8 a1h8
+famous,m6-46,Tigran Vartanovich Petrosian - Carlos Enrique Guimard,1955,6,5,8/8/8/1kp1Q2p/5P2/R5P1/2n5/6K1 w - - 2 71,8872382,e5e8 b5b6 e8e6 b6b7 e6d7 b7b6 a3a7 c5c4 a7b7 b6a5 d7b5
+famous,m6-47,Robert James Fischer - Vasily Smyslov,1965,6,5,5r1k/8/4R2K/4P1B1/5P1P/8/8/8 w - - 3 91,1646590,h4h5 h8g8 h6g6 g8h8 g5f6 h8g8 h5h6 f8f6 e6f6 g8h8 f6f8
+famous,m6-48,Bent Larsen - Berndt Soderborg,1957,6,5,6k1/pp2Pb1p/5P2/2q4P/3p4/8/5R2/4R1K1 w - - 1 40,1568079,f2g2 f7g6 e7e8q c5f8 g2g6 h7g6 e8g6 g8h8 e1e8 d4d3 e8f8
+famous,m6-49,Fischer - Sherwin,1957,6,5,1k6/p2Q4/1p6/5p2/2pP4/2P5/PP2KP2/4r3 w - - 0 42,7407944,e2e1 f5f4 d4d5 f4f3 d5d6 a7a6 d7c7 b8a8 d6d7 a6a5 d7d8q
+famous,m6-50,Lev Polugaevsky - Rashid Gibiatovich Nezhmetdinov,1958,6,5,r5k1/p5bp/2pp4/4n3/Pn1KP1p1/1P1B1rP1/1B2N2R/R2Q4 b - - 1 29,11922146,e5d3 d4c4 d6d5 e4d5 c6d5 c4b5 a8b8 b5a5 b4c6 a5a6 b8b6
+famous,m6-51,Tal - Furster,1958,6,5,5Q2/1pk5/2p3P1/8/8/p7/PPPK4/8 w - - 0 46,6713491,f8e7 c7b6 b2b4 b6a6 g6g7 a6b6 e7d8 b6b5 d8a5 b5c4 a5c5
+famous,m6-52,Tigran Vartanovich Petrosian - Wolfgang Unzicker,1960,6,5,8/3k4/8/P1R5/3P1N2/8/KP6/8 w - - 3 73,15567925,a5a6 d7d6 a6a7 d6d7 a7a8q d7e7 c5c7 e7f6 a8g2 f6f5 c7f7
+famous,m6-53,Robert Eugene Byrne - Robert James Fischer,1963,6,5,8/8/8/8/4k3/2Kb4/8/4r1B1 b - - 0 60,2412696,e1g1 c3b2 g1b1 b2a2 b1b6 a2a1 e4d4 a1a2 d4c3 a2a1 b6a6
+famous,m6-54,Robert James Fischer - Pal Benko,1963,6,5,7R/8/P7/8/4Bp2/1P3P2/3k4/7K w - - 1 75,4583939,h8d8 d2c1 a6a7 c1b2 a7a8q b2b3 a8a5 b3b2 d8b8 b2c1 a5e1
+famous,m6-55,Robert James Fischer - Svetozar Gligoric,1966,6,5,8/1kp5/8/7R/2R5/5KPP/1P6/8 w - - 5 42,19858465,h5c5 b7b6 c5c7 b6a5 c7b7 a5a6 c4c7 a6a5 c7c6 a5a4 c6a6
+famous,m6-56,Lehman - Smyslov,1966,6,5,1K6/1p6/7p/7r/3k4/6p1/8/8 b - - 1 65,2388914,h5f5 b8a7 g3g2 a7b6 g2g1q b6a7 d4c5 a7b7 f5f7 b7a6 g1a1
+famous,m6-57,Robert James Fischer - Miguel Najdorf,1966,6,5,6R1/8/8/7k/4K3/8/8/8 w - - 12 66,658964,e4f5 h5h4 g8g5 h4h3 f5f4 h3h2 f4f3 h2h1 f3f2 h1h2 g5h5
+famous,m6-58,Samuel Rosenthal - Wilhelm Steinitz,1873,6,5,8/p5bk/1p3p2/2p4p/2P4P/5Pp1/3Br3/6K1 b - - 0 43,1712947,e2d2 g1f1 d2f2 f1e1 g7f8 f3f4 f6f5 e1d1 g3g2 d1c1 g2g1q
+famous,m6-59,Robert James Fischer - Paul Keres,1959,6,5,8/5Pk1/8/3BK3/8/8/8/8 w - - 1 88,1802966,e5e6 g7g6 f7f8q g6g5 f8f5 g5h4 f5g6 h4h3 g6g5 h3h2 g5g2
+famous,m6-60,Ratmir Kholmov - Robert James Fischer,1967,6,5,6k1/8/3bp1p1/4N2p/p3bn1P/6K1/8/8 b - - 7 62,3553621,d6e5 g3f2 e5d4 f2e1 d4e3 e1d1 a4a3 d1e1 a3a2 e1d1 a2a1q
+famous,m6-61,Robert James Fischer - Leonid Stein,1967,6,5,3Q4/5k2/8/8/8/8/3K4/8 w - - 3 80,1506815,d2e3 f7e6 e3f4 e6f7 f4f5 f7g7 d8e7 g7h6 e7d7 h6h5 d7h7
+famous,m6-62,Richard Teichmann - Aron Nimzowitsch,1911,6,5,8/8/2k5/5K2/1q6/8/8/8 b - - 1 72,2043513,c6d6 f5g6 b4g4 g6f6 g4h5 f6g7 d6e6 g7g8 e6f6 g8f8 h5h8
+famous,m6-63,Bent Larsen - Robert James Fischer,1967,6,5,8/8/6n1/6Np/4p2P/3k3K/2p5/8 b - - 1 69,892313,g6f4 h3h2 c2c1q g5h3 c1d2 h2g3 d2e3 g3h2 e3h3 h2g1 h3g2
+famous,m6-64,Petrosian - Estrin,1968,6,5,4r3/4N1Pk/4KP2/3p1N2/8/8/4P3/8 w - - 0 58,735745,g7g8q e8g8 e7g8 h7g6 f6f7 g6g5 f7f8q g5f4 f8h6 f4e4 h6e3
+famous,m6-65,Anatoly Karpov - Svetozar Gligoric,1973,6,5,8/3N4/5P2/7k/4K3/8/8/8 w - - 3 93,1384578,f6f7 h5g4 f7f8q g4g3 f8f3 g3h2 f3g4 h2h1 e4f3 h1h2 g4g2
+famous,m6-66,Mikhail Tal - Efim Geller,1958,6,5,8/1B6/6K1/8/8/8/6R1/2k5 w - - 25 76,2073735,g6f5 c1b1 f5e4 b1a1 e4d3 a1b1 b7d5 b1a1 d3c3 a1b1 g2g1
+famous,m6-67,Anatoly Karpov - Wolfgang Unzicker,1974,6,5,2Q1N1k1/5n2/3p4/BP1PpP2/2p1P2P/2P1b3/6K1/8 w - - 1 67,4079200,e8d6 g8g7 f5f6 g7h6 d6f7 h6g6 c8g8 g6h5 g2h3 e3c1 g8g4
+famous,m6-68,Anatoly Karpov - Boris Spassky,1974,6,5,2Q5/8/8/1kP5/8/8/6PK/8 w - - 5 75,3760536,c5c6 b5b4 c8g4 b4a3 c6c7 a3a2 g4a4 a2b1 c7c8q b1b2 c8c2
+famous,m6-69,Wolfgang Unzicker - Robert James Fischer,1962,6,5,6k1/5pp1/7P/2q1pP2/4P3/1p4P1/6K1/8 b - - 0 36,2091912,c5c2 g2f3 g7h6 f3e3 b3b2 e3f3 b2b1r f3g4 c2e4 g4h3 b1h1
+famous,m6-70,Adolf Anderssen - Louis Paulsen,1873,6,5,8/8/6P1/1b6/8/Q3K3/2k5/8 w - - 5 58,2109266,a3c5 c2b2 c5b5 b2c3 b5a4 c3b2 e3d2 b2b1 d2c3 b1c1 a4a1
+famous,m6-71,Anatoly Karpov - Lajos Portisch,1982,6,5,7k/1Q4r1/5p1p/5B2/p7/8/5P1P/7K w - - 4 47,2152152,b7c8 g7g8 c8d7 g8g1 h1g1 h8g8 d7h7 g8f8 f5g6 a4a3 h7f7
+famous,m6-72,Garry Kasparov - Lajos Portisch,1983,6,5,6Q1/p1r1b3/1p3p2/2q1nk2/8/P2R4/5PPP/3R2K1 w - - 13 33,2598303,g2g4 f5e4 g8h7 e5g6 h7g6 f6f5 d3d4 e4f3 d1d3 f3e2 d3e3
+famous,m6-73,Mikhail Tal - Bruno Parma,1961,6,5,8/8/P5k1/2K5/3R4/1P6/8/8 w - - 1 56,2218806,d4d5 g6f6 a6a7 f6e6 a7a8q e6f6 a8c6 f6e7 d5d7 e7e8 c6c8
+famous,m6-74,Garry Kasparov - Anatoly Karpov,1986,6,5,8/8/1k6/7P/8/8/3Q1PPK/8 w - - 1 56,3394343,d2d4 b6a5 h5h6 a5b5 h6h7 b5a5 h7h8q a5b5 h8b8 b5a5 d4a7
+famous,m6-75,Mikhail Tal - Dieter Keller,1959,6,5,8/8/4Q3/5P2/7K/2P3P1/2k4P/8 w - - 1 62,2275332,e6e4 c2c1 e4g2 c1b1 f5f6 b1a1 f6f7 a1b1 f7f8q b1a1 f8f1
+famous,m6-76,Mikhail Tal - Mikhail Botvinnik,1960,6,5,8/2k5/4Q3/6P1/8/1p5P/8/7K w - - 0 72,2274650,e6b3 c7c6 g5g6 c6c5 g6g7 c5d4 g7g8q d4e4 g8e6 e4d4 e6d5
+famous,m6-77,Vladimir Kramnik - Garry Kasparov,1994,6,5,6k1/1pp5/3p1N1p/p2P3P/2Pb1n2/1P2r3/5Kp1/2RB4 b - - 3 42,12399440,g8f7 d1f3 e3e1 f2g3 g2g1q f3g2 g1g2 g3f4 d4e5 f4f5 g2f3
+famous,m6-78,Garry Kasparov - Vladimir Kramnik,1994,6,5,8/3k4/p7/2P5/1p4P1/5Q2/1P2pP2/4K3 w - - 1 46,6771887,f3d3 d7e6 c5c6 e6e5 c6c7 e5e6 c7c8q e6f6 d3f5 f6e7 f5e6
+famous,m6-79,Rubinstein - Salwe,1908,6,5,2r2k2/8/4Q3/6Pp/5P1P/P3P3/8/5K2 w - - 3 58,2317767,e6c8 f8e7 c8c7 e7e6 f1f2 e6d5 f4f5 d5e4 c7d7 e4e5 d7e6
+famous,m6-80,Garry Kasparov - Veselin Topalov,1999,6,5,5Q2/8/8/8/6k1/2K5/8/8 w - - 1 67,961467,f8f6 g4g3 c3d4 g3g2 d4e3 g2g1 f6g5 g1f1 g5g8 f1e1 g8g1
+famous,m6-81,Mikhail Tal - Reinhart Fuchs,1964,6,5,5k2/Q7/3K4/6p1/4n1P1/8/8/8 w - - 9 62,2434434,d6d5 e4f2 a7f2 f8e7 f2f5 e7d8 f5h7 d8c8 d5c6 c8b8 h7b7
+famous,m6-82,Frank James Marshall - Akiba Rubinstein,1908,6,5,2Q5/4b1kp/4p3/4P1p1/p1pPq1n1/2P3P1/PP1R4/3K3R b - - 3 44,2449178,e4h1 d1e2 h1g2 e2e1 g2g1 e1e2 g1f2 e2d1 f2f1 d1c2 g4e3
+famous,m6-83,Robert James Fischer - Hector Decio Rossetto,1959,6,5,6B1/8/8/5R2/4K3/2k5/8/8 w - - 5 72,2631387,f5c5 c3d2 e4f3 d2d3 c5c4 d3d2 g8h7 d2d1 f3e3 d1e1 c4c1
+famous,m6-84,Magnus Carlsen - Vladimir Kramnik,2009,6,5,3q1k2/3P3p/5p2/2pQ1P2/5N2/5K2/7P/8 w - - 3 56,5341896,f4e6 f8e7 d5c5 e7d7 c5d5 d7c8 d5c6 c8b8 e6d8 b8a7 c6b7
+famous,m6-85,Magnus Carlsen - Viswanathan Anand,2009,6,5,2k5/1R6/4K3/8/8/8/8/8 w - - 17 88,319750,b7h7 c8b8 h7g7 b8a8 e6d5 a8b8 d5c6 b8a8 c6b6 a8b8 g7g8
+famous,m6-86,Magnus Carlsen - Veselin Topalov,2009,6,5,2r5/P7/1Q6/3k4/4p3/4K3/1P6/8 w - - 1 65,6225615,b6b7 d5c5 b7c8 c5d6 c8d8 d6c5 a7a8q c5b4 d8a5 b4b3 a5c3
+famous,m6-87,Berthold Englisch - Wilhelm Steinitz,1883,6,5,8/7q/1p1K4/2p5/p1P5/6k1/8/8 b - - 1 52,2635282,h7h6 d6e5 h6g6 e5d5 a4a3 d5e5 g3g4 e5d5 g6f6 d5e4 f6d4
+famous,m6-88,Mikhail Tal - Shlomo Giterman,1951,6,5,8/5P2/P7/5kp1/1K6/8/8/8 w - - 1 72,2820711,f7f8q f5e4 f8f2 e4d3 a6a7 d3e4 a7a8q e4e5 a8e8 e5d5 f2c5
+famous,m6-89,Magnus Carlsen - Viswanathan Anand,2012,6,5,Q7/8/5k2/2P5/8/1P3K2/8/8 w - - 1 68,2529579,a8f8 f6e5 f8d6 e5f5 b3b4 f5g5 d6e6 g5h5 f3f4 h5h4 e6g4
+famous,m6-90,Magnus Carlsen - Boris Gelfand,2013,6,5,8/8/3k4/7P/8/8/4QP1K/8 w - - 1 65,3576273,e2d3 d6c5 h5h6 c5b4 h6h7 b4a4 h7h8q a4b4 h8c3 b4a4 d3c4
+famous,m6-91,Magnus Carlsen - Sergey Karjakin,2013,6,5,8/3KPk2/8/8/8/b7/2B5/8 w - - 0 93,1331194,e7e8q f7f6 e8e3 a3b4 e3f4 f6g7 f4g5 g7f7 c2b3 f7f8 g5g8
+famous,m6-92,Teimour Radjabov - Magnus Carlsen,2013,6,5,8/8/8/5k1p/7P/1K3b2/4p3/5n2 b - - 1 114,6716986,f1d2 b3b2 e2e1q b2c3 e1c1 c3b4 f3e2 b4a4 c1c4 a4a3 c4b3
+famous,m6-93,Tarrasch - Mieses,1916,6,5,8/2r5/7P/8/P4Q2/2k5/6PK/8 w - - 5 59,2826505,f4c7 c3d2 c7a5 d2c1 h6h7 c1b1 h7h8q b1c1 a5c3 c1b1 c3b2
+famous,m6-94,Magnus Carlsen - Viswanathan Anand,2014,6,5,5k2/2Q3p1/5p2/5P1p/P6P/5pP1/2P2P1K/8 w - - 3 42,2471078,c7d7 f8g8 d7e8 g8h7 h2g1 g7g6 f5g6 h7h6 e8g8 f6f5 g8h7
+famous,m6-95,Magnus Carlsen - Maxime Vachier-Lagrave,2015,6,5,5K2/5P2/8/k7/8/3R4/8/8 w - - 1 77,2015997,d3d7 a5a4 f8e7 a4b3 f7f8q b3b2 f8c8 b2a1 c8b8 a1a2 d7a7
+famous,m6-96,Boris Spassky - Mikhail Tal,1959,6,5,7k/4Q3/p1r2P1p/1p1pP1p1/1n1q4/1P5P/P5P1/4B1K1 w - - 1 42,2919571,g1h1 c6f6 e5f6 d4f6 e7f6 h8h7 f6f7 h7h8 e1c3 d5d4 c3d4
+famous,m6-97,Magnus Carlsen - Fabiano Caruana,2018,6,5,5RK1/7P/8/3k4/8/8/8/8 w - - 1 77,6041054,h7h8q d5c4 f8f4 c4d3 h8h3 d3e2 h3g3 e2d1 g3g2 d1c1 f4f1
+famous,m6-98,Joseph Henry Blackburne - Emanuel Lasker,1892,6,5,8/8/8/1K2kpp1/7p/6r1/8/8 b - - 1 58,2836649,h4h3 b5a4 h3h2 a4b4 h2h1q b4a5 h1b1 a5a4 b1b2 a4a5 g3a3
+famous,m6-99,Tarrasch - Mieses,1920,6,5,2Q5/8/8/6K1/5P2/3k4/8/8 w - - 3 56,2862723,f4f5 d3d2 f5f6 d2d1 f6f7 d1e1 f7f8q e1d1 f8f1 d1d2 c8c1
+famous,m6-100,Siegbert Tarrasch - Josef Noa,1885,6,5,4r1k1/4r1pN/p1b3P1/1p1pRP1p/1PpP1K1P/P7/8/4R3 w - - 7 48,2982511,e5e7 e8a8 e7g7 g8g7 e1e7 g7h6 h7f6 a8h8 f6g8 h8g8 e7h7
+tournaments,m1-01,"Boucquet, Emile - Mindlin, Alon",2022,1,0,r6k/1pp3p1/3p2pp/p1b1n3/P5Pq/6rP/R1B2P1K/Q1B2R2 b - - 11 24,3,h4h3
+tournaments,m1-02,"Boucquet, Emile - Roubalik, Jakub",2022,1,0,8/5pk1/6p1/8/1P4RP/4bQPK/2rq4/8 b - - 3 51,3,d2h2
+tournaments,m1-03,"Friedrich, Norbert - Finnsson, Johann Arnar",2022,1,0,r4r1k/pp4p1/n1p1B1P1/7n/6P1/5P2/P5K1/2B4R w - - 1 23,3,h1h5
+tournaments,m1-04,"Michalik, Peter - Trost, Edvin",2022,1,0,7r/8/3R4/1rN2Pk1/1P2P1P1/P5K1/5P1p/8 w - - 0 43,3,d6g6
+tournaments,m1-05,"Navara, David - Lammens, Tim",2022,1,0,4r3/R1R2p2/4pkp1/7p/3pnP2/3P1KP1/1rP4P/8 w - - 0 35,3,c7f7
+tournaments,m1-06,"Niemi, Mikko - Hoffmann, Hendrik",2022,1,0,8/8/8/5KBk/7p/6P1/8/8 w - - 1 64,3,g3g4
+tournaments,m1-07,"Okkes, Menno - Libiszewski, Fabien",2022,1,0,8/7k/3p2p1/5p2/1P6/3n1P2/6BP/2q3QK b - - 1 52,5,d3f2
+tournaments,m1-08,"Rademakers, Evert - Kobo, Ori",2022,1,0,8/pp3p2/2p4p/1PP4k/8/5n1P/4BP2/1r4RK b - - 8 47,3,b1g1
+tournaments,m1-09,"Ragger, Markus - Haug, Johannes",2022,1,0,3r3r/2k3p1/QpPp1b2/7p/8/8/2q2PPP/4R1K1 w - - 2 29,11,a6b7
+tournaments,m1-10,"Tarlev, Konstantin - Rademakers, Evert",2022,1,0,R1N3k1/2pq1p1p/3p2pQ/3P4/4Pp1P/3n1P2/2p3P1/6K1 w - - 0 26,17,c8e7
+tournaments,m1-11,"Abdelmadjid Zakaria, Mahamat - Ndahangwapo, Heskiel",2022,1,0,r3r1k1/pp3p2/7p/2p3p1/P1Pn4/1P1K4/4B3/2q5 b - - 9 37,5,c1e3
+tournaments,m1-12,"Aboubacar Akarintkitt - Cottle, Brian S",2022,1,0,6k1/Bpp3p1/p7/4p2K/4b2P/1P6/6r1/8 b - - 2 37,3,e4g6
+tournaments,m1-13,"Aboubacar Akarintkitt - Espirito Santo, Waldyr",2022,1,0,8/5np1/8/2p3k1/p1P1b3/P4q1p/5N1K/8 b - - 3 59,11,f3g2
+tournaments,m1-14,"Aboubacar Akarintkitt - Hewlett, Leo",2022,1,0,4Q3/7k/6pp/q1p1RQ2/3p4/3P4/1PP3PP/6K1 w - - 0 46,5,f5g6
+tournaments,m1-15,"Aboubacar Akarintkitt - Stratonowitsch, Andre",2022,1,0,8/p4ppk/2p5/3p3p/2p5/B1PpP3/PR2nqPK/8 b - - 7 31,5,f2h4
+tournaments,m1-16,"Adu Jnr, Lionel - Ahamada Abdillah",2022,1,0,3R4/7k/1p3Qr1/p3N2r/8/4P1p1/PP3P1p/2R4K w - - 0 34,3,f6g6
+tournaments,m1-17,"Adu-Poku, Kwabena - Raouf Ben Anziz",2022,1,0,8/4Q1p1/6k1/1P3N1p/6P1/p4P2/P6P/6K1 w - - 5 50,5,e7g7
+tournaments,m1-18,"Ahamada Abdillah - Age, Jeremiah",2022,1,0,8/2b3pp/p7/2p3k1/Pp2p1P1/5p1K/1P2r3/5R2 b - - 1 41,3,e2h2
+tournaments,m1-19,"Ahamada Abdillah - Lockhart, Kenville",2022,1,0,8/8/K1k4p/1p3pp1/3r4/4p3/8/8 b - - 3 51,3,d4a4
+tournaments,m1-20,"Ahamada Abdillah - Yacouba Hassane, Issa",2022,1,0,3rk2r/3qn1b1/5pP1/4p3/3pP2B/1Q3NPp/PP3P2/2R2RK1 w - - 5 33,5,b3f7
+tournaments,m1-21,"Ahmad, Al Khatib - Bridet, Robert",2022,1,0,7k/5R2/5KPp/7P/1p6/1P6/8/8 w - - 6 51,7,f7f8
+tournaments,m1-22,Ahmed Hassan Ahmed - kelzang Tshering,2022,1,0,1R6/6pk/5pNp/3P3P/8/3rPK2/5PP1/8 w - - 3 39,3,b8h8
+tournaments,m1-23,"Akram, Yousouf Dahab - Mutabazi Hugues",2022,1,0,8/2b3p1/2r4p/3k3P/8/K7/8/1r6 b - - 3 55,7,c6a6
+tournaments,m1-24,"Al Ibrahim, Abdulrahman - Odounga Christ, Ceylan",2022,1,0,7k/2R4r/5P2/6N1/P5p1/3p4/1P1K1P2/8 w - - 2 42,7,c7c8
+tournaments,m1-25,"Al Qudaimi, Basheer - Cilia Vincenti, David",2022,1,0,8/4b3/6R1/7p/1p1rnP2/1P2N3/5N1k/5K2 w - - 9 62,5,g6g2
+tournaments,m1-26,"Al Qudaimi, Basheer - Gerena Rivas, Eliam",2022,1,0,4Q3/1p4k1/8/7Q/PpPp4/1r6/5q2/4R2K w - - 1 46,5,e8h8
+tournaments,m1-27,"Al-Burshaid, Ebrahim - Escalante Ramirez, Brian Sebasti",2022,1,0,5rk1/pp2b1pp/8/8/3PR1Qq/8/PP3r2/1B1R2K1 b - - 1 31,9,h4h2
+tournaments,m1-28,"Alegre, Fabio Costa - Maman, Oumarou",2022,1,0,8/8/8/8/8/PK4p1/3Q3P/1k6 w - - 0 61,3,d2d1
+tournaments,m1-29,"Alexander, Shakthi - Cu Hor, Winston Darwin",2022,1,0,r5k1/ppp3pp/2n1p3/2bP4/1q6/3K4/PPP1B1PP/R1BQ1r1R b - - 6 16,9,c6e5
+tournaments,m1-30,"Alexander, Shakthi - Koualet-Bebondi, Vianney Archeveq",2022,1,0,r5k1/ppp3p1/3p1r1p/4p3/3bPp2/1PNQ1P1q/P1PBR3/1R2K3 b - - 1 28,9,h3h1
+tournaments,m1-31,"Alexander, Shakthi - Maman, Oumarou",2022,1,0,Q7/1ppkp3/p3p2p/6p1/1P2q1P1/P1r4P/5P2/5K2 b - - 1 32,17,c3c1
+tournaments,m1-32,"Alfaro, William - Hashem, Khaled",2022,1,0,5r2/5r1k/4R1p1/p1p3Q1/2q5/2B3P1/PP3P2/6K1 w - - 0 36,3,g5g6
+tournaments,m1-33,"Alhejab, Meshal - Conhoff, David",2022,1,0,b2qr3/5p1Q/2p2k1p/n7/1b1P4/8/1PB1RPPP/2B3K1 w - - 6 31,5,h7h6
+tournaments,m1-34,"Amega-Dzaka, Komi Nukunu - Sklyarov, Dmitry V.",2022,1,0,6k1/5p2/4p2p/2n5/6PB/2b1P2P/3q1P2/1K6 b - - 1 43,11,d2b2
+tournaments,m1-35,"Angel Estanislao Gatjens Capche - Koualet-Bebondi, Vianney Archeveq",2022,1,0,1K3Q2/1P4Q1/8/8/7k/8/8/8 w - - 5 117,33,f8h8
+tournaments,m1-36,"Apol, Luitjen Akselsson - Al Busaidi, Hamood",2022,1,0,4Q1R1/8/3p1prp/3P1n1k/8/1P3q1P/P6K/8 b - - 11 49,9,f3g2
+tournaments,m1-37,"Arakaza Abdoul Wadoud - Chimthere, Alfred Charles",2022,1,0,r2r2k1/4b1p1/3p2Pp/1Bn5/4bP2/8/PP2N3/K3RR2 b - - 5 31,5,c5b3
+tournaments,m1-38,"Arnold Smith - Bongo Ngombele, Tary",2022,1,0,6k1/4R2p/2p2K2/4p3/7P/5P2/6r1/8 w - - 0 42,5,e7e8
+tournaments,m1-39,"Arnold Smith - Jaiswal, Rupesh",2022,1,0,3Q4/7k/1R5p/7p/1P3p2/5Pn1/5KP1/3r4 b - - 0 51,9,d1f1
+tournaments,m1-40,"Auguiste, Lyndon - Mohammed, Zozek Salah Mohammed",2022,1,0,8/8/8/8/7k/2r3pp/1R6/6K1 b - - 0 59,5,c3c1
+tournaments,m1-41,"Auguiste, Lyndon - Mujahid, Bin Yazeed",2022,1,0,6k1/pQ3ppp/2n1b1n1/8/8/1P4KP/P5P1/4r1q1 b - - 2 34,11,e1e3
+tournaments,m1-42,"Aziradji Mohamed Ismael - Ahmad, Md Siraj Munir",2022,1,0,8/2q4p/1q5P/8/K7/6k1/8/8 b - - 5 61,3,c7a7
+tournaments,m1-43,"Aziradji Mohamed Ismael - Bagheri, Amir",2022,1,0,1R6/8/p7/5p1p/7P/2rp2k1/K7/2q5 b - - 3 65,9,c3a3
+tournaments,m1-44,"Aziradji Mohamed Ismael - Hasford, John Kojo",2022,1,0,8/2p5/1p1p4/1PbP4/8/pk6/3rp3/K7 b - - 1 67,3,e2e1q
+tournaments,m1-45,"Belzo, Krzysztof - Kourakoumba, Florent",2022,1,0,2bk4/8/2PP1p2/1BK3p1/5P1p/6P1/7P/8 w - - 2 43,3,c6c7
+tournaments,m1-46,"Berardi, Giancarlo - Zaw, Ye Htut",2022,1,0,7k/6p1/p1P1Q3/Pq2Pp1p/5P2/4P1P1/6KP/3r4 b - - 2 37,7,b5f1
+tournaments,m1-47,"Berend, Fred - Gerena Rivas, Eliam",2022,1,0,7k/4B3/6KN/8/8/8/8/8 w - - 41 107,3,e7f6
+tournaments,m1-48,"Bibby, Simon - Razanadrakotoarisoa, Toavina",2022,1,0,8/5p2/b6P/p1pk4/P4p2/1P5R/5KP1/1r6 b - - 0 49,5,b1f1
+tournaments,m1-49,"Boidiya, Sidi - Adebayo, Adegboyega",2022,1,0,8/1B4k1/p3R3/Pp3p2/2q4b/4PK2/1PP3P1/5R2 b - - 2 39,3,c4f1
+tournaments,m1-50,"Bongo Akanga Ndjila, Barthelemy - Dalliah, Joseph",2022,1,0,3r1k2/1R1P1Bb1/2p3P1/p4b2/5B2/8/PP6/2K5 w - - 1 39,3,f4d6
+tournaments,m1-51,"Bongo Ngombele, Tary - AH KYE, Benitot",2022,1,0,8/2q3k1/P5p1/5q2/4p2K/6PP/2P5/8 b - - 2 44,9,c7d8
+tournaments,m1-52,"Bongo Ngombele, Tary - Alhejab, Meshal",2022,1,0,6k1/p2Q1ppp/2p5/1qP5/8/K7/P5PP/2r5 b - - 11 38,7,c1c3
+tournaments,m1-53,"Bongo Ngombele, Tary - Neto, Roberto",2022,1,0,8/5pkp/4p1P1/1R1pP3/2r5/1K6/8/r6q b - - 0 67,11,h1b1
+tournaments,m1-54,"Borisek, Jure - Ahn, Hongjin",2022,1,0,3r4/p5Q1/bq1Pk3/4p3/5n2/1p6/P1r2PP1/3RR1K1 w - - 0 39,3,e1e5
+tournaments,m1-55,"Borisek, Jure - Ali Abdullahi, Farah",2022,1,0,2r2bk1/1pqn3p/p2p1pPQ/3Pp3/2P1N3/1P4R1/P5PP/3R2K1 w - - 1 31,5,h6h7
+tournaments,m1-56,"Boshra, Alshaeby - Al Kathiri, Mana",2022,1,0,6kr/pp3p2/1b2pPp1/3pP2p/3q2P1/B2RRQKP/P1r5/8 b - - 1 36,7,h5h4
+tournaments,m1-57,"Bwalya, Gillan - Carlsen, Magnus",2022,1,0,3r2k1/1p4pp/5p2/p2p1P1Q/3Pb1RN/4q3/6PP/2R2K2 b - - 1 26,17,e4d3
+tournaments,m1-58,"Cabunagan, Tito - Conhoff, David",2022,1,0,2Qq1k2/5r2/p7/1p2PNpp/2p5/P1P4P/1P3PP1/4R1K1 w - - 5 43,3,c8d8
+tournaments,m1-59,"Cawdery, Daniel - Blackburn, Jonathan L B",2022,1,0,8/1R5p/4p1pk/3pN2q/2b2P1Q/6P1/r6P/6K1 w - - 9 33,9,e5g4
+tournaments,m1-60,"Charlee, Porthor - Winston Gerald, Mansfield Thomas",2022,1,0,8/8/1p6/b1p1p1k1/P3pn2/8/2q5/K7 b - - 3 59,5,a5c3
+tournaments,m1-61,"Cheikhna, Mohamed Lemine - Amba Oyon Marius Claude",2022,1,0,8/1p3pkp/6p1/2p5/2P2P2/1P4PP/7Q/3rqNK1 b - - 0 43,3,e1f1
+tournaments,m1-62,"Conhoff, David - Kasongo Kazadi Olivier",2022,1,0,r3k3/p6q/1pnp2p1/3B1p2/3P4/2R1PQp1/PP1N2P1/5RK1 b q - 2 24,5,h7h2
+tournaments,m1-63,"Cornette, Matthieu - Lazov, Toni",2022,1,0,8/1p5k/p1qprP2/P1p3Qp/2P3nP/1P3P2/8/6RK w - - 4 38,7,g5g7
+tournaments,m1-64,"Cottle, Brian S - Kourakoumba, Florent",2022,1,0,8/4Q3/4P1k1/3p1pP1/3P1B2/5PP1/6K1/2q5 w - - 0 60,9,e7f7
+tournaments,m1-65,"Dabuae, David - Stanley, P'Della'P",2022,1,0,2kr1bnr/1p3ppp/2nB4/pBpN4/Q1PP2b1/5N2/PP3PPP/R4RK1 w - - 0 13,5,d5b6
+tournaments,m1-66,"Dabuae, Thubalkain - Nambi, Pradeep",2022,1,0,2Q5/B7/3R4/4k3/8/5PPp/7P/5K2 w - - 3 48,9,c8c5
+tournaments,m1-67,"Dalliah, Joseph - Nambi, Pradeep",2022,1,0,2k5/Q2r3n/1p2p2p/1N1pB1rB/3P1p2/P3P3/6PP/R4RK1 w - - 1 32,5,a7b8
+tournaments,m1-68,"Degross Dolle, Leroy - Al Harazy, Khalid",2022,1,0,6k1/1p3pp1/2b4p/2p2P1P/8/2q5/1q6/5K2 b - - 3 37,17,c3c1
+tournaments,m1-69,"Degross Dolle, Leroy - Pedro Manuel Envo Engonga Avomo",2022,1,0,r1b1k1nr/pppp1ppp/8/2bNp3/4P3/P7/1PQP1qPP/R1BK1BNR b kq - 1 8,5,f2f1
+tournaments,m1-70,"Degross Dolle, Leroy - Pillay, Ragul",2022,1,0,1k4r1/1pp1b2p/p7/8/P1PPPp2/BP1KN1q1/2Q4r/R7 b - - 2 34,3,g3e3
+tournaments,m1-71,"Degross Dolle, Leroy - Sangvane Vongphouthone",2022,1,0,5rk1/p1p3pp/1pb2pq1/4p3/5P2/3P4/P1P1QNPP/1R2R1K1 b - - 0 22,3,g6g2
+tournaments,m1-72,"Degross Dolle, Leroy - York, Tchaikouski",2022,1,0,8/kp6/6p1/p2p4/3n1PP1/P5K1/1P2q2r/4R3 b - - 1 38,19,e2g2
+tournaments,m1-73,"Diop, Wara - Degross Dolle, Leroy",2022,1,0,r4br1/pN6/1kn1Q2p/1ppPB2p/8/2P5/PP3PPP/RN4K1 w - - 0 24,3,e6c6
+tournaments,m1-74,"Dlamini Simphiwe - Gordon, Frank",2022,1,0,3rkb1r/1Q3ppp/p2pPnn1/8/1P3B2/2N5/P1P2P1P/R3K1N1 w Qk - 1 20,3,b7f7
+tournaments,m1-75,Donkeng Hussel - Aboubacar Akarintkitt,2022,1,0,8/8/4N1pp/7k/5Q2/P7/5P2/6K1 w - - 2 60,13,e6g7
+tournaments,m1-76,"Dornbusch, Tatiana - Raouf Ben Anziz",2022,1,0,5k2/1p2R1p1/1p1P1p2/r4B1p/4P3/8/1P3PPP/2R3K1 w - - 5 30,7,c1c8
+tournaments,m1-77,Ebosse Kingue Victor Patrick - Angel Estanislao Gatjens Capche,2022,1,0,r4r2/p3q1k1/bp2p1p1/3nN3/4Q3/1BP5/PP3P2/1K5R w - - 0 30,3,e4g6
+tournaments,m1-78,"Ebosse Kingue Victor Patrick - Saidou, Djibo",2022,1,0,6r1/p2p1pB1/2pP4/1r3N1k/1p6/6R1/PPB3PP/5RK1 w - - 4 33,7,c2d1
+tournaments,m1-79,"Eickelman, Connor - Esungi, Guy Botetsi",2022,1,0,4r1k1/p4Rp1/1p2P1Qp/2pp4/3P4/1P4PB/P3q2P/7K w - - 4 42,3,g6g7
+tournaments,m1-80,"Eickelman, Connor - Volpinari, Danilo",2022,1,0,6k1/6B1/2N3K1/8/8/8/8/8 w - - 79 95,3,c6e7
+tournaments,m1-81,"Enemchukwu Chinedu Benjamin - Maman, Oumarou",2022,1,0,4k3/1R3p2/r1PPp3/3n4/p2P2r1/3P1N2/P2B2P1/5RK1 w - - 3 32,3,b7b8
+tournaments,m1-82,"Espinoza Solano, Jose Nahum - Asllani, Muhamet",2022,1,0,2b4R/1p6/p1p3k1/2P1Kp2/1P3P2/P7/3r2N1/8 b - - 2 53,3,d2d5
+tournaments,m1-83,"Estur, Gavino Aguilar - Kasongo Kazadi Olivier",2022,1,0,4kr2/p1Q4R/8/1p2p3/4P1p1/PN1P2P1/qPP2P2/2KR4 w - - 1 29,7,h7e7
+tournaments,m1-84,"Faulks, Nick - Hewlett, Leo",2022,1,0,3R4/4k1pp/8/1p2pQ2/4n3/P3B3/1p3PPP/3R2K1 w - - 2 32,15,d1d7
+tournaments,m1-85,"Faulks, Nick - Masiala Mayuku, Eddy",2022,1,0,7k/p1R5/6p1/8/8/PR2p1Pp/5P1P/6K1 w - - 0 39,5,b3b8
+tournaments,m1-86,"Fellman, Mike - Kwong, Wing Ki",2022,1,0,8/6Pk/5P2/b5K1/2B5/8/P7/8 w - - 5 62,3,g7g8q
+tournaments,m1-87,"Forbes, Garry - Degross Dolle, Leroy",2022,1,0,1rb2k1r/ppN1n1qp/2n1pp2/7Q/3P1P2/3B1NP1/PPP2P1P/2KRR3 w - - 1 16,5,h5e8
+tournaments,m1-88,"Gabriel, Davidson - Arakaza Abdoul Wadoud",2022,1,0,4k2r/1q3p1p/1nNQ4/3p2p1/3Pn3/BP2P3/P4PPP/2R2RK1 w k - 1 25,15,d6d8
+tournaments,m1-89,"Gajadin, Dewperkash - Arias Santana, Mauricio",2022,1,0,r1b4r/bp2qpk1/2p5/p3P2p/2B2P2/1QP5/PP1R2PK/5R2 b - - 0 23,3,e7h4
+tournaments,m1-90,"Garber, Ousainou - Mohamed Ali Dima",2022,1,0,r3k2r/1p3pp1/p3p3/3pP2p/4bPn1/1Q2PBqP/PP4P1/R1B2RK1 b kq - 4 18,5,g3h2
+tournaments,m1-91,"Garber, Ousainou - Volodin, Aleksandr",2022,1,0,8/p7/1p4k1/1P2q2p/2Q3pP/P4bP1/5K2/3r4 b - - 6 52,5,e5e1
+tournaments,m1-92,"Golubovskis, Maksims - Lockhart, Kenville",2022,1,0,r5kr/pp1RQ2p/2p1R3/8/6q1/1P6/P1P2PPP/6K1 w - - 5 29,13,e7f7
+tournaments,m1-93,"Gordon, Frank - Garber, Ousainou",2022,1,0,5b1k/1p3P2/3p4/P3p3/8/2q5/2q5/5K2 b - - 4 52,7,c3a1
+tournaments,m1-94,"Gordon, Frank - Goorsahye, Antoine",2022,1,0,6k1/ppp2ppp/2n5/3r4/6b1/2KQ2P1/PP2q2P/R6R b - - 3 23,7,e2d3
+tournaments,m1-95,"Gordon, Frank - Harris, Yoshi",2022,1,0,r3k1r1/ppp2p2/1b1p3p/1P2p3/P3P3/B2B1n1b/2PP1P1P/1R1R3K b q - 1 17,3,h3g2
+tournaments,m1-96,"Guterres, Cosme - Hewlett, Leo",2022,1,0,7r/p4p2/4kp1r/2Q5/4BPb1/5N2/1q4PP/3R3K w - - 3 41,23,c5d6
+tournaments,m1-97,"Guzman, Christopher - Fortes, Aires",2022,1,0,5rk1/p1pq2rp/7B/b1ppPR2/8/2P4P/PP4P1/5RK1 w - - 0 22,3,f5f8
+tournaments,m1-98,"Hadj Kholti, Yasser - Bongo Ngombele, Tary",2022,1,0,3Q4/1b2Nppk/p6p/8/8/5q1P/PP3P2/6K1 w - - 2 35,7,d8g8
+tournaments,m1-99,"Hernandez Guerrero, Gilberto - Kamara, Ansumana",2022,1,0,5q2/3Q4/6k1/6P1/5p1Q/4P3/3K1P1P/8 w - - 0 48,23,d7h7
+tournaments,m1-100,"Herrera, Adrian - Bhakta Bahadur Monger",2022,1,0,8/1RR2pk1/8/6pp/8/4KP2/3r2r1/8 b - - 1 40,3,g2e2
+tournaments,m2-01,"Boucquet, Emile - Mindlin, Alon",2022,2,1,r6k/1pp3p1/3p2pp/p1b1n3/P5Pq/5r1P/R1B2P2/Q1B2RK1 b - - 9 23,198,f3g3 g1h1 h4h3
+tournaments,m2-02,"Friedrich, Norbert - Finnsson, Johann Arnar",2022,2,1,r4r1k/pp4p1/n1p1Bnp1/7P/6P1/5P2/P5K1/2B4R w - - 0 22,43,h5g6 f6h5 h1h5
+tournaments,m2-03,"Ragger, Markus - Haug, Johannes",2022,2,1,2kr3r/6p1/1pPp1b2/7p/8/3Q4/2q2PPP/4R1K1 w - - 0 28,63,d3a6 c8c7 a6b7
+tournaments,m2-04,"Aboubacar Akarintkitt - Cottle, Brian S",2022,2,1,6k1/Bpp3p1/p7/4p1K1/4b2P/1P6/r7/8 b - - 0 36,39,a2g2 g5h5 e4g6
+tournaments,m2-05,"Aboubacar Akarintkitt - Espirito Santo, Waldyr",2022,2,1,8/5np1/8/2p3k1/p1P1b3/P5Kp/5N2/3q4 b - - 1 58,135,d1f3 g3h2 f3g2
+tournaments,m2-06,"Aboubacar Akarintkitt - Hewlett, Leo",2022,2,1,4Q3/6pk/7p/q1p1R3/3p1Q2/3P4/1PP3PP/6K1 w - - 1 45,65,f4h6 h7h6 e5h5
+tournaments,m2-07,"Adu Jnr, Lionel - Ahamada Abdillah",2022,2,1,3R4/6rk/1p3Qn1/p3N2r/4B3/4P1p1/PP3P1p/2R4K w - - 6 33,99,e4g6 h7h6 e5g4
+tournaments,m2-08,"Adu-Poku, Kwabena - Raouf Ben Anziz",2022,2,1,8/6p1/5k2/1P3N1p/6P1/p3QP2/P6P/6K1 w - - 3 49,47,e3e7 f6g6 e7g7
+tournaments,m2-09,"Ahamada Abdillah - Age, Jeremiah",2022,2,1,8/2b3pp/p7/2p1p1k1/Pp4P1/5pK1/1P2r3/5R2 b - - 3 40,60,e5e4 g3h3 e2h2
+tournaments,m2-10,"Ahamada Abdillah - Lockhart, Kenville",2022,2,1,8/8/2k4p/Kp3pp1/8/3rp3/8/8 b - - 1 50,170,d3d4 a5a6 d4a4
+tournaments,m2-11,"Ahmad, Al Khatib - Bridet, Robert",2022,2,1,6k1/5R2/6Pp/5K1P/1p6/1P6/8/8 w - - 4 50,167,f5f6 g8h8 f7f8
+tournaments,m2-12,Ahmed Hassan Ahmed - kelzang Tshering,2022,2,1,6k1/1R4p1/5pNp/3P3P/8/3rPK2/5PP1/8 w - - 1 38,53,b7b8 g8f7 b8f8
+tournaments,m2-13,"Akram, Yousouf Dahab - Mutabazi Hugues",2022,2,1,8/2b3p1/2r4p/3k3P/1K6/8/8/3r4 b - - 1 54,51,d1b1 b4a3 c6a6
+tournaments,m2-14,"Alegre, Fabio Costa - Maman, Oumarou",2022,2,1,8/8/8/8/K5p1/P7/3Q3P/1k6 w - - 3 60,554,a4b3 b1a1 d2d1
+tournaments,m2-15,"Alexander, Shakthi - Cu Hor, Winston Darwin",2022,2,1,r5k1/ppp3pp/2n1p3/2bP4/5q2/2K5/PPP1B1PP/R1BQ1r1R b - - 4 15,671,f4b4 c3d3 c6e5
+tournaments,m2-16,"Alhejab, Meshal - Conhoff, David",2022,2,1,b2qr3/5pk1/2p4p/n4Q2/1b1P4/8/1PB1RPPP/2B3K1 w - - 4 30,191,f5h7 g7f6 h7h6
+tournaments,m2-17,"Amega-Dzaka, Komi Nukunu - Sklyarov, Dmitry V.",2022,2,1,6k1/5p2/4p2p/2n5/6PB/2bqP2P/3N1P2/2K5 b - - 5 42,57,d3d2 c1b1 d2b2
+tournaments,m2-18,"Angel Estanislao Gatjens Capche - Koualet-Bebondi, Vianney Archeveq",2022,2,1,1K3Q2/1P2Q3/8/8/6k1/8/8/8 w - - 3 116,531,e7g7 g4h3 f8h8
+tournaments,m2-19,"Auguiste, Lyndon - Mujahid, Bin Yazeed",2022,2,1,6k1/pQ3ppp/2n1b1n1/8/8/1P5P/P5PK/4rq2 b - - 0 33,106,f1f4 g2g3 f4f2
+tournaments,m2-20,"Aziradji Mohamed Ismael - Ahmad, Md Siraj Munir",2022,2,1,8/2q4p/5q1P/8/1K6/6k1/8/8 b - - 3 60,226,c7c3 b4a4 f6a6
+tournaments,m2-21,"Aziradji Mohamed Ismael - Bagheri, Amir",2022,2,1,1R6/8/p7/5p1p/7P/2rp2k1/1K6/4q3 b - - 1 64,131,e1c1 b2a2 c3a3
+tournaments,m2-22,"Aziradji Mohamed Ismael - Hasford, John Kojo",2022,2,1,8/2p5/1p1p4/1PbP4/8/pBk5/3rp3/1K6 b - - 5 66,29,e2e1q b3d1 e1d1
+tournaments,m2-23,"Berend, Fred - Gerena Rivas, Eliam",2022,2,1,6k1/4B3/6K1/5N2/8/8/8/8 w - - 39 106,27,f5h6 g8h8 e7f6
+tournaments,m2-24,"Bongo Ngombele, Tary - Alhejab, Meshal",2022,2,1,6k1/p2Q1ppp/2p5/2P5/8/1K6/P3q1PP/2r5 b - - 9 37,400,e2b5 b3a3 c1c3
+tournaments,m2-25,"Borisek, Jure - Ahn, Hongjin",2022,2,1,3r4/p7/bq1PNk2/4p3/5n2/1p4Q1/P1r2PP1/3RR1K1 w - - 1 38,92,g3g7 f6f5 e1e5
+tournaments,m2-26,"Bwalya, Gillan - Carlsen, Magnus",2022,2,1,3r2k1/1p4pp/5p2/p2p1P1Q/3Pb1RN/q3P3/6PP/2R3K1 b - - 0 25,101,a3e3 g1f1 e4d3
+tournaments,m2-27,"Cabunagan, Tito - Conhoff, David",2022,2,1,5k2/5r2/p3Q3/qp2PNpp/2p5/P1P4P/1P3PP1/4R1K1 w - - 3 42,110,e6c8 a5d8 c8d8
+tournaments,m2-28,"Cawdery, Daniel - Blackburn, Jonathan L B",2022,2,1,3Q4/1R5p/4p1pk/3pNq2/2b2P2/6P1/r6P/6K1 w - - 7 32,118,d8h4 f5h5 e5g4
+tournaments,m2-29,"Charlee, Porthor - Winston Gerald, Mansfield Thomas",2022,2,1,8/8/1p6/b1p1p1k1/P3pn2/2q5/K7/8 b - - 1 58,141,c3c2 a2a1 a5c3
+tournaments,m2-30,"Cornette, Matthieu - Lazov, Toni",2022,2,1,8/1p6/p1qprP1k/P1p2Q1p/2P3nP/1P3P2/8/6RK w - - 2 37,82,f5g5 h6h7 g5g7
+tournaments,m2-31,"Cottle, Brian S - Kourakoumba, Florent",2022,2,1,8/2Q1b3/4P1k1/3p1pP1/3P1B2/5PP1/2p3K1/8 w - - 3 59,55,c7e7 g6h5 e7e8
+tournaments,m2-32,"Degross Dolle, Leroy - Pedro Manuel Envo Engonga Avomo",2022,2,1,r1b1k1nr/pppp1ppp/5q2/2bNp3/4P3/P7/1PQP1PPP/R1B1KBNR b KQkq - 0 7,48,f6f2 e1d1 f2f1
+tournaments,m2-33,"Degross Dolle, Leroy - Pillay, Ragul",2022,2,1,1k4r1/1pp1b2p/p5q1/3N4/P1PPPp2/BP1K4/2Q4r/R7 b - - 0 33,208,g6g3 d5e3 g3e3
+tournaments,m2-34,Donkeng Hussel - Aboubacar Akarintkitt,2022,2,1,8/8/4NQpp/8/6k1/P7/5P2/6K1 w - - 0 59,167,f6f4 g4h3 f4g3
+tournaments,m2-35,"Dornbusch, Tatiana - Raouf Ben Anziz",2022,2,1,4R3/1p3kp1/1p1P1p2/r4B1p/4P3/8/1P3PPP/2R3K1 w - - 3 29,91,e8e7 f7f8 c1c8
+tournaments,m2-36,Ebosse Kingue Victor Patrick - Angel Estanislao Gatjens Capche,2022,2,1,r4r2/p3qpk1/bp2p1p1/3nN3/4Q1R1/1BP5/PP3P2/1K5R w - - 4 29,61,e4g6 f7g6 g4g6
+tournaments,m2-37,"Ebosse Kingue Victor Patrick - Saidou, Djibo",2022,2,1,6r1/p2p1pB1/2pP4/1r3N2/1p4k1/7R/PPB3PP/5RK1 w - - 2 32,100,f5e3 g4g5 g7f6
+tournaments,m2-38,"Eickelman, Connor - Volpinari, Danilo",2022,2,1,7k/8/2N3KB/8/8/8/8/8 w - - 77 94,27,h6g7 h8g8 c6e7
+tournaments,m2-39,"Estur, Gavino Aguilar - Kasongo Kazadi Olivier",2022,2,1,3k1r2/p1r4R/8/1p2p3/4P1p1/PNQP2P1/qPP2P2/2KR4 w - - 0 28,48,c3c7 d8e8 h7e7
+tournaments,m2-40,"Faulks, Nick - Hewlett, Leo",2022,2,1,2QR4/5kpp/8/1p2p3/4n3/P3B3/1p3PPP/3R2K1 w - - 0 31,338,d8f8 f7g6 c8e8
+tournaments,m2-41,"Faulks, Nick - Masiala Mayuku, Eddy",2022,2,1,7k/p1R5/6p1/8/4p3/P1R3Pp/5P1P/6K1 w - - 0 38,95,c7a7 h8g8 c3c8
+tournaments,m2-42,"Fellman, Mike - Kwong, Wing Ki",2022,2,1,6k1/6P1/5P2/b5K1/8/3B4/P7/8 w - - 3 61,43,d3c4 g8h7 g7g8q
+tournaments,m2-43,"Gordon, Frank - Harris, Yoshi",2022,2,1,r3k1r1/ppp2p2/1b1p3p/1P2p3/P2nP3/3B1P1b/2PP1P1P/1RBR3K b q - 4 16,51,h3g2 h1g1 d4f3
+tournaments,m2-44,"Guzman, Christopher - Fortes, Aires",2022,2,1,5rk1/p1pq1rpp/7B/b1ppPR2/8/2P3QP/PP4P1/5RK1 w - - 3 21,50,g3g7 f7g7 f5f8
+tournaments,m2-45,"Hadj Kholti, Yasser - Bongo Ngombele, Tary",2022,2,1,7k/1bQ1Npp1/p6p/8/8/5q1P/PP3P2/6K1 w - - 0 34,42,c7d8 h8h7 d8g8
+tournaments,m2-46,"Hewlett, Leo - Charlee, Porthor",2022,2,1,1k4rr/pp1b4/1q2p2p/3pP3/P2nnQ2/1P6/6PP/1RB1R1K1 b - - 0 27,419,d4f3 g1f1 b6f2
+tournaments,m2-47,"Hewlett, Leo - Liu, Yeh Yang",2022,2,1,r3k2r/4bppp/p3bn2/4N3/4n3/1B1p1P2/PP1N1qPP/R1B4K b kq - 1 21,105,f2e1 d2f1 e1f1
+tournaments,m2-48,"Hsu, Hsuan-Ming - Burth, Mia",2022,2,1,2b2rkr/pp6/4p2p/3PQ2B/8/8/PPP2PPP/R3K2R w KQ - 5 23,176,e5g3 g8h7 g3g6
+tournaments,m2-49,"Ibarra Chami, Luis Fernando - Oratile, Kgotlane",2022,2,1,8/6N1/6Rp/4P3/2r2p1k/8/5PPK/8 w - - 0 48,51,g2g3 f4g3 f2g3
+tournaments,m2-50,"Iclicki, Willy - Masiala Mayuku, Eddy",2022,2,1,r1b3r1/2R2Nn1/1p2p1p1/p2pP2k/3P1p1P/PP1B2P1/5P2/2R3K1 w - - 0 38,89,d3e2 f4f3 e2f3
+tournaments,m2-51,"Jelic, Dejan - Burgos Figueroa, Carlos E.",2022,2,1,8/1p2npkp/5p2/p1Rb4/P3p2K/4P2P/6r1/5R2 b - - 3 29,62,e7g6 h4h5 g2g5
+tournaments,m2-52,"Kamara, Ansumana - Hlophe, Smilo",2022,2,1,3r3k/8/pRp5/4bn1N/2P5/1P2B2P/P1P2P2/7K b - - 2 36,77,d8d1 h1g2 f5h4
+tournaments,m2-53,"Kamara, Ansumana - Jimma, Desalegn Fekadu",2022,2,1,8/8/8/6k1/8/3b4/Kp2r3/8 b - - 1 66,48,b2b1q a2a3 e2a2
+tournaments,m2-54,"Kanyamarala, Tarun - Ahn, Hongjin",2022,2,1,6q1/Rr4p1/4p1k1/2B2p2/3P1PPQ/3B1b2/8/6K1 w - - 1 57,230,h4h5 g6f6 g4g5
+tournaments,m2-55,Kasongo Kazadi Olivier - Bhakta Bahadur Monger,2022,2,1,2r5/7p/3p4/3Pp2k/4nb2/7P/5r2/R5K1 b - - 3 46,50,c8g8 g1h1 f2h2
+tournaments,m2-56,"Kasongo Kazadi Olivier - Chimthere, Alfred Charles",2022,2,1,4r1k1/p4p2/1p3Pb1/6R1/B1p5/P1Pn4/4r3/3K4 b - - 3 39,79,e2e1 d1c2 e8e2
+tournaments,m2-57,"Kazakouski, Valery - Maurizzi, Marc'Andria",2022,2,1,7k/p3Q3/1p1PB3/6p1/6P1/7P/PP1K4/2r3q1 w - - 5 44,43,e7f8 h8h7 e6f5
+tournaments,m2-58,"Khoa, Goodwill - Abdelaziz Bokhit, Badjoiri",2022,2,1,8/8/3R4/8/1QK5/8/2k5/8 w - - 5 57,89,d6d2 c2c1 b4b2
+tournaments,m2-59,"Khusenkhojaev, Mustafokhuja - Burth, Mia",2022,2,1,3Nk2r/1p2n1p1/p3Q2p/4P3/8/8/PP3PPP/R4RK1 w - - 5 24,533,f1d1 e8f8 e6f7
+tournaments,m2-60,"Knowles, Kendrick - Teixeira, Gil",2022,2,1,5q2/1Q3p2/n1p1BNk1/2PpP3/3P3P/8/7K/8 w - - 1 51,104,b7b1 g6h6 b1h7
+tournaments,m2-61,"Koualet-Bebondi, Vianney Archeveq - Aziradji Mohamed Ismael",2022,2,1,8/8/4k3/2K5/qnP5/8/8/8 b - - 1 77,153,a4a5 c5d4 a5e5
+tournaments,m2-62,"Koualet-Bebondi, Vianney Archeveq - Enemchukwu Chinedu Benjamin",2022,2,1,6k1/8/8/1K6/8/8/3r4/2q5 b - - 9 57,162,d2b2 b5a4 c1a1
+tournaments,m2-63,"Kourakoumba, Florent - Akram, Yousouf Dahab",2022,2,1,8/6pp/1p3k2/5p1K/5PP1/7P/8/4q3 b - - 2 48,70,g7g6 h5h6 e1h4
+tournaments,m2-64,"Kourakoumba, Florent - Charlee, Porthor",2022,2,1,r5k1/5p1p/2b3q1/1p1p2P1/5Q1P/7K/8/6q1 b - - 2 43,67,a8a3 f4e3 a3e3
+tournaments,m2-65,"Laylo, Darwin - Florentiades, Michalis",2022,2,1,6k1/1pb2p2/p5p1/2p2nP1/2q5/P1B4P/1P4Q1/4R2K w - - 0 39,47,e1e8 g8h7 e8h8
+tournaments,m2-66,"Lhundrup M Dorji - Chavez, Ricardo Ernesto",2022,2,1,8/K7/2pk4/p7/Pq6/8/8/8 b - - 3 56,674,d6c7 a7a6 b4b6
+tournaments,m2-67,"Lim Teck Guan, Rodney - Raouf Ben Anziz",2022,2,1,1N2rk2/2p2B1p/pp6/4BpP1/P5P1/1Q6/1P5P/3R2K1 w - - 0 36,265,b8d7 f8e7 e5f6
+tournaments,m2-68,"Lim, Zhuo Ren - Rakotomaharo, Fy Antenaina",2022,2,1,8/5pkp/8/8/R2bRpp1/P5P1/1P2P1K1/7r b - - 2 46,91,h1g1 g2h2 f4g3
+tournaments,m2-69,"Lungu, Nase - Haubro, Martin",2022,2,1,5k2/1n3p2/p2q1Np1/p5P1/5P1Q/8/1P2P2K/8 w - - 1 38,56,h4h8 f8e7 h8e8
+tournaments,m2-70,"Lutuima, Amaro - Abdelmadjid Zakaria, Mahamat",2022,2,1,1B2k3/3R4/2P5/4NK2/8/6p1/6P1/8 w - - 2 50,751,c6c7 e8f8 c7c8r
+tournaments,m2-71,"Marie, Patrick - Odounga Christ, Ceylan",2022,2,1,7B/1p2kp1p/p2R4/5p2/8/4P2P/PP3PP1/3R2K1 w - - 1 28,127,h8f6 e7e8 d6d8
+tournaments,m2-72,"Masiala Mayuku, Eddy - Gordon, Frank",2022,2,1,1r5r/R1b1k1pp/2Q1p2n/3p1p2/1P1P4/2P2PPP/5P2/1NB2BK1 w - - 0 24,57,c6c7 e7f6 c7g7
+tournaments,m2-73,"Masiala Mayuku, Eddy - Herrera, Adrian",2022,2,1,6k1/6Pp/8/2bp4/5P2/3b3P/6K1/4q3 b - - 0 42,325,e1f2 g2h1 f2g1
+tournaments,m2-74,"Masiala Mayuku, Eddy - Napoleao, Lourenco",2022,2,1,4r1k1/1p3p1p/4r1pQ/6Rn/1P5P/7K/1B2pq2/4R3 b - - 5 40,181,e6e3 h3g4 f2f4
+tournaments,m2-75,"McShane, Luke J - Hamitevici, Vladimir",2022,2,1,8/6rk/8/7p/Pp5q/1P3Q2/7R/7K b - - 0 58,81,h4e1 f3f1 e1f1
+tournaments,m2-76,"Mendoza, Rodrigo - Masiala Mayuku, Eddy",2022,2,1,1kr2Q2/3R4/bpQ1P3/p2p4/3P4/PP6/2P1q1P1/1K1R4 w - - 3 41,74,c6b6 b8a8 b6a7
+tournaments,m2-77,"Miguel Angel Etuba Badangue - Chinasamy, Devarajen",2022,2,1,8/6p1/6P1/1p1k4/pP1pp3/P7/4K3/7q b - - 1 63,441,e4e3 e2d3 h1d1
+tournaments,m2-78,"Moncur, Cecil - Aziradji Mohamed Ismael",2022,2,1,r4Q2/k4P2/5R1p/p1pp3N/Pp6/1P5P/2P3PK/8 w - - 1 41,177,f8e7 a7b8 f7f8q
+tournaments,m2-79,"Monnaatsheko, Keletshabile - Antonio, Kyell-Jean",2022,2,1,2r1qr1k/pb5B/1pn1p2Q/2b2pp1/8/2P2NB1/PP3PPP/3RK2R w K - 0 18,70,h7f5 h8g8 h6h7
+tournaments,m2-80,"Montel Jr, Cyril Tomas - Aboubacar Akarintkitt",2022,2,1,r1n3r1/1p6/2p4p/p1P3Pk/5PN1/1PQ5/PB4B1/R4RK1 w - - 1 33,2036,g4e5 a8a6 c3h3
+tournaments,m2-81,"Montel Jr, Cyril Tomas - Hewlett, Leo",2022,2,1,1r2k3/4P2p/3R1B2/2PB1pp1/8/1P2P1P1/4N2P/2R3K1 w - - 1 35,53,d6d8 b8d8 e7d8q
+tournaments,m2-82,"Nadjim Mohamed - Conhoff, David",2022,2,1,8/1p6/8/7p/2p4P/2k5/7r/K7 b - - 9 47,178,c3b3 a1b1 h2h1
+tournaments,m2-83,"Nadjim Mohamed - Fomevor, Cephas Clinton",2022,2,1,r5k1/5pp1/1pp1pb2/3q4/1P3K1P/4R2Q/5P2/6r1 b - - 4 35,470,g7g5 h4g5 f6g5
+tournaments,m2-84,"Nadjim Mohamed - Gordon, Frank",2022,2,1,8/7k/p5p1/1p3p2/1P6/2P1rq2/P6K/8 b - - 1 43,45,e3e2 h2g1 f3g2
+tournaments,m2-85,"Nadjim Mohamed - Sharikhan, Shawal",2022,2,1,8/1p3p1k/p2r1P1b/5K2/P6P/2P5/1P6/3q4 b - - 1 41,95,d1h5 f5e4 h5d5
+tournaments,m2-86,"Nadjim Mohamed - Verdier, Patrice",2022,2,1,r5k1/1p3pp1/p1n2n1p/2p3q1/3p1b2/QP1P1P1K/P1P1rP1P/R2N1R2 b - - 4 22,67,g5h5 h3g2 h5h2
+tournaments,m2-87,"Naipal, Hoolan - Nambi, Pradeep",2022,2,1,4Q3/p1p5/8/8/PpP3k1/6P1/2P1R2P/7K w - - 1 41,234,e8e6 g4f3 e6e4
+tournaments,m2-88,"Nambi, Pradeep - Deng, Yu Dong Michael",2022,2,1,2r5/3k1p1p/4p1n1/1p1p4/8/4b2r/1B2K3/8 b - - 3 36,163,g6f4 e2d1 h3h1
+tournaments,m2-89,"Nambi, Pradeep - Raouf Ben Anziz",2022,2,1,1r1q1r2/1ppk2Np/p1b2Pp1/5n2/5PQ1/B2B3P/2P3P1/5RK1 w - - 1 29,48,d3f5 g6f5 g4f5
+tournaments,m2-90,"Ndahangwapo, Heskiel - Veer Gandhi",2022,2,1,5k2/2Q3p1/2B2rp1/1p6/8/6K1/8/8 w - - 6 52,60,c7d8 f8f7 d8e8
+tournaments,m2-91,"Nielsen, Hogni Egilstoft - Kett, Tim",2022,2,1,2q2r1k/1pp3p1/p6p/P3Q3/1P1nP2P/5p2/5PbK/3RR3 b - - 1 32,44,c8h3 h2g1 h3h1
+tournaments,m2-92,"Nikolovski, Nikola - Michalik, Peter",2022,2,1,6rk/pq5p/5p2/P1b2Q2/2Pp3R/8/4NKPP/2n2R2 b - - 0 37,56,b7g2 f2e1 g2e2
+tournaments,m2-93,"Nissinen, Niilo Man - Gordon, Frank",2022,2,1,3r3r/1Qpkqpbp/3p1np1/1P1Pp1B1/1P2P3/2P2N2/5PPP/R4RK1 w - - 1 17,176,b7c6 d7c8 a1a8
+tournaments,m2-94,"Njoroge, Martin - Ugyen Wangchuk",2022,2,1,2b3k1/4Q3/p3pnNp/3p1pp1/8/3BP2P/Pq3PP1/6K1 w - - 0 27,85,e7f8 g8h7 f8f7
+tournaments,m2-95,"Nor, Mohamed Ahmed - Sangvane Vongphouthone",2022,2,1,4r2k/1pp2Qp1/p2p2pp/8/2B5/8/PPP2PPP/R1B3K1 w - - 0 24,52,f7e8 h8h7 e8g8
+tournaments,m2-96,"Nsubuga, Haruna - Rodgaard, John",2022,2,1,5r1k/3b1pp1/1q2p1p1/1B1pP3/PQrb4/5NP1/5PK1/R7 w - - 0 27,53,b4f8 h8h7 a1h1
+tournaments,m2-97,"Nyambalo, Joseph Xavier - Masiala Mayuku, Eddy",2022,2,1,8/8/8/6P1/1Q1K3P/8/8/k7 w - - 19 72,523,d4c3 a1a2 b4b2
+tournaments,m2-98,"Odounga Christ, Ceylan - Joel O. Ebiekuta",2022,2,1,8/1bp4k/1p3p2/4r3/P5rP/1P2p1P1/2P1q3/5QK1 b - - 1 39,61,g4g3 f1g2 e2g2
+tournaments,m2-99,"Odounga Christ, Ceylan - Ndahangwapo, Heskiel",2022,2,1,7k/b1n4p/p3pp2/4p3/1Ppqb3/P5PQ/4BPP1/2N3K1 b - - 4 38,56,d4f2 g1h1 f2g1
+tournaments,m2-100,"Odounga Christ, Ceylan - Schneider, James U",2022,2,1,8/8/8/8/4K3/8/2Q5/5k2 w - - 17 76,767,e4f3 f1e1 c2c1
+tournaments,m3-01,"Friedrich, Norbert - Finnsson, Johann Arnar",2022,3,2,r4r1k/pp4pp/n1p1Bn2/4N2P/6P1/5P2/P5K1/2B4R w - - 1 21,2494,e5g6 h7g6 h5g6 f6h5 h1h5
+tournaments,m3-02,"Aboubacar Akarintkitt - Hewlett, Leo",2022,3,2,6k1/4P1p1/7p/q1p1R3/3p1Q2/3P4/1PP3PP/6K1 w - - 1 44,1661,e7e8q g8h7 f4h6 h7h6 e5h5
+tournaments,m3-03,"Ahamada Abdillah - Lockhart, Kenville",2022,3,2,8/6p1/2k4P/1p3pp1/1K6/3rp3/8/8 b - - 0 49,1471,g7h6 b4a5 d3d4 a5a6 d4a4
+tournaments,m3-04,"Ahmad, Al Khatib - Bridet, Robert",2022,3,2,7k/5R2/6Pp/7P/1p2K3/1P6/8/8 w - - 2 49,5449,e4f5 h8g8 f5f6 g8h8 f7f8
+tournaments,m3-05,"Alegre, Fabio Costa - Maman, Oumarou",2022,3,2,8/8/8/8/K5p1/P3Q3/1k5P/8 w - - 1 59,5096,e3d2 b2a1 a4b3 a1b1 d2e1
+tournaments,m3-06,"Alexander, Shakthi - Cu Hor, Winston Darwin",2022,3,2,r5k1/ppp3pp/2n1p3/2bP4/7q/8/PPPKB1PP/R1BQ1r1R b - - 2 14,9061,c5e3 d2c3 h4b4 c3d3 b4d4
+tournaments,m3-07,"Amega-Dzaka, Komi Nukunu - Sklyarov, Dmitry V.",2022,3,2,6k1/5p2/4p2p/8/4n1PB/2bqPN1P/5P2/2K5 b - - 3 41,10499,d3e2 g4g5 c3b2 c1b1 e4c3
+tournaments,m3-08,"Angel Estanislao Gatjens Capche - Koualet-Bebondi, Vianney Archeveq",2022,3,2,1K1Q4/1P2Q3/8/8/5k2/8/8/8 w - - 1 115,2408,e7g5 f4f3 d8d3 f3f2 g5g3
+tournaments,m3-09,"Aziradji Mohamed Ismael - Hasford, John Kojo",2022,3,2,8/2p5/1p1p4/1PbP4/3r4/pBk5/K3p3/8 b - - 3 65,513,d4d2 a2a1 e2e1q b3d1 e1d1
+tournaments,m3-10,"Berend, Fred - Gerena Rivas, Eliam",2022,3,2,7k/4B3/3N2K1/8/8/8/8/8 w - - 37 105,918,d6f7 h8g8 f7h6 g8h8 e7f6
+tournaments,m3-11,"Bongo Ngombele, Tary - Alhejab, Meshal",2022,3,2,6k1/p2Q1ppp/2p5/2P5/8/2K5/P3q1PP/4r3 b - - 7 36,2478,e1c1 c3b3 e2b5 b3a3 c1c3
+tournaments,m3-12,"Bongo Ngombele, Tary - Neto, Roberto",2022,3,2,8/5pkp/4p3/1R1pP1P1/2r5/Kp6/7p/1r6 b - - 1 65,3461,h2h1q b5b3 b1a1 a3b2 h1b1
+tournaments,m3-13,"Borisek, Jure - Ahn, Hongjin",2022,3,2,3r4/p5k1/bq1Pp3/4p1N1/5n2/1p4Q1/P1r2PP1/3RR1K1 w - - 0 37,1628,g5e6 g7f6 g3g7 f6f5 e1e5
+tournaments,m3-14,"Cawdery, Daniel - Blackburn, Jonathan L B",2022,3,2,3Q4/6kp/4p1p1/3pNq2/2b2P2/6P1/r6P/1R4K1 w - - 5 31,3034,b1b7 g7h6 d8h4 f5h5 e5g4
+tournaments,m3-15,"Charlee, Porthor - Winston Gerald, Mansfield Thomas",2022,3,2,8/8/1p6/b1p1p1k1/P3pn2/1KPq4/8/8 b - - 5 57,1503,d3c3 b3a2 c3c2 a2a1 a5c3
+tournaments,m3-16,"Degross Dolle, Leroy - Pillay, Ragul",2022,3,2,1k4r1/1pp1b2p/p5q1/3N1p2/P1PP4/BP1KP3/2Q4r/R7 b - - 1 32,2262,f5f4 e3e4 g6g3 d5e3 g3e3
+tournaments,m3-17,"Ebosse Kingue Victor Patrick - Saidou, Djibo",2022,3,2,6r1/p2p1pB1/2pP4/1r3N2/1p3k2/7R/PPB3PP/2R3K1 w - - 0 31,6392,h3f3 f4g4 f3g3 g4f4 c1f1
+tournaments,m3-18,"Eickelman, Connor - Volpinari, Danilo",2022,3,2,6k1/8/6KB/4N3/8/8/8/8 w - - 75 93,342,e5d7 g8h8 h6g7 h8g8 d7f6
+tournaments,m3-19,"Estur, Gavino Aguilar - Kasongo Kazadi Olivier",2022,3,2,2rk1r2/p6R/3B4/1p2p3/4P1p1/PNQP2P1/qPP2P2/2KR4 w - - 1 27,3367,d6c7 c8c7 c3c7 d8e8 h7e7
+tournaments,m3-20,"Faulks, Nick - Masiala Mayuku, Eddy",2022,3,2,7k/p1R5/6p1/5p2/4q3/P1R2QPp/5P1P/6K1 w - - 2 37,3927,f3e4 f5e4 c7a7 h8g8 c3c8
+tournaments,m3-21,"Fellman, Mike - Kwong, Wing Ki",2022,3,2,8/6Pk/5P2/b4K2/8/3B4/P7/8 w - - 1 60,2826,f5g5 h7g8 d3c4 g8h7 g7g8q
+tournaments,m3-22,"Gordon, Frank - Harris, Yoshi",2022,3,2,r3k2r/ppp2p2/1b1p3p/1P2p3/P2nP3/3B1P1b/2PP1P1P/1RBR2K1 b kq - 2 15,2131,d4f3 g1h1 h8g8 c2c3 h3g2
+tournaments,m3-23,"Hadj Kholti, Yasser - Bongo Ngombele, Tary",2022,3,2,3R4/1bQ1Nppk/p6p/8/8/5q1P/PP3P2/6K1 w - - 0 33,1273,d8h8 h7h8 c7d8 h8h7 d8g8
+tournaments,m3-24,"Hewlett, Leo - Karimov, Alisher",2022,3,2,5rk1/pp2b1pp/8/1P6/P1n1Pr2/6K1/2P4P/8 b - - 0 29,3480,f4f3 g3g2 c4e3 g2g1 f3f1
+tournaments,m3-25,"Hewlett, Leo - Liu, Yeh Yang",2022,3,2,r3k2r/4bppp/p3bn2/2q1N3/4n3/1B1p1P2/PP1N1RPP/R1B3K1 b kq - 1 20,2903,c5f2 g1h1 f2e1 d2f1 e1f1
+tournaments,m3-26,"Ibarra Chami, Luis Fernando - Oratile, Kgotlane",2022,3,2,8/6N1/7p/4Pp2/2r4k/6R1/5PPK/8 w - - 0 47,2878,g3g6 f5f4 g2g3 f4g3 f2g3
+tournaments,m3-27,Kasongo Kazadi Olivier - Bhakta Bahadur Monger,2022,3,2,2r5/7p/3p2k1/3Pp3/4nb2/7P/5r2/R6K b - - 1 45,6385,e4g3 h1g1 c8c2 h3h4 f2g2
+tournaments,m3-28,"Kasongo Kazadi Olivier - Chimthere, Alfred Charles",2022,3,2,4r1k1/p4p2/1p3Pb1/6R1/B1p5/P1Pnr3/3K4/8 b - - 1 38,413,e3e2 d2d1 e2e1 d1c2 e8e2
+tournaments,m3-29,"Kazakouski, Valery - Maurizzi, Marc'Andria",2022,3,2,6k1/p3Q3/1p1P4/5Bp1/6P1/7P/PP1K4/2r3q1 w - - 3 43,6751,f5e6 g8h8 e7f8 h8h7 e6f5
+tournaments,m3-30,"Khusenkhojaev, Mustafokhuja - Burth, Mia",2022,3,2,3N1k1r/1p1Qn1p1/p6p/4P3/8/8/PP3PPP/R4RK1 w - - 3 23,25739,d7e6 f8e8 f1d1 e8f8 e6f7
+tournaments,m3-31,"Knowles, Kendrick - Teixeira, Gil",2022,3,2,1n3q2/1Q3p2/2p1bNk1/2PpP3/3P3P/7B/7K/8 w - - 0 50,1303,b7b1 e6f5 b1f5 g6h6 f5h7
+tournaments,m3-32,"Koualet-Bebondi, Vianney Archeveq - Enemchukwu Chinedu Benjamin",2022,3,2,6k1/8/2K5/8/8/8/3r4/4q3 b - - 7 56,5023,e1c1 c6b5 d2b2 b5a4 c1a1
+tournaments,m3-33,"Kourakoumba, Florent - Akram, Yousouf Dahab",2022,3,2,8/6pp/1p3k2/5p2/5PPK/7P/8/3q4 b - - 0 47,963,d1e1 h4h5 g7g6 h5h6 e1h4
+tournaments,m3-34,"Kourakoumba, Florent - Charlee, Porthor",2022,3,2,r5k1/5p1p/2b3q1/1p1p2P1/5QKP/8/8/q7 b - - 0 42,2349,a1g1 g4f3 g6d3 f4e3 d3e3
+tournaments,m3-35,"Laylo, Darwin - Florentiades, Michalis",2022,3,2,8/1pb2pPk/p5p1/2p2nP1/2q5/P1B4P/1P4Q1/4R2K w - - 1 38,1281,g7g8q h7g8 e1e8 g8h7 e8h8
+tournaments,m3-36,"Lhundrup M Dorji - Chavez, Ricardo Ernesto",2022,3,2,K7/8/2pk4/p1q5/P7/8/8/8 b - - 1 55,4691,c5b4 a8a7 d6c7 a7a6 b4b6
+tournaments,m3-37,"Lim Teck Guan, Rodney - Raouf Ben Anziz",2022,3,2,1N2rk2/2p2B1p/pp4p1/4BbP1/P5P1/1Q6/1P5P/3R1RK1 w - - 1 35,10329,b8d7 f5d7 f7e6 f8e7 d1d7
+tournaments,m3-38,"Lim, Zhuo Ren - Rakotomaharo, Fy Antenaina",2022,3,2,8/5pkp/8/8/R2bRpp1/P5P1/1P2P2r/5K2 b - - 0 45,1526,h2h1 f1g2 h1g1 g2h2 f4g3
+tournaments,m3-39,"Lutuima, Amaro - Abdelmadjid Zakaria, Mahamat",2022,3,2,1B6/4k3/2PR4/4NK2/8/6p1/6P1/8 w - - 0 49,2001,d6d7 e7e8 c6c7 e8f8 c7c8r
+tournaments,m3-40,"Marie, Patrick - Odounga Christ, Ceylan",2022,3,2,7B/1p3p1p/p2bk3/3R1p2/8/4P2P/PP3PP1/3R2K1 w - - 5 27,1293,d5d6 e6e7 h8f6 e7e8 d6d8
+tournaments,m3-41,"McShane, Luke J - Hamitevici, Vladimir",2022,3,2,8/6rk/8/3q3p/Pp5q/1P3R2/7R/5Q1K b - - 1 57,1821,d5f3 f1f3 h4e1 f3f1 e1f1
+tournaments,m3-42,"Mendoza, Rodrigo - Masiala Mayuku, Eddy",2022,3,2,k1r2Q2/3R4/bp1QP3/p2p4/3P4/PP6/2P1q1P1/1K1R4 w - - 1 40,1824,d6d5 a8b8 f8d6 c8c7 d6c7
+tournaments,m3-43,"Moncur, Cecil - Aziradji Mohamed Ismael",2022,3,2,rk3r2/4QP2/5R1p/p1pp3N/Pp6/1P5P/2P3PK/8 w - - 5 40,1681,e7f8 b8a7 f8e7 a7b8 f7f8q
+tournaments,m3-44,"Montel Jr, Cyril Tomas - Hewlett, Leo",2022,3,2,1r3k2/7p/3RPB2/2PB1pp1/8/1P2P1P1/4N2P/2R3K1 w - - 2 34,2173,d6d8 b8d8 e6e7 f8e8 e7d8q
+tournaments,m3-45,"Nadjim Mohamed - Conhoff, David",2022,3,2,8/1p6/8/7p/2p4P/3k4/7r/1K6 b - - 7 46,3550,d3c3 b1a1 c3b3 a1b1 h2h1
+tournaments,m3-46,"Nadjim Mohamed - Fomevor, Cephas Clinton",2022,3,2,r5k1/5pp1/1pp1pb2/3q4/1P5P/4R1KQ/5P2/3r4 b - - 2 34,16035,d1g1 g3f4 g7g5 h4g5 f6g5
+tournaments,m3-47,"Naipal, Hoolan - Nambi, Pradeep",2022,3,2,4Q3/p1p5/8/8/Ppr5/1P3kP1/2P1R2P/7K w - - 0 40,6936,b3c4 f3g4 e8e6 g4f3 e6e4
+tournaments,m3-48,"Nambi, Pradeep - Raouf Ben Anziz",2022,3,2,1r1q1r2/1ppkn1Np/p1b3p1/4Pp2/5PQ1/B2B3P/2P3P1/5RK1 w - f6 0 28,3583,e5f6 e7f5 d3f5 g6f5 g4f5
+tournaments,m3-49,"Nikolovski, Nikola - Michalik, Peter",2022,3,2,6rk/pq5p/5p2/P1b2Q2/2Pp3R/6N1/5KPP/2n1rR2 b - - 1 36,3333,e1e2 g3e2 b7g2 f2e1 g2e2
+tournaments,m3-50,"Nsubuga, Haruna - Rodgaard, John",2022,3,2,5rk1/3b1pp1/1q2p1p1/1B1pP3/PQrb4/5NP1/5PK1/R6R w - - 1 26,3622,h1h8 g8h8 b4f8 h8h7 a1h1
+tournaments,m3-51,"Nyambalo, Joseph Xavier - Masiala Mayuku, Eddy",2022,3,2,8/8/8/6P1/3K3P/2Q5/k7/8 w - - 17 71,6479,c3b4 a2a1 d4c3 a1a2 b4b2
+tournaments,m3-52,"Odounga Christ, Ceylan - Joel O. Ebiekuta",2022,3,2,8/1bp4k/1p3p2/4r3/P5rP/1P2p1PQ/2PqR3/6K1 b - - 1 38,13878,d2e2 h3f1 g4g3 f1g2 e2g2
+tournaments,m3-53,"Odounga Christ, Ceylan - Schneider, James U",2022,3,2,8/8/8/8/4K3/3Q4/8/4k3 w - - 15 75,8473,d3c2 e1f1 e4f3 f1e1 c2c1
+tournaments,m3-54,"Righi, Ezio - Auguiste, Lyndon",2022,3,2,5b1r/3Q1ppp/3p1k1q/1B1Pp3/1P6/5bNP/1P3PP1/R3K2R w KQ - 1 25,11726,d7f5 f6e7 a1a7 e7d8 f5d7
+tournaments,m3-55,"Roachford, Adam - Mwadzura, Roy",2022,3,2,8/6p1/6p1/2r2k2/7P/3R4/7K/5q2 b - - 3 50,2735,c5c2 d3d2 c2d2 h2g3 f1d3
+tournaments,m3-56,"Sai, Han Thiha - Weldegebriel Beraki, Kibrom",2022,3,2,2r1r3/5p1k/2bq2p1/4R2p/2B2Q2/1PB4P/6P1/7K w - - 0 43,2559,e5h5 g6h5 f4f7 h7h6 f7g7
+tournaments,m3-57,"Salim Mohammed, Salim Al Amri - Ashiku, Franc",2022,3,2,7k/2p5/2P3R1/p7/P3p2K/5b2/8/6q1 b - - 11 59,2930,g1g6 h4h3 g6g4 h3h2 g4g2
+tournaments,m3-58,"Sangvane Vongphouthone - Adeshole Beckley, Brian",2022,3,2,r5k1/5ppp/2p5/p2p4/P7/P1q2b1P/5R1K/8 b - - 1 35,1507,c3e5 h2g1 e5e1 g1h2 e1f2
+tournaments,m3-59,"Santillan, Reygene - Souley Mahaman Abarchi",2022,3,2,5b1k/R7/n1p5/3p4/2pPp1Q1/4P3/PP1B2PP/6K1 w - - 1 35,1840,g4h4 f8h6 h4h6 h8g8 h6g7
+tournaments,m3-60,"Selkridge, Alanderson - Koualet-Bebondi, Vianney Archeveq",2022,3,2,8/8/1K1k4/8/2q5/8/8/8 b - - 11 81,3230,c4b4 b6a6 d6c7 a6a7 b4b7
+tournaments,m3-61,"Stanley, P'Della'P - Kannappan, Thanneermalai",2022,3,2,6k1/pp5p/2p3p1/P2p1pP1/3P1n1P/5P2/3r2r1/1R3K2 b - - 3 32,1023,g2f2 f1g1 f4h3 g1h1 f2h2
+tournaments,m3-62,"Stanley, P'Della'P - Samuel, Jhon",2022,3,2,3r2k1/p4pp1/1q3b1p/6nQ/P5K1/6P1/P7/4R3 b - - 9 36,1188,d8d4 g4f5 b6a5 e1e5 a5e5
+tournaments,m3-63,"Tchouka, Yakini - Abdelmadjid Zakaria, Mahamat",2022,3,2,4Q3/6k1/1pN2p2/2p3p1/4B3/1P5P/r1P1K3/8 w - - 2 42,1371,e8g6 g7f8 g6f6 f8e8 f6e7
+tournaments,m3-64,"Teixeira, Gil - Perez Ponsa, Federico",2022,3,2,8/pp3pk1/4b1p1/8/3p1pP1/1P3q2/P1PQ3K/2RR4 b - - 2 31,1807,f3g3 h2h1 e6d5 d2g2 g3g2
+tournaments,m3-65,"Thomas, Larry - Berardi, Giancarlo",2022,3,2,8/8/8/8/8/4KQ2/7k/8 w - - 3 100,7472,f3g4 h2h1 e3f3 h1h2 g4g2
+tournaments,m3-66,"Vasco, Mateus Felizardo Viageiro - Al Hosani, Omran",2022,3,2,8/8/2bQ3q/4R3/6k1/6P1/PP5P/6K1 w - - 8 51,1472,d6d1 g4h3 e5h5 h6h5 d1h5
+tournaments,m3-67,"Vilaphen, Phakthong - de Araujo, Helder",2022,3,2,8/5k1p/5p1K/r4P2/7P/8/8/8 b - - 0 59,475,a5f5 h4h5 f5a5 h6h7 a5h5
+tournaments,m3-68,"Waldhausen Gordon, Frederick - Flores, Diego",2022,3,2,r3k3/1p2qp2/2p1p2p/p4p2/P2P1b2/2P2B2/1P2QPP1/R3R2K b q - 0 27,925,e7h4 h1g1 h4h2 g1f1 h2h1
+tournaments,m3-69,"Winter Atwell, Adrian - Souley Mahaman Abarchi",2022,3,2,2krr3/Pp4pp/8/P1N5/3P4/2N1b3/5P1P/R3K2R w KQ - 0 27,638,a7a8q c8c7 a8b7 c7d6 c3b5
+tournaments,m3-70,"Yussof, Pg Abd Rahman - Ahamada Abdillah",2022,3,2,4k3/1R6/2p2p2/p4P2/8/8/P4P1P/3R3K w - - 1 41,1660,b7b8 e8e7 b8d8 e7f7 d1d7
+tournaments,m3-71,"Zebaze Dongmo Loic Dylane - Nguema Okomo, Jose Primo Esono",2022,3,2,2k5/3R4/p4P2/1pP5/1P6/P5P1/6P1/5K2 w - - 1 46,4841,c5c6 c8b8 f6f7 b8a8 f7f8q
+tournaments,m3-72,"Dardha, Daniel - Hess, Max",2021,3,2,r3k3/3nrp1R/p1p1pQ2/8/1p1R4/6P1/PP3P1P/2q2BK1 w - - 3 31,3685,h7h8 d7f8 h8f8 e8f8 f6h8
+tournaments,m3-73,"Kadric, Denis - Hess, Max",2021,3,2,1n2r1k1/2pq2B1/1p1pN3/pP1Pp2Q/P3P3/7P/5PP1/6K1 w - - 13 49,1519,h5h8 g8f7 e6g5 f7g6 h8h6
+tournaments,m3-74,"Dominguez Perez, Leinier - Shankland, Sam",2022,3,2,4Q3/3N2k1/8/3pp2R/KP5b/5P2/8/1r5q w - - 6 57,4047,e8f8 g7g6 f8f5 g6g7 f5h7
+tournaments,m3-75,"Carmesin, Leon Lucas Finn - Wegerle, Joerg",2022,3,2,8/4Kpkp/5np1/3P2P1/4PP2/6Q1/3q4/8 b - - 0 56,1014,d2b4 e7d8 b4b8 d8e7 b8f8
+tournaments,m3-76,"Dimitrijeski, Kristian - Lutz, Ruben",2022,3,2,2k5/1b3p2/pp2p3/2p1n1P1/2Pp4/P2P2q1/1PNQR1Br/5RK1 b - - 5 27,34957,e5g4 d2c1 h2g2 g1h1 g2g1
+tournaments,m3-77,"Fruebing, Stefan - Berchtenbreiter, Maximilian",2022,3,2,8/Q7/2p5/5pk1/5N2/4n1P1/P6K/4q3 b - - 10 51,1362,e1f2 h2h1 f2f1 h1h2 e3g4
+tournaments,m3-78,"Okkes, Menno - Libiszewski, Fabien",2022,3,2,8/7k/1Q1p2p1/5p2/1P3q2/3n1P2/6BP/2R4K b - - 0 51,964,f4c1 g2f1 c1f1 b6g1 d3f2
+tournaments,m3-79,"Al Ibrahim, Abdulrahman - Odounga Christ, Ceylan",2022,3,2,7k/2R5/5P2/6N1/P5p1/3p3r/1P2KP2/8 w - - 0 41,538,e2d2 h3e3 c7c8 e3e8 c8e8
+tournaments,m3-80,"Al Qudaimi, Basheer - Cilia Vincenti, David",2022,3,2,8/4b3/6R1/7p/1p1r1P2/1Pn5/5NNk/5K2 w - - 7 61,2943,g2e1 e7g5 g6g5 d4d1 g5g2
+tournaments,m3-81,"Al Qudaimi, Basheer - Gerena Rivas, Eliam",2022,3,2,6k1/1p2P3/8/7Q/PpPp4/1r6/5q2/4R2K w - - 0 45,1118,e7e8r g8g7 e1e7 g7f6 e7f7
+tournaments,m3-82,"Alexander, Shakthi - Maman, Oumarou",2022,3,2,Q7/1ppkp3/p1q1p2p/6p1/1P2N1P1/P1r4P/5P2/4K3 b - - 0 31,1168,c6e4 e1d1 e4d3 d1e1 c3c1
+tournaments,m3-83,"Arnold Smith - Jaiswal, Rupesh",2022,3,2,8/3P4/1R4kp/7p/1P3p2/5Pn1/5KP1/3r4 b - - 2 50,1985,g6g7 b6g6 g7g6 d7d8q d1f1
+tournaments,m3-84,"Conhoff, David - Kasongo Kazadi Olivier",2022,3,2,r3k3/p1q5/1pnp2p1/3B1p2/3P4/2R1PQp1/PP1N2P1/5R1K b q - 0 23,785,c7h7 f3h5 h7h5 h1g1 h5h2
+tournaments,m3-85,"Dabuae, Thubalkain - Nambi, Pradeep",2022,3,2,2Q5/B7/5k2/8/8/5PPp/7P/3R1K2 w - - 1 47,5655,d1d6 f6e7 c8c7 e7e8 d6d8
+tournaments,m3-86,"Dalliah, Joseph - Nambi, Pradeep",2022,3,2,8/pk1r3n/1p2p2p/1N1pB1rB/Q2P1p2/P3P3/6PP/R4RK1 w - - 9 31,2082,a4a7 b7c6 f1c1 c6b5 h5e2
+tournaments,m3-87,"Eickelman, Connor - Esungi, Guy Botetsi",2022,3,2,4r1k1/p5p1/1p2P1Qp/1qpp4/3P4/1P4PB/P6P/5R1K w - - 2 41,9492,f1f7 b5f1 h3f1 g8h8 g6g7
+tournaments,m3-88,"Garber, Ousainou - Volodin, Aleksandr",2022,3,2,8/p7/1p3qk1/1P5p/2Q3pP/P3KbP1/8/3r4 b - - 4 51,1695,f6e7 e3f4 e7d6 f4e3 d6d2
+tournaments,m3-89,"Golubovskis, Maksims - Lockhart, Kenville",2022,3,2,r5kr/pp1RQ2p/2p3q1/8/8/1P6/P1P2PPP/4R1K1 w - - 3 28,77525,e1e6 g6g2 g1g2 c6c5 e7f7
+tournaments,m3-90,"Kasongo Kazadi Olivier - Bolanos, Fernando",2022,3,2,8/K7/7p/P1k3pP/5pP1/5P2/1q6/8 b - - 2 54,7815,c5d6 a7a6 d6c7 a6a7 b2b7
+tournaments,m3-91,"Marie, Patrick - Stanley, P'Della'P",2022,3,2,r1bq1rk1/2p2p1p/p1p1p2B/3pp3/3P4/8/PPP2PPP/R2QK2R w KQ - 0 12,1413,d1g4 d8g5 g4g5 g8h8 g5g7
+tournaments,m3-92,"Nambi, Pradeep - Sihlongonyane, Sikhanyiso",2022,3,2,8/5p1p/4p3/1b4p1/3k2P1/6P1/6r1/3K4 b - - 19 53,6662,g2b2 d1c1 d4c3 c1d1 b2b1
+tournaments,m3-93,"Uapingene, Uatiavi Jossy - Bongo Ngombele, Tary",2022,3,2,3k1n2/2r3pp/2P1Qp2/8/8/4P1P1/5PBP/5RK1 w - - 0 36,4193,f1d1 f8d7 d1d7 d8c8 e6g8
+tournaments,m3-94,"Veljanoski, Andrej - Walrond, Niccolo",2022,3,2,4kr2/pp1r2Qp/6p1/1BP1N3/1P4b1/3p4/P5PP/2R3K1 w - - 0 34,3235,b5d7 e8d8 g7f8 d8c7 f8c8
+tournaments,m3-95,"Wanyama, Harold - Angel Estanislao Gatjens Capche",2022,3,2,8/5p2/4p3/8/5k2/2Q5/1PB3P1/6K1 w - - 3 57,5644,c3f6 f4g4 c2d1 g4g3 f6f2
+tournaments,m3-96,"Bhambure, Shantanu - Saravanan, Durga",2021,3,2,6k1/p1p5/1p3K1R/8/3P4/P2BrP2/4n1P1/8 w - - 9 39,1117,d3c4 e3e6 c4e6 g8f8 h6h8
+tournaments,m3-97,"Kamara, Ansumana - Jimma, Desalegn Fekadu",2022,3,2,8/8/8/6k1/2b5/1p6/4r3/1K6 b - - 1 64,1004,c4d3 b1c1 b3b2 c1d1 b2b1q
+tournaments,m3-98,Donkeng Hussel - Aboubacar Akarintkitt,2022,3,2,8/2N5/6pp/6k1/3Q2P1/P7/5P2/6K1 w - - 1 57,1665,c7e6 g5h4 d4f4 h4h3 f4g3
+tournaments,m3-99,"Ugyen Wangchuk - Masiala Mayuku, Eddy",2022,3,2,3Q4/1bP2k2/4p3/pP2Pp1p/P7/B2B2PK/8/8 w - - 1 49,1705,d8f8 f7g6 f8g8 g6h6 a3f8
+tournaments,m3-100,"Dardha, Daniel - Klein, Felix",2022,3,2,5Q2/p2q2r1/1p6/4b2p/4p1kN/4P1P1/5RKP/8 w - - 8 46,2007,f8f4 e5f4 e3f4 d7d4 h2h3
+tournaments,m4-01,"Abdelmadjid Zakaria, Mahamat - Ndahangwapo, Heskiel",2022,4,3,r4rk1/pp3p2/7p/2p3p1/P1Pn4/1P2K3/4B3/q7 b - - 3 34,86387,a8e8 e3d2 e8e2 d2d3 a1b1 d3c3 b1b3
+tournaments,m4-02,"Adu Jnr, Lionel - Ahamada Abdillah",2022,4,3,7k/4n1r1/1p1R1Q2/p3N2r/8/4P1p1/PP3PBp/2R4K w - - 2 31,377583,c1c8 h8h7 g2e4 e7f5 e4f5 h5f5 f6h6
+tournaments,m4-03,"Ahamada Abdillah - Lockhart, Kenville",2022,4,3,8/6p1/2k5/1p3ppP/1K2p3/3r4/8/8 b - - 1 48,41580,d3h3 b4a5 h3b3 h5h6 g7h6 a5a6 b3a3
+tournaments,m4-04,"Ahmad, Al Khatib - Bridet, Robert",2022,4,3,6k1/5R2/6Pp/7P/1p6/1P1K4/8/8 w - - 0 48,47326,d3e4 g8h8 e4f5 h8g8 f5f6 g8h8 f7f8
+tournaments,m4-05,"Alegre, Fabio Costa - Maman, Oumarou",2022,4,3,8/8/8/1K6/p5p1/P3Q3/k6P/8 w - - 4 58,71621,b5a4 a2b2 e3d2 b2a1 a4b3 a1b1 d2e1
+tournaments,m4-06,"Alexander, Shakthi - Cu Hor, Winston Darwin",2022,4,3,r5k1/ppp3pp/2n1p3/2bP4/7q/8/PPP1BrPP/R1BQK2R b KQ - 0 13,875683,f2f1 e1d2 c5e3 d2c3 h4b4 c3d3 b4d4
+tournaments,m4-07,"Amega-Dzaka, Komi Nukunu - Sklyarov, Dmitry V.",2022,4,3,6k1/5p2/4p2p/8/2q1n1PB/2b1PN1P/5P2/3K4 b - - 1 40,232105,c4d3 d1c1 d3e2 g4g5 c3b2 c1b1 e4c3
+tournaments,m4-08,"Angel Estanislao Gatjens Capche - Koualet-Bebondi, Vianney Archeveq",2022,4,3,1K6/1P1PQ3/8/5k2/8/8/8/8 w - - 1 114,101524,d7d8q f5f4 e7g5 f4f3 d8d3 f3f2 g5g3
+tournaments,m4-09,"Aziradji Mohamed Ismael - Hasford, John Kojo",2022,4,3,8/2p5/1p1p4/1PbP4/3r4/pB6/3kp3/1K6 b - - 1 64,20570,e2e1q b3d1 e1d1 b1a2 d1c2 a2a1 c2b2
+tournaments,m4-10,"Berend, Fred - Gerena Rivas, Eliam",2022,4,3,6k1/8/3N2K1/8/7B/8/8/8 w - - 35 104,12486,h4e7 g8h8 d6f7 h8g8 f7h6 g8h8 e7f6
+tournaments,m4-11,"Bongo Ngombele, Tary - Alhejab, Meshal",2022,4,3,6k1/p2Q1ppp/2p5/2P5/8/8/P2K2PP/4rq2 b - - 5 35,28717,f1e2 d2c3 e1c1 c3b3 e2b5 b3a3 c1c3
+tournaments,m4-12,"Cawdery, Daniel - Blackburn, Jonathan L B",2022,4,3,5k2/7p/1Q2p1p1/3pNq2/2b2P2/6P1/r6P/1R4K1 w - - 3 30,44750,b6d8 f8g7 b1b7 g7h6 d8h4 f5h5 e5g4
+tournaments,m4-13,"Charlee, Porthor - Winston Gerald, Mansfield Thomas",2022,4,3,8/8/1p6/b1p1p1k1/P1K1pn2/2P1q3/8/8 b - - 3 56,51540,e3d3 c4b3 d3c3 b3a2 c3c2 a2a1 a5c3
+tournaments,m4-14,"Degross Dolle, Leroy - Pillay, Ragul",2022,4,3,1k4r1/1pp1b2p/p5q1/3N1p2/P1PP3r/BP2P3/2Q1K2P/R7 b - - 4 31,71600,h4h2 e2d3 f5f4 e3e4 g6g3 d5e3 g3e3
+tournaments,m4-15,"Diop, Wara - Degross Dolle, Leroy",2022,4,3,rn3br1/pbk5/2N1Q1pp/1ppPq2R/8/2P3B1/PP3PPP/RN4K1 w - - 12 21,57533,e6e5 f8d6 e5d6 c7b6 d6c7 b6a6 c7a5
+tournaments,m4-16,"Ebosse Kingue Victor Patrick - Saidou, Djibo",2022,4,3,6r1/p2p1pB1/2pP4/1r3Nk1/1p6/7R/PPB2PPP/2R3K1 w - - 9 30,143297,f2f4 g5f4 h3f3 f4g4 f3g3 g4f4 c1f1
+tournaments,m4-17,"Eickelman, Connor - Volpinari, Danilo",2022,4,3,7k/8/7B/4N1K1/8/8/8/8 w - - 73 92,12478,g5g6 h8g8 e5d7 g8h8 h6g7 h8g8 d7f6
+tournaments,m4-18,"Faulks, Nick - Masiala Mayuku, Eddy",2022,4,3,7k/p5R1/6p1/5p2/3q4/P1R2QPp/5P1P/6K1 w - - 0 36,68709,g7g6 d4g7 c3c8 h8h7 f3h5 g7h6 h5h6
+tournaments,m4-19,"Fellman, Mike - Kwong, Wing Ki",2022,4,3,7k/8/5PP1/b4K2/8/3B4/P7/8 w - - 1 59,7341,g6g7 h8h7 f5g5 h7g8 d3c4 g8h7 g7g8q
+tournaments,m4-20,"Ibarra Chami, Luis Fernando - Oratile, Kgotlane",2022,4,3,8/8/4N2p/4Pp1k/2r4P/6R1/5PPK/8 w - - 3 46,16893,e6g7 h5h4 g3g6 f5f4 g2g3 f4g3 f2g3
+tournaments,m4-21,Kasongo Kazadi Olivier - Bhakta Bahadur Monger,2022,4,3,2r5/R5kp/3p2P1/3Pp3/4nb2/7P/5r2/7K b - - 2 44,18828,g7g6 a7a1 e4g3 h1g1 c8c2 h3h4 f2g2
+tournaments,m4-22,"Kazakouski, Valery - Maurizzi, Marc'Andria",2022,4,3,4Q3/p5k1/1p1P4/5Bp1/6P1/7P/PP1K4/2r3q1 w - - 1 42,69522,e8e7 g7g8 f5e6 g8h8 e7f8 h8h7 e6f5
+tournaments,m4-23,"Koualet-Bebondi, Vianney Archeveq - Enemchukwu Chinedu Benjamin",2022,4,3,3r2k1/2K5/8/8/8/8/8/4q3 b - - 5 55,210382,d8d5 c7b6 e1e6 b6a7 d5d7 a7a8 e6e8
+tournaments,m4-24,"Kourakoumba, Florent - Akram, Yousouf Dahab",2022,4,3,8/6pp/1p3k2/5p2/5P1K/6PP/3p4/8 b - - 0 46,4339,d2d1q g3g4 d1e1 h4h5 g7g6 h5h6 e1h4
+tournaments,m4-25,"Kourakoumba, Florent - Nambi, Pradeep",2022,4,3,5rk1/pp6/6P1/2ppp1Q1/1P4B1/P1PP3P/6PK/8 w - - 0 34,111758,g5e7 f8f2 g4e6 f2f7 e7f7 g8h8 f7g8
+tournaments,m4-26,"Lim Teck Guan, Rodney - Raouf Ben Anziz",2022,4,3,1N2r1k1/2p2n1p/pp4p1/4BbP1/P1B3P1/1Q6/1P5P/3R1RK1 w - - 1 34,102627,c4f7 g8f8 b8d7 f5d7 f7e6 f8e7 d1d7
+tournaments,m4-27,"Lutuima, Amaro - Abdelmadjid Zakaria, Mahamat",2022,4,3,1B6/4k3/2PR4/4Nb2/5Kp1/8/6P1/8 w - - 4 48,35793,f4f5 e7e8 d6d7 e8f8 c6c7 f8e8 c7c8r
+tournaments,m4-28,"McShane, Luke J - Hamitevici, Vladimir",2022,4,3,8/6rk/5q2/3q3p/Pp5P/1P3R2/5R2/5Q1K b - - 11 56,65104,f6h4 f2h2 d5f3 f1f3 h4e1 f3f1 e1f1
+tournaments,m4-29,"Moncur, Cecil - Aziradji Mohamed Ismael",2022,4,3,r4r2/1k3P2/5R1p/p1ppQ2N/Pp6/1P5P/2P3PK/8 w - - 3 39,51697,e5d5 b7c7 d5c5 c7b7 f6b6 b7a7 c5a5
+tournaments,m4-30,"Montel Jr, Cyril Tomas - Hewlett, Leo",2022,4,3,5k1B/7p/3RP3/2PB1pp1/1r6/1P2P1P1/4N2P/2R3K1 w - - 0 33,153587,e6e7 f8e8 h8f6 b4b8 d6d8 b8d8 e7d8q
+tournaments,m4-31,"Nadjim Mohamed - Conhoff, David",2022,4,3,8/1p6/8/7p/2p4P/3k4/4r3/2K5 b - - 5 45,26919,d3c3 c1b1 e2e1 b1a2 e1d1 a2a3 d1a1
+tournaments,m4-32,"Naipal, Hoolan - Nambi, Pradeep",2022,4,3,6Q1/p1p5/2r5/8/PpP5/1P3kP1/2P1R2P/7K w - - 1 39,118638,g8e8 f3g4 e8c6 g4f5 c6e6 f5g5 e2e5
+tournaments,m4-33,"Nambi, Pradeep - Deng, Yu Dong Michael",2022,4,3,2r5/b2k1p1p/4pBn1/1p1p4/8/1r5P/3K4/8 b - - 3 34,1570257,g6f4 f6b2 b3b2 d2d1 f4h3 d1e1 c8c1
+tournaments,m4-34,"Nambi, Pradeep - Raouf Ben Anziz",2022,4,3,1r1q1r2/1ppknpNp/p1b3p1/4P2Q/5P2/B2B3P/2P3P1/5RK1 w - - 2 27,88559,h5g4 f7f5 e5f6 e7f5 d3f5 g6f5 g4f5
+tournaments,m4-35,"Nyambalo, Joseph Xavier - Masiala Mayuku, Eddy",2022,4,3,8/8/2Q5/6P1/3K3P/1k6/8/8 w - - 15 70,73727,c6c3 b3a2 c3b4 a2a1 d4c3 a1a2 b4b2
+tournaments,m4-36,"Odounga Christ, Ceylan - Joel O. Ebiekuta",2022,4,3,8/1bp4k/1p3p2/4r3/P3p1rP/1P4PQ/2PqRK2/8 b - - 3 37,85318,e5f5 f2g1 d2e2 g1h1 e4e3 h1g1 e2f2
+tournaments,m4-37,"Odounga Christ, Ceylan - Schneider, James U",2022,4,3,8/8/8/3Q4/4K3/8/5k2/8 w - - 13 74,89102,d5g5 f2e1 g5g2 e1d1 e4d3 d1c1 g2c2
+tournaments,m4-38,"Pultinevicius, Paulius - Gong, Qianyun",2022,4,3,rb4k1/p1q3n1/2p3R1/1p4B1/5r2/7Q/PP4P1/4R2K w - - 0 29,112703,e1e8 g8f7 g6g7 f7g7 h3h6 g7f7 e8f8
+tournaments,m4-39,"Righi, Ezio - Auguiste, Lyndon",2022,4,3,5b1r/3nkppp/3p3q/1B1PpQ2/1P6/5bNP/1P3PP1/R3K2R w KQ - 2 24,87332,f5d7 e7f6 d7f5 f6e7 a1a7 e7d8 f5d7
+tournaments,m4-40,"Roachford, Adam - Mwadzura, Roy",2022,4,3,8/6p1/6p1/2r2k2/7P/3R3K/5q2/8 b - - 1 49,34580,f2f1 h3h2 c5c2 d3d2 c2d2 h2g3 f1d3
+tournaments,m4-41,"Samuel, Jhon - Ahamada Abdillah",2022,4,3,8/R7/2p5/6pp/2B3k1/1P4P1/P4P1P/6K1 w - - 0 28,210846,a7f7 h5h4 c4e2 g4h3 f2f3 h4g3 f7h7
+tournaments,m4-42,"Santillan, Reygene - Souley Mahaman Abarchi",2022,4,3,2Q2bk1/R7/n1p5/3p4/2pPp1q1/4P3/PP1B2PP/6K1 w - - 0 34,14991,c8g4 g8h8 g4h4 f8h6 h4h6 h8g8 h6g7
+tournaments,m4-43,"Teixeira, Gil - Perez Ponsa, Federico",2022,4,3,8/pp3pk1/4b1p1/8/3pqpP1/1P5K/P1PQ4/2RR4 b - - 0 30,28874,e4f3 h3h2 f3g3 h2h1 e6d5 d2g2 g3g2
+tournaments,m4-44,"Vasco, Mateus Felizardo Viageiro - Al Hosani, Omran",2022,4,3,8/4R3/2bQ3q/6k1/8/6P1/PP5P/6K1 w - - 6 50,47882,d6f4 g5g6 f4f7 g6g5 e7e5 g5g4 f7f5
+tournaments,m4-45,"Waldhausen Gordon, Frederick - Flores, Diego",2022,4,3,r3k3/1p2qp2/2p1p2p/p4p1r/P2P1b2/2P2B2/1P2QPP1/R3R1K1 b q - 1 26,13346,h5h1 g1h1 e7h4 h1g1 h4h2 g1f1 h2h1
+tournaments,m4-46,"Yussof, Pg Abd Rahman - Ahamada Abdillah",2022,4,3,5k2/1p4R1/2p2p2/p4P2/8/8/P4P1P/3R3K w - - 4 40,39286,g7b7 f8e8 b7b8 e8e7 b8d8 e7f7 d1d7
+tournaments,m4-47,"Zebaze Dongmo Loic Dylane - Nguema Okomo, Jose Primo Esono",2022,4,3,1k6/3R4/p7/1pP2P2/1P6/P5P1/6P1/5K2 w - - 2 45,54949,f5f6 b8c8 c5c6 c8b8 f6f7 b8a8 f7f8q
+tournaments,m4-48,"Kadric, Denis - Hess, Max",2021,4,3,1n2r3/2pq2Bk/1p1pN3/pP1Pp3/P3P1Q1/7P/5PP1/6K1 w - - 11 48,19175,g4h5 h7g8 h5h8 g8f7 e6g5 f7g6 h8h6
+tournaments,m4-49,"Dominguez Perez, Leinier - Shankland, Sam",2022,4,3,3Q4/3N4/6k1/3pp2R/KP5b/5P2/8/1r5q w - - 4 56,42627,d8e8 g6g7 e8f8 g7g6 f8f5 g6g7 f5h7
+tournaments,m4-50,"Okkes, Menno - Libiszewski, Fabien",2022,4,3,2r5/7k/1Q1p2p1/5p2/1P3q2/3n1P2/6BP/1R5K b - - 0 50,58966,c8c1 b1c1 f4c1 g2f1 c1f1 b6g1 d3f2
+tournaments,m4-51,"Aboubacar Akarintkitt - Espirito Santo, Waldyr",2022,4,3,8/5np1/8/2p3k1/p1P1b1N1/P5Kp/3p4/8 b - - 1 57,25278,d2d1q g4e3 d1e1 g3h2 e1f2 h2h3 f2h4
+tournaments,m4-52,Ahmed Hassan Ahmed - kelzang Tshering,2022,4,3,6k1/1R4p1/5pNp/7P/3P4/r3PK2/5PP1/8 w - - 0 37,8678,b7b8 g8f7 d4d5 a3e3 f3e3 f6f5 b8f8
+tournaments,m4-53,"Akram, Yousouf Dahab - Mutabazi Hugues",2022,4,3,8/2b3p1/2r4p/3k3P/3r4/1K6/8/3R4 b - - 5 53,46192,d4d1 b3b2 c7e5 b2a2 c6b6 a2a3 d1a1
+tournaments,m4-54,"Arnold Smith - Jaiswal, Rupesh",2022,4,3,8/1R1P4/6kp/7p/1P3p2/3r1Pn1/5KP1/8 b - - 0 49,64210,d3d1 b7b6 g6g7 b6g6 g7g6 d7d8q d1f1
+tournaments,m4-55,"Auguiste, Lyndon - Mujahid, Bin Yazeed",2022,4,3,6k1/ppQ2ppp/2n1b1n1/8/8/1P5P/P5PK/3rNq2 b - - 1 32,138929,d1e1 c7e5 f1g1 h2g3 e1e5 g3f3 g1e3
+tournaments,m4-56,"Conhoff, David - Kasongo Kazadi Olivier",2022,4,3,r3k3/p1q5/1pnp2p1/3B1p2/3P4/2R1PQp1/PP1N2Pr/5RK1 b q - 1 22,26240,h2h1 g1h1 c7h7 f3h5 h7h5 h1g1 h5h2
+tournaments,m4-57,"Cottle, Brian S - Kourakoumba, Florent",2022,4,3,1Q6/4b1k1/4P3/3p1pP1/3P1B2/5PP1/2p3K1/8 w - - 1 58,33136,f4e5 g7g6 b8g8 g6h5 g8f7 h5g5 e5f4
+tournaments,m4-58,"Dabuae, Thubalkain - Nambi, Pradeep",2022,4,3,8/B1P5/4k3/8/8/5PPp/7P/3R1K2 w - - 1 46,34674,c7c8q e6f6 d1d6 f6e7 c8c7 e7e8 d6d8
+tournaments,m4-59,"Golubovskis, Maksims - Lockhart, Kenville",2022,4,3,r4k1r/pp1R3p/2p1Q1q1/8/8/1P6/P1P2PPP/4R1K1 w - - 1 27,166112,e6e7 f8g8 e1e6 g6g2 g1g2 c6c5 e7f7
+tournaments,m4-60,"Kasongo Kazadi Olivier - Bolanos, Fernando",2022,4,3,8/8/K6p/P5pP/2k2pP1/5P2/1q6/8 b - - 0 53,54071,c4d5 a6a7 d5d6 a7a6 d6c7 a6a7 b2b7
+tournaments,m4-61,"Masiala Mayuku, Eddy - Gordon, Frank",2022,4,3,1r5r/2b1k1pp/2Q1pp1n/3p4/1P1P4/2P2PPP/5P2/RNB2BK1 w - - 4 23,93260,c6c7 e7e8 a1a7 b8b7 a7a8 b7b8 a8b8
+tournaments,m4-62,"Masiala Mayuku, Eddy - Herrera, Adrian",2022,4,3,6k1/6pp/5P2/2bp4/5P2/3b3P/4p1K1/8 b - - 0 41,74753,e2e1q f6f7 g8f7 g2f3 d3e2 f3g2 e1g1
+tournaments,m4-63,"Monnaatsheko, Keletshabile - Antonio, Kyell-Jean",2022,4,3,2r1qr1k/pb3p1B/1pn1p3/2b3p1/7Q/2P2NB1/PP3PPP/3RK2R w K - 0 17,357891,h4h6 c5f2 e1f2 c6b8 h7e4 h8g8 h6h7
+tournaments,m4-64,"Nadjim Mohamed - Sharikhan, Shawal",2022,4,3,8/1p3p1k/p2r1P1b/8/P5KP/2P5/1P1p4/8 b - - 0 40,23418,d2d1q g4g3 d1g1 g3f3 d6e6 b2b3 e6e3
+tournaments,m4-65,"Nadjim Mohamed - Verdier, Patrice",2022,4,3,r5k1/1p3pp1/p1n2n1p/2p1q3/3p1b2/QP1P1P2/P1P1rPKP/R2N1R2 b - - 2 21,163551,e5g5 g2h1 g5h4 h2h3 h4h3 h1g1 h3h2
+tournaments,m4-66,"Pereira, Sergio - Mohamed Ali Djama",2022,4,3,4k3/1pp5/1p3Q2/1P6/2NPPn2/3P2p1/P4r1r/2RK2R1 w - - 1 34,106747,c4d6 c7d6 c1c8 e8d7 c8d8 d7c7 f6d6
+tournaments,m4-67,"Sangvane Vongphouthone - AH KYE, Benitot",2022,4,3,1r3rk1/5ppp/p2p4/2p1p1qn/Pp2P2b/1P1PRPNb/1BP2P1P/1R1B2K1 b - - 7 21,107171,h5g3 h2g3 h4g3 b2c1 g3h2 g1h1 g5g1
+tournaments,m4-68,"Wanyama, Harold - Angel Estanislao Gatjens Capche",2022,4,3,7Q/5p2/4p3/8/8/4k3/1PB3P1/6K1 w - - 1 56,27615,h8c3 e3f4 c3f6 f4g4 c2d1 g4g3 f6f2
+tournaments,m4-69,"Yacouba Hassane, Issa - Schneider, James U",2022,4,3,8/3n2k1/5p1p/4p2P/4P1P1/3r1P1K/2p5/8 b - - 1 44,31076,c2c1q h3g2 d3d2 g2g3 c1g1 g3h3 d2h2
+tournaments,m4-70,"Bhambure, Shantanu - Saravanan, Durga",2021,4,3,7k/p1p5/1p3KR1/8/3P4/P2BrP2/4n1P1/8 w - - 7 38,6055,g6h6 h8g8 d3c4 e3e6 c4e6 g8f8 h6h8
+tournaments,m4-71,"Klein, Felix - Zajogin, Alexander",2022,4,3,4r3/8/kp5Q/2n5/1P4p1/P4qP1/5P2/1K5R b - - 0 39,70319,f3d3 b1a1 c5b3 a1b2 e8e2 h6d2 e2d2
+tournaments,m4-72,"Aboubacar Akarintkitt - Stratonowitsch, Andre",2022,4,3,1R6/p4ppk/2p5/3p3p/2p5/B1PpP1n1/P4qPK/8 b - - 5 30,225836,g3e2 b8h8 h7h8 a3e7 f2g1 h2h3 g1h1
+tournaments,m4-73,"Gordon, Frank - Goorsahye, Antoine",2022,4,3,6k1/ppp1qppp/2n5/3r4/6b1/3Q2P1/PP1K3P/R6R b - - 1 22,102316,e7e2 d2c1 d5d3 c1b1 d3d1 h1d1 e2d1
+tournaments,m4-74,"Hernandez Guerrero, Gilberto - Kamara, Ansumana",2022,4,3,5q2/3Q4/6k1/5pP1/3Q4/4P3/3K1P1P/8 w - - 1 47,1034306,h2h4 f8f7 d7d6 g6h7 d6h6 h7g8 h6h8
+tournaments,m4-75,"Lee, Ethan - Odounga Christ, Ceylan",2022,4,3,q5nk/1R2r3/p2N3p/3pp1pP/2pP2P1/2P1P3/P1Q2R1B/7K w - - 3 38,80595,h2e5 g8f6 e5f6 h8g8 c2g6 g8f8 f6e7
+tournaments,m4-76,"Mutabazi Hugues - Knowles, Kendrick",2022,4,3,r5k1/1p3ppp/1pn5/4p3/2P5/P1QrqPPP/1PR1N1K1/7R b - - 8 22,41985,e3f3 g2g1 d3d1 c3e1 d1e1 g1h2 f3h1
+tournaments,m4-77,"Pinales Roussel, Gabriel - Oluka Robert Mcligeyo",2022,4,3,1q5k/p2R3p/1p6/2pPr3/2P5/6P1/PB1P3P/5RK1 w - - 1 29,35324,b2e5 h8g8 d7g7 g8h8 g7g4 b8e5 f1f8
+tournaments,m4-78,"Prasad, Rudr - Chinchilla Miranda, Eugenio",2022,4,3,Q5k1/5pp1/4r3/1p1p1K2/1P5q/4PB2/8/8 b - - 9 50,20605,g8h7 a8h8 h7h8 f3h5 e6f6 f5e5 h4e4
+tournaments,m4-79,"Huschenbeth, Niclas - Seel, Christian",2022,4,3,2k5/pp2r3/4p2p/4Q1p1/3RB3/KP6/P4qPP/8 w - - 4 32,59659,e5h8 f2f8 h8f8 e7e8 f8e8 c8c7 e8d8
+tournaments,m4-80,"Grandelius, Nils - Bluebaum, Matthias",2021,4,3,5Q2/rp1b2p1/4p2p/p2p4/P2Nq3/1PPk3P/6P1/5RK1 w - - 1 30,52178,f1d1 d3c3 f8c5 c3b2 c5c1 b2a2 c1a1
+tournaments,m4-81,"Kuybokarov, Temur - Nihal, Sarin",2021,4,3,8/2p1rpkp/1p4rp/p2n4/N1N5/1P3n2/P4PB1/R2R3K b - - 0 31,286653,e7e4 d1d4 e4d4 c4e5 d4h4 g2h3 h4h3
+tournaments,m4-82,Donkeng Hussel - Aboubacar Akarintkitt,2022,4,3,8/2N5/6pp/5k2/3Q2r1/P6P/5P2/6K1 w - - 0 56,3162,h3g4 f5g5 c7e6 g5h4 d4f4 h4h3 f4g3
+tournaments,m4-83,"Thomas, Larry - Berardi, Giancarlo",2022,4,3,8/8/8/8/8/4K3/5p1k/5Q2 w - - 10 98,14262,f1f2 h2h1 f2c2 h1g1 e3f3 g1f1 c2b1
+tournaments,m4-84,"Vilaphen, Phakthong - de Araujo, Helder",2022,4,3,8/5kpp/5p2/r4P1K/6PP/8/8/8 b - - 0 57,22661,a5a4 g4g5 g7g6 f5g6 h7g6 h5h6 a4h4
+tournaments,m4-85,"Stanley, P'Della'P - Kasongo Kazadi Olivier",2022,4,3,r4qk1/1bp5/1Pp4p/3p2p1/3Pp1Pb/4P3/4B2P/Q1K5 b - - 0 31,24697,a8a1 c1b2 f8a3 b2c2 a3a2 c2c3 h4e1
+tournaments,m4-86,"Bongo Ngombele, Tary - AH KYE, Benitot",2022,4,3,8/2q3k1/p5p1/1P6/4p1K1/5pQP/2P2P2/6r1 b - - 2 40,31898,g1g3 f2g3 c7e5 b5a6 e5f5 g4h4 f5h5
+tournaments,m4-87,"Garber, Ousainou - Volodin, Aleksandr",2022,4,3,8/pq6/1p4k1/1P5p/2Qb2pP/P3BbP1/5K2/3r4 b - - 5 48,35434,d4e3 f2e3 b7e7 e3f4 e7d6 f4e3 d6d2
+tournaments,m4-88,"Khoa, Goodwill - Abdelaziz Bokhit, Badjoiri",2022,4,3,8/1P6/3R4/2K5/8/2k5/8/8 w - - 1 54,39171,b7b8q c3c2 c5c4 c2c1 c4d3 c1d1 b8b1
+tournaments,m4-89,"Lhundrup M Dorji - Chavez, Ricardo Ernesto",2022,4,3,8/K7/2p5/p1k5/PqP5/8/8/8 b - - 1 53,48333,c5d6 a7a6 b4b8 a6a5 d6c5 a5a6 b8a8
+tournaments,m4-90,"Aziradji Mohamed Ismael - Ahmad, Md Siraj Munir",2022,4,3,q7/P6p/1K6/7P/8/6k1/5p2/8 b - - 3 56,55195,f2f1q b6c5 a8a7 c5b4 f1d3 h5h6 a7a3
+tournaments,m4-91,"Wane, Al Hassane - Bongo Ngombele, Tary",2022,4,3,Q7/8/7k/8/5P1P/3K2N1/8/8 w - - 1 64,57579,a8f8 h6g6 f4f5 g6h7 f5f6 h7g6 f8g7
+tournaments,m4-92,"Nambi, Pradeep - Sihlongonyane, Sikhanyiso",2022,4,3,8/5p1p/4p3/1b2k1p1/6P1/6P1/6r1/4K3 b - - 17 52,60474,b5c4 e1d1 e5d4 d1c1 d4c3 c1b1 g2g1
+tournaments,m4-93,"Gordon, Frank - Garber, Ousainou",2022,4,3,5b1k/1p3P2/3p4/4p3/4q3/P1p3K1/8/8 b - - 0 48,86588,e4f4 g3g2 c3c2 g2g1 c2c1q g1g2 c1f1
+tournaments,m4-94,"Stanley, P'Della'P - Kannappan, Thanneermalai",2022,4,3,6k1/pp5p/2p3p1/P2p1pP1/3P1P1P/3n1P2/3rr3/R5K1 b - - 0 30,96578,d3f4 g1f1 e2f2 f1g1 f4h3 g1h1 f2h2
+tournaments,m4-95,"Degross Dolle, Leroy - York, Tchaikouski",2022,4,3,8/kpR5/6p1/p2p4/3P2P1/P3PPK1/1Pn1q2r/2R5 b - - 0 35,100190,g6g5 c7b7 a7b7 c1c2 h2g2 g3h3 e2f3
+tournaments,m4-96,"Tchouka, Yakini - Abdelmadjid Zakaria, Mahamat",2022,4,3,6k1/4P2R/1pN2p2/2p3p1/8/1P5P/r1P1K1B1/8 w - - 1 40,102219,g2e4 f6f5 e4f5 a2c2 f5c2 c5c4 e7e8r
+tournaments,m4-97,"Al Ibrahim, Abdulrahman - Odounga Christ, Ceylan",2022,4,3,7k/2R5/5P2/8/P2pN1p1/7r/1P2KP2/8 w - - 3 40,107525,e4g5 d4d3 e2d2 h3e3 c7c8 e3e8 c8e8
+tournaments,m4-98,"Kamara, Ansumana - Jimma, Desalegn Fekadu",2022,4,3,8/8/8/6k1/1pb5/8/4r3/K7 b - - 5 63,162626,b4b3 a1b1 c4d3 b1c1 b3b2 c1d1 b2b1q
+tournaments,m4-99,"Hewlett, Leo - Karimov, Alisher",2022,4,3,3r2k1/pp2b1pp/8/1P2n3/2R1Pr2/P7/2P3KP/8 b - - 4 27,177064,d8d2 g2g1 e5c4 c2c3 e7c5 g1h1 f4f1
+tournaments,m4-100,"Nor, Mohamed Ahmed - Sangvane Vongphouthone",2022,4,3,r6k/1pp3pp/p2pQrp1/6N1/2B5/8/PPP2PPP/R1B1R1K1 w - - 0 21,202754,g5f7 f6f7 e6f7 a6a5 f7e8 a8e8 e1e8
+tournaments,m5-01,"Adu Jnr, Lionel - Ahamada Abdillah",2022,5,4,6rk/4n3/1p1RQ3/p3N2r/8/4P1p1/PP3PBp/2R4K w - - 0 30,4302847,e5f7 h8g7 e6f6 g7h7 g2e4 e7f5 e4f5 h5f5 f6h6
+tournaments,m5-02,"Ahamada Abdillah - Lockhart, Kenville",2022,5,4,8/6p1/p1k5/1P3ppP/2K1p3/3r4/8/8 b - - 0 47,64337,a6b5 c4b4 d3h3 b4a5 h3b3 h5h6 g7h6 a5a6 b3a3
+tournaments,m5-03,"Angel Estanislao Gatjens Capche - Koualet-Bebondi, Vianney Archeveq",2022,5,4,1K6/1P2Q3/3P4/8/5k2/8/8/8 w - - 2 113,509127,e7e2 f4g3 d6d7 g3h3 d7d8q h3g3 d8g5 g3h3 g5g4
+tournaments,m5-04,"Aziradji Mohamed Ismael - Hasford, John Kojo",2022,5,4,8/2p5/1p1p4/1PbP4/3r4/pB2p3/K2k4/8 b - - 3 63,632927,d4b4 a2a1 b4b3 a1a2 d2c2 a2a1 a3a2 a1a2 b3a3
+tournaments,m5-05,"Berend, Fred - Gerena Rivas, Eliam",2022,5,4,5k2/8/3N2K1/6B1/8/8/8/8 w - - 33 103,101786,g5d8 f8g8 d8e7 g8h8 d6f7 h8g8 f7h6 g8h8 e7f6
+tournaments,m5-06,"Diop, Wara - Degross Dolle, Leroy",2022,5,4,rn3br1/pb6/2Nk2pp/1ppPq2R/6Q1/2P3B1/PP3PPP/RN4K1 w - - 10 20,1555987,g3e5 d6d5 e5b8 g6h5 g4f5 d5c6 f5e6 f8d6 e6d6
+tournaments,m5-07,"Eickelman, Connor - Volpinari, Danilo",2022,5,4,8/7k/7B/4N3/6K1/8/8/8 w - - 71 91,238960,g4h5 h7g8 h5g6 g8h8 e5c6 h8g8 c6e7 g8h8 h6g7
+tournaments,m5-08,"Kazakouski, Valery - Maurizzi, Marc'Andria",2022,5,4,4n1k1/p7/1p1P4/5Bp1/6P1/4Q2P/PP1K4/2r3q1 w - - 0 41,281818,e3e8 g8g7 e8e7 g7g8 f5e6 g8h8 e7f8 h8h7 e6f5
+tournaments,m5-09,"Koualet-Bebondi, Vianney Archeveq - Enemchukwu Chinedu Benjamin",2022,5,4,5rk1/8/3K4/8/8/8/8/4q3 b - - 3 54,1380119,e1d1 d6c5 f8c8 c5b6 d1b1 b6a7 b1b2 a7a6 c8a8
+tournaments,m5-10,"Kourakoumba, Florent - Nambi, Pradeep",2022,5,4,r4qk1/pp6/6P1/2ppp1Q1/1P4B1/P1PP3P/6PK/5R2 w - - 0 33,795914,f1f8 a8f8 g5e7 f8f2 g4e6 f2f7 e7f7 g8h8 f7g8
+tournaments,m5-11,"Nadjim Mohamed - Conhoff, David",2022,5,4,8/1p6/8/7p/2pk3P/8/4r3/3K4 b - - 3 44,113013,e2b2 d1c1 c4c3 c1d1 d4e3 d1c1 e3d3 c1d1 b2b1
+tournaments,m5-12,"Naipal, Hoolan - Nambi, Pradeep",2022,5,4,8/p1p3P1/2r5/8/PpP3k1/1P4P1/2P1R2P/7K w - - 0 38,340858,g7g8q g4f3 g8e8 f3g4 e8c6 g4f5 c6e6 f5g5 e2e5
+tournaments,m5-13,"Nambi, Pradeep - Deng, Yu Dong Michael",2022,5,4,4r3/b2k1p1p/4pBn1/1p1p4/8/1r5P/4K3/8 b - - 1 33,3937263,g6f4 e2d1 e8c8 f6b2 b3b2 h3h4 f4e2 d1e1 c8c1
+tournaments,m5-14,"Nambi, Pradeep - Raouf Ben Anziz",2022,5,4,1r1qkr2/1pp1np1p/p1b1N1p1/4P2Q/5P2/B2B3P/2P3P1/5RK1 w - - 0 26,1067775,e6g7 e8d7 h5g4 f7f5 e5f6 e7f5 d3f5 g6f5 g4f5
+tournaments,m5-15,"Belzo, Krzysztof - Kourakoumba, Florent",2022,5,4,3k4/8/2PP1p2/2K2bp1/B4P1p/6P1/7P/8 w - - 0 42,112169,c6c7 d8c8 a4c6 h4g3 c5b6 g3h2 d6d7 f5d7 c6b7
+tournaments,m5-16,"Righi, Ezio - Auguiste, Lyndon",2022,5,4,5b1r/3n1ppp/3p1k1q/1B1Pp3/1P6/5bNP/1PQ2PP1/R3K2R w KQ - 0 23,1860348,c2f5 f6e7 f5d7 e7f6 d7f5 f6e7 a1a7 e7d8 f5d7
+tournaments,m5-17,"Roachford, Adam - Mwadzura, Roy",2022,5,4,8/6p1/6p1/2r2k2/7P/3R1q2/5N1K/8 b - - 0 48,174181,f3f2 h2h3 f2f1 h3h2 c5c2 d3d2 c2d2 h2g3 f1d3
+tournaments,m5-18,"Vasco, Mateus Felizardo Viageiro - Al Hosani, Omran",2022,5,4,3Q4/4R3/2b2k1q/8/8/6P1/PP5P/6K1 w - - 4 49,356693,d8d6 f6f5 e7e5 f5g4 d6d1 g4h3 e5h5 h6h5 d1h5
+tournaments,m5-19,"Waldhausen Gordon, Frederick - Flores, Diego",2022,5,4,r3k3/1p2qp2/2p1p2p/p4prP/P2P1b2/2P2B2/1P2QPP1/R3R2K b q - 11 25,158232,g5h5 h1g1 h5h1 g1h1 e7h4 h1g1 h4h2 g1f1 h2h1
+tournaments,m5-20,"Zebaze Dongmo Loic Dylane - Nguema Okomo, Jose Primo Esono",2022,5,4,3R4/k7/p7/1pP2P2/1P6/P5P1/6P1/5K2 w - b6 0 44,164288,d8d7 a7a8 d7e7 a8b8 f5f6 b8a8 f6f7 a8b8 f7f8q
+tournaments,m5-21,"Kadric, Denis - Hess, Max",2021,5,4,1n2r2k/2pq4/1p1pN2B/pP1Pp3/P3P1Q1/7P/5PP1/6K1 w - - 9 47,255509,h6g7 h8h7 g4h5 h7g8 h5h8 g8f7 e6g5 f7g6 h8h6
+tournaments,m5-22,"Akram, Yousouf Dahab - Mutabazi Hugues",2022,5,4,8/2b3p1/4r2p/3k3P/3r4/8/2K5/3R4 b - - 3 52,196150,e6e2 c2b3 d4d1 b3c3 c7e5 c3b3 e2b2 b3a3 d1a1
+tournaments,m5-23,"Auguiste, Lyndon - Mujahid, Bin Yazeed",2022,5,4,6k1/ppQ2ppp/2n1b1n1/8/8/1P5P/P3q1P1/3rNR1K b - - 0 31,1153921,e2f1 h1h2 d1e1 c7e5 f1g1 h2g3 e1e5 g3f3 g1e3
+tournaments,m5-24,"Dabuae, Thubalkain - Nambi, Pradeep",2022,5,4,8/B3k3/2P5/8/8/5PPp/7P/3R1K2 w - - 1 45,1418186,c6c7 e7e6 c7c8q e6f6 d1d6 f6e7 c8c7 e7e8 d6d8
+tournaments,m5-25,"Hewlett, Leo - Karimov, Alisher",2022,5,4,3r2k1/pp2b1pp/8/1P6/2n1Pr2/P5K1/2P4P/8 b - - 1 28,3669060,f4e4 g3f2 d8f8 f2g2 e4e2 g2g1 e7c5 g1h1 f8f1
+tournaments,m5-26,"Nadjim Mohamed - Sharikhan, Shawal",2022,5,4,8/1p3p1k/p2r1P1b/8/P5pP/2Pp2K1/1P6/8 b - - 1 39,1100386,d3d2 g3g4 d2d1q g4g3 d1g1 g3f3 d6e6 b2b3 e6e3
+tournaments,m5-27,"Pereira, Sergio - Mohamed Ali Djama",2022,5,4,5k2/1pp5/1p3p2/1P2Q3/2NPPn2/3P2p1/P4r1r/2RK2R1 w - - 0 33,360218,e5f6 f8e8 c4d6 c7d6 c1c8 e8d7 c8d8 d7c7 f6d6
+tournaments,m5-28,"Sangvane Vongphouthone - Adeshole Beckley, Brian",2022,5,4,r5k1/5ppp/2p5/p2p4/P2q4/P1N2b1P/5R2/6K1 b - - 0 34,3125778,a8e8 g1f1 d4d3 f1g1 e8e1 g1h2 d3g6 h3h4 e1h1
+tournaments,m5-29,"Tchouka, Yakini - Abdelmadjid Zakaria, Mahamat",2022,5,4,4Q3/7k/1pN2p2/2p3p1/8/1P5P/r1P1K1B1/8 w - - 0 41,201435,g2e4 f6f5 e4f5 h7g7 e8g6 g7f8 g6f6 f8e8 f6e7
+tournaments,m5-30,"Dardha, Daniel - Hess, Max",2021,5,4,rn2k3/4rp1R/p1p1pQ2/8/1p1R4/6P1/PP3PBP/2q3K1 w - - 1 30,580261,g2f1 c1f1 g1f1 b8d7 h7h8 d7f8 h8f8 e8f8 f6h8
+tournaments,m5-31,"Boucquet, Emile - Mindlin, Alon",2022,5,4,r2q3k/1pp3p1/3p2pp/p1b1n3/P5P1/5r1P/RQB2P2/2B2RK1 b - - 7 22,7043020,d8h4 b2e5 c5f2 g1h1 h4h3 e5h2 h3f1 h2g1 f1g1
+tournaments,m5-32,"Aboubacar Akarintkitt - Stratonowitsch, Andre",2022,5,4,1R6/p4ppk/2p5/3p3p/2p1n3/B1PpP3/P4qP1/7K b - - 3 29,1987878,e4g3 h1h2 g3e2 b8h8 h7h8 a3e7 f2g1 h2h3 g1h1
+tournaments,m5-33,"Aziradji Mohamed Ismael - Bagheri, Amir",2022,5,4,1R6/8/p7/5p1p/7P/2rp2k1/4p3/1K6 b - - 1 63,235211,e2e1q b1a2 c3c2 b8b2 e1a5 a2b1 c2c1 b1c1 a5e1
+tournaments,m5-34,"Gordon, Frank - Goorsahye, Antoine",2022,5,4,3r2k1/ppp1qppp/2n5/3N4/6b1/4Q1P1/PP1K3P/R6R b - - 0 21,629693,d8d5 d2c2 g4f5 e3d3 f5d3 c2c1 d5c5 c1d1 e7e2
+tournaments,m5-35,"Hernandez Guerrero, Gilberto - Kamara, Ansumana",2022,5,4,5q2/3Q4/7k/5pp1/3Q3P/4P3/3K1P1P/8 w - - 0 46,2952390,h4g5 h6g6 h2h4 f8f7 d7d6 g6h7 d6h6 h7g8 h6h8
+tournaments,m5-36,"Kanyamarala, Tarun - Ahn, Hongjin",2022,5,4,1r4q1/R5p1/4p1k1/2B2p2/3P1P1Q/3B1bP1/8/6K1 w - - 6 56,12166717,g3g4 g8h8 g4f5 e6f5 h4g5 g6h7 g5f5 h7h6 f5g6
+tournaments,m5-37,"Lee, Ethan - Odounga Christ, Ceylan",2022,5,4,q3r1nk/1R6/p6p/3ppNpP/2pP2P1/2P1P3/P1Q2R1B/7K w - - 1 37,2434860,b7h7 h8h7 f5h4 h7g7 c2h7 g7h7 f2f7 h7h8 h4g6
+tournaments,m5-38,"Montel Jr, Cyril Tomas - Aboubacar Akarintkitt",2022,5,4,r1n3r1/1p6/2p2Nkp/p1P3P1/5Pq1/1PQ5/PB4B1/R4RK1 w - - 4 32,7477185,f6g4 g8h8 g2e4 g6f7 c3g7 f7e8 g4f6 e8d8 g7d7
+tournaments,m5-39,"Pinales Roussel, Gabriel - Oluka Robert Mcligeyo",2022,5,4,1q2r2k/p2n2Rp/1p6/2pP4/2P5/6P1/PB1P3P/5RK1 w - - 1 28,388979,g7d7 h8g8 d7g7 g8h8 g7g4 e8e5 b2e5 b8e5 f1f8
+tournaments,m5-40,"Vilaphen, Phakthong - Stanley, P'Della'P",2022,5,4,2r2qk1/4Rp1p/5PpB/1p1p4/p2p4/P1P5/3Q1PPP/6K1 w - - 0 26,5119713,h6f8 c8c3 d2c3 h7h6 e7e8 g8h7 f8g7 d4c3 e8h8
+tournaments,m5-41,"Huschenbeth, Niclas - Seel, Christian",2022,5,4,1k6/pp2r3/4p2p/1Q4p1/3RB3/KP6/P4qPP/8 w - - 2 31,395516,b5e5 b8c8 e5h8 f2f8 h8f8 e7e8 f8e8 c8c7 e8d8
+tournaments,m5-42,"Schroeder, Jan-Christian - Nagy, Gabor1",2022,5,4,3q4/3k1prp/p3p3/2Q1P3/8/5B1P/6P1/7K w - - 0 42,206498,c5d6 d7c8 d6a6 c8d7 f3c6 d7e7 a6a3 d8d6 a3d6
+tournaments,m5-43,"Grandelius, Nils - Bluebaum, Matthias",2021,5,4,5Q2/rp1b2p1/4p2p/p2p4/P1kNq3/2P4P/1P4P1/5RK1 w - - 4 29,536556,b2b3 c4d3 f1d1 d3c3 f8c5 c3b2 c5c1 b2a2 c1a1
+tournaments,m5-44,"Kuybokarov, Temur - Nihal, Sarin",2021,5,4,8/2p1rpkp/1p4rp/p2n4/N1N5/1P3n1b/P4PP1/R2R1B1K b - - 5 30,1503471,h3g2 f1g2 e7e4 d1d4 e4d4 c4e5 d4h4 g2h3 h4h3
+tournaments,m5-45,"Guterres, Cosme - Hewlett, Leo",2022,5,4,7r/p2k1p2/5p1r/2Q5/4BPb1/5N2/1q4PP/5R1K w - - 1 40,1629876,f1d1 d7e8 e4c6 g4d7 c6d7 e8d8 d7b5 b2d2 d1d2
+tournaments,m5-46,"Khan, Taffin - Alexander, Shakthi",2022,5,4,4knQ1/p4p2/b3rB2/1pRpPp2/3P4/7P/qP4P1/2R3K1 w - - 0 34,3279177,c5c7 e6f6 e5f6 a2a3 g8f7 e8d8 b2a3 b5b4 f7f8
+tournaments,m5-47,"Markov, Mikhail KGZ - Ahmad, Al Khatib",2022,5,4,8/5Q2/5p1k/2p3r1/4PKp1/6P1/8/8 w - - 2 67,30151,f7f6 h6h7 f4g5 c5c4 f6f7 h7h8 g5f6 c4c3 f7g7
+tournaments,m5-48,"Miswadah, Baha - Pace, Colin",2022,5,4,7r/1Qp5/1p1k4/1Pqp1Pp1/4p1P1/8/P5K1/3R4 b - - 4 41,54298,c5c2 d1d2 c2d2 g2g1 d2d1 g1f2 h8h2 f2e3 d1d3
+tournaments,m5-49,"Raouf Ben Anziz - Knowles, Kendrick",2022,5,4,2r3k1/4bppp/4p3/3p4/3Pn3/5BPP/4NPK1/rq2B3 b - - 2 36,1269551,b1e1 g2h2 e1f2 f3g2 f2e2 h3h4 e2f2 h2h3 f2g3
+tournaments,m5-50,"Sangvane Vongphouthone - Khalema, Sechaba",2022,5,4,rn4k1/6p1/4p3/2pp1p2/Pb6/1P6/2K4p/8 b - - 1 46,468553,h2h1q c2b2 h1g2 b2c1 g2d2 c1b1 b4a3 b1a1 d2b2
+tournaments,m5-51,"Klein, Felix - Zajogin, Alexander",2022,5,4,4r3/8/kp5Q/2n5/1P4p1/Pq4P1/5P2/2K4R b - - 2 40,630140,b3c4 c1b1 c4d3 b1a1 c5b3 a1b2 e8e2 h6d2 e2d2
+tournaments,m5-52,"Charlee, Porthor - Winston Gerald, Mansfield Thomas",2022,5,4,8/8/1p6/b1p1ppk1/P3Nn2/2P5/2K5/6q1 b - - 0 54,195693,f5e4 c2b2 g1h2 b2c1 f4d3 c1d1 a5c3 a4a5 h2d2
+tournaments,m5-53,"Lhundrup M Dorji - Chavez, Ricardo Ernesto",2022,5,4,8/8/K1p5/p1k5/PPP5/8/8/4q3 b - - 0 52,291588,e1b4 a6a7 c5d6 a7a6 b4b8 a6a5 d6c5 a5a6 b8a8
+tournaments,m5-54,Donkeng Hussel - Aboubacar Akarintkitt,2022,5,4,8/2N5/6pp/5kr1/3Q4/P6P/5PP1/6K1 w - - 3 55,336300,g2g4 g5g4 h3g4 f5g5 c7e6 g5h4 d4f4 h4h3 f4g3
+tournaments,m5-55,"Yussof, Pg Abd Rahman - Ahamada Abdillah",2022,5,4,8/1p2k3/2p2pR1/p4P2/8/8/P4P1P/3R3K w - - 2 39,354173,g6g7 e7e8 g7b7 a5a4 b7b8 e8e7 b8d8 e7f7 d1d7
+tournaments,m5-56,"Khoa, Goodwill - Abdelaziz Bokhit, Badjoiri",2022,5,4,8/8/1P1R4/2K5/8/1k6/8/8 w - - 1 53,362443,b6b7 b3b2 b7b8q b2c1 b8b4 c1c2 d6d2 c2c1 b4b2
+tournaments,m5-57,"Gordon, Frank - Garber, Ousainou",2022,5,4,5b1k/1p6/3p1P2/4p3/3pq3/P1R3K1/8/8 b - - 0 47,448999,e4f4 g3g2 d4c3 g2g1 f4d2 g1f1 c3c2 f1g1 c2c1q
+tournaments,m5-58,"Teixeira, Gil - Perez Ponsa, Federico",2022,5,4,8/pp3pk1/4b1p1/4q3/3pPpP1/1P5r/P1PQ2K1/2RR4 b - - 1 29,549803,e5e4 g2h3 e4f3 h3h2 f3g3 h2h1 e6d5 d2g2 g3g2
+tournaments,m5-59,"Nyambalo, Joseph Xavier - Masiala Mayuku, Eddy",2022,5,4,8/8/2Q5/5KP1/7P/1k6/8/8 w - - 11 68,603325,f5e4 b3a2 c6b6 a2a1 e4d3 a1a2 d3c2 a2a1 b6a6
+tournaments,m5-60,"Bongo Ngombele, Tary - AH KYE, Benitot",2022,5,4,8/2q3k1/p5p1/1P6/4p1KQ/5p1P/2P2P2/5r2 b - - 0 39,706406,f1g1 h4g3 g1g3 f2g3 c7e5 b5a6 e5f5 g4h4 f5h5
+tournaments,m5-61,"Nambi, Pradeep - Sihlongonyane, Sikhanyiso",2022,5,4,8/5p1p/4pk2/1b4p1/6P1/6P1/6r1/3K4 b - - 15 51,1017254,f6e5 d1c1 b5c4 c1b1 e5d4 b1a1 d4c3 a1b1 g2g1
+tournaments,m5-62,"Estur, Gavino Aguilar - Kasongo Kazadi Olivier",2022,5,4,r1k2r2/p1p4R/3p4/1p2p3/4P1p1/PN1PB1P1/qPPQ1P2/2KR4 w - - 2 24,3561626,d2a5 a2b2 c1b2 f8f7 h7f7 c8b7 a5c7 b7a6 c7d6
+tournaments,m5-63,"Nor, Mohamed Ahmed - Sangvane Vongphouthone",2022,5,4,r6k/1pp3pp/p2pbPp1/3Q1rN1/2B5/8/PPP2PPP/R1B1R1K1 w - - 1 20,4316756,g5f7 h8g8 d5e6 a8f8 f7d6 g8h8 e6g8 f8g8 d6f7
+tournaments,m6-01,"Bongo Ngombele, Tary - Alhejab, Meshal",2022,6,5,6k1/p2Q1ppp/2p5/2P5/8/8/P3K1PP/1rq5 b - - 1 33,2123036,c1e1 e2d3 b1d1 d3c2 d1d7 c2b2 e1d2 b2b1 d7b7 b1a1 d2e1
+tournaments,m6-02,"Eickelman, Connor - Volpinari, Danilo",2022,6,5,5Bk1/8/8/4N3/6K1/8/8/8 w - - 69 90,876290,f8h6 g8h7 g4h5 h7g8 h5g6 g8h8 e5c6 h8g8 c6e7 g8h8 h6g7
+tournaments,m6-03,"Garber, Ousainou - Volodin, Aleksandr",2022,6,5,8/pq6/1p3bk1/1P5p/2Q3pP/P4bP1/5K2/2Br4 b - - 3 47,13092415,f6d4 c4d4 d1d4 a3a4 b7e4 c1e3 d4d2 f2e1 e4e3 e1f1 e3f2
+tournaments,m6-04,"Hernandez Guerrero, Gilberto - Kamara, Ansumana",2022,6,5,2Q5/3Q4/6pk/5p2/6qP/4P3/4KP1P/8 w - - 3 43,904178,e2f1 g4h3 f1e1 h3f1 e1f1 h6h5 c8h8 h5g4 f1g2 g6g5 f2f3
+tournaments,m6-05,"Kamara, Ansumana - Jimma, Desalegn Fekadu",2022,6,5,8/8/8/6k1/1pb5/4r3/1K6/8 b - - 3 62,2053378,e3e2 b2b1 c4d3 b1c1 e2c2 c1d1 b4b3 d1e1 b3b2 e1d1 b2b1q
+tournaments,m6-06,"Nadjim Mohamed - Conhoff, David",2022,6,5,8/1p2r3/8/7p/2pk3P/8/2K5/8 b - - 1 43,921147,e7e2 c2d1 e2b2 d1c1 c4c3 c1d1 d4e3 d1c1 e3d3 c1d1 b2b1
+tournaments,m6-07,"Ahmad, Al Khatib - Bridet, Robert",2022,6,5,6k1/5R2/6Pp/1p5P/8/1p1K4/P7/8 w - - 0 47,956162,a2b3 g8h8 b3b4 h8g8 d3e4 g8h8 e4f5 h8g8 f5f6 g8h8 f7f8
+tournaments,m6-08,"Akram, Yousouf Dahab - Mutabazi Hugues",2022,6,5,8/2b3p1/4r2p/3k3P/5r2/3K4/8/3R4 b - - 1 51,3111077,f4d4 d3c2 e6e2 c2b3 d4d1 b3c3 c7e5 c3b3 e2b2 b3a3 d1a1
+tournaments,m6-09,"Auguiste, Lyndon - Mujahid, Bin Yazeed",2022,6,5,6k1/ppQ2ppp/2n1b1n1/7q/8/1P6/P5PP/3rNR1K b - - 5 30,16597638,h5e2 c7d8 c6d8 h2h4 e2f1 h1h2 f1f4 g2g3 f4f2 h2h1 d1e1
+tournaments,m6-10,"Dabuae, Thubalkain - Nambi, Pradeep",2022,6,5,8/B7/4k3/2P5/8/5PPp/7P/3R1K2 w - - 1 44,7588126,c5c6 e6e5 c6c7 e5f5 c7c8q f5f6 d1d6 f6e7 c8c7 e7e8 d6d8
+tournaments,m6-11,"Ibarra Chami, Luis Fernando - Oratile, Kgotlane",2022,6,5,8/8/4N2p/4Pp1k/7P/6R1/5PP1/2r3K1 w - - 1 45,876955,g1h2 c1f1 f2f3 f1a1 e6g7 h5h4 g7f5 h4h5 f5g7 h5h4 g3g4
+tournaments,m6-12,"Aziradji Mohamed Ismael - Bagheri, Amir",2022,6,5,8/8/p7/5p1p/7P/2rp2P1/1R2pk2/1K6 b - - 3 62,891789,f2g3 b1a2 e2e1q b2b1 e1b1 a2b1 c3c2 b1a1 d3d2 a1b1 d2d1q
+tournaments,m6-13,"Thomas, Larry - Berardi, Giancarlo",2022,6,5,8/8/8/8/8/3K2k1/5p2/5Q2 w - - 8 97,1273385,d3e4 g3g4 f1f2 g4g5 f2b6 g5g4 b6g1 g4h3 e4f5 h3h4 g1g4
+tournaments,m6-14,"Aboubacar Akarintkitt - Hewlett, Leo",2022,6,5,3q2k1/6p1/4P2p/2p1R3/3p1Q2/3P4/1PP3PP/6K1 w - - 5 43,10684605,f4f7 g8h7 e6e7 d8d7 e7e8q d7e8 e5e8 c5c4 f7f5 g7g6 f5f7
+tournaments,m6-15,"Golubovskis, Maksims - Lockhart, Kenville",2022,6,5,r4k1r/pp1n3p/2p1Q3/6q1/8/1P6/P1P2PPP/3RR1K1 w - - 1 26,20214766,d1d7 g5g7 e6f5 f8g8 d7g7 g8g7 e1e7 g7h6 g2g4 a8e8 f5h5
+tournaments,m6-16,"Yacouba Hassane, Issa - Schneider, James U",2022,6,5,8/3n2k1/5p1p/4p2P/4P1P1/2pr1PK1/8/8 b - - 0 43,6147441,c3c2 g3g2 d3d2 g2h3 c2c1q g4g5 c1f1 h3g3 d2g2 g3h3 f1h1
+tournaments,m6-17,"Pinales Roussel, Gabriel - Oluka Robert Mcligeyo",2022,6,5,1q2r1k1/p2n1Rpp/1p6/2pP4/2P5/6P1/PB1P3P/5RK1 w - - 1 27,1142063,f7g7 g8h8 g7d7 h8g8 d7g7 g8h8 g7g4 e8e5 b2e5 b8e5 f1f8
+tournaments,m6-18,"Masiala Mayuku, Eddy - Napoleao, Lourenco",2022,6,5,4r1k1/1p3p1p/1q2r1pQ/6Rn/1P5P/8/1B2p2K/4R3 b - - 3 39,3116615,b6f2 h2h1 f2e1 h1g2 e1f1 g2h2 f1f2 h2h1 e2e1r g5g1 e1g1
+tournaments,m6-19,"Odounga Christ, Ceylan - Ndahangwapo, Heskiel",2022,6,5,7k/b1nq3p/p3pp2/4p3/1Pp1b3/P5PQ/4BPP1/2N2K2 b - - 2 37,9054658,d7d4 h3h7 h8h7 c1d3 c4d3 f1e1 d4f2 e1d1 d3e2 d1c1 e2e1q
+tournaments,m6-20,"Ricardo Dougan Abia - Odounga Christ, Ceylan",2022,6,5,3Q4/pQ4pk/7p/8/8/B3n3/P1P1n1PP/6K1 w - - 3 36,15887450,g1h1 e3f5 b7f7 e2g3 h2g3 h6h5 f7h5 f5h6 d8e8 a7a6 h5g6
+tournaments,m6-21,"Uapingene, Uatiavi Jossy - Bongo Ngombele, Tary",2022,6,5,2rk1n2/2q3pp/2PPQp2/8/8/4P1P1/5PBP/5RK1 w - - 1 35,3425037,d6c7 d8c7 e6e7 f8d7 e7d7 c7b6 f1b1 b6a6 d7c8 a6a5 c8a8
+tournaments,m6-22,"Kuybokarov, Temur - Nihal, Sarin",2021,6,5,8/2p1rpkp/1p4rp/p2n4/N1Nn4/1P5b/P4PP1/R2R1BK1 b - - 3 29,21348352,d4f3 g1h1 h3g2 f1g2 e7e4 d1d4 e4d4 c4e5 d4h4 g2h3 h4h3
