@@ -1,101 +1,172 @@
-number,white,black,year,event,selectionCollection,title,sourceUrl
-1,McDonnell,La Bourdonnais,1834,McDonnell - La Bourdonnais (King's Gambit) ,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-2,Alexander McDonnell,Louis Charles Mahe De La Bourdonnais,1834,London m4 ;HCL 18,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-3,La Bourdonnais,McDonnell,1834,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-4,Anderssen,Lionel Kieseritzky,1851,?,Immortal games anthology,The Immortal Game,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-5,Adolf Anderssen,Jean Dufresne,1852,Berlin casual game,Evergreen Game — published historical game score,The Evergreen Game,https://en.wikipedia.org/wiki/Evergreen_Game
-6,Marache,Morphy,1857,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-7,Morphy,Anderssen,1858,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-8,Morphy,Duke of Brunswick,1858,?,Immortal games anthology,The Opera Game,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-9,Steinitz,Mongredian,1862,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-10,Steinitz,Anderssen,1866, World Championship,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-11,"Steinitz, W","Sellman, A.G.",1885,?,Great Masters anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
-12,Emanuel Lasker,Johann Hermann Bauer,1889,Amsterdam,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-13,Steinitz,Tchigorin,1892, World Championship (4),Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-14,"Tarrasch, S","Von Scheve, T",1894,?,Great Masters anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
-15,Tarrasch,Schlecter,1894,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-16,Harry Nelson Pillsbury,Siegbert Tarrasch,1895,Hastings,Masters of the Chessboard — Richard Réti,,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
-17,Wilhelm Steinitz,Curt von Bardeleben,1895,Hastings,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-18,Siegbert Tarrasch,Georg Marco,1898,Vienna,Masters of the Chessboard — Richard Réti,,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
-19,Pillsbury,Marco,1900,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-20,Carl Schlechter,Isidor Gunsberg,1901,Monte Carlo,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-21,Schlecter,Przepiorka,1906,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-22,Marshall,Lasker,1907,World Championship (1),Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-23,Reshevsky,Traube,1920,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-24,Alexander Alekhine,Fred Dewhirst Yates,1922,London,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-25,Richard Reti,Akiba Rubinstein,1923,Karlsbad,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-26,Friedrich Saemisch,Aron Nimzowitsch,1923,Copenhagen,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-27,Richard Reti,F Fischer,1923,Vienna,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-28,Gruenfeld,Alekhine,1923,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-29,Jose Raul Capablanca,Savielly Tartakower,1924,New York,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-30,Capablanca,Spielmann,1927,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-31,Spielmann,Hunlinger,1929,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-32,Mikhail Botvinnik,Nikolay Tikhonovich Sorokin,1931,USSR Championship,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-33,Alexander Alekhine,Salomon Flohr,1931,Bled,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-34,Alekhine,Alexander,1936,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-35,Jose Raul Capablanca,Andre Lilienthal,1936,Moscow,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-36,Euwe,Maroczy,1936,?,Great Masters anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
-37,Botvinnik,Capablanca,1938,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-38,Capablanca,"Golombek, H",1939,?,Great Masters anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
-39,"Smyslov, V","Kottnauer, C",1946,?,Great Masters anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
-40,Yuri S Gusev,E Auerbach,1946,Molniya Sporting Society,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-41,Frantisek Zita,David Bronstein,1946,Prague-Moscow,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-42,Mikhail Botvinnik,Max Euwe,1948,FIDE World Championship Tournament,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-43,Tartakover,Euwe,1948,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-44,Isaac Boleslavsky,Vasily Smyslov,1950,Budapest Candidates,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-45,Efim Geller,Max Euwe,1953,Zurich Candidates,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-46,Tigran Vartanovich Petrosian,Carlos Enrique Guimard,1955,Gothenburg Interzonal,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-47,Donald Byrne,Robert James Fischer,1956,Third Rosenwald Trophy,Chess Classics anthology,The Game of the Century,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-48,Bent Larsen,Berndt Soderborg,1957,WchT U26 04th,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-49,Fischer,Sherwin,1957,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-50,Lev Polugaevsky,Rashid Gibiatovich Nezhmetdinov,1958,18th RSFSR-ch,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-51,Tal,Furster,1958,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-52,Tigran Vartanovich Petrosian,Wolfgang Unzicker,1960,FRG-URS,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-53,Robert Eugene Byrne,Robert James Fischer,1963,US Championship 1963/64,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-54,Robert James Fischer,Pal Benko,1963,US Championship 1963/64,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-55,Robert James Fischer,Svetozar Gligoric,1966,Havana ol (Men) fin-A,My 60 Memorable Games — Bobby Fischer,,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
-56,Lehman,Smyslov,1966,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-57,Robert James Fischer,Miguel Najdorf,1966,Second Piatigorsky Cup,My 60 Memorable Games — Bobby Fischer,,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
-58,Lajos Portisch,Robert James Fischer,1966,Second Piatigorsky Cup,My 60 Memorable Games — Bobby Fischer,,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
-59,Robert James Fischer,Lhamsuren Myagmarsuren,1967,Sousse Interzonal,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-60,Ratmir Kholmov,Robert James Fischer,1967,Skopje,My 60 Memorable Games — Bobby Fischer,,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
-61,Robert James Fischer,Leonid Stein,1967,Sousse Interzonal,My 60 Memorable Games — Bobby Fischer,,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
-62,Robert James Fischer,Efim Geller,1967,Skopje,My 60 Memorable Games — Bobby Fischer,,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
-63,Bent Larsen,Robert James Fischer,1967,Monte Carlo,My 60 Memorable Games — Bobby Fischer,,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
-64,Petrosian,Estrin,1968,?,Immortal games anthology,,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
-65,Anatoly Karpov,Svetozar Gligoric,1973,Leningrad Interzonal,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-66,Alexsander A Shashin,Viktor Korchnoi,1973,Leningrad-ch,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-67,Anatoly Karpov,Wolfgang Unzicker,1974,Olympiad Final-A,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-68,Anatoly Karpov,Boris Spassky,1974,Karpov - Spassky Candidates Semifinal,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-69,Garry Kasparov,Andrei Sokolov,1975,Baku,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-70,Tigran Vartanovich Petrosian,Mikhail Tal,1976,USSR Championship,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-71,Eduard Gufeld,Bozidar Ivanovic,1979,Chigorin Memorial,Chess Classics anthology,,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
-72,Garry Kasparov,Lajos Portisch,1983,Niksic 1983,RamaChess selected greatest games,Kasparov vs Portisch (1983),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-73,Anatoly Karpov,Garry Kasparov,1985,"World Championship 1985, Moscow",RamaChess selected greatest games,Karpov vs Kasparov (1985),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-74,Garry Kasparov,Anatoly Karpov,1986,"World Championship 1986, London / Leningrad",RamaChess selected greatest games,Kasparov vs Karpov (1986),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-75,Garry Kasparov,Anatoly Karpov,1990,"World Championship 1990, Lyon",RamaChess selected greatest games,Kasparov vs Karpov (1990),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-76,Anatoly Karpov,Garry Kasparov,1993,Linares 1993,RamaChess selected greatest games,Karpov vs Kasparov (1993),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-77,Vladimir Kramnik,Garry Kasparov,1994,"Intel World Chess Express Challenge, Munich 1994",RamaChess selected greatest games,Kramnik vs Kasparov (1994),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-78,Garry Kasparov,Vladimir Kramnik,1994,Novgorod 1994,RamaChess selected greatest games,Kasparov vs Kramnik (1994),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-79,Garry Kasparov,Viswanathan Anand,1995,"PCA World Championship 1995, New York, game 10",RamaChess selected greatest games,Kasparov vs Anand (1995),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-80,Garry Kasparov,Veselin Topalov,1999,Wijk aan Zee 1999,RamaChess selected greatest games,Kasparov's Immortal,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-81,Michael Adams,Garry Kasparov,2005,Linares 2005,RamaChess selected greatest games,Adams vs Kasparov (2005),https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
-82,Magnus Carlsen,Alexander Beliavsky,2006,Wijk aan Zee 2006,RamaChess selected greatest games,Beating a Soviet-Era Legend,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-83,Magnus Carlsen,Michael Adams,2007,World Cup 2007,RamaChess selected greatest games,First Knockout Win,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-84,Magnus Carlsen,Vladimir Kramnik,2009,London Chess Classic 2009,RamaChess selected greatest games,Cracking Kramnik’s Fortress,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-85,Magnus Carlsen,Viswanathan Anand,2009,Linares 2009,RamaChess selected greatest games,Beating the World Champion,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-86,Magnus Carlsen,Veselin Topalov,2009,Nanjing 2009,RamaChess selected greatest games,Crushing the World #1,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-87,Magnus Carlsen,Veselin Topalov,2010,Nanjing 2010,RamaChess selected greatest games,Nanjing Revisited,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-88,Magnus Carlsen,Wang Hao,2011,Tata Steel 2011,RamaChess selected greatest games,Inside the Wijk aan Zee Dominance,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-89,Magnus Carlsen,Viswanathan Anand,2012,Sao Paulo / Bilbao 2012,RamaChess selected greatest games,Pre-Coronation Anand,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-90,Magnus Carlsen,Boris Gelfand,2013,Candidates 2013,RamaChess selected greatest games,Qualifying for the Crown,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-91,Magnus Carlsen,Sergey Karjakin,2013,Tata Steel 2013,RamaChess selected greatest games,Tata Steel Burner,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-92,Teimour Radjabov,Magnus Carlsen,2013,Candidates 2013,RamaChess selected greatest games,Candidates Endgame Marathon,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-93,Magnus Carlsen,Viswanathan Anand,2013,WC 2013 Game 5,RamaChess selected greatest games,The Title Match in Chennai,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-94,Magnus Carlsen,Viswanathan Anand,2014,WC 2014 Game 2,RamaChess selected greatest games,Defending the Crown,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-95,Magnus Carlsen,Maxime Vachier-Lagrave,2015,Sinquefield Cup 2015,RamaChess selected greatest games,Beating the Sharpest Tactician,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-96,Magnus Carlsen,Sergey Karjakin,2016,WC 2016 Tiebreak Game 4,RamaChess selected greatest games,The Queen Sacrifice That Defended a Crown,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-97,Magnus Carlsen,Fabiano Caruana,2018,WC 2018 Tiebreak Game 1,RamaChess selected greatest games,Outlasting Caruana,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
-98,"Erdogmus, Yagiz Kaan","Van Foreest, Jorden",2026,Tata Steel Chess Masters,Tata Steel Masters 2026 — selected decisive highlights,Tata Steel 2026 highlight,https://ramachess.com/tournaments/tata-steel-chess-2026/tata-steel-chess-2026.pgn
-99,"Abdusattorov, Nodirbek",Gukesh D,2026,Tata Steel Chess Masters,Tata Steel Masters 2026 — selected decisive highlights,Tata Steel 2026 highlight,https://ramachess.com/tournaments/tata-steel-chess-2026/tata-steel-chess-2026.pgn
-100,Erigaisi Arjun,"Abdusattorov, Nodirbek",2026,Tata Steel Chess Masters,Tata Steel Masters 2026 — selected decisive highlights,Tata Steel 2026 highlight,https://ramachess.com/tournaments/tata-steel-chess-2026/tata-steel-chess-2026.pgn
+gameKey,white,black,year,selectionCollection,sourceUrl
+a79a5dcb9b7965d4,McDonnell,La Bourdonnais,1834,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+e6c935bbd4e8fbbe,Alexander McDonnell,Louis Charles Mahe De La Bourdonnais,1834,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+e9b824761a2a5e37,La Bourdonnais,McDonnell,1834,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+c0d106681bc49dd1,Anderssen,Lionel Kieseritzky,1851,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+7803bf4cccbb90d9,Adolf Anderssen,Jean Dufresne,1852,Evergreen Game — published historical game score,https://en.wikipedia.org/wiki/Evergreen_Game
+3fa61724e3666f1f,Marache,Morphy,1857,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+94576a20b0082e7d,Morphy,Anderssen,1858,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+a102a47083481020,Morphy,Duke of Brunswick,1858,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+de7dafd27b1d6625,Steinitz,Mongredian,1862,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+196244536a0c4f69,Steinitz,Anderssen,1866,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+9b7b926846a4af51,Adolf Anderssen,Louis Paulsen,1873,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+c81d6a2c85cbe39d,Samuel Rosenthal,Wilhelm Steinitz,1873,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+a85e5057e7047f38,Berthold Englisch,Wilhelm Steinitz,1883,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+567d42c9025104a7,Siegbert Tarrasch,Josef Noa,1885,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+bb8b64b207c38a1e,"Steinitz, W","Sellman, A.G.",1885,Great Masters anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
+39d647b237ecefa6,Emanuel Lasker,Johann Hermann Bauer,1889,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+02c9a68393465003,Joseph Henry Blackburne,Emanuel Lasker,1892,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+a765e7f804479f2d,Steinitz,Tchigorin,1892,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+6887bdeb5f254d3c,"Tarrasch, S","Von Scheve, T",1894,Great Masters anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
+ebd9394d8358bf2c,Tarrasch,Schlecter,1894,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+6834c6c8c864ad09,Harry Nelson Pillsbury,Siegbert Tarrasch,1895,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+af951552579eb84b,Wilhelm Steinitz,Curt von Bardeleben,1895,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+7e986c4f2931c4e2,Siegbert Tarrasch,Georg Marco,1898,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+4d291315d6ddb03b,Pillsbury,Marco,1900,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+842b92866d5c1f92,Carl Schlechter,Isidor Gunsberg,1901,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+eb92362af064233f,Marshall,Tarrasch,1905,Logical Chess: Move by Move — Irving Chernev,https://github.com/usefulmove/chessdb/blob/main/LogicalChessMoveByMoveChernev.pgn
+ebb37ae9ad2d7993,Carl Schlechter,Walter John,1905,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+ed583cd6d7582ed6,Schlecter,Przepiorka,1906,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+b21d8d5d2b1f4c77,Marshall,Lasker,1907,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+f8b58f9b505912d6,Vliet,Znosko-Borovsky,1907,Logical Chess: Move by Move — Irving Chernev,https://github.com/usefulmove/chessdb/blob/main/LogicalChessMoveByMoveChernev.pgn
+291b9aaa56466b70,Rubinstein,Salwe,1908,Logical Chess: Move by Move — Irving Chernev,https://github.com/usefulmove/chessdb/blob/main/LogicalChessMoveByMoveChernev.pgn
+529baa9bc031ace6,Frank James Marshall,Akiba Rubinstein,1908,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+38918d7cc5fdfde4,"Tarrasch, S","Vogel, S",1910,Great Masters anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
+b223036f20fa0c54,Richard Teichmann,Aron Nimzowitsch,1911,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+35a1e25b21445a16,Grunfeld,Schenkein,1915,Logical Chess: Move by Move — Irving Chernev,https://github.com/usefulmove/chessdb/blob/main/LogicalChessMoveByMoveChernev.pgn
+a8c54cdeeef768ff,Tarrasch,Mieses,1916,Logical Chess: Move by Move — Irving Chernev,https://github.com/usefulmove/chessdb/blob/main/LogicalChessMoveByMoveChernev.pgn
+0e459044c60302ad,Tarrasch,Mieses,1920,Logical Chess: Move by Move — Irving Chernev,https://github.com/usefulmove/chessdb/blob/main/LogicalChessMoveByMoveChernev.pgn
+7dfe9b819f42b1e2,Reshevsky,Traube,1920,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+8f00193388bbe7c5,Alexander Alekhine,Fred Dewhirst Yates,1922,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+a7f233a57809ea9c,Alexander Alekhine,Heinrich Wolf,1922,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+c7151f8beee8ed0f,Efim Bogoljubov,Heinrich Wolf,1922,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+5e3cc483b7936718,Richard Reti,Akiba Rubinstein,1923,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+9758f43c7c6924f6,Friedrich Saemisch,Aron Nimzowitsch,1923,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+e27556860ba98af8,Richard Reti,F Fischer,1923,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+e439cfe15d284eee,Gruenfeld,Alekhine,1923,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+fed2ca3abbde727a,Akiba Rubinstein,Karel Hromadka,1923,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+7cc15298f75ecad7,Jose Raul Capablanca,Savielly Tartakower,1924,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+406762ab74e5dcad,Efim Bogoljubov,Jacques Mieses,1925,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+1e5d82fe685c8789,Paul F Johner,Aron Nimzowitsch,1926,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+3e23e30fad01f05f,Alekhine,"Marshall, F.J.",1927,Great Masters anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
+59fa1d1c906b6f6e,Aron Nimzowitsch,Jose Raul Capablanca,1927,Masters of the Chessboard — Richard Réti,https://github.com/usefulmove/chessdb/blob/main/MastersoftheChessboardReti1933.pgn
+f4d84ed256355965,Capablanca,Spielmann,1927,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+ff88888d63015fdb,Spielmann,Hunlinger,1929,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+71fb8464b2fb4b65,Mikhail Botvinnik,Nikolay Tikhonovich Sorokin,1931,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+b2a77a0c919ccb6a,Alexander Alekhine,Salomon Flohr,1931,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+21f2271de0b02fd0,Alekhine,Alexander,1936,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+c88e9e25f2bd6495,Jose Raul Capablanca,Andre Lilienthal,1936,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+ca28f430d1c5a0e6,Euwe,Maroczy,1936,Great Masters anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
+f11470ab9c801daf,Botvinnik,Capablanca,1938,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+7c444720ec09c85c,Capablanca,"Golombek, H",1939,Great Masters anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
+77cf4f6a37906459,"Smyslov, V","Kottnauer, C",1946,Great Masters anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/great_masters.pgn
+dad765dc43507dee,Yuri S Gusev,E Auerbach,1946,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+e782e0b3bcaf22ce,Frantisek Zita,David Bronstein,1946,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+aa55f8d7423a680e,Mikhail Botvinnik,Max Euwe,1948,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+cef8a9543450d301,Tartakover,Euwe,1948,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+ed827a427631b6c1,Ratmir Kholmov,Mikhail Tal,1949,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+d22c1afefdcb969e,Isaac Boleslavsky,Vasily Smyslov,1950,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+e1a7e09a05946eb9,Mikhail Tal,Shlomo Giterman,1951,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+3d319ebf4d48dae1,Mikhail Tal,Straume,1953,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+7d45fc174e7a091c,Efim Geller,Max Euwe,1953,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+a94cefa2b7a71b48,Isaak Birbrager,Mikhail Tal,1953,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+d504edaaed2fa59b,Mikhail Tal,Vladimir Alexandrovich Soloviev,1955,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+f1af5fff410caa50,Tigran Vartanovich Petrosian,Carlos Enrique Guimard,1955,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+7d402734bef984ea,Donald Byrne,Robert James Fischer,1956,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+96953a1d7f6204a3,Bent Larsen,Berndt Soderborg,1957,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+e2db21c54d8d778c,Fischer,Sherwin,1957,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+f359309dc9e5b47f,Paul Keres,Mikhail Tal,1957,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+05d87abd3edd1234,Lev Polugaevsky,Rashid Gibiatovich Nezhmetdinov,1958,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+0ada5a8c381dcf64,Mikhail Tal,Oscar Panno,1958,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+79b85c08c4a9bec9,Tal,Furster,1958,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+dcdfb3a8b2988816,Boris Spassky,Mikhail Tal,1958,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+f72ed87070d878d7,Mikhail Tal,Efim Geller,1958,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+0d5c53d094b8a54f,Robert James Fischer,Paul Keres,1959,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+1afeb46d015d690e,Vasily Smyslov,Robert James Fischer,1959,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+3cee5c151bb29844,Mikhail Tal,Robert James Fischer,1959,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+720427901a38f758,Jan Hein Donner,Mikhail Tal,1959,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+7547a0bb793d88e2,Mikhail Tal,Dieter Keller,1959,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+c9a50bea6002f41d,Mikhail Tal,Lev Polugaevsky,1959,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+e1b1e466aa5472b7,Robert James Fischer,Hector Decio Rossetto,1959,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+e5090070ebb04136,Mikhail Tal,Svetozar Gligoric,1959,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+f02e29a08195b41f,Boris Spassky,Mikhail Tal,1959,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+178d5a049559714f,Mikhail Tal,Mikhail Botvinnik,1960,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+7f76d769add750c7,Mikhail Botvinnik,Mikhail Tal,1960,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+829d16f949f2449b,Mikhail Tal,Mikhail Botvinnik,1960,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+86c172b64c7c8015,Mikhail Tal,Klaus Viktor Darga,1960,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+a60cb4d35662e108,Tigran Vartanovich Petrosian,Wolfgang Unzicker,1960,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+aaace8f83e43a5b6,Mikhail Tal,Mikhail Botvinnik,1960,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+ad87ffef2f12223f,Arinbjorn Gudmundsson,Robert James Fischer,1960,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+b0d9103dfb246f8a,William James Lombardy,Robert James Fischer,1960,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+0b950fa9b7c98544,Robert James Fischer,Mikhail Tal,1961,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+28d79d165f517a79,Mikhail Botvinnik,Mikhail Tal,1961,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+9e9d693df4818213,Borislav Ivkov,Mikhail Tal,1961,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+a351449f37782e19,Samuel Reshevsky,Robert James Fischer,1961,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+b01e177bf80815ec,Mikhail Botvinnik,Mikhail Tal,1961,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+ff4af6be4008d31c,Mikhail Tal,Bruno Parma,1961,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+24ba78a926bf4f88,Mikhail Tal,Anatolij Bannik,1962,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+60bb401a6d9b704b,Wolfgang Unzicker,Robert James Fischer,1962,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+d364d2be7f37543f,Arkady Novopashin,Mikhail Tal,1962,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+0bd4dadc4487506e,Robert Eugene Byrne,Robert James Fischer,1963,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+8d83f47dca65e71c,Robert James Fischer,Pal Benko,1963,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+90de2e554a639417,Mikhail Tal,Nikola Padevsky,1963,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+e3b51e217f7c4a87,Mikhail Tal,Istvan Bilek,1963,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+1312348e0e5e00e1,Mikhail Tal,Reinhart Fuchs,1964,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+8f7184e242ea7b43,Vasily Smyslov,Mikhail Tal,1964,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+cde167da1be633c4,Larry Melvyn Evans,Mikhail Tal,1964,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+22836b0135b68872,Mikhail Tal,Anatoly Shmit,1965,The Life and Games of Mikhail Tal,https://github.com/brianerdelyi/ChessPGN/blob/main/Life%20and%20Games%20of%20Mikhail%20Tal.pgn
+c456969505fc000c,Robert James Fischer,Vasily Smyslov,1965,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+01514ddc6309b798,Robert James Fischer,Svetozar Gligoric,1966,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+be12cc440a015aa1,Lehman,Smyslov,1966,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+d672ebf4edfec5b2,Robert James Fischer,Miguel Najdorf,1966,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+eab40d9a2c407f49,Lajos Portisch,Robert James Fischer,1966,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+23f20dfafdf86386,Robert James Fischer,Lhamsuren Myagmarsuren,1967,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+293fb42b753d171d,Ratmir Kholmov,Robert James Fischer,1967,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+2d37887b8f79b1db,Robert James Fischer,Leonid Stein,1967,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+aa3d4d457019efbd,Robert James Fischer,Efim Geller,1967,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+de82dbb3aa3c06bd,Bent Larsen,Robert James Fischer,1967,My 60 Memorable Games — Bobby Fischer,https://github.com/brianerdelyi/ChessPGN/blob/main/My%20Memorable%2060.pgn
+07e5001fc44a6a5c,Petrosian,Estrin,1968,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+5bdf6f29a75088f1,Anatoly Karpov,Svetozar Gligoric,1973,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+6dcad9d171057238,Alexsander A Shashin,Viktor Korchnoi,1973,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+440d042455c0903f,Anatoly Karpov,Wolfgang Unzicker,1974,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+678990be5f81be59,Anatoly Karpov,Boris Spassky,1974,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+b8bc1358d06b3c86,Garry Kasparov,Andrei Sokolov,1975,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+a04f1f1743c66537,Tigran Vartanovich Petrosian,Mikhail Tal,1976,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+5567d698a0705ba3,Eduard Gufeld,Bozidar Ivanovic,1979,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+8eee0c5f075ab121,Lawrence Day,Sylvain Barbeau,1980,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+9766550f40f133da,Gerhard Kraehenbuehl,Ralf Akesson,1981,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+98d2fc7957b17c6f,Anatoly Karpov,Lajos Portisch,1982,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+001681d238658f5b,Garry Kasparov,Lajos Portisch,1983,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+01869f226960c315,Anatoly Karpov,Garry Kasparov,1985,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+6cf3d8584faf47e7,Garry Kasparov,Anatoly Karpov,1986,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+dc16b53a07b95cc1,Karpov,Hartinov,1988,Immortal games anthology,https://github.com/ValdemarOrn/Chess/blob/master/Annotated%20Games/immortal_games.pgn
+13c13eba783e59e7,Garry Kasparov,Anatoly Karpov,1990,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+95b736d28ff7113d,Grigory Yuryevich Serper,Ioannis Nikolaidis,1993,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+b3cb103b9b4a652b,Anatoly Karpov,Garry Kasparov,1993,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+015bb9a248a3d587,Vladimir Kramnik,Garry Kasparov,1994,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+8af8dd73c30a3607,Garry Kasparov,Vladimir Kramnik,1994,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+fd9ee61ff54d9eb2,Anatoly Karpov,Veselin Topalov,1994,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+6b4759f1b34d0a52,Garry Kasparov,Viswanathan Anand,1995,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+7c615db0968933cd,Veselin Topalov,Alexey Shirov,1998,Chess Classics anthology,https://github.com/usefulmove/chessdb/blob/main/ChessClassics.pgn
+8b8e30192209b825,Garry Kasparov,Veselin Topalov,1999,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+30846e3ee7887bd0,Michael Adams,Garry Kasparov,2005,RamaChess selected greatest games,https://ramachess.com/articles/players/kasparov-top-10-chess-games.html
+7d0413fac1975c60,Magnus Carlsen,Geir Sune Tallaksen Ostmoe,2005,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+51e5c8b7530a04ae,Magnus Carlsen,Alexander Beliavsky,2006,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+cdf7bf3debd48362,Magnus Carlsen,Michael Adams,2007,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+636ab1f2ccbb521a,Magnus Carlsen,Vladimir Kramnik,2009,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+7896eef8d4c8de36,Magnus Carlsen,Viswanathan Anand,2009,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+dc3a163db12508d8,Magnus Carlsen,Veselin Topalov,2009,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+db161f1696b889f3,Magnus Carlsen,Veselin Topalov,2010,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+e66bc28a4dd2a5cc,Magnus Carlsen,Wang Hao,2011,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+8fb0e88831c9a160,Magnus Carlsen,Viswanathan Anand,2012,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+10ba77052358eb94,Magnus Carlsen,Boris Gelfand,2013,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+1eaaa3a6e59e8289,Magnus Carlsen,Sergey Karjakin,2013,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+7e3d2f3887db5f9c,Teimour Radjabov,Magnus Carlsen,2013,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+a5a5ab6a09bf9e56,Magnus Carlsen,Viswanathan Anand,2013,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+5241e6df049d6abf,Magnus Carlsen,Viswanathan Anand,2014,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+b14f358d9d5fd3cf,Magnus Carlsen,Maxime Vachier-Lagrave,2015,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+3d1ef438ea958911,Magnus Carlsen,Sergey Karjakin,2016,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+9b9a2c7281ce50ef,Magnus Carlsen,Fabiano Caruana,2018,RamaChess selected greatest games,https://ramachess.com/articles/magnus/magnus-carlsen-top-games.html
+0096338724147d67,"Erdogmus, Yagiz Kaan","Van Foreest, Jorden",2026,Tata Steel Masters 2026 — selected decisive highlights,https://ramachess.com/tournaments/tata-steel-chess-2026/tata-steel-chess-2026.pgn
+b4c1dca481748bbb,"Abdusattorov, Nodirbek",Gukesh D,2026,Tata Steel Masters 2026 — selected decisive highlights,https://ramachess.com/tournaments/tata-steel-chess-2026/tata-steel-chess-2026.pgn
+e48d35df6e292d02,Erigaisi Arjun,"Abdusattorov, Nodirbek",2026,Tata Steel Masters 2026 — selected decisive highlights,https://ramachess.com/tournaments/tata-steel-chess-2026/tata-steel-chess-2026.pgn
