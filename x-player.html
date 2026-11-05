@@ -73,7 +73,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 <body data-phase="loading">
 <main class="app">
 <header class="top"><h1 id="instruction">Loading puzzle...</h1><time class="timer" id="timer" aria-label="Elapsed time" aria-live="off">00:00</time></header>
-<button id="voice-toggle" type="button" aria-pressed="false" title="Toggle Whisper voice input and computer move announcements">Voice off</button>
+<button class="action" id="voice-toggle" type="button" aria-pressed="false" title="Toggle Whisper voice input and computer move announcements">Voice off</button>
 <span class="voice-status" id="voice-status" role="status" aria-live="polite"></span>
 <!-- Hidden settings used by the Whisper stack (defaults match index-9601) -->
 <select id="voice-backend" hidden><option value="whisper" selected>whisper</option></select>
