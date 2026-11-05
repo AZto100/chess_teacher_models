@@ -7,6 +7,10 @@
 <meta name="color-scheme" content="dark">
 <title>Mate puzzles</title>
 <style>
+#voice-toggle[aria-pressed="true"]{background:#385a72;border-color:#8fbcdb}
+.sq.voice-preview:after{content:"";position:absolute;inset:1px;border:3px solid #15803d;background:#45e37c55;pointer-events:none;z-index:3}
+.voice-status{font-size:11px;color:#94a3b8;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:360px){.voice-status{max-width:100px}}
 :root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;--board-size:320px;background:#111827;color:#f3f4f6}
 *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden}body{height:100vh;height:100dvh;min-width:180px}
 .app{height:100%;width:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:max(4px,env(safe-area-inset-top)) max(4px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(4px,env(safe-area-inset-left));gap:4px}
@@ -37,6 +41,12 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 <body data-phase="loading">
 <main class="app">
 <header class="top"><h1 id="instruction">Loading puzzle...</h1><time class="timer" id="timer" aria-label="Elapsed time" aria-live="off">00:00</time></header>
+<button class="action" id="voice-toggle" type="button" aria-pressed="false" title="Toggle Whisper voice input and computer move announcements">Voice off</button>
+<span class="voice-status" id="voice-status" role="status" aria-live="polite"></span>
+<!-- Hidden settings used by the Whisper stack (defaults match index-9601) -->
+<select id="voice-backend" hidden><option value="whisper" selected>whisper</option></select>
+<select id="voice-pause" hidden><option value="950" selected>950</option></select>
+<input type="hidden" id="voice-text" value="">
 <section class="stage" id="stage" aria-label="Puzzle playing area"><div class="board-shell">
 <div class="board" id="board" role="group" aria-label="Chess puzzle" aria-busy="true"></div>
 <div class="feedback" id="feedback" role="status" aria-live="polite">Loading...</div>
@@ -45,6 +55,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 <footer class="toolbar"><button type="button" onclick="window.location.href='./famous-games.html'">Select a game?</button><label><span class="visually-hidden">Puzzle collection</span><select id="collection" aria-label="Puzzle collection"><option value="tournaments">Tournament Games</option></select></label><label><span class="visually-hidden">Puzzle level</span><select id="level" aria-label="Puzzle level"><option value="1">Mate in 1</option><option value="2">Mate in 2</option><option value="3">Mate in 3</option><option value="4">Mate in 4</option><option value="5">Mate in 5</option><option value="6">Mate in 6</option></select></label><button class="action" id="undo" type="button" disabled>Undo</button><button class="action" id="next" type="button" disabled>Next</button><button class="action" id="retry" type="button" hidden>Retry</button></footer>
 </main>
 <noscript>JavaScript is needed to play this puzzle.</noscript>
+<script src="whisper-loader.js"></script>
 <script>
 // Chess960-only rules: chessops 0.15.0 (Niklas Fiekas, GPL-3.0-or-later).
 // Source: https://github.com/niklasf/chessops/tree/v0.15.0/src
@@ -2373,8 +2384,7 @@ const PIECE_ARTWORK = Object.freeze({
   "q": "<g class=\"piece-body\"><path d=\"M13 17 20 28 21 11 28 25 32 7 36 25 43 11 44 28 51 17 44 42H20Z\"/><circle cx=\"12\" cy=\"15\" r=\"3.5\"/><circle cx=\"21\" cy=\"10\" r=\"3.5\"/><circle cx=\"32\" cy=\"7\" r=\"3.5\"/><circle cx=\"43\" cy=\"10\" r=\"3.5\"/><circle cx=\"52\" cy=\"15\" r=\"3.5\"/><path d=\"M21 40h22l2 9H19Z\"/><path d=\"M17 48h30l7 9H10Z\"/></g><g class=\"piece-detail\"><path d=\"M22 36h20M23 44h18M17 53h30\"/></g>",
   "k": "<g class=\"piece-body\"><path d=\"M29 4h6v6h6v6h-6v8h-6v-8h-6v-6h6Z\"/><path d=\"M21 38c-3-6-10-9-10-17 0-8 11-10 17-1l4 7 4-7c6-9 17-7 17 1 0 8-7 11-10 17Z\"/><path d=\"M22 35h20l3 15H19Z\"/><path d=\"M17 48h30l7 9H10Z\"/></g><g class=\"piece-detail\"><path d=\"M32 26v9M23 40h18M17 53h30\"/></g>"
 });
-/* Compact mate puzzles. The only analysis/opponent engine is Stockfish 19 Lite.
-   All puzzle outcomes are decided by actual legal checkmate, not a stored line.
+/* Compact mate puzzles + Whisper voice (same stack as index-9601).
    SPDX-License-Identifier: GPL-3.0-or-later */
 (() => {
 'use strict';
@@ -2384,11 +2394,11 @@ const NAMES = {p:'pawn',n:'knight',b:'bishop',r:'rook',q:'queen',k:'king'};
 const ABORT = () => new DOMException('Search cancelled','AbortError');
 const ENGINE_URL = new URL('engine/stockfish-19-lite-single.js', location.href);
 const THINK_MS = [0,600,900,1200,1600,2000,2400];
+
 class LiteEngine {
   constructor() {
     this.active=null; this.pending=null; this.phase='boot'; this.worker=null;
     this.ready=new Promise((resolve,reject)=>{this.resolveReady=resolve;this.rejectReady=reject;});
-    // A handler is attached immediately, including when puzzle JSON loads slowly.
     this.ready.catch(()=>{});
     this.bootTimer=setTimeout(()=>this.fail(new Error('Stockfish Lite did not start.')),45000);
     try {
@@ -2453,7 +2463,6 @@ class LiteEngine {
     this.active.cancelled=true;this.active.reject(ABORT());
     if(this.phase==='preparing')return;
     this.send('stop');
-    // Do not reuse the worker until the old search's bestmove has been drained.
     clearTimeout(this.searchTimer);
     this.stopTimer=setTimeout(()=>this.fail(new Error('Stockfish Lite could not stop the previous search.')),5000);
   }
@@ -2467,12 +2476,14 @@ class LiteEngine {
   }
   destroy() { this.fail(ABORT()); }
 }
+
 let engine=new LiteEngine(),game=null,puzzle=null,pack=[],index=0,selected=null;
 let phase='loading',version=0,resetTimer=null,feedbackTimer=null,promotionOptions=null;
 let elapsed=0,startedAt=null,attackingMoves=0,loadLevel=1;
 const packs=new Map(),puzzleAliases=new Map();
 const defaultCollection={id:'tournaments',name:'Tournament Games',basePath:'puzzles/'};
 let collections=[defaultCollection],selectedCollection='tournaments';
+
 async function loadCollections(){
   try{
     const response=await fetch(new URL('puzzles/collections.json',location.href),{cache:'no-store'});
@@ -2497,6 +2508,669 @@ async function loadCollections(){
 
 const uci=m=>m.from+m.to+(m.promotion||'');
 const colour=c=>c==='w'?'White':'Black';
+
+// ========== VOICE (Whisper — same approach as index-9601) ==========
+const VOICE_FILE_WORDS = Object.freeze({a:'a',ay:'a',alpha:'a',alfa:'a',b:'b',be:'b',bee:'b',bravo:'b',c:'c',see:'c',sea:'c',charlie:'c',d:'d',dee:'d',delta:'d',e:'e',ee:'e',echo:'e',f:'f',ef:'f',eff:'f',foxtrot:'f',g:'g',gee:'g',golf:'g',h:'h',aitch:'h',haitch:'h',hotel:'h'});
+const VOICE_RANK_WORDS = Object.freeze({one:'1',won:'1',two:'2',to:'2',too:'2',three:'3',tree:'3',four:'4',for:'4',fore:'4',five:'5',six:'6',seven:'7',eight:'8',ate:'8'});
+const VOICE_PROMOTIONS = Object.freeze({q:'q',queen:'q',r:'r',rook:'r',b:'b',bishop:'b',n:'n',knight:'n',night:'n'});
+
+function parseSpokenMove(text) {
+  if (typeof text !== 'string' || text.length > 180) return {error:'Say one short move, with both square names.'};
+  let s = text.toLowerCase().normalize('NFKC').trim().replace(/[.,!?;:()']/g,' ').replace(/[\u2192\u2013\u2014-]/g,' ');
+  s = s.replace(/^please\s+/,'').replace(/\s+please$/,'').replace(/^(?:move|play)\s+/,'').replace(/^from\s+/,'').trim();
+  if (/^(?:castle|castles|castling)\s+(?:king\s*side|short)$/.test(s) || /^(?:o\s*o|0\s*0)$/.test(s)) return {castle:'k'};
+  if (/^(?:castle|castles|castling)\s+(?:queen\s*side|long)$/.test(s) || /^(?:o\s*o\s*o|0\s*0\s*0)$/.test(s)) return {castle:'q'};
+  if (/^castl/.test(s)) return {error:'Specify castle kingside or castle queenside.'};
+  s = s.replace(/([a-h])([1-8])/g,'$1 $2 ').replace(/([1-8])([a-h])/g,'$1 $2');
+  const tokens = s.replace(/=/g,' ').split(/\s+/).filter(Boolean);
+  let i = 0;
+  const square = () => {
+    const f = VOICE_FILE_WORDS[tokens[i++]];
+    const t = tokens[i++], r = /^[1-8]$/.test(t || '') ? t : VOICE_RANK_WORDS[t];
+    return f && r ? f + r : null;
+  };
+  const from = square();
+  if (['to','two','too'].includes(tokens[i])) i++;
+  const to = square();
+  if (!from || !to) return {error:'Could not read two squares. Try "C two to C four".'};
+  let promotion = '';
+  if (i < tokens.length) {
+    if (['promote','promotes','promotion'].includes(tokens[i])) i++;
+    if (['to','as'].includes(tokens[i])) i++;
+    if (tokens[i] === 'a') i++;
+    promotion = VOICE_PROMOTIONS[tokens[i++]] || '';
+    if (!promotion) return {error:'Promotion must be queen, rook, bishop or knight.'};
+  }
+  if (i !== tokens.length) return {error:'Extra words. Say one FROM-to-TO move.'};
+  if (from === to) return {error:'Start and destination are the same.'};
+  return {from, to, promotion};
+}
+
+let voice = {serial:0,inputEpoch:0,phase:'idle',active:false,processing:false,
+  candidate:null,candidateSeq:0,promotionMoves:[],recorder:null,
+  whisper:null,ready:false,readyKey:'',timer:null};
+let computerSpeech = {active:false, token:0, timer:null, gapTimer:null, utterance:null};
+
+const voiceKey = () => 'whisper:en';
+const voiceAllowed = () => phase==='human' && game && puzzle && game.turn()===puzzle.attacker && !promotionOptions && !computerSpeech.active && !game.isGameOver();
+const voiceBusy = () => voice.active || ['preparing','starting','transcribing'].includes(voice.phase);
+
+function voicePreview() {
+  const c = voice.candidate;
+  return c && voiceAllowed() && c.fen===game.fen() && c.version===version ? c : null;
+}
+function voiceMessage(message, kind='') {
+  const el = $('voice-status');
+  if (!el) return;
+  el.textContent = message || '';
+  el.className = 'voice-status' + (kind ? ' '+kind : '');
+}
+function voiceMoveLabel(c=voicePreview()) {
+  if (!c) return '';
+  const m = c.move;
+  return m.from.toUpperCase() + ' → ' + (m.castleKingTo||m.to).toUpperCase() +
+    (c.needsPromotion ? ' (choose promotion)' : m.promotion ? ' = '+NAMES[m.promotion] : '');
+}
+function updateVoiceButton() {
+  const btn = $('voice-toggle');
+  if (!btn) return;
+  btn.setAttribute('aria-pressed', String(voice.active));
+  btn.textContent = voice.active ? 'Voice on' : 'Voice off';
+  if (voice.phase==='preparing') btn.textContent = 'Preparing…';
+}
+function voiceControls() {
+  updateVoiceButton();
+  if (!voice.active) return;
+  if (voice.phase==='transcribing') voiceMessage('Processing - wait');
+  else if (!voiceAllowed()) voiceMessage(computerSpeech.active ? 'Computer speaking…' : 'Waiting for your turn…');
+  else if (voicePreview()) voiceMessage('Preview '+voiceMoveLabel()+'. Say "move".');
+  else if (voice.phase==='listening') voiceMessage('Listening…');
+  else if (voice.phase==='starting') voiceMessage('Starting microphone…');
+}
+function clearVoiceCandidate() {
+  const changed = Boolean(voice.candidate);
+  voice.candidate = null;
+  voice.promotionMoves = [];
+  if (changed) renderBoard();
+}
+function cancelVoice(message='') {
+  voice.active = false;
+  voice.serial++;
+  voice.inputEpoch++;
+  clearTimeout(voice.timer);
+  voice.timer = null;
+  voice.recorder?.cancel();
+  voice.recorder = null;
+  if (voice.phase==='preparing' || voice.processing) {
+    voice.whisper?.destroy();
+    voice.whisper = null;
+    voice.ready = false;
+  }
+  voice.processing = false;
+  voice.phase = 'idle';
+  clearVoiceCandidate();
+  if (message) voiceMessage(message);
+  else voiceMessage('');
+  updateVoiceButton();
+}
+function voiceContext() {
+  return {
+    serial: voice.serial,
+    epoch: voice.inputEpoch,
+    version,
+    fen: game ? game.fen() : '',
+    allowed: voiceAllowed(),
+    candidateId: voicePreview()?.id || 0,
+    startedAt: performance.now()
+  };
+}
+function voiceSessionValid(session) {
+  return session && session.serial===voice.serial && session.epoch===voice.inputEpoch &&
+    session.version===version && game && session.fen===game.fen() &&
+    session.allowed && voiceAllowed() && document.visibilityState!=='hidden';
+}
+function syncHandsFree() {
+  if (!voice.active) return;
+  if (game?.isGameOver()) { cancelVoice('Game finished. Microphone off.'); return; }
+  if (voice.processing) { voiceControls(); return; }
+  voice.phase = voiceAllowed() ? 'listening' : 'waiting';
+  voice.recorder?.reset();
+  voiceControls();
+}
+function invalidateVoiceUtterance() {
+  voice.inputEpoch++;
+  voice.recorder?.reset();
+}
+function clearVoicePreview(message) {
+  invalidateVoiceUtterance();
+  clearVoiceCandidate();
+  if (message) voiceMessage(message);
+  voiceControls();
+}
+
+function stopComputerAnnouncement() {
+  const had = computerSpeech.active || computerSpeech.utterance;
+  computerSpeech.token++;
+  clearTimeout(computerSpeech.timer);
+  clearTimeout(computerSpeech.gapTimer);
+  computerSpeech.timer = null;
+  computerSpeech.gapTimer = null;
+  computerSpeech.active = false;
+  computerSpeech.utterance = null;
+  if (had) {
+    try { window.speechSynthesis?.cancel(); } catch(_) {}
+    voice.recorder?.reset();
+    queueMicrotask(syncHandsFree);
+  }
+}
+function spokenComputerMoveParts(move, checkmate=false, check=false) {
+  const pieces = {p:'Pawn',n:'Knight',b:'Bishop',r:'Rook',q:'Queen',k:'King'};
+  const ranks = {1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight'};
+  const square = s => s[0].toUpperCase() + ' ' + ranks[s[1]];
+  const parts = [];
+  if (move.flags && move.flags.includes('k')) parts.push('Castle kingside');
+  else if (move.flags && move.flags.includes('q')) parts.push('Castle queenside');
+  else parts.push(pieces[move.piece]||'Piece', square(move.from), 'to', square(move.castleKingTo||move.to));
+  if (move.flags && move.flags.includes('e')) parts.push('Capturing en passant');
+  else if (move.captured) parts.push('Captures '+(pieces[move.captured]||'').toLowerCase());
+  if (move.promotion) parts.push('Promotes to '+(pieces[move.promotion]||'').toLowerCase());
+  if (checkmate) parts.push('Checkmate');
+  else if (check) parts.push('Check');
+  return parts;
+}
+function announceComputerMove(move) {
+  if (!voice.active || document.visibilityState==='hidden' ||
+      !window.speechSynthesis || !window.SpeechSynthesisUtterance) return;
+  stopComputerAnnouncement();
+  const token = ++computerSpeech.token;
+  computerSpeech.active = true;
+  invalidateVoiceUtterance();
+  clearTimeout(voice.timer);
+  voice.timer = null;
+  voice.recorder?.reset();
+  const parts = spokenComputerMoveParts(move, game.isCheckmate(), game.isCheck());
+  let finished = false;
+  const finish = () => {
+    if (token!==computerSpeech.token || finished) return;
+    finished = true;
+    clearTimeout(computerSpeech.timer);
+    clearTimeout(computerSpeech.gapTimer);
+    computerSpeech.timer = setTimeout(() => {
+      if (token!==computerSpeech.token) return;
+      computerSpeech.active = false;
+      computerSpeech.utterance = null;
+      computerSpeech.timer = null;
+      computerSpeech.gapTimer = null;
+      voice.recorder?.reset();
+      syncHandsFree();
+    }, 400);
+  };
+  const speakPart = index => {
+    if (token!==computerSpeech.token || finished) return;
+    computerSpeech.gapTimer = null;
+    if (index===parts.length) { finish(); return; }
+    const utterance = new SpeechSynthesisUtterance(parts[index]);
+    computerSpeech.utterance = utterance;
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    utterance.onend = () => {
+      if (token!==computerSpeech.token || finished) return;
+      if (index+1===parts.length) speakPart(index+1);
+      else computerSpeech.gapTimer = setTimeout(() => speakPart(index+1), 20);
+    };
+    utterance.onerror = () => finish();
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.speak(utterance);
+    } catch(_) { finish(); }
+  };
+  syncHandsFree();
+  speakPart(0);
+}
+
+function interpretVoice(text) {
+  const previous = voicePreview();
+  const promotion = String(text).toLowerCase().trim().replace(/[.!?,]/g,'').replace(/^(?:promote\s+(?:to\s+)?|to\s+)/,'');
+  if (previous?.needsPromotion && VOICE_PROMOTIONS[promotion])
+    text = previous.move.from + ' ' + previous.move.to + ' ' + VOICE_PROMOTIONS[promotion];
+  clearVoiceCandidate();
+  if (!voiceAllowed()) {
+    voiceMessage('Wait for your turn.','error');
+    voiceControls();
+    return false;
+  }
+  const parsed = parseSpokenMove(text);
+  if (parsed.error) {
+    voiceMessage(parsed.error,'error');
+    voiceControls();
+    return false;
+  }
+  const legal = game.moves({verbose:true});
+  const matches = legal.filter(m => parsed.castle
+    ? (m.flags && m.flags.includes(parsed.castle) && m.piece==='k')
+    : (m.from===parsed.from && m.to===parsed.to && (!parsed.promotion || m.promotion===parsed.promotion)));
+  if (!matches.length) {
+    voiceMessage('That move is not legal. Please repeat.','error');
+    voiceControls();
+    return false;
+  }
+  const needsPromotion = matches.length > 1;
+  voice.candidate = {
+    move: matches[0],
+    fen: game.fen(),
+    version,
+    id: ++voice.candidateSeq,
+    needsPromotion,
+    painted: false,
+    createdAt: performance.now()
+  };
+  selected = null;
+  if (needsPromotion) voice.promotionMoves = matches;
+  voiceMessage('Preview '+voiceMoveLabel()+'. '+(needsPromotion?'Say queen, rook, bishop or knight.':'Say "move" to play.'));
+  voiceControls();
+  renderBoard();
+  return true;
+}
+function playVoiceMove(source='button', context=null) {
+  const candidate = voicePreview();
+  if (!candidate) { voiceMessage('No move pending. Say the two squares first.','error'); return false; }
+  if (candidate.needsPromotion) { voiceMessage('First say queen, rook, bishop or knight, then "move".','error'); return false; }
+  if (source==='voice' && (!voiceSessionValid(context) || context.candidateId!==candidate.id ||
+      !candidate.painted || context.startedAt < candidate.createdAt)) {
+    voiceMessage('Wait for the green preview, then say "move".','error');
+    return false;
+  }
+  const m = candidate.move;
+  clearVoiceCandidate();
+  humanMove(m);
+  voiceMessage('Played. '+(voice.active?'Listening…':''));
+  voiceControls();
+  return true;
+}
+function handleVoiceCommand(text, context) {
+  if (!voice.active) return false;
+  const command = String(text).toLowerCase().normalize('NFKC').trim().replace(/[.,!?;:]/g,'').replace(/\s+/g,' ');
+  if (command==='stop listening' || command==='voice off') {
+    cancelVoice('Voice off.');
+    return true;
+  }
+  if (!voiceSessionValid(context)) return false;
+  if ($('voice-text')) $('voice-text').value = String(text).trim();
+  if (command==='cancel') { clearVoicePreview('Preview cancelled. Still listening.'); return true; }
+  if (command==='move') return playVoiceMove('voice', context);
+  return interpretVoice(String(text));
+}
+
+class LocalChessWhisper {
+  static shared = { loading:null, module:null, instance:0, busy:false, failed:false };
+  constructor(onStatus) {
+    this.onStatus = onStatus;
+    this.ready = false;
+    this.destroyed = false;
+  }
+  async load() {
+    if (this.destroyed) throw new Error('Speech operation cancelled.');
+    const shared = LocalChessWhisper.shared;
+    if (shared.failed) throw new Error('Whisper needs a page reload after its previous failure.');
+    if (!shared.loading) {
+      shared.loading = (async () => {
+        const loader = window.WhisperAssetLoader;
+        if (!loader) throw new Error('Missing whisper-loader.js beside x-player.html.');
+        await loader.prepare({
+          onStatus: message => { if (!this.destroyed) this.onStatus?.(message); }
+        });
+        const module = window.Module;
+        for (const name of ['init','set_audio','get_transcribed','get_status']) {
+          if (typeof module?.[name] !== 'function')
+            throw new Error('Whisper runtime is missing '+name+'. Check wasm/stream.js.');
+        }
+        const instance = module.init(loader.MODEL_FS_NAME, 'en');
+        if (!instance) throw new Error('Whisper could not initialise its speech model.');
+        shared.module = module;
+        shared.instance = instance;
+      })().catch(error => { shared.failed = true; throw error; });
+    }
+    await shared.loading;
+    if (this.destroyed) throw new Error('Speech operation cancelled.');
+    this.ready = true;
+  }
+  async transcribe(audio) {
+    const shared = LocalChessWhisper.shared;
+    if (!this.ready || this.destroyed) throw new Error('Whisper is not ready.');
+    if (shared.failed) throw new Error('Reload the page to restart Whisper.');
+    if (shared.busy) throw new Error('Whisper is finishing the previous command. Wait.');
+    shared.busy = true;
+    const module = shared.module;
+    try {
+      module.get_transcribed();
+      const rc = module.set_audio(shared.instance, audio);
+      if (rc !== 0) throw new Error('Whisper rejected microphone audio: '+rc);
+      const started = Date.now();
+      let sawRunning = false, emptyWaitingSince = 0;
+      while (Date.now() - started < 120000) {
+        const text = String(module.get_transcribed() || '').trim();
+        const status = String(module.get_status() || '').toLowerCase();
+        if (text) {
+          if (this.destroyed) throw new Error('Speech operation cancelled.');
+          return text;
+        }
+        if (status.includes('running whisper')) sawRunning = true;
+        if (sawRunning && status.includes('waiting for audio')) {
+          if (!emptyWaitingSince) emptyWaitingSince = Date.now();
+          if (Date.now() - emptyWaitingSince > 500) return '';
+        } else emptyWaitingSince = 0;
+        await new Promise(r => setTimeout(r, 100));
+      }
+      shared.failed = true;
+      throw new Error('Whisper transcription timed out. Reload the page.');
+    } finally {
+      shared.busy = false;
+    }
+  }
+  destroy() {
+    this.destroyed = true;
+    this.ready = false;
+  }
+}
+
+async function prepareVoiceIsolation(stillCurrent) {
+  if (crossOriginIsolated) return true;
+  if (!navigator.serviceWorker)
+    throw new Error('This browser cannot enable the local Whisper worker. Use HTTPS/localhost.');
+  const expected = new URL('voice-coi-serviceworker.js', location.href).href;
+  const scope = new URL('.', location.href).href;
+  const existing = await navigator.serviceWorker.getRegistration(scope);
+  const prior = existing?.active?.scriptURL || existing?.waiting?.scriptURL || existing?.installing?.scriptURL;
+  if (prior && prior !== expected)
+    throw new Error('Another service worker controls this app. Use voice-coi-serviceworker.js for this folder.');
+  if (!stillCurrent()) return false;
+  const registration = await navigator.serviceWorker.register(expected, {scope, updateViaCache:'none'});
+  if (!registration.active) await new Promise((resolve, reject) => {
+    const w = registration.installing || registration.waiting;
+    if (!w) { reject(new Error('Voice isolation worker did not install.')); return; }
+    const timer = setTimeout(() => reject(new Error('Voice isolation worker did not activate.')), 15000);
+    const check = () => {
+      if (w.state === 'activated') { clearTimeout(timer); resolve(); }
+      else if (w.state === 'redundant') { clearTimeout(timer); reject(new Error('Voice isolation installation failed.')); }
+    };
+    w.addEventListener('statechange', check);
+    check();
+  });
+  if (!stillCurrent()) return false;
+  const marker = 'chess-voice-isolation:'+scope;
+  if (sessionStorage.getItem(marker) === 'reloaded')
+    throw new Error('Still not cross-origin isolated after reload. Open the site directly (not an iframe).');
+  sessionStorage.setItem(marker, 'reloaded');
+  location.reload();
+  return false;
+}
+
+async function prepareVoice() {
+  if (voiceBusy()) return false;
+  const id = ++voice.serial;
+  const key = voiceKey();
+  voice.phase = 'preparing';
+  voice.ready = false;
+  updateVoiceButton();
+  try {
+    if (!isSecureContext) throw new Error('Microphone needs HTTPS or localhost.');
+    voiceMessage('Preparing local Whisper (may reload once)…');
+    if (!await prepareVoiceIsolation(() => id === voice.serial)) return false;
+    if (id !== voice.serial) return false;
+    const instance = voice.whisper || new LocalChessWhisper(msg => {
+      if (id === voice.serial) voiceMessage(msg);
+    });
+    voice.whisper = instance;
+    await instance.load();
+    if (id !== voice.serial) return false;
+    voice.ready = true;
+    voice.readyKey = key;
+    voice.phase = 'idle';
+    voiceMessage('Whisper ready.');
+    updateVoiceButton();
+    return true;
+  } catch (error) {
+    if (id === voice.serial) {
+      voice.whisper?.destroy();
+      voice.whisper = null;
+      voice.ready = false;
+      voice.phase = 'idle';
+      voiceMessage(error.message || String(error), 'error');
+      updateVoiceButton();
+    }
+    return false;
+  }
+}
+
+class ChessVoiceRecorder {
+  constructor() {
+    this.stream = null;
+    this.context = null;
+    this.source = null;
+    this.node = null;
+    this.closed = false;
+    this.reset();
+  }
+  reset() {
+    this.frames = [];
+    this.preRoll = [];
+    this.preSamples = 0;
+    this.samples = 0;
+    this.voiced = 0;
+    this.quiet = 0;
+    this.speechSeen = false;
+    this.utterance = null;
+  }
+  async start(onUtterance, onError) {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC || !navigator.mediaDevices?.getUserMedia)
+      throw new Error('Microphone capture requires HTTPS/localhost.');
+    this.context = new AC();
+    await this.context.resume();
+    if (this.closed) return;
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: false,
+      audio: {channelCount:1, echoCancellation:true, noiseSuppression:true, autoGainControl:true}
+    });
+    if (this.closed) { stream.getTracks().forEach(t => t.stop()); return; }
+    this.stream = stream;
+    const processor = `class ChessCapture extends AudioWorkletProcessor {
+      constructor(){super();this.buffer=new Float32Array(1024);this.offset=0;}
+      process(inputs,outputs){
+        for(const out of outputs)for(const ch of out)ch.fill(0);
+        const input=inputs[0];
+        if(input&&input.length){
+          for(let j=0;j<input[0].length;j++){
+            let x=0;for(const ch of input)x+=ch[j]||0;
+            this.buffer[this.offset++]=x/input.length;
+            if(this.offset===this.buffer.length){
+              const a=this.buffer;this.buffer=new Float32Array(1024);this.offset=0;
+              this.port.postMessage(a,[a.buffer]);
+            }
+          }
+        }
+        return true;
+      }
+    }
+    registerProcessor('chess-capture',ChessCapture);`;
+    const url = URL.createObjectURL(new Blob([processor], {type:'text/javascript'}));
+    try { await this.context.audioWorklet.addModule(url); }
+    finally { URL.revokeObjectURL(url); }
+    if (this.closed) return;
+    this.node = new AudioWorkletNode(this.context, 'chess-capture', {
+      numberOfInputs:1, numberOfOutputs:1, outputChannelCount:[1]
+    });
+    this.node.onprocessorerror = () => onError(new Error('Microphone processor stopped.'));
+    for (const track of stream.getAudioTracks())
+      track.onended = () => { if (!this.closed) onError(new Error('Microphone disconnected.')); };
+    this.node.port.onmessage = ({data}) => this.consume(data, onUtterance, onError);
+    this.source = this.context.createMediaStreamSource(stream);
+    this.source.connect(this.node);
+    this.node.connect(this.context.destination);
+  }
+  consume(audio, onUtterance, onError) {
+    if (this.closed || !audio?.length) return;
+    if (!voice.active || voice.phase !== 'listening' || !voiceAllowed()) { this.reset(); return; }
+    const rate = this.context.sampleRate;
+    const seconds = audio.length / rate;
+    let sum = 0;
+    for (const x of audio) sum += x * x;
+    const speaking = Math.sqrt(sum / audio.length) > 0.008;
+    if (!this.speechSeen) {
+      this.preRoll.push(audio);
+      this.preSamples += audio.length;
+      while (this.preRoll.length > 1 && this.preSamples > rate * 0.24)
+        this.preSamples -= this.preRoll.shift().length;
+      if (!speaking) return;
+      this.speechSeen = true;
+      this.utterance = voiceContext();
+      this.frames = this.preRoll;
+      this.samples = this.preSamples;
+      this.preRoll = [];
+      this.preSamples = 0;
+      this.voiced = seconds;
+      return;
+    }
+    this.frames.push(audio);
+    this.samples += audio.length;
+    if (speaking) { this.quiet = 0; this.voiced += seconds; }
+    else this.quiet += seconds;
+    const pause = Number($('voice-pause')?.value || 950) / 1000;
+    if (this.samples > rate * 7) {
+      this.reset();
+      clearVoiceCandidate();
+      voiceMessage('Phrase too long. Say two squares, pause, then "move".','error');
+      voiceControls();
+      return;
+    }
+    if (this.quiet < pause) return;
+    const frames = this.frames, samples = this.samples, context = this.utterance, voiced = this.voiced;
+    this.reset();
+    if (voiced < 0.10) return;
+    voice.phase = 'transcribing';
+    voice.processing = true;
+    voiceControls();
+    const pcm = new Float32Array(samples);
+    let offset = 0;
+    for (const frame of frames) { pcm.set(frame, offset); offset += frame.length; }
+    Promise.resolve(onUtterance(pcm, rate, context)).catch(onError);
+  }
+  cancel() {
+    this.closed = true;
+    this.stream?.getTracks().forEach(t => t.stop());
+    this.stream = null;
+    try { this.source?.disconnect(); this.node?.disconnect(); } catch(_) {}
+    this.context?.close().catch(() => {});
+    this.reset();
+  }
+}
+
+async function resampleChessAudio(pcm, rate) {
+  if (pcm.length < rate * 0.15) throw new Error('Phrase too short. Say one clear command.');
+  const OC = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+  const offline = new OC(1, Math.ceil(pcm.length * 16000 / rate), 16000);
+  const buffer = offline.createBuffer(1, pcm.length, rate);
+  buffer.copyToChannel(pcm, 0);
+  const source = offline.createBufferSource();
+  source.buffer = buffer;
+  source.connect(offline.destination);
+  source.start();
+  return trimChessAudio((await offline.startRendering()).getChannelData(0));
+}
+function trimChessAudio(audio) {
+  const frame = 320, levels = [];
+  let maximum = 0;
+  for (let i = 0; i < audio.length; i += frame) {
+    let sum = 0;
+    const n = Math.min(frame, audio.length - i);
+    for (let j = 0; j < n; j++) sum += audio[i+j] * audio[i+j];
+    const rms = Math.sqrt(sum / n);
+    levels.push(rms);
+    maximum = Math.max(maximum, rms);
+  }
+  if (maximum < 0.003) throw new Error('No clear speech detected.');
+  const threshold = Math.max(0.002, maximum * 0.10);
+  let first = levels.findIndex(x => x >= threshold);
+  let last = levels.length - 1;
+  while (last >= 0 && levels[last] < threshold) last--;
+  const start = Math.max(0, first * frame - 1600);
+  const end = Math.min(audio.length, (last + 1) * frame + 1600);
+  if (end - start > 72000) throw new Error('Phrase too long. About four seconds max.');
+  const out = new Float32Array(Math.max(16000, end - start + 8000));
+  out.set(audio.subarray(start, end), 4000);
+  return out;
+}
+
+async function transcribeVoiceChunk(pcm, rate, context) {
+  const serial = voice.serial;
+  try {
+    if (!voiceSessionValid(context)) return;
+    voiceMessage('Processing speech…');
+    const audio = await resampleChessAudio(pcm, rate);
+    if (!voiceSessionValid(context)) return;
+    const text = await voice.whisper.transcribe(audio);
+    if (!voiceSessionValid(context)) return;
+    if (text) handleVoiceCommand(text, context);
+    else {
+      clearVoiceCandidate();
+      voiceMessage('No clear command. Please repeat.','error');
+    }
+  } catch (error) {
+    if (voice.serial !== serial || !voice.active) return;
+    if (/too long|No clear speech|too short/.test(error.message || '')) {
+      clearVoiceCandidate();
+      voiceMessage((error.message || '') + ' Say one command.','error');
+    } else {
+      cancelVoice(error.message || String(error));
+    }
+  } finally {
+    if (voice.serial === serial && voice.active) {
+      voice.processing = false;
+      voice.phase = voiceAllowed() ? 'listening' : 'waiting';
+      voice.recorder?.reset();
+      voiceControls();
+    }
+  }
+}
+
+async function startVoice() {
+  if (voiceBusy()) return;
+  if (!voice.ready || voice.readyKey !== voiceKey()) {
+    if (!await prepareVoice()) return;
+  }
+  if (document.visibilityState === 'hidden') return;
+  voice.active = true;
+  voice.serial++;
+  voice.inputEpoch++;
+  const serial = voice.serial;
+  voice.phase = 'starting';
+  updateVoiceButton();
+  const recorder = new ChessVoiceRecorder();
+  voice.recorder = recorder;
+  const fail = error => {
+    if (voice.serial === serial && voice.active)
+      cancelVoice(error.message || String(error));
+  };
+  try {
+    await recorder.start(transcribeVoiceChunk, fail);
+    if (voice.serial !== serial || !voice.active) { recorder.cancel(); return; }
+    voice.phase = voiceAllowed() ? 'listening' : 'waiting';
+    voiceMessage('Listening…');
+    voiceControls();
+  } catch (error) {
+    recorder.cancel();
+    fail(error);
+  }
+}
+function stopVoice() {
+  cancelVoice('Voice off.');
+}
+async function toggleVoice() {
+  if (voice.active || voiceBusy()) stopVoice();
+  else await startVoice();
+}
+
+// ========== Puzzle UI ==========
 function timeNow(){return elapsed+(startedAt===null?0:performance.now()-startedAt);}
 function tick(){const t=Math.floor(timeNow()/1000);$('timer').textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0');}
 function startClock(){if(startedAt===null)startedAt=performance.now();tick();}
@@ -2506,8 +3180,22 @@ function setMessage(text,kind='neutral'){
   $('feedback').textContent=text;$('feedback').className='feedback '+kind;$('feedback').hidden=!text;
 }
 function clearTransient(){clearTimeout(resetTimer);clearTimeout(feedbackTimer);resetTimer=null;feedbackTimer=null;closePromotion();setMessage('');}
-function invalidate(){version++;engine.cancel();selected=null;clearTransient();return version;}
-function setPhase(value){phase=value;document.body.dataset.phase=value;$('board').setAttribute('aria-busy',String(value==='defending'||value==='loading'));renderControls();}
+function invalidate(){
+  version++;
+  engine.cancel();
+  selected=null;
+  clearVoiceCandidate();
+  if (voice.active) { voice.inputEpoch++; voice.recorder?.reset(); }
+  clearTransient();
+  return version;
+}
+function setPhase(value){
+  phase=value;
+  document.body.dataset.phase=value;
+  $('board').setAttribute('aria-busy',String(value==='defending'||value==='loading'));
+  renderControls();
+  if (voice.active) queueMicrotask(syncHandsFree);
+}
 function renderControls(){
   $('undo').disabled=!game||game.history().length===0||phase==='loading';
   $('next').disabled=!puzzle||phase==='loading';
@@ -2528,6 +3216,13 @@ function renderBoard(){
     const coord=document.createElement('span');coord.className='coord';coord.textContent=sq;coord.setAttribute('aria-hidden','true');button.append(coord);
     if(pc){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 64 64');svg.setAttribute('class','piece '+(pc.color==='w'?'white':'black'));svg.setAttribute('aria-hidden','true');svg.innerHTML=PIECE_ARTWORK[pc.type];button.append(svg);}
     board.append(button);
+  }
+  const preview = voicePreview();
+  if (preview) {
+    const dest = preview.move.castleKingTo || preview.move.to;
+    const cell = board.querySelector('[data-square="'+dest+'"]');
+    if (cell) cell.classList.add('voice-preview');
+    preview.painted = true;
   }
   renderControls();
 }
@@ -2560,7 +3255,7 @@ async function loadPuzzle(level,requestedId=null,offset=0){
     document.title=colour(puzzle.attacker)+' to move - Mate in '+puzzle.mate;
     $('board').setAttribute('aria-label',colour(puzzle.attacker)+' playing from the bottom. Chess puzzle.');
     renderBoard();sizeBoard();
-    try{const u=new URL(location.href);u.searchParams.set('p',puzzle.id);if(selectedCollection==='tournaments')u.searchParams.delete('c');else u.searchParams.set('c',selectedCollection);history.replaceState(null,'',u);}catch(_){/* Some sandbox configurations disallow History API writes. */}
+    try{const u=new URL(location.href);u.searchParams.set('p',puzzle.id);if(selectedCollection==='tournaments')u.searchParams.delete('c');else u.searchParams.set('c',selectedCollection);history.replaceState(null,'',u);}catch(_){}
     await engine.ready;if(ticket!==version)return;
     setMessage('');setPhase('human');startClock();
   }catch(e){if(ticket!==version||e.name==='AbortError')return;engineError(e);}
@@ -2577,6 +3272,8 @@ function askPromotion(options){
 }
 function clickSquare(square){
   if(phase!=='human'||!game||game.turn()!==puzzle.attacker||promotionOptions)return;
+  if (voice.candidate) clearVoicePreview('Voice preview cleared (mouse).');
+  else invalidateVoiceUtterance();
   const pc=game.get(square);
   if(selected){
     const moves=game.moves({verbose:true}).filter(m=>m.from===selected&&(m.to===square||m.castleKingTo===square));
@@ -2594,10 +3291,11 @@ function actualOutcome(){
 }
 function humanMove(move){
   if(phase!=='human')return;
+  clearVoiceCandidate();
   const legal=game.moves({verbose:true}).find(m=>uci(m)===uci(move));if(!legal)return;
   game.move(legal);attackingMoves++;selected=null;setMessage('');renderBoard();
+  if (voice.active) { voice.inputEpoch++; voice.recorder?.reset(); }
   if(actualOutcome())return;
-  // No early best-move / wrong-move test. Let the user finish the attempt.
   if(attackingMoves>=puzzle.mate){failAttempt();return;}
   defend();
 }
@@ -2607,9 +3305,6 @@ async function defend(){
   try{
     const history=game.history({verbose:true});
     const line=puzzle.defenceLine||puzzle.tournamentLine||[];
-    // Verified packs use a best-resistance line; older packs retain their recorded line.
-    // Compare the whole prefix: a later transposition does not erase a deviation.
-    // Recorded UCI uses king destinations for castling; the engine uses rook squares.
     const onLine=history.every((m,i)=>
       (m.from+(m.castleKingTo||m.to)+(m.promotion||''))===line[i]);
     const recorded=onLine?line[history.length]:null;
@@ -2619,15 +3314,17 @@ async function defend(){
     if(ticket!==version||phase!=='defending'||game.fen()!==fen)return;
     legal=game.moves({verbose:true}).find(m=>uci(m)===move);
     if(!legal)throw new Error('The engine returned an illegal move. Use Retry.');
-    game.move(legal);renderBoard();if(actualOutcome())return;setPhase('human');
+    game.move(legal);renderBoard();
+    if (voice.active) announceComputerMove(legal);
+    if(actualOutcome())return;
+    setPhase('human');
   }catch(e){if(ticket!==version||e.name==='AbortError')return;engineError(e);}
 }
 function failAttempt(){
-  setPhase('retry');selected=null;setMessage('Try again','try-again');const ticket=version;
+  setPhase('retry');selected=null;clearVoiceCandidate();setMessage('Try again','try-again');const ticket=version;
   resetTimer=setTimeout(()=>{
     if(ticket!==version||phase!=='retry')return;
     game=new Rules(puzzle.fen);attackingMoves=0;setPhase('human');renderBoard();
-    // Timer deliberately continues, including the visible reset interval.
     feedbackTimer=setTimeout(()=>{if(ticket===version&&phase==='human')setMessage('');},900);
   },850);
 }
@@ -2638,13 +3335,34 @@ function undo(){
   attackingMoves=game.history({verbose:true}).filter(m=>m.color===puzzle.attacker).length;
   setPhase('human');renderBoard();if(wasSolved)startClock();
 }
+
 $('board').addEventListener('click',e=>{const s=e.target.closest('[data-square]');if(s)clickSquare(s.dataset.square);});
 $('collection').addEventListener('change',()=>{selectedCollection=$('collection').value;loadPuzzle(Number($('level').value));});
 $('level').addEventListener('change',()=>loadPuzzle(Number($('level').value)));
 $('next').addEventListener('click',()=>loadPuzzle(puzzle.mate,null,index+1));
 $('undo').addEventListener('click',undo);
 $('promotion-cancel').addEventListener('click',closePromotion);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePromotion();selected=null;renderBoard();}});
+$('voice-toggle').addEventListener('click',()=>toggleVoice());
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closePromotion();selected=null;
+    if(voiceBusy()||voice.candidate){cancelVoice('Cancelled.');}
+    renderBoard();
+  }
+});
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden'){
+    stopComputerAnnouncement();
+    if(voice.active) cancelVoice('Tab hidden. Voice off.');
+  }
+});
+window.addEventListener('pagehide',()=>{
+  stopComputerAnnouncement();
+  cancelVoice();
+  voice.whisper?.destroy();
+  voice.whisper=null;
+  voice.ready=false;
+});
 $('retry').addEventListener('click',async()=>{
   if(phase!=='error')return;
   engine.destroy();engine=new LiteEngine();const ticket=++version;setPhase('loading');setMessage('Loading...');
@@ -2659,6 +3377,5 @@ const initial=new URLSearchParams(location.search).get('p');
 const valid=initial&&/^m([1-6])-\d{2,}$/.exec(initial);
 loadCollections().then(()=>loadPuzzle(valid?Number(valid[1]):1,valid?initial:null));
 })();
-
 </script>
 </body></html>
