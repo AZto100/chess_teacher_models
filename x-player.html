@@ -7,10 +7,6 @@
 <meta name="color-scheme" content="dark">
 <title>Mate puzzles</title>
 <style>
-#voice-toggle[aria-pressed="true"]{background:#385a72;border-color:#8fbcdb}
-.sq.voice-preview:after{content:"";position:absolute;inset:1px;border:3px solid #15803d;background:#45e37c55;pointer-events:none;z-index:3}
-.voice-status{font-size:11px;color:#94a3b8;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-@media(max-width:360px){.voice-status{max-width:100px}}
 :root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;--board-size:320px;background:#111827;color:#f3f4f6}
 *{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden}body{height:100vh;height:100dvh;min-width:180px}
 .app{height:100%;width:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:max(4px,env(safe-area-inset-top)) max(4px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(4px,env(safe-area-inset-left));gap:4px}
@@ -36,6 +32,10 @@ button:focus-visible,select:focus-visible{outline:2px solid #80b7ff;outline-offs
 @media(max-width:300px){.toolbar{gap:5px}.toolbar button.action,.toolbar select{font-size:12px;padding:5px 8px}.top{gap:7px;padding:0}h1{font-size:13px}.timer{font-size:12px}}
 @media(max-height:300px){.app{gap:1px;padding:2px}.top{min-height:21px}h1,.timer{font-size:12px}.toolbar{min-height:25px}.toolbar button.action,.toolbar select{padding:2px 8px;font-size:12px}}
 #collection{max-width:145px;min-width:0}#level{max-width:100px}.toolbar{flex-wrap:wrap;gap:6px}.toolbar button.action,.toolbar select{padding:5px 6px;font-size:13px}@media(max-width:360px){#collection{max-width:130px}.toolbar{gap:4px}.toolbar button.action,.toolbar select{padding:4px 5px}}
+#voice-toggle[aria-pressed="true"]{background:#385a72;border-color:#8fbcdb}
+.sq.voice-preview:after{content:"";position:absolute;inset:1px;border:3px solid #15803d;background:#45e37c55;pointer-events:none;z-index:3}
+.voice-status{font-size:11px;color:#94a3b8;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:360px){.voice-status{max-width:100px}}
 </style>
 </head>
 <body data-phase="loading">
